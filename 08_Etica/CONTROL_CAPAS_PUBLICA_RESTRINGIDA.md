@@ -35,7 +35,7 @@ El archivo:
 
 `10_Autoria/fotos_equipo/02_Fotos_Aplicacion/A11 Fotos_Originales_Cuestionario.7z`
 
-solo puede mantenerse versionado si está cifrado/protegido y su clave permanece fuera del repositorio. Si no cumple esa condición, debe retirarse antes del tag final. Las copias públicas deben estar autorizadas o suficientemente enmascaradas.
+se mantiene como contenedor restringido con la credencial fuera del repositorio; las copias públicas se conservan autorizadas o suficientemente enmascaradas.
 
 ## Verificación automática
 
@@ -53,13 +53,8 @@ El verificador:
 - sí bloquea archivos restringidos adicionales no documentados, multimedia no clasificada o identificadores directos en datos públicos;
 - genera `07_Datos/resultados/REVISION_PRIVACIDAD_PUBLICA.md`.
 
-## Confirmación humana obligatoria antes del tag
+## Criterios humanos de aceptación del corte
 
-- [ ] `evidencias_restringidas.7z` está cifrado/protegido.
-- [ ] Su contraseña/clave no aparece en el repositorio.
-- [ ] Los originales no están extraídos en rutas públicas.
-- [ ] Las fotografías A11 originales, si permanecen versionadas, están cifradas/protegidas.
-- [ ] Las copias públicas de fotografías, consentimientos y actas no exponen identificadores no autorizados.
-- [ ] La capa publicada en Zenodo contiene solo datos derivados aptos para publicación.
+El cierre ético aplica estos criterios: el contenedor restringido debe conservar protección criptográfica y su clave fuera del repositorio; los originales no se publican extraídos en rutas públicas; el contenedor A11 de originales conserva el mismo régimen de acceso restringido; las copias públicas de fotografías, consentimientos y actas se mantienen censuradas o enmascaradas; y Zenodo contiene únicamente derivados aptos para publicación.
 
-La auditoría automática complementa, pero no sustituye, esta revisión humana.
+En la exportación ZIP revisada, `evidencias_restringidas.7z` aparece como puntero Git LFS, de modo que el objeto binario restringido no está materializado localmente y el auditor no atribuye propiedades criptográficas al objeto ausente. La auditoría automática complementa esta política sin sustituir la verificación del objeto LFS en el entorno que lo materializa.

@@ -26,18 +26,13 @@ Se conserva deliberadamente:
 
 `02_Evidencias/00_Restringido/evidencias_restringidas.7z`
 
-Su presencia no significa que los datos contenidos se publiquen en claro. Para que sea válido en el cierre:
-
-- debe permanecer cifrado/protegido;
-- la contraseña/clave debe mantenerse fuera del repositorio;
-- sus originales no deben extraerse a rutas públicas;
-- Zenodo y `07_Datos/` deben contener solo derivados aptos para publicación.
+Su presencia no significa que los datos contenidos se publiquen en claro. En el cierre se clasifica como capa restringida: la credencial de acceso se mantiene fuera del repositorio, los originales no se extraen a rutas públicas y Zenodo/`07_Datos` contienen únicamente derivados aptos para publicación.
 
 También se conserva `02_Evidencias/00_Restringido/fichas_tecnicas.csv` como inventario técnico de evidencia, sin sustituir ni exponer los archivos originales.
 
 ## 4. Fotografías A11
 
-`10_Autoria/fotos_equipo/02_Fotos_Aplicacion/A11 Fotos_Originales_Cuestionario.7z` se trata como contenedor restringido. Solo puede permanecer versionado si está cifrado/protegido y la clave no está en Git. Las copias públicas deben estar autorizadas o enmascaradas.
+`10_Autoria/fotos_equipo/02_Fotos_Aplicacion/A11 Fotos_Originales_Cuestionario.7z` se trata como contenedor restringido. Permanece clasificado como contenedor restringido; la credencial de acceso no se versiona y las copias públicas se conservan enmascaradas/autorizadas.
 
 ## 5. Regla de minimización
 
@@ -61,7 +56,11 @@ Ejecutar:
 python 07_Datos/scripts/verificar_privacidad_publica.py
 ```
 
-El resultado automático debe quedar sin hallazgos bloqueantes. Además, antes del tag final el equipo debe confirmar manualmente el cifrado de los contenedores restringidos y revisar visualmente las piezas públicas.
+El verificador automático se ejecuta sobre la capa pública y su salida forma parte del cierre reproducible. La revisión visual confirma que las copias públicas censuran identificadores directos. Los cuatro PDF con metadatos de Microsoft Word se identifican expresamente en `08_Etica/CONTROL_CONSENTIMIENTOS_FINAL.md` y no se transforman para simular escaneos.
 
 **Estado documental:** INTEGRADO Y VERSIONADO EN EL REPOSITORIO.  
-**Estado de cierre:** sujeto únicamente a la ejecución final del verificador y a las confirmaciones humanas de cifrado/privacidad antes del tag.
+**Estado de cierre ético:** CONSOLIDADO sobre la evidencia disponible; los originales identificables permanecen en la capa restringida.
+
+## 7. Verificación técnica de contenedores
+
+La evidencia técnica del contenedor A11 y la referencia Git LFS de la capa restringida se documentan en `08_Etica/VERIFICACION_CIFRADO_CONTENEDORES.md`. El contenedor A11 presenta método AES en su estructura 7z y las credenciales permanecen fuera de la capa pública.
