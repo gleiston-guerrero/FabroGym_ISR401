@@ -2,8 +2,8 @@
 
 ## Fotografías reales del equipo incorporadas
 
-- `2026-07-27_Equipo_FabroGym_01.jpg`
-- `2026-07-27_Equipo_FabroGym_02.jpg`
+- `2026-07-27_equipo_fabrogym_01.jpg`
+- `2026-07-27_equipo_fabrogym_02.jpg`
 
 Estas son las dos fotografías de equipo que existen físicamente en `10_Autoria/fotos_equipo/01_fotos_equipo/`. Ambas conservan `DateTimeOriginal` de 2026-07-27 y su SHA-256 se registra en `exif_inventario.csv`. No se anuncian fotografías adicionales que no estén presentes en el repositorio.
 

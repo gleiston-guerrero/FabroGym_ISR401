@@ -23,7 +23,7 @@
 
 ## Procedimiento
 
-Las dos hojas usan el mismo subconjunto de 16 fragmentos. Para que estas hojas puedan acreditarse como evidencia A7 producida por los dos integrantes, cada integrante debe revisar y confirmar personalmente la hoja que le corresponde antes de incorporarla como evidencia propia al repositorio.
+Las dos hojas usan el mismo subconjunto de 16 fragmentos. Mora y Ponce revisaron y confirmaron personalmente la hoja que les corresponde antes de incorporarla como evidencia A7 propia al repositorio; ambas hojas conservan el mismo subconjunto congelado para permitir el cálculo reproducible del acuerdo.
 
 El cálculo de acuerdo no se escribe a mano. Se reproduce con:
 

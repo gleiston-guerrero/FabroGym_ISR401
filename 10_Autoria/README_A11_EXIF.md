@@ -15,8 +15,8 @@ El inventario conserva únicamente evidencia que existe y puede trazarse.
 
 Los dos archivos reales se encuentran en `10_Autoria/fotos_equipo/01_fotos_equipo/` con nombres normalizados por fecha:
 
-- `2026-07-27_Equipo_FabroGym_01.jpg` — `DateTimeOriginal: 2026:07:27 17:52:21`.
-- `2026-07-27_Equipo_FabroGym_02.jpg` — `DateTimeOriginal: 2026:07:27 17:50:39`.
+- `2026-07-27_equipo_fabrogym_01.jpg` — `DateTimeOriginal: 2026:07:27 17:52:21`.
+- `2026-07-27_equipo_fabrogym_02.jpg` — `DateTimeOriginal: 2026:07:27 17:50:39`.
 
 El renombrado hace legible la fecha sin modificar los bytes de imagen ni los metadatos EXIF.
 
