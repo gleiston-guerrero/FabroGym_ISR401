@@ -3,6 +3,7 @@
 Video 06:18:08; audio 06:18:14,sesiones_multimedia_desde_ficha_v3_1.csv,tabla09_cumplimiento_multimedia.csv
 Questionnaire n=70,encuesta_clientes_anonimizada.csv,tabla06_encuesta_frecuencias.csv / analyze_survey
 "76 coded fragments: 49 technical, 27 non-technical",codificacion_walkthroughs.csv,tabla04_comparacion_perfiles.csv / analyze_walkthroughs
+Session-level profile effect: n_unidades=6; Cliff delta=0.555556; IC95%=-0.333333..1.000000; interpretable=NO,07_Datos/datos_crudos/codificacion_walkthroughs.csv,07_Datos/resultados/tablas/tabla_efecto_perfiles.csv / calcular_efecto_perfiles.py
 9 explainability-relevant fragments,codificacion_walkthroughs.csv,tabla10_dimensiones_explicabilidad.csv / analyze_explainability
 4 terminal RNF,candidatos + member checking,tabla01_rnf_explicabilidad_final.csv
 "12 MC decisions: 4 confirm, 8 adjust, 0 reject",member_checking_estructurado.csv,tabla02_member_checking_por_rnf.csv

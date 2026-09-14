@@ -9,3 +9,7 @@ privacy_importance,Client questionnaire,General ordinal privacy-importance item;
 Metrica / Umbral,Candidate RNF,Operational measure and acceptance threshold
 Metodo_Comprobacion,Candidate RNF,Verification procedure
 Resultado,Member checking,Confirmado / Ajustado / No confirmado
+n_unidades,Session-level effect-size table,Total independent WALK sessions used in the profile effect (6 = 3 technical + 3 non-technical)
+interpretable,Session-level effect-size table,YES/NO rubric-facing flag for population/inferential interpretation; NO in the terminal analysis because only 3 independent sessions exist per profile
+efecto_delta,Session-level effect-size table,Cliff's delta calculated from independent WALK-session outcomes
+IC95_bootstrap_exacto_inf / IC95_bootstrap_exacto_sup,Session-level effect-size table,Lower and upper limits of the exhaustive with-replacement bootstrap percentile interval over the 3+3 WALK sessions
