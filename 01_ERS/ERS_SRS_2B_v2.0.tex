@@ -605,6 +605,22 @@ Origen / estado & DERIVADO DE NORMA/DISEÑO; PROPUESTO; no existe evaluación ej
 
 La operacionalización auditable de RNF-16 a RNF-23 se conserva en \path{04_Trazabilidad/plan_verificacion_rnf_ia.csv}.
 
+\subsection{Cobertura explícita de los seis aspectos del componente inteligente}
+La guía de cierre exige seis aspectos del componente inteligente. La cobertura terminal se consolida sin crear identificadores artificiales: algunos aspectos se satisfacen mediante más de un RNF ya vigente. La relación canónica es la siguiente.
+
+\begin{tabularx}{\textwidth}{p{3.0cm}p{2.7cm}X}\toprule
+Aspecto exigido & RNF terminal & Criterio verificable y caso de prueba \\ \midrule
+Recomendación de rutina & RNF-20 & Pertinencia validada por entrenador $\geq 80\%$ sobre casos sintéticos predefinidos; PV-RNF-20. \\
+Explicabilidad & RNF-19 & 100\% de sugerencias automáticas con criterio principal visible; PV-RNF-19. \\
+Equidad & RNF-21 & Diferencia máxima de recomendaciones no pertinentes $\leq 10$ puntos porcentuales entre grupos; PV-RNF-21. \\
+Supervisión humana & RNF-17 & 100\% de rutinas con estado de revisión y procedencia visible; PV-RNF-17. \\
+Monitoreo posterior al despliegue & RNF-22 & 100\% de recomendaciones y decisiones humanas registradas, con resumen mensual; PV-RNF-22. \\
+Clasificación de riesgo & RNF-23 & 100\% de versiones con riesgo clasificado y justificado antes de habilitación; PV-RNF-23. \\
+\bottomrule
+\end{tabularx}
+
+RNF-16 se conserva como requisito complementario de explicación del objetivo y restricciones de la rutina; RNF-18 se conserva como requisito complementario de trazabilidad e historial de rutinas. Para B5 la correspondencia principal de los seis aspectos es uno-a-uno: RNF-20, RNF-19, RNF-21, RNF-17, RNF-22 y RNF-23. El detalle de métricas, unidades, umbrales, responsables, frecuencias, elementos de diseño y casos de prueba está sincronizado en \path{04_Trazabilidad/plan_verificacion_rnf_ia.csv} y \path{04_Trazabilidad/cobertura_6_requisitos_ia.csv}. El componente recomendador permanece propuesto y no se presentan como ejecutadas pruebas que requieren una implementación inexistente.
+
 \subsection{Restricciones de diseño y privacidad}
 \begin{tabularx}{\textwidth}{p{2.5cm}X p{3.2cm}}\toprule
 ID & Restricción & Fuente \\ \midrule
@@ -942,7 +958,7 @@ Estabilización axial complementaria & 1,852\% \\
 \bottomrule\end{tabularx}
 
 \section{Criterios de calidad de esta especificación}
-Antes del corte final, cada requisito debe conservar: identificador único; necesidad/fuente; redacción singular; verificabilidad; prioridad; estado; relación con evidencia; y, cuando sea Must, CU/HU/CA y representación de interfaz. Los RNF deben conservar métrica, umbral, condición y método. Los RNF-16 a RNF-19 deben conservar además su evidencia WALK y decisión de member checking.
+Antes del corte final, cada requisito debe conservar: identificador único; necesidad/fuente; redacción singular; verificabilidad; prioridad; estado; relación con evidencia; y, cuando sea Must, CU/HU/CA y representación de interfaz. Los RNF deben conservar métrica, umbral, condición y método. Los RNF-16 a RNF-19 deben conservar además su evidencia WALK y decisión de member checking; RNF-20 a RNF-23 deben conservar la trazabilidad explícita hacia métrica, umbral, método, responsable, frecuencia, diseño y caso de prueba.
 
 
 
