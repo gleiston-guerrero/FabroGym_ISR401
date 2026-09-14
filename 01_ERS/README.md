@@ -5,6 +5,7 @@ Versión terminal vigente: **ERS_SRS_2B_v2.0**.
 La versión académica vigente es 2.0. Las etiquetas internas 2.1 y 2.2 son revisiones históricas no vigentes. Esta versión integra los 54 diagramas UML definitivos del equipo.
 
 Archivos principales:
+
 - `ERS_SRS_2B_v2.0.pdf`
 - `ERS_SRS_2B_v2.0.tex`
 - `referencias.bib` (bibliografía versionada del entregable)
@@ -33,3 +34,21 @@ No copie únicamente el archivo `.tex`: la compilación requiere también
 incluye ambos para permitir la verificación de su igualdad.
 
 Zenodo publicado, versión 2.0.0; DOI específico: `10.5281/zenodo.22237884`.
+
+## Nota sobre autoría histórica y equipo de examen
+
+La ERS/SRS conserva la autoría histórica de los integrantes que participaron en su elaboración durante las distintas etapas del proyecto. Por integridad documental, la presencia de un nombre en la portada o en la tabla de integrantes refleja participación histórica y **no debe interpretarse automáticamente como pertenencia al equipo que rinde el examen final**.
+
+Para el corte actual, el equipo de cierre, defensa y examen final está conformado por:
+
+- **Mera Arias Erick Jhair**;
+- **Mora Duarte Alex José**;
+- **Ponce Rivera Mery Helenmey**.
+
+**Alvia Villegas Erick Adalberto** y **Vaca Romero David Octavio** mantienen la autoría y contribuciones históricas que efectivamente les corresponden, pero no forman parte del equipo que rinde el examen final de este corte.
+
+No se eliminan nombres históricos cuando su presencia sea legítima, ni se reasignan contribuciones. La evidencia individual del cierre se verifica únicamente sobre los integrantes activos.
+
+La delimitación oficial y canónica del equipo de examen se encuentra en:
+
+`../10_Autoria/EQUIPO_EXAMEN_FINAL.md`

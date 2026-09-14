@@ -46,7 +46,7 @@
 Proyecto & FabroGym \\\hline
 Versión & 2.0 -- entrega académica vigente con UML definitivo \\\hline
 Fecha de corte documental & 1 de septiembre de 2026 \\\hline
-Repositorio & \url{https://github.com/amorad35/FabroGym_ISR401} \\\hline
+Repositorio & \url{https://github.com/gleiston-guerrero/FabroGym_ISR401} \\\hline
 Registro OSF & \url{https://osf.io/62ysc/} -- DOI \href{https://doi.org/10.17605/OSF.IO/62YSC}{10.17605/OSF.IO/62YSC} \\\hline
 DOI del paquete Zenodo & \zenododoi \\\hline
 Estado & Documento 2B consolidado con el conjunto UML definitivo del equipo integrado y verificado contra los 19 RF Must, la arquitectura terminal y los límites de alcance. \\\hline
@@ -133,10 +133,21 @@ Member checking & 3 participantes & MC-P01, MC-P02, MC-P03 & 12 decisiones sobre
 \subsection{Codificación y explicabilidad}
 El corpus de walkthroughs contiene 76 fragmentos codificados: 49 técnicos y 27 no técnicos, con 37 códigos normalizados y 18 categorías. Nueve fragmentos se clasificaron como pertinentes para explicabilidad (7 técnicos y 2 no técnicos). De ellos se derivaron cuatro candidatos RNF, revisados documentalmente el 29 de agosto de 2026 por MC-P01, MC-P02 y MC-P03. El registro contiene 12 decisiones: 4 confirmaciones, 8 ajustes y 0 rechazos. El proceso de member checking sí ocurrió; no existe grabación audiovisual de esa actividad y no se afirma lo contrario \cite{birt2016}.
 
-\subsection{Saturación y límite estadístico}
+\subsection{Saturación, tamaño del efecto y límite estadístico}
 A nivel de códigos normalizados, las últimas tres sesiones incorporan un promedio de 2,333 códigos nuevos sobre 37 acumulados, equivalente a 6,306\%, por lo que no se declara cumplimiento estricto del umbral de 5\%. A nivel de categorías axiales el valor complementario es 1,852\%, lo que muestra estabilización conceptual. Esta diferencia se conserva como limitación transparente y no se reetiqueta para forzar un resultado \cite{hennink2017}.
 
-La encuesta de 70 respuestas no contiene perfil técnico/no técnico ni ítems Likert de explicabilidad por dimensión. En consecuencia, no se calculan Mann--Whitney, Fleiss $\kappa$ ni una satisfacción Likert de explicabilidad con datos inexistentes. El análisis cuantitativo de la encuesta permanece descriptivo, conforme a las propiedades reales del instrumento \cite{molleri2020,cohen1988}.
+Para el contraste técnico/no técnico se corrigió la unidad de análisis: las 18 categorías temáticas no se tratan como 18 observaciones independientes. La unidad es cada sesión WALK, con \texttt{n\_unidades=6} (3 técnicas y 3 no técnicas). Sobre la proporción de fragmentos pertinentes a explicabilidad por sesión, el delta de Cliff es 0,555556 y su IC95\% bootstrap exacto es [-0,333333; 1,000000] \cite{cliff1993}. La salida terminal marca \texttt{interpretable=NO} para inferencia poblacional debido al reducido número de sesiones independientes y a la amplitud del intervalo; el cálculo se conserva únicamente como estimación descriptivo-exploratoria del caso. El análisis secundario sobre conteos brutos produce delta=0,777778 e IC95\% [0,333333; 1,000000], pero tampoco se interpreta inferencialmente porque el número total de fragmentos difiere entre sesiones.
+
+\begin{table}[H]\centering\small
+\begin{tabularx}{\textwidth}{p{4.8cm}c c p{3.4cm}c}\toprule
+Métrica & $n$ unidades & Delta de Cliff & IC95\% exacto & Interpretable \\ \midrule
+Proporción pertinente por sesión & 6 (3+3) & 0,555556 & [-0,333333; 1,000000] & NO \\
+Conteo pertinente por sesión (sensibilidad) & 6 (3+3) & 0,777778 & [0,333333; 1,000000] & NO \\ \bottomrule
+\end{tabularx}
+\caption{Auditoría del tamaño del efecto técnico/no técnico por unidades independientes. \texttt{Interpretable=NO} se refiere exclusivamente a inferencia poblacional.}\label{tab:efecto-perfiles}
+\end{table}
+
+La encuesta de 70 respuestas no contiene perfil técnico/no técnico ni ítems Likert de explicabilidad por dimensión. En consecuencia, no se usa para el contraste entre perfiles ni se calculan Mann--Whitney, Fleiss $\kappa$ o una satisfacción Likert de explicabilidad con datos inexistentes. Los índices ordinales del cuestionario permanecen descriptivos y separados del análisis de las seis sesiones WALK \cite{molleri2020,cohen1988}.
 
 \section{Descripción general del sistema}
 \subsection{Perspectiva y límites}
@@ -886,11 +897,13 @@ La ERS especifica métodos y umbrales, pero no declara ejecutadas pruebas que no
 \subsection{Resultados de explicabilidad}
 Los cuatro RNF de explicabilidad (RNF-16 a RNF-19) se incorporan porque cuentan con fragmentos de evidencia, operacionalización y decisión de member checking. El componente recomendado sigue PROPUESTO. No se calcula un porcentaje global de cobertura del marco de explicabilidad porque el instrumento no fija un universo cerrado y verificable de dimensiones; reportar un porcentaje habría creado un denominador no soportado.
 
+El contraste de perfiles se documenta en \texttt{07\_Datos/resultados/tablas/tabla\_efecto\_perfiles.csv}. La fila principal usa seis sesiones WALK independientes, informa \texttt{n\_unidades=6} e \texttt{interpretable=NO} para inferencia poblacional, con delta de Cliff=0,555556 e IC95\% [-0,333333; 1,000000]. Por tanto, la mayor proporción observada en las sesiones técnicas se describe como patrón del caso y no como efecto generalizable.
+
 \subsection{Desviaciones del prerregistro}
 El registro OSF fue publicado el 29-08-2026. Los seis WALK ocurrieron antes de ese registro, por lo que se declaran como evidencia previa/formativa y se reporta la desviación. También se documentan la normalización de identificadores, la no aplicación de pruebas inferenciales no soportadas, la naturaleza descriptiva de la encuesta, el resultado de saturación y la ausencia de grabación del member checking. El archivo terminal es \texttt{06\_Experimento/osf\_deviations.pdf} \cite{nosek2018}.
 
 \subsection{Reproducibilidad}
-El análisis 2B dispone de una entrada única \texttt{06\_Experimento/scripts\_analisis/run\_all.py} y tablas/figuras regenerables desde datos crudos/procesados. Toda cifra cuantitativa usada por la ERS debe mantenerse sincronizada con esa salida \cite{sandve2013,wilkinson2016}.
+El análisis 2B dispone de una única entrada canónica en \texttt{07\_Datos/scripts/run\_all.py} y tablas/figuras regenerables desde los datos crudos versionados. \texttt{06\_Experimento/} conserva procedencia y artefactos históricos, pero no constituye una segunda cadena canónica. Toda cifra cuantitativa usada por la ERS debe mantenerse sincronizada con las salidas de \texttt{07\_Datos/} \cite{sandve2013,wilkinson2016}.
 
 \section{Limitaciones y dependencias externas documentadas}
 \begin{riskbox}
@@ -898,6 +911,9 @@ El análisis 2B dispone de una entrada única \texttt{06\_Experimento/scripts\_a
 \end{riskbox}
 \begin{riskbox}
 \textbf{Saturación estricta.} La curva de códigos queda en 6,306\% para las últimas tres sesiones y no satisface literalmente el umbral de 5\%; la estabilización axial de 1,852\% es evidencia complementaria, no sustitución matemática.
+\end{riskbox}
+\begin{riskbox}
+\textbf{Tamaño del efecto por perfil.} El delta de Cliff se calcula con seis unidades independientes (3 WALK técnicos y 3 no técnicos), no con 18 categorías derivadas. La salida marca \texttt{interpretable=NO} para inferencia poblacional: el IC95\% principal es amplio y el tamaño muestral por perfil es mínimo. Se reporta como descripción exploratoria y no como prueba de diferencia entre poblaciones.
 \end{riskbox}
 \begin{riskbox}
 \textbf{DOI Zenodo.} El paquete final de replicación publicado está identificado mediante DOI Zenodo \href{https://doi.org/10.5281/zenodo.22237884}{10.5281/zenodo.22237884}. El identificador se incorporó de forma consistente en esta ERS, el README de publicación y el manuscrito fuente. La actualización de \texttt{CITATION.cff} permanece fuera de este bloque y no se declara resuelta aquí.
@@ -1168,7 +1184,7 @@ Los 19 diagramas de secuencia fueron reexportados desde la fuente editable de Vi
 \end{figure}
 
 \clearpage
-\begin{thebibliography}{16}
+\begin{thebibliography}{17}
 \bibitem{iso29148} ISO/IEC/IEEE, \emph{ISO/IEC/IEEE 29148:2018 Systems and software engineering -- Life cycle processes -- Requirements engineering}, 2018.
 \bibitem{iso25010} ISO/IEC, \emph{ISO/IEC 25010:2023 Systems and software engineering -- Systems and software Quality Requirements and Evaluation (SQuaRE) -- Product quality model}, 2023.
 \bibitem{pohl2010} K. Pohl, \emph{Requirements Engineering: Fundamentals, Principles, and Techniques}. Springer, 2010.
@@ -1177,6 +1193,7 @@ Los 19 diagramas de secuencia fueron reexportados desde la fuente editable de Vi
 \bibitem{hennink2017} M. M. Hennink, B. N. Kaiser, and V. C. Marconi, ``Code Saturation Versus Meaning Saturation: How Many Interviews Are Enough?'' \emph{Qualitative Health Research}, vol. 27, no. 4, pp. 591--608, 2017.
 \bibitem{molleri2020} J. S. Molleri, K. Petersen, and E. Mendes, ``An empirically evaluated checklist for surveys in software engineering,'' \emph{Information and Software Technology}, vol. 119, p. 106240, 2020.
 \bibitem{cohen1988} J. Cohen, \emph{Statistical Power Analysis for the Behavioral Sciences}, 2nd ed. Lawrence Erlbaum Associates, 1988.
+\bibitem{cliff1993} N. Cliff, ``Dominance Statistics: Ordinal Analyses to Answer Ordinal Questions,'' \emph{Psychological Bulletin}, vol. 114, no. 3, pp. 494--509, 1993, doi: 10.1037/0033-2909.114.3.494.
 \bibitem{lopdp2021} Asamblea Nacional del Ecuador, \emph{Ley Orgánica de Protección de Datos Personales}, Registro Oficial, Quinto Suplemento 459, 2021.
 \bibitem{spdp2025} Superintendencia de Protección de Datos Personales, \emph{Guía de Protección de Datos Personales desde el Diseño y por Defecto}, 2025.
 \bibitem{owasp2025} OWASP Foundation, \emph{Application Security Verification Standard 5.0.0}, 2025.
