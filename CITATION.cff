@@ -28,8 +28,8 @@ keywords:
   - "Personalization"
   - "Non-functional requirements"
   - "Field study"
-repository-code: "https://github.com/amorad35/FabroGym_ISR401"
-url: "https://doi.org/10.5281/zenodo.22237884"
+repository-code: "https://github.com/gleiston-guerrero/FabroGym_ISR401"
+url: "https://github.com/gleiston-guerrero/FabroGym_ISR401"
 identifiers:
   - type: doi
     value: "10.5281/zenodo.22237884"

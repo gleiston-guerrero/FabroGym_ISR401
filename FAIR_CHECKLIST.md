@@ -1,10 +1,10 @@
 # FAIR_CHECKLIST — FabroGym 2B
 
 **Proyecto:** FabroGym — ISR-401  
-**Estado documental:** cierre final 2B — preparación pre-tag; verificación final sobre el commit candidato  
-**Repositorio:** `https://github.com/amorad35/FabroGym_ISR401`
+**Estado documental:** cierre correctivo final 2B para `v2.0.2-final`; `v2.0.1-final` se conserva como línea base histórica y no se reescribe  
+**Repositorio:** `https://github.com/gleiston-guerrero/FabroGym_ISR401`
 
-Este archivo documenta el estado FAIR y de preservación verificable del proyecto antes del congelamiento mediante tag.
+Este archivo documenta el estado FAIR y de preservación verificable del proyecto que será congelado mediante la nueva etiqueta anotada `v2.0.2-final`, una vez superadas las verificaciones terminales. La etiqueta `v2.0.1-final` permanece como referencia histórica.
 
 ## Estado actual
 

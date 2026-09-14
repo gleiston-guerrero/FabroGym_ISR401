@@ -1,257 +1,169 @@
-# 10_Autoria — Evidencia de autoría y trabajo propio
+# FabroGym — Ingeniería de Requerimientos (ISR-401)
 
-**Proyecto:** FabroGym — ISR-401  
-**Entrega:** Entrega 4 (2B / Defensa Final)  
-**Repositorio:** `https://github.com/gleiston-guerrero/FabroGym_ISR401`
+Repositorio académico del proyecto **FabroGym**, desarrollado en la Universidad Técnica Estatal de Quevedo (UTEQ) para la Entrega 4 (2B / Defensa Final) de Ingeniería de Requerimientos.
 
-## 1. Propósito
+**Repositorio canónico de evaluación:** <https://github.com/gleiston-guerrero/FabroGym_ISR401>
 
-Esta carpeta reúne la evidencia verificable de autoría, contribución individual y trabajo propio del equipo FabroGym.
+> **Migración de propietario:** el repositorio fue transferido y la URL canónica vigente es la indicada arriba. Para un clon local existente, el remoto debe apuntar a esta dirección con `git remote set-url origin https://github.com/gleiston-guerrero/FabroGym_ISR401.git` y comprobarse posteriormente mediante `git remote -v`.
 
-La rúbrica final exige que `10_Autoria/` exista con los elementos A1 a A12 como un conjunto completo. Esta carpeta complementa el historial Git y los artefactos técnicos; no los sustituye.
+> **Línea base de cierre:** `v2.0.1-final` se conserva como etiqueta histórica ya publicada. El identificador terminal de esta corrección es `v2.0.2-final`, que debe crearse como **tag anotado nuevo** sobre el commit final únicamente después de ejecutar y validar la reproducibilidad, las compilaciones y ambos manifiestos SHA-256. No se debe mover ni sobrescribir `v2.0.1-final`.
 
-## 2. Equipo actual de cierre
+## Estado 2B
 
-El equipo que realiza el cierre y la defensa final está conformado por:
+FabroGym documenta la ingeniería de requisitos de un sistema de gestión de gimnasio local. El componente empírico usa el **Enfoque 3: explicabilidad como Requisito No Funcional (RNF)** para estudiar necesidades de explicación asociadas a un **componente de recomendación de rutinas propuesto**. El recomendador/IA **no se presenta como implementado** en el MVP.
 
-- **Mera Arias Erick Jhair** — Git: `Emeraxs`
-- **Mora Duarte Alex José** — Git: `amorad35`
-- **Ponce Rivera Mery Helenmey** — Git: `Mery-003`
+| Componente | Estado de cierre |
+|---|---|
+| ERS/SRS | `01_ERS/ERS_SRS_2B_v2.0.pdf` y fuente LaTeX |
+| Trazabilidad | 25 RF, 23 RNF y 4 RD + 97 trazas históricas + 8 planes de verificación IA |
+| MVP | cobertura C3 verificada: **16/19 RF Must (84,21 %)** |
+| **Paquete de datos y análisis canónico** | **`07_Datos/` — ejecución oficial con `python scripts/run_all.py`** |
+| Manuscrito | `07_Publicacion/manuscrito_final.pdf` + `.tex` |
+| Zenodo | **PUBLICADO**, versión 2.0.0 — DOI `10.5281/zenodo.22237884` |
+| OSF | **PUBLICADO** — DOI `10.17605/OSF.IO/62YSC` |
+| Software Heritage | **SNAPSHOT ARCHIVADO** — `swh:1:snp:be5a4db361a11e5287ed1f925ed1b387cf73588e` |
+| F-UJI / FAIR | **EJECUTADO** — **88 %**, FAIR **moderate**, F-UJI 4.0.0 / métrica 0.8 |
 
-Las contribuciones históricas de integrantes que participaron anteriormente permanecen visibles en el historial Git y en los artefactos donde corresponden. No se eliminan, reasignan ni presentan como trabajo de los tres integrantes actuales. La delimitación del corte de examen se documenta en `10_Autoria/EQUIPO_EXAMEN_FINAL.md`.
+> **Regla de unicidad B1:** para la Entrega Final 2B existe un único paquete canónico ejecutable de datos y análisis: `07_Datos/`. Los archivos conservados en `06_Experimento/` documentan el protocolo, la procedencia y el desarrollo histórico del estudio; **no constituyen una segunda cadena canónica de ejecución**. Los artefactos de `07_Publicacion/` documentan la publicación/replicación histórica y tampoco sustituyen a `07_Datos/` para B1.
 
-## 3. Principios de integridad
+> **Nota de preservación:** Software Heritage muestra actualmente una revisión anterior del repositorio. Después del commit/tag final se debe ejecutar **Save again**.
 
-Toda evidencia incorporada en `10_Autoria/` debe:
+## Evidencia FAIR y preservación
 
-- corresponder a una actividad real;
-- conservar fecha y procedencia reales;
-- no ser retrofechada;
-- no ser reconstruida artificialmente para aparentar trabajo previo;
-- no contener placeholders ni archivos vacíos que anuncien evidencia inexistente;
-- utilizar hashes de commit reales cuando se cite trabajo versionado;
-- mantener coherencia entre artefacto, persona responsable e historial Git;
-- respetar las reglas de privacidad y la separación entre capa pública y restringida.
+### F-UJI
 
-## 4. Estructura A1–A12
+El DOI `10.5281/zenodo.22237884` fue evaluado el 11 de septiembre de 2026:
 
-### A1 — `bitacora_sesiones.csv`
+- Resultado global: **88 %**
+- FAIR level: **moderate**
+- Findable: **7/7 — advanced**
+- Accessible: **6/7 — moderate**
+- Interoperable: **4/6 — moderate**
+- Reusable: **6/6 — moderate**
+- Evidencia: `fair_assessment.pdf`
 
-Registro cronológico de sesiones reales de trabajo.
+### Software Heritage
 
-Cada fila debe documentar, según corresponda:
+- Snapshot SWHID: `swh:1:snp:be5a4db361a11e5287ed1f925ed1b387cf73588e`
+- Revision archivada: `swh:1:rev:56ae64739c8dfcb93de77b9085afaf74b029e5fd`
+- Directory SWHID: `swh:1:dir:864d5a537b9e2fa6931f7f2b3ad23a06275432fa`
 
-- identificador de sesión;
-- fecha y horario;
-- modalidad;
-- participantes;
-- usuarios Git;
-- rutas trabajadas;
-- decisiones tomadas;
-- commits reales producidos;
-- fuente de evidencia y observaciones.
+## Equipo
 
-La versión congelada no contiene marcadores provisionales de commit.
+### Equipo actual de cierre y examen final
 
-### A2 — `capturas/`
+El equipo que realiza el **cierre, defensa y examen final** de esta versión está conformado exclusivamente por:
 
-Capturas reales de trabajo individual o colaborativo sobre FabroGym. Para el equipo actual del examen final existen 13 capturas de `Emeraxs`, 19 de `Mery` y 10 de `amorad35`; cada integrante supera el mínimo de tres capturas. El detalle de atribución está en `10_Autoria/capturas/README.md`.
+| Integrante | Usuario Git |
+|---|---|
+| Erick Jhair Mera Arias | `Emeraxs` |
+| Alex José Mora Duarte | `amorad35` |
+| Mery Helenmey Ponce Rivera | `Mery-003` |
 
-Cada captura se relaciona con:
+### Delimitación del equipo evaluado
 
-- herramienta utilizada;
-- artefacto trabajado;
-- usuario o integrante;
-- fecha/hora cuando esté disponible.
+Para el presente corte de cierre y defensa, la evidencia individual correspondiente al examen final se verifica sobre **Mera Arias Erick Jhair, Mora Duarte Alex José y Ponce Rivera Mery Helenmey**.
 
-### A3 — `fuentes_editables/`
+**Alvia Villegas Erick Adalberto** y **Vaca Romero David Octavio** participaron en etapas anteriores del proyecto. Sus aportes, commits, menciones documentales y autoría histórica se conservan íntegramente donde corresponden. No se eliminan, modifican, reasignan ni presentan como trabajo de los tres integrantes actuales.
 
-Fuentes editables de diagramas y modelos utilizados en el proyecto.
+En consecuencia:
 
-Incluye, cuando corresponda:
+- su presencia en documentos históricos no implica participación en el corte actual del examen;
+- no se les atribuyen capturas, sesiones, commits ni evidencias producidas por los tres integrantes que realizan el cierre;
+- no se fabrican ni reconstruyen evidencias individuales para completar una cantidad de integrantes que ya no corresponde al equipo que rinde el examen;
+- la evidencia A2 y la contribución individual del corte final se verifica únicamente sobre los tres integrantes activos.
 
-```text
-*.vpp
-*.drawio
-*.puml
-```
+La declaración formal y canónica de esta delimitación se encuentra en:
 
-Las exportaciones PNG/PDF/SVG no sustituyen la fuente editable cuando esta existe.
+`10_Autoria/EQUIPO_EXAMEN_FINAL.md`
 
-### A4 — `grabaciones/`
+Esta separación preserva simultáneamente la **integridad de la autoría histórica** y la **composición real del equipo que rinde el examen final**.
 
-Grabaciones reales de sesiones de trabajo del equipo.
+## Compilar el ERS/SRS
 
-Deben corresponder a actividades efectivas de revisión, edición, discusión o toma de decisiones sobre FabroGym.
+### Compilador
 
-### A5 — `notas_campo/`
+- `pdflatex` (distribución TeX Live o MiKTeX compatible con los paquetes utilizados por el documento).
 
-Notas reales obtenidas durante actividades de elicitación, observación o validación.
+### Archivo principal
 
-No se reconstruyen notas posteriormente para aparentar evidencia de campo.
+- `01_ERS/ERS_SRS_2B_v2.0.tex`
 
-### A6 — `fotos_equipo/`
+### Dependencias versionadas
 
-La evidencia fotográfica de autoría se organiza en:
+- `01_ERS/referencias.bib`
+- `01_ERS/figuras_2B/`
+- `01_ERS/modelado_final/`
+- `03_Modelado/Diagramas_UML/` como ubicación canónica del modelado UML
 
-```text
-10_Autoria/
-└── fotos_equipo/
-    ├── 01_fotos_equipo/
-    └── 02_Fotos_Aplicacion/
-        └── A11 Fotos_Originales_Cuestionario.7z
-```
+### Directorio de ejecución
 
-`01_fotos_equipo/` contiene las **dos fotografías reales del equipo disponibles en el repositorio**, renombradas con la fecha EXIF `2026-07-27`. No se anuncian otras fotografías de equipo inexistentes. El inventario EXIF se depuró para reflejar únicamente archivos físicamente presentes: dos fotos de equipo y cinco originales de aplicación del cuestionario documentados mediante su copia pública y contenedor restringido.
-
-Además, las **cinco copias públicas enmascaradas de aplicación del cuestionario** se encuentran en:
-
-```text
-02_Evidencias/Cuestionario/Fotos_Aplicacion/
-```
-
-Los originales utilizados para preservar EXIF se conservan dentro del contenedor restringido:
-
-```text
-10_Autoria/fotos_equipo/02_Fotos_Aplicacion/
-A11 Fotos_Originales_Cuestionario.7z
-```
-
-Ese contenedor debe permanecer cifrado/protegido y su contraseña o clave no debe almacenarse en el repositorio.
-
-### A7 — `doble_codificacion/`
-
-Evidencia de doble codificación independiente de un subconjunto común del corpus de walkthroughs.
-
-Debe conservar:
-
-- las dos hojas independientes;
-- el subconjunto codificado;
-- el script de cálculo;
-- kappa/acuerdo e intervalo de confianza.
-
-### A8 — `correspondencia/`
-
-Comunicaciones reales y fechadas con la organización relacionadas con el proyecto.
-
-Antes de publicar cualquier pieza se revisa que no exponga datos personales no autorizados.
-
-### A9 — `declaracion_uso_ia.md`
-
-Declaración del uso de herramientas de IA por sección o artefacto relevante.
-
-Debe indicar:
-
-- herramienta;
-- propósito;
-- responsable de revisión;
-- método de verificación;
-- secciones donde no se utilizó IA, cuando corresponda.
-
-### A10 — `aporte_individual.md` y evidencia firmada
-
-`aporte_individual.md` documenta la contribución verificable de los **tres integrantes actuales de cierre**:
-
-- Mera Arias Erick Jhair;
-- Mora Duarte Alex José;
-- Ponce Rivera Mery Helenmey.
-
-Para cada integrante se registran actividades, rutas, rol y commits reales.
-
-La conformidad firmada del equipo actual se conserva como:
-
-```text
-10_Autoria/aporte_individual_FIRMA.pdf
-```
-
-La versión firmada corresponde a los tres integrantes actuales de cierre. Los aportes históricos de otros integrantes permanecen en Git y no se borran ni se reasignan.
-
-### A11 — `exif_inventario.csv`
-
-Inventario técnico de fotografías utilizadas como evidencia.
-
-Para las cinco fotografías de aplicación del cuestionario, el inventario conserva:
-
-- fecha EXIF del original;
-- dispositivo;
-- SHA-256;
-- estado EXIF;
-- relación entre original restringido y copia pública enmascarada.
-
-Las copias públicas pueden tener hash distinto del original por el enmascaramiento; el inventario primario se basa en los originales preservados.
-
-### A12 — `/.mailmap`
-
-La evidencia A12 se mantiene en la raíz:
-
-```text
-/.mailmap
-```
-
-Su función es normalizar identidades históricas de Git hacia nombres y correos institucionales sin reescribir el historial.
-
-No se crea una segunda `.mailmap` dentro de `10_Autoria/`.
-
-## 5. Relación con el historial Git
-
-El historial Git es evidencia central de autoría.
-
-Reglas:
-
-- cada contribución citada debe apuntar a commits reales;
-- los integrantes activos deben usar identidad real y correo institucional;
-- no se atribuyen a una persona commits producidos por otra;
-- no se reescribe el historial para fabricar distribución de trabajo;
-- los mensajes de commit deben describir el cambio realizado.
-
-Para la revisión final se recomienda comprobar:
+Desde la raíz del repositorio:
 
 ```bash
-git shortlog -sne --all --use-mailmap
+cd 01_ERS
 ```
 
-## 6. Privacidad
+### Orden exacta de compilación
 
-`10_Autoria/` contiene evidencia del trabajo del equipo y debe respetar la política definida en `08_Etica/`.
+Ejecutar tres veces:
 
-Antes del tag final se debe confirmar:
-
-- que los contenedores restringidos estén cifrados/protegidos;
-- que sus contraseñas no estén almacenadas en Git;
-- que las copias públicas enmascaradas no revelen identificadores no autorizados;
-- que los consentimientos, actas y correspondencia pública estén adecuadamente censurados.
-
-El reporte automático vigente se conserva en:
-
-```text
-07_Datos/resultados/REVISION_PRIVACIDAD_PUBLICA.md
+```bash
+pdflatex -interaction=nonstopmode -halt-on-error ERS_SRS_2B_v2.0.tex
+pdflatex -interaction=nonstopmode -halt-on-error ERS_SRS_2B_v2.0.tex
+pdflatex -interaction=nonstopmode -halt-on-error ERS_SRS_2B_v2.0.tex
 ```
 
-y actualmente documenta **0 hallazgos automáticos bloqueantes**.
+### PDF esperado
 
-## 7. Verificación de cierre
+- `01_ERS/ERS_SRS_2B_v2.0.pdf`
 
-Antes de congelar la entrega se debe comprobar:
+## Reproducir el análisis — cadena oficial B1
 
-1. A1–A12 presentes y coherentes;
-2. ausencia de archivos vacíos/placeholder;
-3. hashes de commit citados existentes;
-4. autores normalizados mediante `.mailmap`;
-5. doble codificación reproducible;
-6. dos fotografías reales de equipo con EXIF verificable y cinco fotografías de aplicación del cuestionario con trazabilidad EXIF/copia pública;
-7. declaración de uso de IA consistente;
-8. `aporte_individual.md` sincronizado con los commits finales;
-9. privacidad automática sin bloqueos y revisión humana completada;
-10. `git status` limpio antes de crear el tag.
+Desde la raíz del repositorio:
 
-La verificación previa firmada se conserva como
-`10_Autoria/verificacion_previa.pdf`, conforme a la guía específica
-de cierre. Ese PDF corresponde al corte histórico en el que aún constaban cinco participantes del proyecto; se conserva sin alteración por integridad documental. La delimitación vigente del **equipo que rinde el examen final** está documentada en `10_Autoria/EQUIPO_EXAMEN_FINAL.md` y corresponde a Mera, Mora y Ponce. El PDF histórico complementa A1–A12 y no sustituye ninguno de esos elementos.
+```bash
+cd 07_Datos
+python -m pip install -r scripts/requirements.txt
+python scripts/run_all.py
+```
 
-## 8. Estado de esta carpeta
+Esta es la **única cadena canónica de reproducción para la Entrega 4 (2B)**. No se debe ejecutar `06_Experimento/scripts_analisis/run_all.py` como cadena oficial de B1.
 
-`10_Autoria/` se mantiene como evidencia viva hasta el último commit previo al tag.
+## Relación con `06_Experimento/`
 
-La versión de cierre mantiene sincronizados los documentos de autoría con el corte documental del examen y no conserva marcadores provisionales en la bitácora.
+`06_Experimento/` conserva el protocolo, el prerregistro OSF, instrumentos, matrices y scripts históricos que documentan la procedencia del estudio. Se mantienen por trazabilidad y no-retroceso, pero la cadena consolidada y evaluable se encuentra únicamente en `07_Datos/`.
 
-No se deben crear evidencias ficticias ni modificar evidencia histórica ya válida.
+## Paquete FAIR
+
+Zenodo 2.0.0: https://doi.org/10.5281/zenodo.22237884. La evaluación F-UJI real se conserva como `fair_assessment.pdf`. Consulte también `FAIR_CHECKLIST.md` y `CITATION.cff`.
+
+## Licencias
+
+- Código del MVP y scripts: **MIT**.
+- Documentación y dataset anonimizado: **CC BY 4.0**.
+- Evidencia identificable: sujeta a las reglas de la capa restringida/cifrada definidas en `08_Etica/`.
+
+### Verificación integral de cierre
+
+Los manifiestos terminales se regeneran únicamente después de cerrar todo el contenido versionado:
+
+```bash
+python 07_Datos/scripts/regenerar_manifiestos_sha256.py
+```
+
+La integridad global se comprueba desde la raíz con el verificador compatible con archivos normales y punteros Git LFS:
+
+```bash
+python 07_Datos/scripts/verificar_integridad_repositorio.py
+```
+
+Para el paquete empírico canónico se ejecuta literalmente:
+
+```bash
+cd 07_Datos
+python scripts/run_all.py
+sha256sum -c checksums_datos.sha256
+```
+
+`07_Datos/checksums_datos.sha256` contiene rutas relativas a `07_Datos/`; por ello no duplica el prefijo `07_Datos/`. El manifiesto global conserva para los objetos Git LFS el SHA-256 declarado por su `oid`, que corresponde al objeto materializado por Git LFS. Ambos manifiestos excluyen únicamente su propio archivo para evitar referencias hash circulares.
