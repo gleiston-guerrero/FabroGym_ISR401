@@ -19,7 +19,7 @@ No se modifican retrospectivamente fechas, respuestas, instrumentos, evidencias 
 |---|---|---|---|---|---|---|
 | DEV-OSF-01 | 12/08/2026–29/08/2026 | Las seis sesiones WALK ocurrieron antes de la publicación del prerregistro OSF. | El prerregistro se formalizó después de ejecutar las sesiones. | Los WALK no pueden presentarse como datos confirmatorios recogidos bajo un protocolo previamente registrado. | Se conserva la cronología real y los WALK se tratan como evidencia previa/formativa; el análisis posterior se declara como posterior al registro. | DOCUMENTADA |
 | DEV-AN-02 | 05/09/2026 | Se añadió al cierre 2B una verificación de acuerdo intercodificador mediante doble codificación sobre un subconjunto superior al 20 %, con Cohen's kappa e IC95 %. | La guía terminal exige doble codificación y medida de acuerdo con intervalo de confianza; el procedimiento no formaba parte del análisis preregistrado v1.4. | El resultado debe interpretarse como análisis adicional de cierre y no como prueba preregistrada. | Se conservan el subconjunto, las dos hojas de codificación, el script y los resultados del acuerdo; no se reescribe el protocolo histórico. | DOCUMENTADA |
-| DEV-AN-03 | 05/09/2026 | Se añadió tamaño del efecto + IC95 % para la comparación técnico vs no técnico. | La guía terminal específica lo exige, mientras que el pipeline previo trataba la comparación por perfiles como descriptiva/cualitativa y no aplicaba una prueba inferencial por participante. | El análisis adicional no debe presentarse como hipótesis confirmatoria preregistrada ni como inferencia poblacional. | Se usa una medida descriptivo-exploratoria por categorías, generada por script, con IC95 % bootstrap y sin p-valor por participante. | DOCUMENTADA |
+| DEV-AN-03 | 14/09/2026 | Se corrigió la unidad de análisis del tamaño del efecto técnico vs no técnico: de categorías derivadas a sesiones WALK independientes. | La evaluación final detectó pseudorreplicación en la versión previa. | El resultado terminal evita tratar 18 categorías como 18 observaciones independientes. | Delta de Cliff sobre proporción de fragmentos pertinentes por sesión, n=3 vs n=3, con IC95% bootstrap exacto; sin p-valor. | CORREGIDA |
 
 ---
 
@@ -81,7 +81,7 @@ Antes del cierre terminal, la comparación entre los tres WALK técnicos y los t
 
 ## Situación real
 
-En F3-04 se añadió una medida de tamaño del efecto con IC95 % sobre las categorías temáticas comparables entre perfiles.
+En F3-04 se corrigió la unidad de análisis: el tamaño del efecto con IC95 % se calcula sobre una medida agregada por sesión WALK independiente (3 técnicas vs 3 no técnicas), no sobre 18 categorías derivadas de las mismas sesiones.
 
 ## Motivo
 
@@ -89,7 +89,7 @@ La guía específica de cierre exige reportar tamaño del efecto e intervalo de 
 
 ## Impacto y tratamiento
 
-Se incorpora como análisis **descriptivo-exploratorio**, no como prueba confirmatoria preregistrada. La unidad del cálculo es la categoría temática pareada y no una puntuación independiente por participante. No se genera un p-valor ni se afirma una diferencia poblacional.
+Se incorpora como análisis **descriptivo-exploratorio**, no como prueba confirmatoria preregistrada. La unidad independiente del cálculo es la sesión de walkthrough; las categorías temáticas se mantienen como descripción del corpus. No se genera un p-valor ni se afirma una diferencia poblacional.
 
 ## Evidencia terminal
 
@@ -123,4 +123,4 @@ Solo se añadirá una nueva entrada cuando exista:
 4. un motivo sustentable;
 5. evidencia del impacto y del tratamiento aplicado.
 
-Las actividades pendientes no se registran como si ya hubieran ocurrido. Las entradas históricas no se eliminan para hacer coincidir retrospectivamente el protocolo con el estado final.
+Las actividades no ejecutadas en el corte histórico no se registran como si ya hubieran ocurrido. Las entradas históricas no se eliminan para hacer coincidir retrospectivamente el protocolo con el estado final.
