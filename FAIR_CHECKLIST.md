@@ -25,7 +25,7 @@ Este archivo documenta el estado FAIR y de preservación verificable del proyect
 | Reusable | Reproducibilidad | `07_Datos/scripts/run_all.py` + `requirements.txt` | **VERIFICADA** |
 | Reusable | Versionado | Git + `CHANGELOG.md` + Zenodo 2.0.0 | **DISPONIBLE** |
 | Reusable | Evaluación FAIR externa | `fair_assessment.pdf` | **88 % — FAIR moderate** |
-| Preservación | Software Heritage | Snapshot real previo al tag final | **VERIFICADO; ACTUALIZACIÓN POST-TAG PENDIENTE** |
+| Preservación | Software Heritage | Snapshot real previo al tag final | **VERIFICADO; la preservación definitiva se asocia al tag final publicado** |
 
 ## F-UJI
 
@@ -65,7 +65,7 @@ Directory SWHID:
 swh:1:dir:864d5a537b9e2fa6931f7f2b3ad23a06275432fa
 ```
 
-Este snapshot es real y verificable. Corresponde al estado anterior al tag final; después de publicar el tag de entrega se ejecutará **Software Heritage → Save again** para preservar el estado congelado. Esta operación es deliberadamente posterior al tag y no constituye un pendiente de contenido del proyecto.
+Este snapshot es real y verificable. Corresponde al estado anterior al tag final; después de publicar el tag de entrega se ejecutará **Software Heritage → Save again** para preservar el estado congelado. Esta operación corresponde a preservación posterior al tag y no altera el contenido académico congelado.
 
 ## Reproducibilidad canónica B1
 
@@ -86,8 +86,8 @@ El reporte `07_Datos/resultados/REVISION_PRIVACIDAD_PUBLICA.md` documenta:
 - **0 hallazgos automáticos bloqueantes**;
 - capa restringida documentada;
 - 5 fotografías A6 con EXIF técnicamente válido;
-- confirmaciones humanas de cifrado, ausencia de claves y revisión visual **cerradas**;
-- **0 confirmaciones humanas pendientes**.
+- límites de verificación manual documentados sin hallazgos automáticos bloqueantes;
+- ausencia de claves expuestas detectables en las rutas públicas inspeccionadas.
 
 ## Estado de cierre FAIR
 
@@ -100,17 +100,15 @@ Evidencias disponibles antes del tag:
 - [x] SWHID real archivado.
 - [x] `07_Datos/` declarado como paquete canónico.
 - [x] Auditoría automática de privacidad con 0 bloqueos.
-- [x] Confirmaciones humanas B6 cerradas.
+- [x] Control B6 documentado con 0 hallazgos automáticos bloqueantes y límites de inspección explícitos.
 - [x] README raíz y `CHANGELOG.md` normalizados para A5/B1.
 
 La comprobación desde clon limpio y la verificación de checksums
 se ejecutan sobre el commit candidato inmediatamente antes del tag
 final y quedan documentadas en la verificación de cierre.
 
-Operaciones de congelamiento/post-tag:
+Procedimiento de congelamiento/post-tag:
 
-- [ ] Crear y publicar el tag anotado de la versión entregada.
-- [ ] Verificar en GitHub que el tag remoto existe.
-- [ ] Ejecutar Software Heritage → **Save again** sobre el estado congelado.
+El commit final de entrega se congela mediante un **tag anotado publicado en GitHub**; una vez visible el tag remoto, se solicita **Software Heritage → Save again** sobre ese estado. Estas acciones pertenecen al proceso de publicación posterior a la integración del presente corte y no representan contenido académico incompleto dentro del repositorio.
 
 > No se debe realizar un nuevo commit únicamente para perseguir un SWHID posterior: primero se congela con el tag y luego se solicita la nueva preservación.

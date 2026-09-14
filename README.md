@@ -120,3 +120,21 @@ Zenodo 2.0.0: https://doi.org/10.5281/zenodo.22237884. La evaluación F-UJI real
 - Código del MVP y scripts: **MIT**.
 - Documentación y dataset anonimizado: **CC BY 4.0**.
 - Evidencia identificable: sujeta a las reglas de la capa restringida/cifrada definidas en `08_Etica/`.
+
+### Verificación integral de cierre
+
+La integridad global se comprueba con un verificador compatible con archivos normales y punteros Git LFS:
+
+```bash
+python 07_Datos/scripts/verificar_integridad_repositorio.py
+```
+
+Para el paquete empírico canónico:
+
+```bash
+cd 07_Datos
+python scripts/run_all.py
+sha256sum -c checksums_datos.sha256
+```
+
+El manifiesto global conserva para los objetos Git LFS el SHA-256 declarado por su `oid`, que corresponde al objeto materializado por Git LFS.
