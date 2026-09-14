@@ -502,15 +502,15 @@ Estado & ESPECIFICADO \\ \hline
 \end{tabularx}
 \subsubsection{RNF-17 -- derivado de RNF-EXP-C02}
 \begin{tabularx}{\textwidth}{|>{\bfseries}p{4.0cm}|X|}\hline
-Enunciado & Toda rutina asignada o propuesta deberá indicar si ha sido revisada o validada por un entrenador autorizado y, cuando exista una indicación profesional externa registrada, identificar dicha procedencia como contexto relevante de la rutina. \\ \hline
+Enunciado & Toda rutina propuesta por el componente inteligente deberá ser revisada por un entrenador autorizado antes de asignarse al cliente. El entrenador podrá aceptar, modificar o rechazar la propuesta; el sistema deberá registrar la decisión, el responsable, la fecha y la versión de la rutina, y mostrar la procedencia profesional externa cuando exista. \\ \hline
 Qué se explica & Revisión humana de la rutina y procedencia profesional externa cuando aplique. \\ \hline
 A quién & Cliente e instructor autorizado. \\ \hline
-Formato & Etiqueta de estado y texto breve de procedencia en la cabecera de la rutina. \\ \hline
+Formato & Controles de aceptar/modificar/rechazar para el entrenador y registro auditable de la decisión; etiqueta de estado y procedencia visible para el cliente. \\ \hline
 Momento & Antes de que la rutina sea utilizada por el cliente. \\ \hline
-Métrica & Porcentaje de rutinas asignadas o propuestas que muestran su condición de revisión y la procedencia profesional externa cuando exista. \\ \hline
+Métrica & Porcentaje de propuestas automáticas con decisión humana registrada antes de la asignación y con procedencia profesional visible cuando exista. \\ \hline
 Unidad & Porcentaje. \\ \hline
-Umbral & 100\% de las rutinas evaluadas deben indicar su condición de revisión; cuando exista una indicación profesional externa registrada, su procedencia debe ser visible. \\ \hline
-Método de comprobación & Pruebas funcionales con rutinas revisadas/no revisadas y casos con indicación profesional externa, verificando la información visible. \\ \hline
+Umbral & 100\% de las propuestas automáticas deben registrar una decisión del entrenador (aceptar, modificar o rechazar) antes de asignarse; toda modificación debe conservar responsable, fecha y versión, y la procedencia profesional debe ser visible cuando exista. \\ \hline
+Método de comprobación & Pruebas funcionales con propuestas aceptadas, modificadas y rechazadas; verificar bloqueo de asignación sin revisión y persistencia de decisión, responsable, fecha, versión y procedencia. \\ \hline
 Responsable & Entrenador autorizado. \\ \hline
 Frecuencia & En cada versión candidata del componente propuesto. \\ \hline
 Fuentes & WALK-TEC-02-F008; WALK-TEC-02-F009 \\ \hline
@@ -613,7 +613,7 @@ Aspecto exigido & RNF terminal & Criterio verificable y caso de prueba \\ \midru
 Recomendación de rutina & RNF-20 & Pertinencia validada por entrenador $\geq 80\%$ sobre casos sintéticos predefinidos; PV-RNF-20. \\
 Explicabilidad & RNF-19 & 100\% de sugerencias automáticas con criterio principal visible; PV-RNF-19. \\
 Equidad & RNF-21 & Diferencia máxima de recomendaciones no pertinentes $\leq 10$ puntos porcentuales entre grupos; PV-RNF-21. \\
-Supervisión humana & RNF-17 & 100\% de rutinas con estado de revisión y procedencia visible; PV-RNF-17. \\
+Supervisión humana & RNF-17 & 100\% de propuestas con decisión del entrenador registrada antes de asignación (aceptar/modificar/rechazar), con responsable, fecha y versión; PV-RNF-17. \\
 Monitoreo posterior al despliegue & RNF-22 & 100\% de recomendaciones y decisiones humanas registradas, con resumen mensual; PV-RNF-22. \\
 Clasificación de riesgo & RNF-23 & 100\% de versiones con riesgo clasificado y justificado antes de habilitación; PV-RNF-23. \\
 \bottomrule

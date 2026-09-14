@@ -1,4 +1,4 @@
-﻿aspecto_guia,rnf_terminal,metrica_umbral,caso_prueba,estado
+aspecto_guia,rnf_terminal,metrica_umbral,caso_prueba,estado
 Recomendacion de rutina,RNF-20,Pertinencia >= 80%,PV-RNF-20,PROPUESTO_NO_IMPLEMENTADO
 Explicabilidad,RNF-19,100% criterio principal visible en cada sugerencia automática,PV-RNF-19,PROPUESTO_NO_IMPLEMENTADO
 Equidad,RNF-21,Diferencia máxima <= 10 pp,PV-RNF-21,PROPUESTO_NO_IMPLEMENTADO

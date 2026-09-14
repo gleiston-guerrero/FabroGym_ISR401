@@ -7,7 +7,7 @@ Este documento no crea requisitos nuevos. Consolida cómo la especificación vig
 | 1. Recomendación de rutina | `RNF-20` | Pertinencia validada por entrenador >=80% | `PV-RNF-20` sobre casos sintéticos predefinidos | PROPUESTO / NO IMPLEMENTADO |
 | 2. Explicabilidad | `RNF-19` | 100% de sugerencias automáticas con criterio principal visible | `PV-RNF-19` | PROPUESTO / NO IMPLEMENTADO |
 | 3. Equidad | `RNF-21` | Diferencia máxima de recomendaciones no pertinentes <=10 pp entre grupos | `PV-RNF-21` con datos sintéticos balanceados | PROPUESTO / NO IMPLEMENTADO |
-| 4. Supervisión humana | `RNF-17` | 100% de rutinas con estado de revisión y procedencia visible | `PV-RNF-17` | PROPUESTO / NO IMPLEMENTADO |
+| 4. Supervisión humana | `RNF-17` | 100% de propuestas con decisión del entrenador antes de asignación; aceptar/modificar/rechazar y registro de responsable, fecha y versión | `PV-RNF-17` | PROPUESTO / NO IMPLEMENTADO |
 | 5. Monitoreo post-despliegue | `RNF-22` | 100% de recomendaciones y decisiones humanas registradas; resumen mensual | `PV-RNF-22` | PROPUESTO / NO IMPLEMENTADO |
 | 6. Clasificación de riesgo | `RNF-23` | 100% de versiones con riesgo clasificado y justificado | `PV-RNF-23` | PROPUESTO / NO IMPLEMENTADO |
 
