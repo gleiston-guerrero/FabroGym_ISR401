@@ -288,8 +288,8 @@ def write_applicability():
          "justificacion":"Hay tres walkthroughs por perfil y no existe resultado cuantitativo independiente por participante preregistrado."},
         {"metrica_prueba":"Shapiro-Wilk / Levene","estado":"NO APLICABLE",
          "justificacion":"No se ejecuta una hipótesis inferencial sobre una variable cuantitativa del Enfoque 3."},
-        {"metrica_prueba":"Tamaño del efecto técnico vs no técnico por categorías WALK","estado":"APLICADO DESCRIPTIVAMENTE",
-         "justificacion":"Correlación biserial por rangos pareada + IC95% bootstrap sobre 18 categorías; tres sesiones por perfil. No se interpreta como inferencia poblacional."},
+        {"metrica_prueba":"Tamaño del efecto técnico vs no técnico por sesiones WALK","estado":"APLICADO DESCRIPTIVAMENTE",
+         "justificacion":"Delta de Cliff sobre la proporción de fragmentos pertinentes a explicabilidad por sesión + IC95% bootstrap exacto; 3 sesiones técnicas vs 3 no técnicas. No se interpreta como inferencia poblacional."},
         {"metrica_prueba":"Bootstrap IC95% de índices ordinales generales de encuesta","estado":"APLICADO DESCRIPTIVAMENTE",
          "justificacion":"Solo describe seis preguntas ordinales generales; no se interpreta como explicabilidad ni como prueba de hipótesis."}
     ]).to_csv(TAB / "tabla_aplicabilidad_pruebas_estadisticas.csv", index=False, encoding="utf-8-sig")
@@ -314,7 +314,7 @@ def write_summary(survey, sessions, coding, final, exp, counts, vt, at, sat):
                       "porcentaje_categorias_ultimas_3":round(pcta,3),"cumple_categorias":bool(pcta<=5)}
     }
     (RES / "resumen_resultados.json").write_text(json.dumps(summary, ensure_ascii=False, indent=2), encoding="utf-8")
-    md = f"""# Resultados empíricos terminales — FabroGym\n\n## Evidencia multimedia\nLa ficha técnica v3.1 identifica 16 sesiones únicas: 10 `ENTR-*`, 3 `WALK-TEC-*` y 3 `WALK-NTEC-*`. La suma de los 16 videos es **{fmt_hms(vt)}** ({vt/60:.3f} min), por encima de 240 min; los audios suman **{fmt_hms(at)}**. No se suman audio y video como si fueran sesiones distintas.\n\n## Encuesta\nSe analizaron **{len(survey)} respuestas**. Las columnas directas finales de identificación están vacías en las 70 filas. El cuestionario no contiene un campo técnico/no técnico ni ítems Likert de explicabilidad; se reportan frecuencias e índices ordinales generales con IC95% bootstrap, sin reinterpretarlos como explicabilidad.\n\n## Walkthroughs\nSe analizaron **{len(coding)} fragmentos codificados**: {int((coding['Perfil']=='Tecnico').sum())} técnicos y {int((coding['Perfil']=='No tecnico').sum())} no técnicos, con {coding['Codigo_Normalizado'].nunique()} códigos normalizados y {coding['Categoria'].nunique()} categorías. La comparación entre perfiles sigue siendo descriptiva/exploratoria; se añade tamaño del efecto por categorías con correlación biserial por rangos pareada e IC95% bootstrap, sin p-valor ni inferencia por participante.\n\n## Explicabilidad y member checking\nSe identificaron **{len(exp)} fragmentos pertinentes** y **{len(final)} RNF terminales**. El member checking con `MC-P01`, `MC-P02` y `MC-P03` produjo {int(counts.sum())} decisiones: {int(counts['Confirmado'])} confirmaciones, {int(counts['Ajustado'])} ajustes y {int(counts['No confirmado'])} no confirmaciones. Los RNF se terminalizan como `RNF-16` a `RNF-19`; el componente recomendador permanece **PROPUESTO**, no implementado.\n\nNo se calcula porcentaje de cobertura del marco de explicabilidad: no existe un denominador cerrado verificable.\n\n## Saturación\nEn las últimas tres sesiones aparecen en promedio **{avg3:.3f}** códigos nuevos sobre **{total}** acumulados: **{pct:.3f}%**. El criterio estricto <=5% **no se alcanza**, aunque la curva presenta inflexión visible desde la cuarta sesión. A nivel axial, las últimas tres sesiones representan **{pcta:.3f}%** de categorías nuevas; se informa solo como evidencia complementaria de estabilización.\n\n## Pruebas no aplicadas\nNo se fabrican Fleiss kappa, Mann-Whitney, Shapiro-Wilk ni Levene donde los datos/protocolo no los soportan. Consulte `tabla_aplicabilidad_pruebas_estadisticas.csv`.\n"""
+    md = f"""# Resultados empíricos terminales — FabroGym\n\n## Evidencia multimedia\nLa ficha técnica v3.1 identifica 16 sesiones únicas: 10 `ENTR-*`, 3 `WALK-TEC-*` y 3 `WALK-NTEC-*`. La suma de los 16 videos es **{fmt_hms(vt)}** ({vt/60:.3f} min), por encima de 240 min; los audios suman **{fmt_hms(at)}**. No se suman audio y video como si fueran sesiones distintas.\n\n## Encuesta\nSe analizaron **{len(survey)} respuestas**. Las columnas directas finales de identificación están vacías en las 70 filas. El cuestionario no contiene un campo técnico/no técnico ni ítems Likert de explicabilidad; se reportan frecuencias e índices ordinales generales con IC95% bootstrap, sin reinterpretarlos como explicabilidad.\n\n## Walkthroughs\nSe analizaron **{len(coding)} fragmentos codificados**: {int((coding['Perfil']=='Tecnico').sum())} técnicos y {int((coding['Perfil']=='No tecnico').sum())} no técnicos, con {coding['Codigo_Normalizado'].nunique()} códigos normalizados y {coding['Categoria'].nunique()} categorías. La comparación entre perfiles se realiza a nivel de sesión WALK independiente (3 técnicas vs 3 no técnicas); el tamaño del efecto principal es delta de Cliff sobre la proporción de fragmentos pertinentes a explicabilidad por sesión, con IC95% bootstrap exacto y sin p-valor ni inferencia poblacional. Consulte F3-04_TAMANIO_EFECTO.md.\n\n## Explicabilidad y member checking\nSe identificaron **{len(exp)} fragmentos pertinentes** y **{len(final)} RNF terminales**. El member checking con `MC-P01`, `MC-P02` y `MC-P03` produjo {int(counts.sum())} decisiones: {int(counts['Confirmado'])} confirmaciones, {int(counts['Ajustado'])} ajustes y {int(counts['No confirmado'])} no confirmaciones. Los RNF se terminalizan como `RNF-16` a `RNF-19`; el componente recomendador permanece **PROPUESTO**, no implementado.\n\nNo se calcula porcentaje de cobertura del marco de explicabilidad: no existe un denominador cerrado verificable.\n\n## Saturación\nEn las últimas tres sesiones aparecen en promedio **{avg3:.3f}** códigos nuevos sobre **{total}** acumulados: **{pct:.3f}%**. El criterio estricto <=5% **no se alcanza**, aunque la curva presenta inflexión visible desde la cuarta sesión. A nivel axial, las últimas tres sesiones representan **{pcta:.3f}%** de categorías nuevas; se informa solo como evidencia complementaria de estabilización.\n\n## Pruebas no aplicadas\nNo se fabrican Fleiss kappa, Mann-Whitney, Shapiro-Wilk ni Levene donde los datos/protocolo no los soportan. Consulte `tabla_aplicabilidad_pruebas_estadisticas.csv`.\n"""
     (RES / "RESUMEN_FASE2.md").write_text(md, encoding="utf-8")
     return summary
 
@@ -340,7 +340,7 @@ No se modifican retrospectivamente fechas, respuestas, instrumentos, evidencias 
 |---|---|---|---|---|---|---|
 | DEV-OSF-01 | 12/08/2026–29/08/2026 | Las seis sesiones WALK ocurrieron antes de la publicación del prerregistro OSF. | El prerregistro se formalizó después de ejecutar las sesiones. | Los WALK no pueden presentarse como datos confirmatorios recogidos bajo un protocolo previamente registrado. | Se conserva la cronología real y los WALK se tratan como evidencia previa/formativa; el análisis posterior se declara como posterior al registro. | DOCUMENTADA |
 | DEV-AN-02 | 05/09/2026 | Se añadió al cierre 2B una verificación de acuerdo intercodificador mediante doble codificación sobre un subconjunto superior al 20 %, con Cohen's kappa e IC95 %. | La guía terminal exige doble codificación y medida de acuerdo con intervalo de confianza; el procedimiento no formaba parte del análisis preregistrado v1.4. | El resultado debe interpretarse como análisis adicional de cierre y no como prueba preregistrada. | Se conservan el subconjunto, las dos hojas de codificación, el script y los resultados del acuerdo; no se reescribe el protocolo histórico. | DOCUMENTADA |
-| DEV-AN-03 | 05/09/2026 | Se añadió tamaño del efecto + IC95 % para la comparación técnico vs no técnico. | La guía terminal específica lo exige, mientras que el pipeline previo trataba la comparación por perfiles como descriptiva/cualitativa y no aplicaba una prueba inferencial por participante. | El análisis adicional no debe presentarse como hipótesis confirmatoria preregistrada ni como inferencia poblacional. | Se usa una medida descriptivo-exploratoria por categorías, generada por script, con IC95 % bootstrap y sin p-valor por participante. | DOCUMENTADA |
+| DEV-AN-03 | 14/09/2026 | Se corrigió la unidad de análisis del tamaño del efecto técnico vs no técnico: de categorías derivadas a sesiones WALK independientes. | La evaluación final detectó pseudorreplicación en la versión previa. | El resultado terminal evita tratar 18 categorías como 18 observaciones independientes. | Delta de Cliff sobre proporción de fragmentos pertinentes por sesión, n=3 vs n=3, con IC95% bootstrap exacto; sin p-valor. | CORREGIDA |
 
 ---
 
@@ -402,7 +402,7 @@ Antes del cierre terminal, la comparación entre los tres WALK técnicos y los t
 
 ## Situación real
 
-En F3-04 se añadió una medida de tamaño del efecto con IC95 % sobre las categorías temáticas comparables entre perfiles.
+En F3-04 se corrigió la unidad de análisis: el tamaño del efecto con IC95 % se calcula sobre una medida agregada por sesión WALK independiente (3 técnicas vs 3 no técnicas), no sobre 18 categorías derivadas de las mismas sesiones.
 
 ## Motivo
 
@@ -410,7 +410,7 @@ La guía específica de cierre exige reportar tamaño del efecto e intervalo de 
 
 ## Impacto y tratamiento
 
-Se incorpora como análisis **descriptivo-exploratorio**, no como prueba confirmatoria preregistrada. La unidad del cálculo es la categoría temática pareada y no una puntuación independiente por participante. No se genera un p-valor ni se afirma una diferencia poblacional.
+Se incorpora como análisis **descriptivo-exploratorio**, no como prueba confirmatoria preregistrada. La unidad independiente del cálculo es la sesión de walkthrough; las categorías temáticas se mantienen como descripción del corpus. No se genera un p-valor ni se afirma una diferencia poblacional.
 
 ## Evidencia terminal
 
@@ -444,7 +444,7 @@ Solo se añadirá una nueva entrada cuando exista:
 4. un motivo sustentable;
 5. evidencia del impacto y del tratamiento aplicado.
 
-Las actividades pendientes no se registran como si ya hubieran ocurrido. Las entradas históricas no se eliminan para hacer coincidir retrospectivamente el protocolo con el estado final.
+Las actividades no ejecutadas en el corte histórico no se registran como si ya hubieran ocurrido. Las entradas históricas no se eliminan para hacer coincidir retrospectivamente el protocolo con el estado final.
 """
     text = text.replace("__DEVIATIONS_MD__", "") if False else text
     (ROOT / "osf_deviations.md").write_text(text, encoding="utf-8")
@@ -478,15 +478,15 @@ Las actividades pendientes no se registran como si ya hubieran ocurrido. Las ent
         },
         {
             "ID":"DEV-AN-03",
-            "Fecha_o_periodo":"2026-09-05",
-            "Tipo":"Análisis adicional de cierre",
-            "Condicion_prevista":"Comparación técnico/no técnico tratada previamente como descriptiva/cualitativa sin inferencia por participante",
-            "Situacion_real":"Se incorpora tamaño del efecto + IC95% por categorías durante F3-04",
-            "Motivo":"Exigencia de la guía terminal específica",
-            "Impacto":"No debe interpretarse como hipótesis confirmatoria preregistrada ni como inferencia poblacional",
-            "Tratamiento":"Correlación biserial por rangos pareada + IC95% bootstrap; sin p-valor por participante",
-            "Evidencia":"06_Experimento/scripts_analisis/calcular_efecto_perfiles.py | 06_Experimento/resultados/F3-04_TAMANIO_EFECTO.md",
-            "Estado":"DOCUMENTADA",
+            "Fecha_o_periodo":"2026-09-14",
+            "Tipo":"Corrección metodológica de unidad de análisis",
+            "Condicion_prevista":"Comparación técnico/no técnico con unidades independientes",
+            "Situacion_real":"Se corrige de 18 categorías derivadas a 3 sesiones técnicas vs 3 no técnicas",
+            "Motivo":"Observación de la evaluación final sobre pseudorreplicación",
+            "Impacto":"El resultado terminal evita tratar categorías de las mismas sesiones como observaciones independientes",
+            "Tratamiento":"Delta de Cliff sobre proporción de fragmentos pertinentes por sesión + IC95% bootstrap exacto; sin p-valor",
+            "Evidencia":"07_Datos/scripts/calcular_efecto_perfiles.py | 07_Datos/resultados/F3-04_TAMANIO_EFECTO.md",
+            "Estado":"CORREGIDA",
         },
     ])
     reg.to_csv(ROOT / "desviaciones_registro.csv", index=False, encoding="utf-8-sig")

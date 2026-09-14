@@ -7,7 +7,7 @@ La ficha técnica v3.1 identifica 16 sesiones únicas: 10 `ENTR-*`, 3 `WALK-TEC-
 Se analizaron **70 respuestas**. Las columnas directas finales de identificación están vacías en las 70 filas. El cuestionario no contiene un campo técnico/no técnico ni ítems Likert de explicabilidad; se reportan frecuencias e índices ordinales generales con IC95% bootstrap, sin reinterpretarlos como explicabilidad.
 
 ## Walkthroughs
-Se analizaron **76 fragmentos codificados**: 49 técnicos y 27 no técnicos, con 37 códigos normalizados y 18 categorías. La comparación entre perfiles es descriptiva/cualitativa conforme al protocolo v1.4.
+Se analizaron **76 fragmentos codificados**: 49 técnicos y 27 no técnicos, con 37 códigos normalizados y 18 categorías. La comparación entre perfiles se realiza a nivel de sesión WALK independiente (3 técnicas vs 3 no técnicas); el tamaño del efecto principal es delta de Cliff sobre la proporción de fragmentos pertinentes a explicabilidad por sesión, con IC95% bootstrap exacto y sin p-valor ni inferencia poblacional. Consulte F3-04_TAMANIO_EFECTO.md.
 
 ## Explicabilidad y member checking
 Se identificaron **9 fragmentos pertinentes** y **4 RNF terminales**. El member checking con `MC-P01`, `MC-P02` y `MC-P03` produjo 12 decisiones: 4 confirmaciones, 8 ajustes y 0 no confirmaciones. Los RNF se terminalizan como `RNF-16` a `RNF-19`; el componente recomendador permanece **PROPUESTO**, no implementado.
