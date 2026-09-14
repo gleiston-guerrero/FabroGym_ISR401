@@ -22,6 +22,7 @@ from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
 from reportlab.lib.enums import TA_CENTER
 from reportlab.lib.units import mm
 from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, Table, TableStyle
+from validar_entradas import validar_codificacion, validar_rnf, validar_member_checking
 
 ROOT = Path(__file__).resolve().parents[1]
 RAW = ROOT / "datos_crudos"
@@ -54,6 +55,12 @@ def savefig(base_name):
     plt.close()
 
 def read_inputs():
+    # Validación temprana de las tres matrices estructurales del Enfoque 3.
+    # Evita ejecutar el pipeline sobre esquemas antiguos o columnas incompatibles.
+    validar_codificacion(RAW / "codificacion_walkthroughs.csv")
+    validar_rnf(RAW / "candidatos_RNF_explicabilidad_member_checked.csv")
+    validar_member_checking(RAW / "member_checking_estructurado.csv")
+
     survey = pd.read_csv(RAW / "encuesta_clientes_anonimizada.csv", encoding="utf-8-sig")
     # Normalización de cabeceras por posición; los valores permanecen intactos.
     survey.columns = [

@@ -124,11 +124,30 @@ def summarize_metric(name, tech, nontech, field, unit):
     y = [float(r[field]) for r in nontech]
     delta = cliffs_delta(x, y)
     lo, hi, reps = exact_bootstrap_ci(x, y)
+    # La columna `interpretable` responde a la pregunta de la guía de cierre:
+    # ¿este tamaño del efecto permite una interpretación inferencial/poblacional?
+    # Con solo 3 sesiones independientes por perfil la respuesta es NO. La
+    # estimación se conserva únicamente como descripción exploratoria del caso.
+    if field == "proporcion_explicabilidad":
+        motivo = (
+            "NO inferencial: solo 3 sesiones independientes por perfil y el IC95% "
+            "es amplio e incluye 0; la estimacion se reporta solo descriptivamente."
+        )
+    else:
+        motivo = (
+            "NO inferencial: solo 3 sesiones independientes por perfil; ademas el conteo "
+            "bruto depende del numero total de fragmentos codificados por sesion y se usa "
+            "solo como analisis de sensibilidad."
+        )
     return {
         "comparacion": name,
         "unidad_analisis": "Sesion de walkthrough independiente",
+        "n_unidades": len(x) + len(y),
         "n_tecnico": len(x),
         "n_no_tecnico": len(y),
+        "interpretable": "NO",
+        "alcance_interpretacion": "DESCRIPTIVO-EXPLORATORIO; NO INFERENCIA POBLACIONAL",
+        "motivo_interpretabilidad": motivo,
         "metrica": field,
         "unidad_metrica": unit,
         "medida_efecto": "Delta de Cliff",
@@ -139,7 +158,7 @@ def summarize_metric(name, tech, nontech, field, unit):
         "media_tecnico": f"{sum(x)/len(x):.6f}",
         "media_no_tecnico": f"{sum(y)/len(y):.6f}",
         "diferencia_medias_Tec_menos_NoTec": f"{(sum(x)/len(x))-(sum(y)/len(y)):.6f}",
-        "interpretacion": "Delta positivo = valores mayores en sesiones tecnicas; resultado descriptivo-exploratorio.",
+        "interpretacion": "Delta positivo = valores mayores en sesiones tecnicas; estimacion descriptiva del caso.",
     }
 
 
@@ -229,29 +248,39 @@ El script agrega los fragmentos por `Codigo_Sesion` y calcula, para cada sesión
 
 ## Medida principal
 
-Se utiliza **delta de Cliff** para dos grupos independientes sobre la **proporción de fragmentos pertinentes a explicabilidad por sesión**.
+Se utiliza **delta de Cliff** para dos grupos independientes sobre la **proporción de fragmentos pertinentes a explicabilidad por sesión**. La unidad independiente es cada sesión WALK; por tanto, `n_unidades = {primary['n_unidades']}` (3 técnicas + 3 no técnicas).
 
+- `n_unidades = {primary['n_unidades']}` sesiones independientes.
 - `n técnico = {primary['n_tecnico']}` sesiones.
 - `n no técnico = {primary['n_no_tecnico']}` sesiones.
 - `delta = {primary['efecto_delta']}`.
 - IC95% bootstrap exacto por remuestreo de sesiones: `[{primary['IC95_bootstrap_exacto_inf']}, {primary['IC95_bootstrap_exacto_sup']}]`.
 - Media técnica = `{primary['media_tecnico']}`.
 - Media no técnica = `{primary['media_no_tecnico']}`.
+- `interpretable = {primary['interpretable']}` para inferencia poblacional.
 
-El intervalo es amplio porque solo existen tres sesiones por perfil; esta amplitud se reporta como limitación y no se maquilla.
+El intervalo es amplio y cruza 0. Por ello, el signo positivo de la estimación **no se presenta como una diferencia poblacional estable**. La estimación describe únicamente este conjunto de seis sesiones.
+
+### Regla de la columna `interpretable`
+
+En la tabla terminal, `interpretable` responde exclusivamente a si el tamaño del efecto puede sostener una **interpretación inferencial/poblacional**. En este corte su valor es `NO` porque hay solo tres unidades independientes por perfil. Esto **no invalida el cálculo descriptivo** de delta de Cliff; limita el alcance de la conclusión.
 
 ## Análisis secundario de sensibilidad
 
 Sobre el conteo bruto de fragmentos pertinentes por sesión:
 
+- `n_unidades = {secondary['n_unidades']}` sesiones independientes.
 - `delta = {secondary['efecto_delta']}`.
 - IC95% bootstrap exacto: `[{secondary['IC95_bootstrap_exacto_inf']}, {secondary['IC95_bootstrap_exacto_sup']}]`.
+- `interpretable = {secondary['interpretable']}` para inferencia poblacional.
 
-Este análisis secundario no sustituye a la medida principal porque el número total de fragmentos codificados difiere entre sesiones.
+Este análisis secundario no sustituye a la medida principal porque el número total de fragmentos codificados difiere entre sesiones. Aunque su intervalo bootstrap queda en el lado positivo, se mantiene como **sensibilidad descriptiva**: con tres sesiones por perfil y exposición desigual a fragmentos no se usa para una conclusión poblacional.
 
 ## Alcance metodológico
 
-El resultado es **descriptivo-exploratorio**. No se genera p-valor ni se afirma una diferencia poblacional. El cuestionario de 70 respuestas **no se usa para esta comparación**, porque no registra perfil técnico/no técnico ni contiene una escala de explicabilidad.
+El resultado es **descriptivo-exploratorio**. No se genera p-valor ni se afirma una diferencia poblacional. Las 18 categorías temáticas permanecen como categorías descriptivas y **no se reutilizan como 18 observaciones independientes**. El cuestionario de 70 respuestas **no se usa para esta comparación**, porque no registra perfil técnico/no técnico ni contiene una escala de explicabilidad.
+
+La tabla `tabla_efecto_perfiles.csv` incluye de forma explícita las columnas exigidas para auditar el alcance del resultado: `n_unidades` e `interpretable`.
 
 ## Reproducibilidad
 
