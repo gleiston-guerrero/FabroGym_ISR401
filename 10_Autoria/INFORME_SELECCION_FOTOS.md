@@ -1,28 +1,28 @@
 # Selección A6 y control de privacidad
 
-## Fotografías del equipo en la organización
+## Fotografías reales del equipo incorporadas
 
-La evidencia pública A6 contiene **dos fotografías reales** tomadas dentro del gimnasio, ambas con al menos dos personas visibles y con fecha preservada en EXIF. No se declaran fotografías inexistentes.
+- `2026-07-27_Equipo_FabroGym_01.jpg`
+- `2026-07-27_Equipo_FabroGym_02.jpg`
 
-- `10_Autoria/fotos_equipo/01_fotos_equipo/2026-07-27_equipo_fabrogym_01.jpg` — `DateTimeOriginal: 2026:07:27 17:52:21`.
-- `10_Autoria/fotos_equipo/01_fotos_equipo/2026-07-27_equipo_fabrogym_02.jpg` — `DateTimeOriginal: 2026:07:27 17:50:39`.
-
-Los nombres actuales incorporan la fecha obtenida del EXIF para facilitar la auditoría; el contenido y los metadatos de las fotografías no fueron alterados.
+Estas son las dos fotografías de equipo que existen físicamente en `10_Autoria/fotos_equipo/01_fotos_equipo/`. Ambas conservan `DateTimeOriginal` de 2026-07-27 y su SHA-256 se registra en `exif_inventario.csv`. No se anuncian fotografías adicionales que no estén presentes en el repositorio.
 
 ## Fotografías de aplicación del cuestionario
 
-Existen **cinco fotografías originales** de aplicación del cuestionario con fecha EXIF, dispositivo y SHA-256 documentados en `exif_inventario.csv`.
+La evidencia del cuestionario cuenta con **cinco fotografías originales** con fecha EXIF, dispositivo y SHA-256 documentados en `exif_inventario.csv`.
 
-Los originales identificables se preservan en el contenedor restringido:
+Para preservar los metadatos originales, los archivos identificables se conservan en el contenedor restringido:
 
 `10_Autoria/fotos_equipo/02_Fotos_Aplicacion/A11 Fotos_Originales_Cuestionario.7z`
 
-Las copias públicas enmascaradas están en:
+Las copias destinadas a revisión pública se encuentran en:
 
 `02_Evidencias/Cuestionario/Fotos_Aplicacion/`
 
-Las cinco filas `F3-01_APLICACION_CUESTIONARIO` se identifican como `PUBLICA_ENMASCARADA_ORIGINAL_RESTRINGIDO`.
+y se clasifican como copias públicas enmascaradas.
+
+En `exif_inventario.csv`, las cinco filas `F3-01_APLICACION_CUESTIONARIO` tienen el estado `PUBLICA_ENMASCARADA_ORIGINAL_RESTRINGIDO`.
 
 ## Integridad
 
-No se inventan fechas ni fotografías. La fecha, dispositivo y SHA-256 documentados corresponden a la evidencia original preservada. Las copias públicas pueden tener hash o metadatos distintos como consecuencia del enmascaramiento.
+El inventario final contiene **7 filas reales**: 2 fotografías de equipo y 5 fotografías originales de aplicación del cuestionario. No se mantienen filas correspondientes a archivos inexistentes. Las copias públicas del cuestionario pueden diferir en hash o metadatos como consecuencia del enmascaramiento y no sustituyen a los originales como fuente primaria del inventario.
