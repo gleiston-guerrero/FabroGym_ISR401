@@ -18,7 +18,7 @@ El equipo que realiza el cierre y la defensa final está conformado por:
 - **Mora Duarte Alex José** — Git: `amorad35`
 - **Ponce Rivera Mery Helenmey** — Git: `Mery-003`
 
-Las contribuciones históricas de integrantes que participaron anteriormente permanecen visibles en el historial Git y en los artefactos donde corresponden. No se eliminan, reasignan ni presentan como trabajo de los tres integrantes actuales.
+Las contribuciones históricas de integrantes que participaron anteriormente permanecen visibles en el historial Git y en los artefactos donde corresponden. No se eliminan, reasignan ni presentan como trabajo de los tres integrantes actuales. La delimitación del corte de examen se documenta en `10_Autoria/EQUIPO_EXAMEN_FINAL.md`.
 
 ## 3. Principios de integridad
 
@@ -51,13 +51,13 @@ Cada fila debe documentar, según corresponda:
 - commits reales producidos;
 - fuente de evidencia y observaciones.
 
-No deben quedar marcadores como `PENDIENTE_COMMIT_*` en la versión congelada.
+La versión congelada no contiene marcadores provisionales de commit.
 
 ### A2 — `capturas/`
 
-Capturas reales de trabajo individual o colaborativo sobre FabroGym.
+Capturas reales de trabajo individual o colaborativo sobre FabroGym. Para el equipo actual del examen final existen 12 capturas de `Emeraxs`, 19 de `Mery` y 10 de `amorad35`; cada integrante supera el mínimo de tres capturas. El detalle de atribución está en `10_Autoria/capturas/README.md`.
 
-Deben permitir relacionar la captura con:
+Cada captura se relaciona con:
 
 - herramienta utilizada;
 - artefacto trabajado;
@@ -101,6 +101,8 @@ La evidencia fotográfica de autoría se organiza en:
     └── 02_Fotos_Aplicacion/
         └── A11 Fotos_Originales_Cuestionario.7z
 ```
+
+`01_fotos_equipo/` contiene las **dos fotografías reales del equipo disponibles en el repositorio**, renombradas con la fecha EXIF `2026-07-27`. No se anuncian otras fotografías de equipo inexistentes. El inventario EXIF se depuró para reflejar únicamente archivos físicamente presentes: dos fotos de equipo y cinco originales de aplicación del cuestionario documentados mediante su copia pública y contenedor restringido.
 
 Además, las **cinco copias públicas enmascaradas de aplicación del cuestionario** se encuentran en:
 
@@ -236,7 +238,7 @@ Antes de congelar la entrega se debe comprobar:
 3. hashes de commit citados existentes;
 4. autores normalizados mediante `.mailmap`;
 5. doble codificación reproducible;
-6. cinco fotografías A6 con EXIF válido y copias públicas enmascaradas;
+6. dos fotografías reales de equipo con EXIF verificable y cinco fotografías de aplicación del cuestionario con trazabilidad EXIF/copia pública;
 7. declaración de uso de IA consistente;
 8. `aporte_individual.md` sincronizado con los commits finales;
 9. privacidad automática sin bloqueos y revisión humana completada;
@@ -244,13 +246,12 @@ Antes de congelar la entrega se debe comprobar:
 
 La verificación previa firmada se conserva como
 `10_Autoria/verificacion_previa.pdf`, conforme a la guía específica
-de cierre. Este archivo complementa A1–A12 y no sustituye ninguno
-de esos elementos.
+de cierre. Ese PDF corresponde al corte histórico en el que aún constaban cinco participantes del proyecto; se conserva sin alteración por integridad documental. La delimitación vigente del **equipo que rinde el examen final** está documentada en `10_Autoria/EQUIPO_EXAMEN_FINAL.md` y corresponde a Mera, Mora y Ponce. El PDF histórico complementa A1–A12 y no sustituye ninguno de esos elementos.
 
 ## 8. Estado de esta carpeta
 
 `10_Autoria/` se mantiene como evidencia viva hasta el último commit previo al tag.
 
-Antes de congelar la entrega únicamente deben sincronizarse los documentos de autoría si existen commits posteriores y eliminarse cualquier marcador pendiente que haya quedado en la bitácora.
+La versión de cierre mantiene sincronizados los documentos de autoría con el corte documental del examen y no conserva marcadores provisionales en la bitácora.
 
 No se deben crear evidencias ficticias ni modificar evidencia histórica ya válida.

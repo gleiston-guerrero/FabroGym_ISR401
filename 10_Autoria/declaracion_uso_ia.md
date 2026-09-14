@@ -3,7 +3,7 @@
 **Proyecto:** FabroGym — Ingeniería de Requerimientos ISR-401  
 **Entrega:** Entrega 4 (2B / Defensa Final)  
 **Artefacto:** A9 — `10_Autoria/declaracion_uso_ia.md`  
-**Estado de este archivo:** **FINAL — revisión consolidada. Ponce queda registrado como verificador humano y no permanecen filas `POR CONFIRMAR`.**
+**Estado de este archivo:** **FINAL — revisión consolidada. Ponce queda registrado como verificador humano y todas las filas tienen estado definitivo.**
 
 ---
 
@@ -66,7 +66,7 @@ Cuando una salida de IA propone código, texto académico o una transformación 
 | Defensa / material de presentación | Sí, como apoyo de preparación | ChatGPT | Apoyo para síntesis, banco de preguntas y respuestas, escenarios de demostración y preparación del guion/material de defensa. | Ponce | Contraste con los artefactos finales del repositorio, especialmente `09_Defensa/banco_preguntas_respuestas.md` y los materiales finales de defensa. | **CERRADO** |
 | `10_Autoria/` — estructura, plantillas y controles | Sí | ChatGPT | Apoyo para organizar evidencia A1–A12, preparar plantillas y reglas de integridad. | Ponce | Solo aceptar evidencia real; contraste de archivos con fechas, metadatos y Git cuando corresponde. | **CERRADO** |
 | A8 — `correspondencia/` | Sí, únicamente para estructura documental | ChatGPT | Preparar carpetas, inventario y guía de privacidad. | Ponce | Las capturas/mensajes corresponden a comunicaciones reales; la IA no genera correspondencia histórica. | **CERRADO** |
-| A9 — `declaracion_uso_ia.md` | Sí | ChatGPT | Preparar, revisar y consolidar esta declaración a partir de los usos documentados y del cierre realizado por el equipo. | Ponce | Revisión final línea por línea, eliminación de estados pendientes y comprobación de coherencia con los artefactos documentados. | **FINAL** |
+| A9 — `declaracion_uso_ia.md` | Sí | ChatGPT | Preparar, revisar y consolidar esta declaración a partir de los usos documentados y del cierre realizado por el equipo. | Ponce | Revisión final línea por línea, eliminación de estados provisionales y comprobación de coherencia con los artefactos documentados. | **FINAL** |
 
 ---
 
@@ -109,15 +109,15 @@ El equipo no presenta como uso válido de IA:
 
 ## 6. Cierre de A9
 
-Para el cierre de esta declaración se efectuó la consolidación de las filas pendientes y se adoptaron los siguientes criterios:
+Para el cierre de esta declaración se efectuó la consolidación de las filas previamente provisionales y se adoptaron los siguientes criterios:
 
 1. **Ponce** queda registrado como verificador humano del documento.
-2. Las cinco secciones pendientes del manuscrito —título/resumen/palabras clave, Introducción, Trabajo relacionado, Discusión y Conclusiones— quedan declaradas con **uso de ChatGPT como apoyo de redacción/revisión**, no como fuente de datos ni como autor académico.
+2. Las cinco secciones del manuscrito antes no consolidadas —título/resumen/palabras clave, Introducción, Trabajo relacionado, Discusión y Conclusiones— quedan declaradas con **uso de ChatGPT como apoyo de redacción/revisión**, no como fuente de datos ni como autor académico.
 3. El **MVP/código** queda declarado con uso de ChatGPT como apoyo de desarrollo, revisión y corrección técnica.
 4. La **defensa** queda declarada con uso de ChatGPT como apoyo de preparación, síntesis, preguntas, escenarios y guion/material de apoyo; esta declaración no implica que la IA haya realizado la defensa ni generado evidencia audiovisual de ella.
 5. Para **UML, diagramas y mockups originales** no se atribuye a IA la autoría original porque el expediente revisado no demuestra ese hecho. Sí se declara el uso de ChatGPT en la **revisión y normalización 2B** de dichos artefactos.
 6. F3-02/A7 queda cerrado como uso de IA de apoyo técnico con confirmación humana sobre las codificaciones reales.
-7. No quedan marcadores `POR CONFIRMAR`, `Requiere nombre del verificador` ni `Requiere confirmación humana` en esta versión.
+7. Todas las filas de esta versión tienen responsable de verificación y estado definitivo.
 8. No se declara ninguna herramienta adicional de IA sin evidencia de uso real.
 
 **Esta consolidación no autoriza a inventar hechos históricos ni a sustituir evidencia primaria.**
