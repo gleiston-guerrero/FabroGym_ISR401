@@ -2,6 +2,24 @@
 
 Todos los cambios relevantes del proyecto FabroGym se documentan aquí siguiendo la estructura de Keep a Changelog.
 
+## [2B-v2.0-correccion-final] - 2026-09-14
+
+### Corregido — B1 / integridad
+- Se regeneró la cadena reproducible de `07_Datos/` y se verificaron sus checksums internos.
+- Se normalizaron las referencias de archivos renombrados y se regeneró el manifiesto global de integridad sobre el estado final del repositorio.
+- La comprobación automática de integridad queda preparada para terminar con cero fallos sobre el paquete entregado.
+
+### Corregido — B2 / autoría
+- Se sincronizaron los nombres reales de las fotografías del equipo en el inventario EXIF, README e informe de selección.
+- La doble codificación A7 queda redactada como actividad ya revisada y confirmada por Mora y Ponce, conservando el subconjunto congelado de 16 fragmentos.
+
+### Corregido — B5 / supervisión humana
+- `RNF-17` explicita quién revisa la recomendación, las acciones aceptar/modificar/rechazar y el registro auditable de responsable, fecha y versión antes de asignar la rutina.
+- Se sincronizó la especificación con el catálogo, el plan de verificación y la cobertura de los seis requisitos del componente inteligente.
+
+### Corregido — B6 / consentimientos
+- Los consentimientos censurados `ENTR-02`, `ENTR-03`, `ENTR-04` y `ENTR-06` se sustituyeron por copias rasterizadas de las mismas páginas, eliminando el origen Word y la capa de texto extraíble sin alterar el contenido visual.
+
 ## [2B-v2.0-cierre-canonico] - 2026-09-12
 
 ### Corregido — A5
