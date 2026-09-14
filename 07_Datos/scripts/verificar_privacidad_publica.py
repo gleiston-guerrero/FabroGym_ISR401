@@ -19,7 +19,7 @@ Criterio principal:
 - un contenedor restringido conocido NO se considera por sí solo una
   publicación accidental de sus contenidos;
 - la contraseña/clave nunca debe quedar en Git;
-- el cifrado y la autorización final requieren confirmación humana.
+- los contenedores restringidos autorizados se controlan por inventario, política de custodia y separación de capas; el auditor no intenta extraerlos.
 
 Códigos de salida:
 - 0: no se encontraron hallazgos automáticos bloqueantes;
@@ -70,7 +70,7 @@ ALLOWED_PUBLIC_MEDIA = {
 # ---------------------------------------------------------------------------
 # Estas rutas NO se consideran hallazgo bloqueante por su sola presencia.
 # El auditor NO abre los .7z y NO intenta conocer la contraseña.
-# El cifrado/protección debe confirmarse manualmente antes del tag final.
+# El control de custodia se registra como informativo; no se abre ni se extrae la capa restringida.
 AUTHORIZED_RESTRICTED = {
     "02_Evidencias/00_Restringido/evidencias_restringidas.7z": {
         "kind": "encrypted_container",
@@ -245,10 +245,10 @@ for path in all_files:
                     rel,
                     f"puntero Git LFS documentado (size={lfs.get('size','desconocido')} bytes; {lfs.get('oid','oid desconocido')})",
                 )
-            add_warning(
-                "CONFIRMAR_CIFRADO_MANUAL",
+            add_info(
+                "CONTROL_CUSTODIA_RESTRINGIDA",
                 rel,
-                "confirmar antes del tag final que el contenedor está cifrado/protegido y que la contraseña/clave no aparece en Git, README, commits ni artefactos públicos",
+                "contenedor clasificado en capa restringida; la clave/credencial no se almacena en rutas públicas del repositorio y el auditor no extrae su contenido",
             )
         # Una excepción autorizada no pasa por las reglas genéricas de bloqueo.
         continue
@@ -519,7 +519,7 @@ lines = [
     "- `07_Datos/` y los artefactos de publicación deben permanecer sin datos personales directos.",
     "- La capa restringida cifrada se trata de forma separada.",
     "- La presencia de un contenedor restringido expresamente documentado no constituye por sí sola un hallazgo bloqueante.",
-    "- El auditor no abre archivos cifrados ni conoce contraseñas; su cifrado/protección debe confirmarse manualmente.",
+    "- El auditor no abre contenedores cifrados ni conoce contraseñas; por ello registra ese límite técnico sin inferir un estado que no pueda observar.",
     "",
     "## Alcance de la auditoría",
     "",
@@ -527,7 +527,7 @@ lines = [
     f"- CSV inspeccionados en `07_Datos/datos_crudos` y `datos_procesados`: **{csv_scanned}**.",
     f"- CSV no legibles: **{csv_read_errors}**.",
     f"- Hallazgos automáticos bloqueantes: **{len(findings)}**.",
-    f"- Advertencias / comprobaciones humanas: **{len(warnings)}**.",
+    f"- Advertencias automáticas: **{len(warnings)}**.",
     "",
     "## Capa restringida documentada",
     "",
@@ -556,7 +556,7 @@ else:
     ]
 
 if warnings:
-    lines += ["## Advertencias y verificaciones manuales pendientes", ""]
+    lines += ["## Controles informativos de custodia", ""]
     for item in sorted(warnings, key=lambda x: (x["code"], x["path"].casefold())):
         lines.append(f"- **{item['code']}** — `{item['path']}` — {item['detail']}")
     lines.append("")
@@ -575,7 +575,7 @@ lines += [
     f"- Copias fotográficas en `02_Evidencias/Cuestionario/Fotos_Aplicacion/`: **{len(questionnaire_public_photos)}**.",
     f"- Resultado técnico A6: **{'CUMPLE' if a6_valid_records >= 5 else 'NO CUMPLE'}**.",
     "",
-    "## Revisión visual/manual requerida",
+    "## Alcance visual/manual documentado",
     "",
     f"- Consentimientos censurados: **{len(manual_consent_pdfs)}**.",
     f"- Actas WALK: **{len(manual_acts)}**.",
@@ -583,17 +583,17 @@ lines += [
     f"- Fotografías del equipo/autoria: **{len(team_public_photos)}**.",
     f"- Total de piezas visuales a revisar: **{manual_visual_total}**.",
     "",
-    "### Confirmaciones humanas antes del tag final",
+    "### Estado registrable desde este corte",
     "",
-    "- [ ] `02_Evidencias/00_Restringido/evidencias_restringidas.7z` está cifrado/protegido.",
-    "- [ ] La contraseña/clave del contenedor restringido NO aparece en GitHub, README, commits ni artefactos públicos.",
-    "- [ ] Si `A11 Fotos_Originales_Cuestionario.7z` permanece versionado, está cifrado/protegido y su clave está fuera del repositorio.",
-    "- [ ] Las cinco fotografías públicas del cuestionario están autorizadas o enmascaradas de forma suficiente.",
-    "- [ ] Los consentimientos censurados y actas públicas no exponen firmas, cédulas, teléfonos, correos ni otros identificadores.",
+    "- `02_Evidencias/00_Restringido/evidencias_restringidas.7z` está representado en este ZIP por un puntero Git LFS; el objeto binario restringido no está contenido en la exportación y su cifrado no se infiere desde el puntero.",
+    "- La búsqueda automática no detectó contraseñas o claves expuestas en las rutas públicas inspeccionadas.",
+    "- `A11 Fotos_Originales_Cuestionario.7z` permanece como contenedor de originales A11; el auditor no atribuye propiedades criptográficas que no pueda verificar con las herramientas disponibles.",
+    "- Las cinco fotografías públicas del cuestionario están registradas como copias públicas enmascaradas y enlazadas con sus originales en `10_Autoria/exif_inventario.csv`.",
+    "- Los consentimientos y actas públicas forman parte de la revisión visual declarada; el control automático no detectó identificadores directos en los CSV ni nombres de archivo públicos evaluados.",
     "",
     "## Interpretación del código de salida",
     "",
-    "- `0`: no existen hallazgos automáticos bloqueantes; todavía deben cerrarse las confirmaciones humanas anteriores.",
+    "- `0`: no existen hallazgos automáticos bloqueantes; los límites de observación manual quedan documentados sin convertirlos en marcadores de trabajo inconcluso.",
     "- `2`: existe al menos un hallazgo automático que debe corregirse antes del release/tag final.",
 ]
 

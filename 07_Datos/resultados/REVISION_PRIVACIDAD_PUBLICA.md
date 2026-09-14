@@ -1,84 +1,66 @@
 # Revisión automática de privacidad — F3-07 / B6
 
-**Estado automático:** **SIN HALLAZGOS AUTOMÁTICOS BLOQUEANTES**.  
-**Estado humano de cierre:** **CONFIRMACIONES MANUALES CERRADAS**.
+**Estado automático:** **SIN HALLAZGOS AUTOMÁTICOS BLOQUEANTES**.
 
 ## Criterio aplicado
 
 - `07_Datos/` y los artefactos de publicación deben permanecer sin datos personales directos.
 - La capa restringida cifrada se trata de forma separada.
 - La presencia de un contenedor restringido expresamente documentado no constituye por sí sola un hallazgo bloqueante.
-- El auditor automático no abre archivos cifrados ni conoce contraseñas; las comprobaciones de cifrado, ausencia de claves y revisión visual fueron confirmadas manualmente por el equipo antes del tag final.
+- El auditor no abre contenedores cifrados ni conoce contraseñas; por ello registra ese límite técnico sin inferir un estado que no pueda observar.
 
 ## Alcance de la auditoría
 
-- Archivos del árbol inspeccionados por nombre/extensión: **1008**.
+- Archivos inspeccionados por nombre/extensión: **960**.
 - CSV inspeccionados en `07_Datos/datos_crudos` y `datos_procesados`: **20**.
-- CSV no legibles durante el análisis: **0**.
+- CSV no legibles: **0**.
 - Hallazgos automáticos bloqueantes: **0**.
-- Advertencias / comprobaciones humanas pendientes: **0**.
+- Advertencias automáticas: **0**.
 
 ## Capa restringida documentada
 
-- `02_Evidencias/00_Restringido/evidencias_restringidas.7z` — **CIFRADO/PROTECCIÓN CONFIRMADOS MANUALMENTE** — contenedor restringido previsto por FabroGym y versionado mediante Git LFS; la clave permanece fuera del repositorio.
-- `02_Evidencias/00_Restringido/fichas_tecnicas.csv` — **DOCUMENTADO** — inventario técnico de evidencia con códigos, duración, códec, tamaño y SHA-256.
-- `10_Autoria/fotos_equipo/02_Fotos_Aplicacion/A11 Fotos_Originales_Cuestionario.7z` — **CIFRADO/PROTECCIÓN CONFIRMADOS MANUALMENTE** — contenedor de fotografías originales A11 utilizado para preservar EXIF; la clave permanece fuera del repositorio.
+- `02_Evidencias/00_Restringido/evidencias_restringidas.7z` — **DOCUMENTADO** — Contenedor de evidencia restringida previsto por el proyecto y versionado mediante Git LFS. Debe permanecer cifrado/protegido y la clave no debe almacenarse en el repositorio.
+- `02_Evidencias/00_Restringido/fichas_tecnicas.csv` — **DOCUMENTADO** — Inventario técnico de evidencia (códigos, duración, códec, tamaño y SHA-256). La guía específica de FabroGym indica conservar este formato.
+- `10_Autoria/fotos_equipo/02_Fotos_Aplicacion/A11 Fotos_Originales_Cuestionario.7z` — **DOCUMENTADO** — Contenedor de originales A11 para preservar EXIF. Solo es admisible si está cifrado/protegido y la clave permanece fuera del repositorio.
 
 ## Resultado automático
 
 No se detectaron hallazgos automáticos bloqueantes con las reglas aplicadas.
 
-Los artefactos de la capa restringida están documentados expresamente por la política F3-07/B6. Su sola presencia no se interpreta como exposición accidental de datos.
-
-Las cinco fotografías públicas del cuestionario figuran en `10_Autoria/exif_inventario.csv` con estado `PUBLICA_ENMASCARADA_ORIGINAL_RESTRINGIDO`. Los registros de fotografías de autoría/equipo ya no conservan el marcador transitorio `EQUIPO_AUTORIA_REVISAR_PUBLICACION`, pues su revisión de publicación quedó cerrada.
-
-## Confirmaciones manuales cerradas
-
-- **CIFRADO_CONFIRMADO** — `02_Evidencias/00_Restringido/evidencias_restringidas.7z`.
-- **CLAVE_FUERA_DE_GIT_CONFIRMADA** — no se conserva la contraseña/clave en GitHub, README, commits ni artefactos públicos.
-- **CIFRADO_CONFIRMADO** — `10_Autoria/fotos_equipo/02_Fotos_Aplicacion/A11 Fotos_Originales_Cuestionario.7z`.
-- **REVISION_VISUAL_CONFIRMADA** — las cinco fotografías públicas del cuestionario permanecen enmascaradas y sin identificadores no autorizados.
-- **REVISION_VISUAL_CONFIRMADA** — consentimientos censurados y actas públicas revisados sin identificadores no autorizados.
-- **CAPA_PUBLICA_CONFIRMADA** — `07_Datos/` y los artefactos de publicación revisados sin datos personales directos.
-
 ## Verificaciones informativas
 
-- **LFS_RESTRINGIDO_ESPERADO** — `02_Evidencias/00_Restringido/evidencias_restringidas.7z` — puntero Git LFS documentado de **1.521.924.213 bytes**, SHA-256 `a1b9b56a4fddf469a39bab3a51bcc891c85c0d0ce70432bf8602513f84c24070`.
-- **A6_EXIF_OK** — `10_Autoria/exif_inventario.csv` — los **5** registros F3-01 documentan fecha EXIF, fuente EXIF, dispositivo y SHA-256 válidos.
-- **A6_PRIVACIDAD_DOCUMENTADA** — los **5** registros F3-01 están clasificados como `PUBLICA_ENMASCARADA_ORIGINAL_RESTRINGIDO`.
-- **RESTRINGIDO_DOCUMENTADO** — los tres artefactos de la capa restringida están contemplados por la política actual del proyecto.
+- **A6_EXIF_OK** — `10_Autoria/exif_inventario.csv` — 5 registros F3-01 documentan fecha EXIF, dispositivo y SHA-256 válidos
+- **CONTROL_CUSTODIA_RESTRINGIDA** — `02_Evidencias/00_Restringido/evidencias_restringidas.7z` — contenedor clasificado en capa restringida; la clave/credencial no se almacena en rutas públicas del repositorio y el auditor no extrae su contenido
+- **CONTROL_CUSTODIA_RESTRINGIDA** — `10_Autoria/fotos_equipo/02_Fotos_Aplicacion/A11 Fotos_Originales_Cuestionario.7z` — contenedor clasificado en capa restringida; la clave/credencial no se almacena en rutas públicas del repositorio y el auditor no extrae su contenido
+- **LFS_RESTRINGIDO_ESPERADO** — `02_Evidencias/00_Restringido/evidencias_restringidas.7z` — puntero Git LFS documentado (size=1521924213 bytes; sha256:a1b9b56a4fddf469a39bab3a51bcc891c85c0d0ce70432bf8602513f84c24070)
+- **RESTRINGIDO_DOCUMENTADO** — `02_Evidencias/00_Restringido/evidencias_restringidas.7z` — Contenedor de evidencia restringida previsto por el proyecto y versionado mediante Git LFS. Debe permanecer cifrado/protegido y la clave no debe almacenarse en el repositorio.
+- **RESTRINGIDO_DOCUMENTADO** — `02_Evidencias/00_Restringido/fichas_tecnicas.csv` — Inventario técnico de evidencia (códigos, duración, códec, tamaño y SHA-256). La guía específica de FabroGym indica conservar este formato.
+- **RESTRINGIDO_DOCUMENTADO** — `10_Autoria/fotos_equipo/02_Fotos_Aplicacion/A11 Fotos_Originales_Cuestionario.7z` — Contenedor de originales A11 para preservar EXIF. Solo es admisible si está cifrado/protegido y la clave permanece fuera del repositorio.
 
-## Verificación técnica A6 — fotografías del cuestionario y EXIF
+## Verificación técnica A6 — fotografías y EXIF
 
-- Registros `F3-01_APLICACION_CUESTIONARIO` en `10_Autoria/exif_inventario.csv`: **5**.
-- Registros con fecha EXIF, fuente EXIF, dispositivo, `Estado_EXIF=OK` y SHA-256 válido: **5**.
-- Copias fotográficas presentes en `02_Evidencias/Cuestionario/Fotos_Aplicacion/`: **5**.
-- Estado de privacidad documentado: **`PUBLICA_ENMASCARADA_ORIGINAL_RESTRINGIDO`**.
-- **Resultado técnico A6:** **CUMPLE**.
+- Registros F3-01 en `10_Autoria/exif_inventario.csv`: **5**.
+- Registros EXIF técnicamente válidos: **5**.
+- Copias fotográficas en `02_Evidencias/Cuestionario/Fotos_Aplicacion/`: **5**.
+- Resultado técnico A6: **CUMPLE**.
 
-## Multimedia pública clasificada
+## Alcance visual/manual documentado
 
-- `05_MVP/video_demo.mp4` — video demostrativo del MVP.
-- `09_Defensa/video_defensa.mp4` — grabación de la defensa final.
-- `10_Autoria/grabaciones/Vd_01.mp4` — grabación de sesión de trabajo del equipo.
-- `10_Autoria/grabaciones/Vd_02.mp4` — grabación de sesión de trabajo del equipo.
+- Consentimientos censurados: **16**.
+- Actas WALK: **6**.
+- Fotografías públicas del cuestionario: **5**.
+- Fotografías del equipo/autoria: **2**.
+- Total de piezas visuales a revisar: **29**.
 
-## Revisión visual/manual
+### Estado registrable desde este corte
 
-La revisión humana de las piezas públicas y de los contenedores restringidos fue registrada como **COMPLETADA** para el cierre B6.
-
-- [x] `02_Evidencias/00_Restringido/evidencias_restringidas.7z` está cifrado/protegido.
-- [x] La contraseña/clave del contenedor restringido **NO** aparece en GitHub, README, commits ni artefactos públicos.
-- [x] `A11 Fotos_Originales_Cuestionario.7z` está cifrado/protegido y su clave permanece fuera del repositorio.
-- [x] Las cinco fotografías públicas del cuestionario siguen visualmente enmascaradas y no revelan identificadores no autorizados.
-- [x] Los consentimientos censurados y actas públicas no exponen firmas, cédulas, teléfonos, correos ni otros identificadores.
-- [x] La capa pública de `07_Datos/` y los artefactos de publicación no contienen datos personales directos.
+- `02_Evidencias/00_Restringido/evidencias_restringidas.7z` está representado en este ZIP por un puntero Git LFS; el objeto binario restringido no está contenido en la exportación y su cifrado no se infiere desde el puntero.
+- La búsqueda automática no detectó contraseñas o claves expuestas en las rutas públicas inspeccionadas.
+- `A11 Fotos_Originales_Cuestionario.7z` permanece como contenedor de originales A11; el auditor no atribuye propiedades criptográficas que no pueda verificar con las herramientas disponibles.
+- Las cinco fotografías públicas del cuestionario están registradas como copias públicas enmascaradas y enlazadas con sus originales en `10_Autoria/exif_inventario.csv`.
+- Los consentimientos y actas públicas forman parte de la revisión visual declarada; el control automático no detectó identificadores directos en los CSV ni nombres de archivo públicos evaluados.
 
 ## Interpretación del código de salida
 
-- `0`: no existen hallazgos automáticos bloqueantes. Las confirmaciones humanas de cierre B6 están documentadas como completadas.
+- `0`: no existen hallazgos automáticos bloqueantes; los límites de observación manual quedan documentados sin convertirlos en marcadores de trabajo inconcluso.
 - `2`: existe al menos un hallazgo automático que debe corregirse antes del release/tag final.
-
-## Estado de cierre
-
-**RESULTADO CONSOLIDADO: APTO PARA CREAR EL TAG FINAL**, con **0 hallazgos automáticos bloqueantes** y **0 confirmaciones humanas pendientes**.
