@@ -82,6 +82,22 @@ python scripts/run_all.py
 
 No se requieren pasos manuales intermedios.
 
+### Validación estructural previa
+
+El orquestador ejecuta validaciones tempranas sobre las matrices de codificación,
+candidatos RNF y member checking. También pueden verificarse de forma aislada:
+
+```bash
+python scripts/validar_entradas.py \
+  --codificacion datos_crudos/codificacion_walkthroughs.csv \
+  --rnf datos_crudos/candidatos_RNF_explicabilidad_member_checked.csv \
+  --member-checking datos_crudos/member_checking_estructurado.csv
+```
+
+Para el corte terminal esperado, la validación debe informar **76 filas de
+codificación, 4 candidatos RNF y 12 decisiones de member checking**, sin errores
+de esquema.
+
 El pipeline regenera:
 
 - `datos_procesados/`;
@@ -89,6 +105,42 @@ El pipeline regenera:
 - figuras;
 - resúmenes analíticos;
 - artefactos de desviaciones definidos por la cadena.
+
+## Comparación técnico vs. no técnico — criterio terminal F3-04
+
+La comparación de perfiles usa como unidad independiente la **sesión de walkthrough** y no las categorías temáticas derivadas. El conjunto contiene **6 unidades independientes**: 3 sesiones técnicas y 3 no técnicas.
+
+La salida canónica es:
+
+```text
+resultados/tablas/tabla_efecto_perfiles.csv
+```
+
+La medida principal es delta de Cliff sobre la proporción de fragmentos pertinentes a explicabilidad por sesión, con IC95% obtenido mediante bootstrap exacto de las seis sesiones. La tabla expone explícitamente `n_unidades` e `interpretable`. En este proyecto, `interpretable = NO` significa **no interpretable como inferencia poblacional** debido al tamaño extremadamente pequeño de unidades independientes; la estimación se conserva como descripción exploratoria del caso.
+
+El cuestionario de 70 respuestas no se utiliza para este contraste porque no contiene variable técnico/no técnico ni una escala de explicabilidad.
+
+## Integridad SHA-256
+
+El manifiesto `checksums_datos.sha256` usa **rutas relativas a la raíz de `07_Datos/`**. Esta decisión es intencional: evita prefijos duplicados y permite ejecutar literalmente el comando de verificación desde el directorio canónico.
+
+Verificación terminal del paquete:
+
+```bash
+cd 07_Datos
+python scripts/run_all.py
+sha256sum -c checksums_datos.sha256
+```
+
+El resultado esperado es que **todas las entradas terminen en `OK` y existan 0 fallos**. El propio manifiesto se excluye de su contenido para evitar una referencia hash circular.
+
+La regeneración de los dos manifiestos terminales se realiza **solo después de cerrar el contenido del repositorio**, desde la raíz:
+
+```bash
+python 07_Datos/scripts/regenerar_manifiestos_sha256.py
+```
+
+Ese script regenera primero `07_Datos/checksums_datos.sha256` y luego `checksums.sha256`. El manifiesto raíz cubre también el manifiesto de `07_Datos` y trata los objetos Git LFS mediante su `oid sha256`, de modo que la comprobación global funciona tanto con un objeto LFS materializado como con su puntero versionado.
 
 ## Privacidad
 

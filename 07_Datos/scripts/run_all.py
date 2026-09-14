@@ -23,6 +23,7 @@ from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
 from reportlab.lib.enums import TA_CENTER
 from reportlab.lib.units import mm
 from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, Table, TableStyle
+from validar_entradas import validar_codificacion, validar_rnf, validar_member_checking
 
 # Salidas PDF/SVG reproducibles byte a byte entre ejecuciones equivalentes.
 rl_config.invariant = True
@@ -59,6 +60,12 @@ def savefig(base_name):
     plt.close()
 
 def read_inputs():
+    # Validación temprana de las tres matrices estructurales del Enfoque 3.
+    # Evita ejecutar el pipeline sobre esquemas antiguos o columnas incompatibles.
+    validar_codificacion(RAW / "codificacion_walkthroughs.csv")
+    validar_rnf(RAW / "candidatos_RNF_explicabilidad_member_checked.csv")
+    validar_member_checking(RAW / "member_checking_estructurado.csv")
+
     survey = pd.read_csv(RAW / "encuesta_clientes_anonimizada.csv", encoding="utf-8-sig")
     # Normalización de cabeceras por posición; los valores permanecen intactos.
     survey.columns = [
@@ -290,17 +297,19 @@ def write_applicability():
         {"metrica_prueba":"Fleiss kappa entre rondas de validación","estado":"NO CALCULADO",
          "justificacion":"No existen dos rondas equivalentes de clasificación; el protocolo v1.4 preregistró decisión nominal de member checking y excluyó kappa."},
         {"metrica_prueba":"U de Mann-Whitney técnico vs no técnico","estado":"NO APLICABLE",
-         "justificacion":"Hay tres walkthroughs por perfil y no existe resultado cuantitativo independiente por participante preregistrado."},
+         "justificacion":"Hay tres walkthroughs por perfil. Existe una medida agregada posterior por sesión para tamaño del efecto, pero no un resultado cuantitativo por participante preregistrado que justifique una prueba inferencial."},
         {"metrica_prueba":"Shapiro-Wilk / Levene","estado":"NO APLICABLE",
          "justificacion":"No se ejecuta una hipótesis inferencial sobre una variable cuantitativa del Enfoque 3."},
         {"metrica_prueba":"Tamaño del efecto técnico vs no técnico por sesiones WALK","estado":"APLICADO DESCRIPTIVAMENTE",
-         "justificacion":"Delta de Cliff sobre la proporción de fragmentos pertinentes a explicabilidad por sesión + IC95% bootstrap exacto; 3 sesiones técnicas vs 3 no técnicas. No se interpreta como inferencia poblacional."},
+         "justificacion":"Delta de Cliff sobre la proporción de fragmentos pertinentes a explicabilidad por sesión + IC95% bootstrap exacto; n_unidades=6 (3 técnicas + 3 no técnicas). La tabla marca interpretable=NO para inferencia poblacional."},
         {"metrica_prueba":"Bootstrap IC95% de índices ordinales generales de encuesta","estado":"APLICADO DESCRIPTIVAMENTE",
          "justificacion":"Solo describe seis preguntas ordinales generales; no se interpreta como explicabilidad ni como prueba de hipótesis."}
     ]).to_csv(TAB / "tabla_aplicabilidad_pruebas_estadisticas.csv", index=False, encoding="utf-8-sig")
 
 def write_summary(survey, sessions, coding, final, exp, counts, vt, at, sat):
     total, avg3, pct, total_a, avg3a, pcta = sat
+    effect_table = pd.read_csv(TAB / "tabla_efecto_perfiles.csv", encoding="utf-8-sig")
+    effect_primary = effect_table.iloc[0].to_dict()
     summary = {
         "proyecto":"FabroGym","fase":"2B - Fase 2 análisis empírico reproducible",
         "sesiones":{"total":len(sessions),"entrevistas":10,"walkthroughs":6,"walkthroughs_tecnicos":3,"walkthroughs_no_tecnicos":3,
@@ -309,6 +318,18 @@ def write_summary(survey, sessions, coding, final, exp, counts, vt, at, sat):
         "walkthroughs":{"fragmentos":len(coding),"tecnicos":int((coding["Perfil"]=="Tecnico").sum()),
                         "no_tecnicos":int((coding["Perfil"]=="No tecnico").sum()),
                         "codigos_normalizados":int(coding["Codigo_Normalizado"].nunique()),"categorias":int(coding["Categoria"].nunique())},
+        "efecto_perfiles":{
+            "unidad_analisis":str(effect_primary["unidad_analisis"]),
+            "n_unidades":int(effect_primary["n_unidades"]),
+            "n_tecnico":int(effect_primary["n_tecnico"]),
+            "n_no_tecnico":int(effect_primary["n_no_tecnico"]),
+            "medida":"Delta de Cliff",
+            "delta":float(effect_primary["efecto_delta"]),
+            "ic95_inf":float(effect_primary["IC95_bootstrap_exacto_inf"]),
+            "ic95_sup":float(effect_primary["IC95_bootstrap_exacto_sup"]),
+            "interpretable":str(effect_primary["interpretable"]),
+            "alcance":"descriptivo-exploratorio; no inferencia poblacional"
+        },
         "explicabilidad":{"fragmentos_pertinentes":len(exp),"candidatos":len(final),"rnf_finales":len(final),
                           "cobertura_marco_porcentaje":None,"razon_no_porcentaje":"No existe denominador cerrado verificable en instrumento/codificación."},
         "member_checking":{"participantes":["MC-P01","MC-P02","MC-P03"],"fecha":"2026-08-29","decisiones":int(counts.sum()),
@@ -319,7 +340,7 @@ def write_summary(survey, sessions, coding, final, exp, counts, vt, at, sat):
                       "porcentaje_categorias_ultimas_3":round(pcta,3),"cumple_categorias":bool(pcta<=5)}
     }
     (RES / "resumen_resultados.json").write_text(json.dumps(summary, ensure_ascii=False, indent=2), encoding="utf-8")
-    md = f"""# Resultados empíricos terminales — FabroGym\n\n## Evidencia multimedia\nLa ficha técnica v3.1 identifica 16 sesiones únicas: 10 `ENTR-*`, 3 `WALK-TEC-*` y 3 `WALK-NTEC-*`. La suma de los 16 videos es **{fmt_hms(vt)}** ({vt/60:.3f} min), por encima de 240 min; los audios suman **{fmt_hms(at)}**. No se suman audio y video como si fueran sesiones distintas.\n\n## Encuesta\nSe analizaron **{len(survey)} respuestas**. Las columnas directas finales de identificación están vacías en las 70 filas. El cuestionario no contiene un campo técnico/no técnico ni ítems Likert de explicabilidad; se reportan frecuencias e índices ordinales generales con IC95% bootstrap, sin reinterpretarlos como explicabilidad.\n\n## Walkthroughs\nSe analizaron **{len(coding)} fragmentos codificados**: {int((coding['Perfil']=='Tecnico').sum())} técnicos y {int((coding['Perfil']=='No tecnico').sum())} no técnicos, con {coding['Codigo_Normalizado'].nunique()} códigos normalizados y {coding['Categoria'].nunique()} categorías. La comparación entre perfiles se realiza a nivel de sesión WALK independiente (3 técnicas vs 3 no técnicas); el tamaño del efecto principal es delta de Cliff sobre la proporción de fragmentos pertinentes a explicabilidad por sesión, con IC95% bootstrap exacto y sin p-valor ni inferencia poblacional. Consulte F3-04_TAMANIO_EFECTO.md.\n\n## Explicabilidad y member checking\nSe identificaron **{len(exp)} fragmentos pertinentes** y **{len(final)} RNF terminales**. El member checking con `MC-P01`, `MC-P02` y `MC-P03` produjo {int(counts.sum())} decisiones: {int(counts['Confirmado'])} confirmaciones, {int(counts['Ajustado'])} ajustes y {int(counts['No confirmado'])} no confirmaciones. Los RNF se terminalizan como `RNF-16` a `RNF-19`; el componente recomendador permanece **PROPUESTO**, no implementado.\n\nNo se calcula porcentaje de cobertura del marco de explicabilidad: no existe un denominador cerrado verificable.\n\n## Saturación\nEn las últimas tres sesiones aparecen en promedio **{avg3:.3f}** códigos nuevos sobre **{total}** acumulados: **{pct:.3f}%**. El criterio estricto <=5% **no se alcanza**, aunque la curva presenta inflexión visible desde la cuarta sesión. A nivel axial, las últimas tres sesiones representan **{pcta:.3f}%** de categorías nuevas; se informa solo como evidencia complementaria de estabilización.\n\n## Pruebas no aplicadas\nNo se fabrican Fleiss kappa, Mann-Whitney, Shapiro-Wilk ni Levene donde los datos/protocolo no los soportan. Consulte `tabla_aplicabilidad_pruebas_estadisticas.csv`.\n"""
+    md = f"""# Resultados empíricos terminales — FabroGym\n\n## Evidencia multimedia\nLa ficha técnica v3.1 identifica 16 sesiones únicas: 10 `ENTR-*`, 3 `WALK-TEC-*` y 3 `WALK-NTEC-*`. La suma de los 16 videos es **{fmt_hms(vt)}** ({vt/60:.3f} min), por encima de 240 min; los audios suman **{fmt_hms(at)}**. No se suman audio y video como si fueran sesiones distintas.\n\n## Encuesta\nSe analizaron **{len(survey)} respuestas**. Las columnas directas finales de identificación están vacías en las 70 filas. El cuestionario no contiene un campo técnico/no técnico ni ítems Likert de explicabilidad; se reportan frecuencias e índices ordinales generales con IC95% bootstrap, sin reinterpretarlos como explicabilidad.\n\n## Walkthroughs\nSe analizaron **{len(coding)} fragmentos codificados**: {int((coding['Perfil']=='Tecnico').sum())} técnicos y {int((coding['Perfil']=='No tecnico').sum())} no técnicos, con {coding['Codigo_Normalizado'].nunique()} códigos normalizados y {coding['Categoria'].nunique()} categorías. La comparación entre perfiles se realiza a nivel de sesión WALK independiente (`n_unidades=6`: 3 técnicas vs 3 no técnicas); el tamaño del efecto principal es delta de Cliff sobre la proporción de fragmentos pertinentes a explicabilidad por sesión, con IC95% bootstrap exacto. La tabla terminal marca `interpretable=NO` para inferencia poblacional; no se genera p-valor. Consulte F3-04_TAMANIO_EFECTO.md.\n\n## Explicabilidad y member checking\nSe identificaron **{len(exp)} fragmentos pertinentes** y **{len(final)} RNF terminales**. El member checking con `MC-P01`, `MC-P02` y `MC-P03` produjo {int(counts.sum())} decisiones: {int(counts['Confirmado'])} confirmaciones, {int(counts['Ajustado'])} ajustes y {int(counts['No confirmado'])} no confirmaciones. Los RNF se terminalizan como `RNF-16` a `RNF-19`; el componente recomendador permanece **PROPUESTO**, no implementado.\n\nNo se calcula porcentaje de cobertura del marco de explicabilidad: no existe un denominador cerrado verificable.\n\n## Saturación\nEn las últimas tres sesiones aparecen en promedio **{avg3:.3f}** códigos nuevos sobre **{total}** acumulados: **{pct:.3f}%**. El criterio estricto <=5% **no se alcanza**, aunque la curva presenta inflexión visible desde la cuarta sesión. A nivel axial, las últimas tres sesiones representan **{pcta:.3f}%** de categorías nuevas; se informa solo como evidencia complementaria de estabilización.\n\n## Pruebas no aplicadas\nNo se fabrican Fleiss kappa, Mann-Whitney, Shapiro-Wilk ni Levene donde los datos/protocolo no los soportan. Consulte `tabla_aplicabilidad_pruebas_estadisticas.csv`.\n"""
     (RES / "RESUMEN_FASE2.md").write_text(md, encoding="utf-8")
     return summary
 

@@ -22,6 +22,18 @@
     "codigos_normalizados": 37,
     "categorias": 18
   },
+  "efecto_perfiles": {
+    "unidad_analisis": "Sesion de walkthrough independiente",
+    "n_unidades": 6,
+    "n_tecnico": 3,
+    "n_no_tecnico": 3,
+    "medida": "Delta de Cliff",
+    "delta": 0.555556,
+    "ic95_inf": -0.333333,
+    "ic95_sup": 1.0,
+    "interpretable": "NO",
+    "alcance": "descriptivo-exploratorio; no inferencia poblacional"
+  },
   "explicabilidad": {
     "fragmentos_pertinentes": 9,
     "candidatos": 4,
