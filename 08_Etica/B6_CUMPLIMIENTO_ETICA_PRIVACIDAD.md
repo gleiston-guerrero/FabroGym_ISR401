@@ -56,10 +56,10 @@ Ejecutar:
 python 07_Datos/scripts/verificar_privacidad_publica.py
 ```
 
-El verificador automático se ejecuta sobre la capa pública y su salida forma parte del cierre reproducible. La revisión visual confirma que las copias públicas censuran identificadores directos. Los cuatro PDF con metadatos de Microsoft Word se identifican expresamente en `08_Etica/CONTROL_CONSENTIMIENTOS_FINAL.md` y no se transforman para simular escaneos.
+El verificador automático se ejecuta sobre la capa pública y su salida forma parte del cierre reproducible. La revisión visual confirma que las copias públicas censuran identificadores directos. Las cuatro copias anteriormente observadas (`ENTR-02`, `ENTR-03`, `ENTR-04` y `ENTR-06`) fueron sustituidas el 14 de septiembre de 2026 por versiones escaneadas y censuradas de los formularios firmados. En el corte actual, las cuatro tienen tres páginas y no declaran Microsoft Word en los campos Creator/Producer. El control técnico actualizado se conserva en `07_Datos/resultados/tablas/B6_control_metadatos_consentimientos.csv`.
 
 **Estado documental:** INTEGRADO Y VERSIONADO EN EL REPOSITORIO.  
-**Estado de cierre ético:** CONSOLIDADO sobre la evidencia disponible; los originales identificables permanecen en la capa restringida.
+**Estado de cierre ético:** CONSOLIDADO; la observación documental sobre las cuatro copias públicas queda cerrada en el corte actual y los originales identificables permanecen en la capa restringida.
 
 ## 7. Verificación técnica de contenedores
 
