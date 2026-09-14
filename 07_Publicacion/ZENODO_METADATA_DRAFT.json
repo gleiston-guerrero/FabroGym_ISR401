@@ -47,10 +47,12 @@
       "note": "OSF preregistration DOI 10.17605/OSF.IO/62YSC"
     },
     {
-      "identifier": "https://github.com/amorad35/FabroGym_ISR401",
+      "identifier": "https://github.com/gleiston-guerrero/FabroGym_ISR401",
       "relation": "isSupplementTo",
       "resource_type": "software"
     }
   ],
-  "notes": "PRE-DEPOSIT DRAFT. Do not invent or prefill a Zenodo DOI. Deposit after Phase 6, then patch all project artifacts with the real DOI."
+  "notes": "HISTORICAL DRAFT retained only for traceability. The real deposit is already published as Zenodo v2.0.0 (DOI 10.5281/zenodo.22237884). Do not publish or treat this file as pending metadata; use dataset_zenodo/ZENODO_METADATA_READY.json for the published-state metadata.",
+  "artifact_status": "HISTORICAL_SUPERSEDED_DRAFT",
+  "superseded_by": "Zenodo v2.0.0 — DOI 10.5281/zenodo.22237884"
 }

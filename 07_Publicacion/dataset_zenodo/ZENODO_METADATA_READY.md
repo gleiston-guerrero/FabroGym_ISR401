@@ -16,7 +16,7 @@ Metadata used for the FabroGym Zenodo dataset record.
 - **Data/documentation license:** CC BY 4.0
 - **Code/scripts license:** MIT
 - **Related OSF DOI:** 10.17605/OSF.IO/62YSC
-- **Related GitHub repository:** https://github.com/amorad35/FabroGym_ISR401
+- **Related GitHub repository:** https://github.com/gleiston-guerrero/FabroGym_ISR401
 
 **Description:** Anonymized replication package for a requirements-engineering field case study on explainability requirements for a proposed fitness-routine recommendation component in FabroGym. The package contains 16 anonymized session transcripts, an anonymized client questionnaire, terminal requirements, traceability, thematic coding, member-checking decisions, processed results, manuscript-supporting material, and reproducible analysis scripts. Identifiable audiovisual evidence and original consent material are excluded.
 

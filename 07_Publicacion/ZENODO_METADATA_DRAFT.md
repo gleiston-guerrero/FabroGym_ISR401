@@ -1,4 +1,7 @@
-# ZENODO_METADATA_DRAFT — NO PUBLICAR AÚN
+# ZENODO_METADATA_DRAFT — BORRADOR HISTÓRICO SUPERADO
+
+> **Estado:** artefacto histórico conservado únicamente por trazabilidad. El depósito real ya fue publicado en Zenodo como versión 2.0.0 con DOI `10.5281/zenodo.22237884`. Este borrador **no es el metadato vigente y no debe publicarse ni reutilizarse como pendiente de depósito**. Para el estado publicado consulte `dataset_zenodo/ZENODO_METADATA_READY.md` y `dataset_zenodo/ZENODO_METADATA_READY.json`.
+
 
 - **Resource type:** Dataset
 - **Title:** Replication package for Explainability Requirements for Fitness Routine Recommendations: A Field Case Study in Ecuador
@@ -14,7 +17,7 @@
 - **Data/documentation license:** CC BY 4.0
 - **Code/scripts license:** MIT
 - **Related OSF record:** https://osf.io/62ysc/ — DOI 10.17605/OSF.IO/62YSC
-- **Related GitHub repository:** https://github.com/amorad35/FabroGym_ISR401
+- **Related GitHub repository:** https://github.com/gleiston-guerrero/FabroGym_ISR401
 - **Zenodo DOI:** dejar vacío/reservar solo al final; no usar el DOI OSF como sustituto.
 
 **Description:** Anonymized replication package for a requirements-engineering field case study on explainability requirements for a proposed fitness-routine recommendation component in FabroGym. The package contains anonymized transcripts, an anonymized client questionnaire, terminal requirements, traceability, thematic coding, member-checking decisions, processed results and reproducible analysis scripts. Identifiable audiovisual evidence and original consent material are excluded from the open deposit.
