@@ -11,7 +11,7 @@ Esta carpeta conserva el manuscrito y artefactos de publicación/replicación as
 - `manuscrito_final.tex` — fuente canónica del informe/manuscrito;
 - `manuscrito_final.pdf` — PDF regenerado desde la fuente;
 - `compilar_manuscrito.py` — compilación reproducible de la entrega académica;
-- `RETROSPECTIVA_EXAMEN_SUSPENSO.md` — apoyo auditable de la retrospectiva incorporada también en el informe;
+- `RETROSPECTIVA_EXAMEN_SUSPENSO.md` — espejo documental de la retrospectiva canónica `../10_Autoria/retrospectiva_equipo.md`;
 - tablas y figuras sincronizadas con `07_Datos/`;
 - artefactos de metadatos y publicación;
 - copia local normalizada del paquete asociado al depósito Zenodo.
@@ -59,16 +59,20 @@ El estado de evidencia individual A2 del equipo actual se documenta en `../10_Au
 
 ## Estado de la corrección §16
 
-El informe final incorpora de forma explícita:
+El informe final queda recompilado **después de la regeneración reproducible de §12** y mantiene correspondencia con las salidas canónicas de `07_Datos/resultados/`.
+
+El informe incorpora de forma explícita:
 
 1. la tabla de efectos corregida de §13, con `n_unidades=6` e `interpretable=NO` para inferencia poblacional;
 2. la limitación de la encuesta `n=70` dentro de amenazas a la validez;
-3. la explicación del cierre ético de ENTR-02, ENTR-03, ENTR-04 y ENTR-06;
-4. el repositorio canónico, `v2.0.2-final` como línea base histórica publicada y `v2.0.3-final` como etiqueta terminal declarada, creada únicamente después de verificar los manifiestos SHA-256 finales;
-5. la sección **“Retrospectiva del examen suspenso / Failed-exam correction retrospective”**, con corrección, evidencia y responsable documentado;
-6. la distinción entre autoría histórica del proyecto y el equipo actual de cierre conformado por Mera, Mora y Ponce.
+3. el resultado de saturación de códigos `6.306 %` y la estabilización axial `1.852 %`, sin convertir el incumplimiento del umbral estricto en un resultado positivo;
+4. la explicación del cierre ético de ENTR-02, ENTR-03, ENTR-04 y ENTR-06;
+5. el repositorio canónico, `v2.0.2-final` como línea base histórica publicada y `v2.0.3-final` como etiqueta terminal declarada, creada únicamente después de verificar los manifiestos SHA-256 finales;
+6. la sección **“Retrospectiva del examen suspenso / Failed-exam correction retrospective”**, actualizada con §4, §12, §13 y §16;
+7. la retrospectiva canónica `../10_Autoria/retrospectiva_equipo.md`, con qué se corrigió, responsables documentados y aprendizajes del equipo;
+8. la distinción entre autoría histórica del proyecto y el equipo actual de cierre conformado por Mera, Mora y Ponce.
 
-El informe conserva estos elementos en estado terminal y no contiene marcadores de trabajo abierto para el cierre §16.
+El manuscrito se congela en este corte de §16; cualquier corrección posterior que altere resultados obligaría a recompilarlo antes del cierre terminal.
 
 ## Compilación reproducible del manuscrito final
 

@@ -1,49 +1,76 @@
-# Retrospectiva del examen suspenso — FabroGym
+# Retrospectiva del equipo - examen suspenso FabroGym
 
-**Proyecto:** FabroGym — ISR-401  
-**Artefacto principal asociado:** `07_Publicacion/manuscrito_final.tex` / `manuscrito_final.pdf`  
-**Repositorio canónico de evaluación:** `https://github.com/gleiston-guerrero/FabroGym_ISR401`  
-**Línea base histórica publicada previa al cierre:** `v2.0.2-final` (no se mueve)  
-**Etiqueta terminal declarada:** `v2.0.3-final`, creada solo después de cerrar contenido y verificar manifiestos al final
+**Proyecto:** FabroGym - ISR-401  
+**Fecha de corte de esta retrospectiva:** 15 de septiembre de 2026  
+**Repositorio canónico:** `https://github.com/gleiston-guerrero/FabroGym_ISR401`  
+**Línea base histórica publicada:** `v2.0.2-final`  
+**Etiqueta terminal prevista:** `v2.0.3-final`, únicamente después del cierre documental, la verificación de integridad y los manifiestos SHA-256 terminales.
 
 ## 1. Propósito
 
-Este documento resume las correcciones realizadas después de la revisión del examen suspenso y sirve como apoyo auditable del informe final. No sustituye al manuscrito: la retrospectiva también está incorporada dentro de `manuscrito_final.tex` y su PDF generado.
+Esta retrospectiva documenta qué se corrigió durante el examen suspenso, quién realizó o verificó cada bloque y qué aprendió el equipo del proceso. Se redacta después de las correcciones de especificación de casos de uso (§4) y de reproducibilidad/carpeta canónica de resultados (§12), y se vincula con el manuscrito final recompilado en `07_Publicacion/`.
 
-La corrección preserva la autoría histórica y evita confundirla con la composición del **equipo actual de cierre**, conformado por **Mera, Mora y Ponce**. Los aportes históricos de Alvia y Vaca permanecen trazables en los artefactos donde realmente participaron.
+No sustituye el historial Git ni reasigna autoría histórica. La autoría acumulada del proyecto se conserva en los artefactos originales. Para el cierre reciente, la documentación distingue a Mera (`Emeraxs`), Mora (`amorad35`) y Ponce (`Mery-003`) como equipo de corrección, sin atribuir a Alvia o Vaca actividades recientes que no estén respaldadas por evidencia verificable.
 
-El trabajo de corrección reciente está documentado para Mera (`Emeraxs`), Mora (`amorad35`) y Ponce (`Mery-003`). El inventario A2 del equipo actual contiene 13, 10 y 19 capturas respectivamente. La declaración canónica está en `10_Autoria/EQUIPO_EXAMEN_FINAL.md`.
+## 2. Qué corregimos
 
-## 2. Correcciones ejecutadas
+| Bloque | Hallazgo del examen | Corrección realizada | Evidencia verificable |
+|---|---|---|---|
+| §4 - ERS/SRS | Los 19 casos de uso Must estaban modelados y trazados, pero no especificados textualmente con el nivel de comportamiento exigido. | Se incorporó para cada CU actor, disparador, precondiciones, flujo principal numerado, flujo alternativo con condición, excepción con condición y poscondiciones. Se añadieron `ID_Flujo` y `Descripcion_Flujo` en la matriz y 57 trazas explícitas de flujo. | `01_ERS/ERS_SRS_2B_v2.0.tex`, `01_ERS/ERS_SRS_2B_v2.0.pdf`, `04_Trazabilidad/matriz_trazabilidad.csv`; commits `eaec001`, `da6e327`, `b494bf4`, `3a9697f`. |
+| §12 - reproducibilidad | El corte evaluado tenía diferencias entre `06_Experimento/resultados/` y `07_Datos/resultados/`, y la semilla del proceso no estaba declarada como una constante única del cierre. | Se dejó `07_Datos/resultados/` como única salida canónica; `06_Experimento/resultados/` se mantiene solo como espejo derivado byte-idéntico. `run_all.py` declara `SEED = 401`. Dos ejecuciones consecutivas sobre los mismos datos fueron verificadas con hashes idénticos en las salidas generadas. | `07_Datos/scripts/run_all.py`, `07_Datos/README_datos.md`, `07_Datos/resultados/README.md`, `06_Experimento/README.md`, `06_Experimento/resultados/`; commits `330bdc9`, `33988cb` y sincronizaciones posteriores. |
+| §13 - tamaño del efecto | Un análisis anterior había tratado categorías temáticas como si fueran unidades independientes. | La unidad independiente se corrigió a sesión WALK: 3 técnicas y 3 no técnicas (`n_unidades=6`). El análisis principal reporta Cliff's delta `0.555556`, IC95% `[-0.333333, 1.000000]` e `interpretable=NO` para inferencia poblacional. | `07_Datos/resultados/tablas/tabla_efecto_perfiles.csv`, `07_Datos/resultados/F3-04_TAMANIO_EFECTO.md`, `07_Datos/scripts/calcular_efecto_perfiles.py`. |
+| §16 - manuscrito | El manuscrito evaluado era anterior al análisis corregido y no existía la retrospectiva canónica en `10_Autoria/`. | Se sincronizó la narración de resultados y discusión con las tablas canónicas, se mantuvieron explícitas las limitaciones reales, se recompiló el PDF después del cierre de resultados de §12 y se creó esta retrospectiva. | `07_Publicacion/manuscrito_final.tex`, `07_Publicacion/manuscrito_final.pdf`, `10_Autoria/retrospectiva_equipo.md`. |
 
-| Sección | Hallazgo de revisión | Corrección terminal | Evidencia principal | Responsable documentado |
-|---|---|---|---|---|
-| §15 Autoría | La documentación de cierre llegó a mezclar la autoría histórica de cinco participantes con el equipo actual de examen. | Se separa explícitamente la autoría histórica del **equipo actual de cierre (Mera, Mora y Ponce)**. A2 declara 13 capturas de Mera, 10 de Mora y 19 de Ponce. El EXIF se consolida con 11 registros reales. | `10_Autoria/EQUIPO_EXAMEN_FINAL.md`, `10_Autoria/capturas/README.md`, `10_Autoria/README_A11_EXIF.md`, `10_Autoria/exif_inventario.csv` | Revisión documental del cierre; no se eliminan ni reasignan aportes históricos de Alvia/Vaca. |
-| §7 Consentimientos | ENTR-02, ENTR-03, ENTR-04 y ENTR-06 estaban representados públicamente por PDFs de origen Word, y la guía menciona 17 consentimientos aunque el inventario reproducible de las 16 sesiones contiene 16 formularios específicos. | Se sustituyeron los cuatro observados por copias escaneadas y censuradas. Se documenta el conteo real de **16 consentimientos de sesión** (10 ENTR + 3 WALK-TEC + 3 WALK-NTEC) y se crea un espejo byte-idéntico en `08_Etica/consentimientos/` para que funcione el comando literal de verificación de la guía, sin contar los archivos por duplicado. | `02_Evidencias/Consentimientos/`, `08_Etica/consentimientos/`, `08_Etica/CONTROL_CONSENTIMIENTOS_FINAL.md`, `07_Datos/resultados/tablas/B6_control_metadatos_consentimientos.csv` | **Mera Arias / `Emeraxs`**, corrección registrada en `a68594a`; reconciliación documental en el cierre actual. |
-| §13 Resultados | Se usaban categorías temáticas como unidades independientes. | La unidad independiente pasó a ser la sesión WALK: 3 técnicas + 3 no técnicas (`n_unidades=6`). Se reporta Cliff's delta `0.555556`, IC95% `[-0.333333, 1.000000]` e `interpretable=NO` para inferencia poblacional. La encuesta `n=70` queda fuera del contraste de perfiles porque no contiene perfil técnico/no técnico ni ítems de explicabilidad. | `07_Datos/scripts/calcular_efecto_perfiles.py`, `07_Datos/resultados/tablas/tabla_efecto_perfiles.csv`, ERS/SRS y manuscrito final | **Mora Duarte / `amorad35`**, corrección base registrada en `01c87fb`; sincronización terminal revisada por el equipo de cierre. |
-| §16 Informe | El informe no reunía en un único artefacto la tabla corregida, la limitación del cuestionario, la explicación ética, la línea base declarada y una retrospectiva con responsables. | El manuscrito integra esos elementos, distingue la línea base `v2.0.2-final` de la etiqueta terminal declarada y se recompila desde la fuente. | `07_Publicacion/manuscrito_final.tex`, `07_Publicacion/manuscrito_final.pdf`, `07_Publicacion/compilar_manuscrito.py` | Revisión cruzada del equipo de corrección; no altera la composición evaluable. |
+## 3. Quién hizo qué
 
-## 3. Línea base declarada en el informe
+### Mera Arias Erick Jhair - `Emeraxs`
 
-El informe declara como repositorio canónico:
+- completó la especificación textual de los 19 casos de uso en la ERS y recompiló el documento;
+- documentó el cierre §4 en README/CHANGELOG;
+- ajustó la ejecución reproducible de `run_all.py` para declarar `SEED = 401` y sincronizar el espejo de resultados;
+- participó en la revisión del manuscrito final y en la comprobación de consistencia entre resultados y texto.
 
-`https://github.com/gleiston-guerrero/FabroGym_ISR401`
+### Ponce Rivera Mery Helenmey - `Mery-003`
 
-La etiqueta de cierre declarada como vigente para la entrega terminal es:
+- reemitió la matriz de trazabilidad para incorporar los 57 flujos `FP/FA/EX` sin alterar los requisitos terminales;
+- actualizó el checklist de defensa para reflejar el nuevo estado de los casos de uso y la trazabilidad;
+- participó en la revisión documental de las salidas de resultados y del cierre de publicación.
 
-`v2.0.2-final` permanece como línea base histórica publicada. El cierre terminal declarado será `v2.0.3-final`, creado únicamente después de regenerar y verificar los manifiestos terminales.
+### Mora Duarte Alex Jose - `amorad35`
 
-El nombre de la etiqueta queda fijado en el informe para que el paso procedimental de cierre use exactamente ese identificador sobre el commit terminal, después de regenerar los manifiestos de integridad. El manuscrito no debe modificarse después de quedar congelado en este corte.
+- realizó la corrección estadística base que sustituyó la categoría temática por la sesión WALK como unidad independiente;
+- verificó la interpretación del tamaño del efecto y la limitación del cuestionario `n=70` para la comparación técnico/no técnico;
+- participó en la revisión cruzada de la coherencia entre tablas canónicas, discusión y amenazas a la validez.
 
-## 4. Regla de integridad
+## 4. Qué aprendimos
 
-La retrospectiva no convierte limitaciones en evidencias inexistentes. En particular:
+1. **Trazabilidad no equivale a especificación.** Tener `CU/HU/CA` vinculados a un requisito no sustituye describir el comportamiento completo del caso de uso. Para un cierre verificable, el flujo principal, las alternativas y las excepciones deben existir y poder rastrearse.
 
-- no se crean capturas para integrantes históricos;
-- no se inventa una sexta fotografía del cuestionario;
-- no se reconstruyen firmas;
-- no se transforma la encuesta de 70 respuestas en una escala de explicabilidad;
-- no se tratan 18 categorías como 18 unidades independientes;
-- no se afirma inferencia poblacional con tres sesiones por perfil.
+2. **La unidad de análisis debe corresponder al diseño real.** Las categorías temáticas ayudan a interpretar el corpus, pero no son observaciones independientes. La sesión WALK es la unidad defendible para la comparación exploratoria realizada.
 
-El objetivo del cierre es que cada afirmación del informe pueda rastrearse a un artefacto real, un script reproducible o un registro verificable del repositorio.
+3. **Reproducibilidad significa una sola fuente canónica.** Conservar resultados duplicados sin una regla explícita crea ambigüedad. El cierre deja `07_Datos/resultados/` como única fuente evaluable y cualquier copia adicional como espejo derivado.
+
+4. **Un resultado negativo también es un resultado válido.** El indicador estricto de saturación de códigos es `6.306%`, superior al umbral de `5%`; no se reclasifica como cumplimiento. Del mismo modo, el IC95% del delta de Cliff es amplio e incluye cero, por lo que no se formula una inferencia poblacional.
+
+5. **No se corrige una carencia fabricando evidencia.** El equipo conserva las discrepancias que no pueden resolverse retroactivamente con evidencia real. No se inventan consentimientos, capturas, fotografías, notas de campo ni observaciones estadísticas.
+
+6. **El manuscrito debe congelarse después de los resultados que reporta.** Por eso el PDF final de §16 se recompila después de la regeneración reproducible de §12 y antes de los manifiestos terminales.
+
+## 5. Limitaciones y asuntos que no deben maquillarse
+
+- La comparación por perfil se basa en tres sesiones técnicas y tres no técnicas; se mantiene como descriptiva/exploratoria.
+- El cuestionario de 70 respuestas no contiene una variable de perfil técnico/no técnico ni una escala de explicabilidad y no se usa para esa comparación.
+- El indicador estricto de saturación de códigos no alcanza el umbral del 5%.
+- La evidencia histórica de autoría se conserva tal como existe; cualquier elemento adicional de §15 sólo puede incorporarse si es real y verificable.
+
+## 6. Regla de cierre
+
+Esta retrospectiva no declara cerrados los manifiestos SHA-256 ni la etiqueta terminal. Esos pasos se ejecutan únicamente cuando ya no se modificará ningún contenido evaluable. El orden terminal es:
+
+1. cerrar los artefactos documentales y de autoría que correspondan;
+2. regenerar `07_Datos/checksums_datos.sha256`;
+3. regenerar `checksums.sha256`;
+4. verificar ambos sin fallos;
+5. crear la etiqueta anotada `v2.0.3-final` sobre el commit final.
+
+La meta del cierre no es aumentar artificialmente el expediente, sino lograr que cada afirmación pueda rastrearse a evidencia real, un requisito versionado, un resultado reproducible o un commit verificable.
