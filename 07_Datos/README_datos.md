@@ -140,7 +140,7 @@ La regeneración de los dos manifiestos terminales se realiza **solo después de
 python 07_Datos/scripts/regenerar_manifiestos_sha256.py
 ```
 
-Ese script regenera primero `07_Datos/checksums_datos.sha256` y luego `checksums.sha256`. El manifiesto raíz cubre también el manifiesto de `07_Datos` y trata los objetos Git LFS mediante su `oid sha256`, de modo que la comprobación global funciona tanto con un objeto LFS materializado como con su puntero versionado.
+Ese script regenera primero `07_Datos/checksums_datos.sha256` y luego `checksums.sha256`. El manifiesto raíz cubre también el manifiesto de `07_Datos` y calcula los hashes sobre los bytes físicamente presentes en la entrega. Por ello `sha256sum -c checksums.sha256 --quiet` funciona también cuando la exportación contiene un puntero Git LFS: se verifica el puntero entregado, mientras su `oid sha256` se conserva únicamente como referencia al objeto LFS remoto.
 
 ## Privacidad
 
