@@ -2,14 +2,14 @@
 
 **Proyecto:** FabroGym — ISR-401  
 **Entrega:** Entrega 4 (2B / Defensa Final)  
-**Repositorio:** `https://github.com/amorad35/FabroGym_ISR401`  
-**Equipo actual de cierre:** Mera Arias Erick Jhair, Mora Duarte Alex José y Ponce Rivera Mery Helenmey.
+**Repositorio:** `https://github.com/gleiston-guerrero/FabroGym_ISR401`  
+**Alcance evaluable:** cinco integrantes según la guía del proyecto; este documento detalla las contribuciones de cierre actualmente verificables de Mera, Mora y Ponce.
 
 ## 1. Propósito
 
-Este documento consolida contribuciones individuales verificables de los tres integrantes que conforman actualmente el equipo de cierre de FabroGym. Cada aporte se vincula con una actividad concreta, una ruta del repositorio y uno o más commits reales.
+Este documento consolida las contribuciones de cierre que actualmente pueden verificarse mediante commits reales y artefactos del repositorio. La evidencia detallada reciente está disponible para Mera, Mora y Ponce.
 
-Los aportes históricos de integrantes que ya no forman parte del equipo final permanecen íntegros en el historial Git y no se eliminan, reasignan ni presentan como trabajo de los tres integrantes actuales.
+La guía y los artefactos académicos mantienen a Alvia y Vaca dentro del equipo evaluable mientras no exista una autorización docente posterior que disponga lo contrario. Sus aportes históricos permanecen íntegros en Git; este documento no inventa contribuciones recientes ni sustituye la evidencia A2 individual que no esté localizada.
 
 ## 2. Criterio de inclusión
 
@@ -91,7 +91,7 @@ Los aportes históricos de integrantes que ya no forman parte del equipo final p
 | Incorporar correspondencia verificable con la organización | `10_Autoria/correspondencia/` | `87d667969192f9f86c19ae70848acec06008ea30` | Coordinación |
 | Incorporar el video real de defensa | `09_Defensa/video_defensa.mp4` | `631579ced1e93029829166dde5db03cae6299806` | Evidencia audiovisual / defensa |
 | Sincronizar documentación y manifiesto de cierre de defensa | `09_Defensa/` | `2b8b50cd440702e791e784abf33654167749a635` | Defensa / integridad |
-| Incorporar el aporte individual firmado del equipo actual | `10_Autoria/aporte_individual_FIRMA.pdf` | `ab26e952f59a862486921d4c86bb13ecc98eaec5` | Autoría / conformidad |
+| Incorporar el aporte individual firmado disponible | `10_Autoria/aporte_individual_FIRMA.pdf` | `ab26e952f59a862486921d4c86bb13ecc98eaec5` | Autoría / conformidad |
 | Actualizar verificación de privacidad pública y evidencia A6 | `07_Datos/resultados/REVISION_PRIVACIDAD_PUBLICA.md`; `10_Autoria/exif_inventario.csv` | `ade8366361cf0c32d302d4b879a5446ee39884ca` | Privacidad / evidencia de campo |
 | Cerrar evidencia A6 y trazabilidad de fotografías | `02_Evidencias/Cuestionario/Fotos_Aplicacion/`; `10_Autoria/exif_inventario.csv`; documentación A6 | `5542e050ca8a492ffd528f01cbde497b958ad922` | Evidencia A6 / trazabilidad |
 | Actualizar checksums SHA-256 generales con las rutas vigentes del repositorio | `checksums.sha256` | `5961a4a6d231bf1419ab6bc0bde4a3fd0587c70d` | Integridad / cierre |
@@ -128,7 +128,7 @@ Esta relación se contrasta con:
 
 Las contribuciones incluidas se basan en evidencia versionada verificable. No se fabrican commits, no se atribuyen cambios locales no versionados y no se reasignan aportes históricos.
 
-El equipo actual de cierre está conformado por **Mera Arias Erick Jhair, Mora Duarte Alex José y Ponce Rivera Mery Helenmey**. Los aportes históricos de otros integrantes permanecen visibles en Git y no se eliminan ni se atribuyen a este equipo.
+El trabajo correctivo reciente documentado aquí corresponde principalmente a **Mera Arias Erick Jhair, Mora Duarte Alex José y Ponce Rivera Mery Helenmey**. Esta constatación no reduce por sí sola el equipo evaluable de cinco integrantes. Los aportes históricos de Alvia y Vaca permanecen visibles en Git y no se eliminan ni se reasignan.
 
 ## 9. Corte documental de cierre
 

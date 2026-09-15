@@ -2,7 +2,7 @@
 
 **Proyecto:** FabroGym — ISR-401  
 **Entrega:** Entrega 4 (2B / Defensa Final)  
-**Repositorio:** `https://github.com/amorad35/FabroGym_ISR401`
+**Repositorio:** `https://github.com/gleiston-guerrero/FabroGym_ISR401`
 
 ## 1. Propósito
 
@@ -10,15 +10,11 @@ Esta carpeta reúne la evidencia verificable de autoría, contribución individu
 
 La rúbrica final exige que `10_Autoria/` exista con los elementos A1 a A12 como un conjunto completo. Esta carpeta complementa el historial Git y los artefactos técnicos; no los sustituye.
 
-## 2. Equipo actual de cierre
+## 2. Alcance del equipo y corrección reciente
 
-El equipo que realiza el cierre y la defensa final está conformado por:
+La guía y los artefactos académicos del proyecto mantienen un equipo evaluable de cinco integrantes: **Alvia Villegas Erick Adalberto, Mera Arias Erick Jhair, Mora Duarte Alex José, Ponce Rivera Mery Helenmey y Vaca Romero David Octavio**. No existe en este corte una autorización docente versionada que reduzca formalmente ese alcance.
 
-- **Mera Arias Erick Jhair** — Git: `Emeraxs`
-- **Mora Duarte Alex José** — Git: `amorad35`
-- **Ponce Rivera Mery Helenmey** — Git: `Mery-003`
-
-Las contribuciones históricas de integrantes que participaron anteriormente permanecen visibles en el historial Git y en los artefactos donde corresponden. No se eliminan, reasignan ni presentan como trabajo de los tres integrantes actuales. La delimitación del corte de examen se documenta en `10_Autoria/EQUIPO_EXAMEN_FINAL.md`.
+El trabajo correctivo reciente se encuentra documentado principalmente para Mera (`Emeraxs`), Mora (`amorad35`) y Ponce (`Mery-003`). Esa concentración de actividad reciente no elimina la autoría histórica ni convierte por sí sola al equipo evaluado en un grupo de tres. El estado exacto de evidencia individual se documenta en `10_Autoria/EQUIPO_EXAMEN_FINAL.md`.
 
 ## 3. Principios de integridad
 
@@ -55,7 +51,7 @@ La versión congelada no contiene marcadores provisionales de commit.
 
 ### A2 — `capturas/`
 
-Capturas reales de trabajo individual o colaborativo sobre FabroGym. Para el equipo actual del examen final existen 12 capturas de `Emeraxs`, 19 de `Mery` y 10 de `amorad35`; cada integrante supera el mínimo de tres capturas. El detalle de atribución está en `10_Autoria/capturas/README.md`.
+Capturas reales de trabajo individual o colaborativo sobre FabroGym. El inventario actual contiene 13 capturas de `Emeraxs`, 19 de `Mery` y 10 de `amorad35`. No se localizaron capturas A2 atribuibles a Alvia ni a Vaca para este corte; por tanto, **no se declara cumplido su mínimo individual**. El detalle de atribución está en `10_Autoria/capturas/README.md`.
 
 Cada captura se relaciona con:
 
@@ -102,7 +98,7 @@ La evidencia fotográfica de autoría se organiza en:
         └── A11 Fotos_Originales_Cuestionario.7z
 ```
 
-`01_fotos_equipo/` contiene las **dos fotografías reales del equipo disponibles en el repositorio**, renombradas con la fecha EXIF `2026-07-27`. No se anuncian otras fotografías de equipo inexistentes. El inventario EXIF se depuró para reflejar únicamente archivos físicamente presentes: dos fotos de equipo y cinco originales de aplicación del cuestionario documentados mediante su copia pública y contenedor restringido.
+`01_fotos_equipo/` contiene las **dos fotografías reales del equipo disponibles en el repositorio**, renombradas con la fecha EXIF `2026-07-27`. No se anuncian otras fotografías de equipo inexistentes. El inventario EXIF final refleja únicamente archivos físicamente presentes y trazables: **2 fotos de equipo, 4 JPG de entorno y 5 originales de aplicación del cuestionario**, para un total de **11 registros**.
 
 Además, las **cinco copias públicas enmascaradas de aplicación del cuestionario** se encuentran en:
 
@@ -150,35 +146,37 @@ Debe indicar:
 
 ### A10 — `aporte_individual.md` y evidencia firmada
 
-`aporte_individual.md` documenta la contribución verificable de los **tres integrantes actuales de cierre**:
+`aporte_individual.md` documenta las contribuciones de cierre que pueden verificarse actualmente mediante commits y artefactos. El documento contiene evidencia detallada reciente para Mera, Mora y Ponce; esto **no redefine** el alcance evaluable de cinco integrantes.
 
-- Mera Arias Erick Jhair;
-- Mora Duarte Alex José;
-- Ponce Rivera Mery Helenmey.
+Para cada aporte registrado se conservan actividad, ruta, rol y commit real. Los aportes históricos de Alvia y Vaca permanecen en Git y en los artefactos correspondientes; no se borran, reasignan ni se presentan como evidencia A2 inexistente.
 
-Para cada integrante se registran actividades, rutas, rol y commits reales.
-
-La conformidad firmada del equipo actual se conserva como:
+La conformidad firmada disponible se conserva como:
 
 ```text
 10_Autoria/aporte_individual_FIRMA.pdf
 ```
 
-La versión firmada corresponde a los tres integrantes actuales de cierre. Los aportes históricos de otros integrantes permanecen en Git y no se borran ni se reasignan.
+Su alcance debe interpretarse según las personas que realmente la firmaron y no como sustituto de la evidencia individual exigida a cada integrante.
 
 ### A11 — `exif_inventario.csv`
 
 Inventario técnico de fotografías utilizadas como evidencia.
 
-Para las cinco fotografías de aplicación del cuestionario, el inventario conserva:
+El inventario final contiene **11 registros verificables**:
 
-- fecha EXIF del original;
+- 2 fotografías del equipo;
+- 4 fotografías JPG de entorno de `02_Evidencias/Fotos_Entorno/`;
+- 5 fotografías originales de aplicación del cuestionario.
+
+Para cada registro se conserva, cuando está disponible en el archivo fuente:
+
+- fecha EXIF;
 - dispositivo;
 - SHA-256;
 - estado EXIF;
-- relación entre original restringido y copia pública enmascarada.
+- ruta trazable dentro del repositorio.
 
-Las copias públicas pueden tener hash distinto del original por el enmascaramiento; el inventario primario se basa en los originales preservados.
+Para las cinco fotografías del cuestionario se conserva además la relación entre el original restringido y la copia pública enmascarada. Las copias públicas pueden tener hash distinto del original por el enmascaramiento; el inventario primario se basa en los originales preservados.
 
 ### A12 — `/.mailmap`
 
@@ -246,7 +244,7 @@ Antes de congelar la entrega se debe comprobar:
 
 La verificación previa firmada se conserva como
 `10_Autoria/verificacion_previa.pdf`, conforme a la guía específica
-de cierre. Ese PDF corresponde al corte histórico en el que aún constaban cinco participantes del proyecto; se conserva sin alteración por integridad documental. La delimitación vigente del **equipo que rinde el examen final** está documentada en `10_Autoria/EQUIPO_EXAMEN_FINAL.md` y corresponde a Mera, Mora y Ponce. El PDF histórico complementa A1–A12 y no sustituye ninguno de esos elementos.
+de cierre. Ese PDF se conserva sin alteración como evidencia histórica del estado que verificó. No se utiliza para justificar la exclusión de integrantes ni para validar cambios posteriores. La composición evaluable y el estado de evidencia individual vigente se documentan en `10_Autoria/EQUIPO_EXAMEN_FINAL.md`. Una nueva verificación, si corresponde, debe realizarse solo después del cierre real del siguiente estado etiquetado.
 
 ## 8. Estado de esta carpeta
 
