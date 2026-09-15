@@ -1,5 +1,14 @@
 # Changelog
 
+## 2026-09-15 - Cierre §4 del examen suspenso: especificación textual de casos de uso
+
+- Se especifican textualmente los **19 casos de uso Must** del ERS con actor principal, disparador, precondiciones, flujo principal numerado, flujo alternativo con condición, excepción con condición y poscondiciones.
+- Cada caso de uso conserva su vínculo vigente con RF, HU, CA, evidencia, componente y mockups; la corrección refina comportamiento existente y **no crea requisitos nuevos**.
+- Se incorpora la convención de identificadores `CU-xx-FP`, `CU-xx-FA-01` y `CU-xx-EX-01`.
+- `04_Trazabilidad/matriz_trazabilidad.csv` añade las columnas `ID_Flujo` y `Descripcion_Flujo` y 57 trazas explícitas de flujo, manteniendo las 105 trazas previas; el total queda en **162 filas**.
+- Se recompila `01_ERS/ERS_SRS_2B_v2.0.pdf` desde la fuente actualizada y se verifica que el texto contiene al menos una ocurrencia de flujo principal, flujo alternativo, excepción, precondiciones y poscondiciones por cada uno de los 19 CU.
+- Los manifiestos SHA-256 terminales permanecen pendientes y deberán regenerarse únicamente después de completar los demás puntos del examen suspenso.
+
 ## 2026-09-15 - Consolidación final PRE-CHECKSUMS (etiqueta terminal declarada `v2.0.3-final`)
 
 - Se conserva `v2.0.2-final` sin mover ni sobrescribir como línea base histórica ya publicada.

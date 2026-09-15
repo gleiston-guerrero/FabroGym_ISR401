@@ -15,7 +15,7 @@ FabroGym documenta la ingeniería de requisitos de un sistema de gestión de gim
 | Componente | Estado de cierre |
 |---|---|
 | ERS/SRS | `01_ERS/ERS_SRS_2B_v2.0.pdf` y fuente LaTeX |
-| Trazabilidad | 25 RF, 23 RNF y 4 RD + 97 trazas históricas + 8 planes de verificación IA |
+| Trazabilidad | 25 RF, 23 RNF y 4 RD + 97 trazas históricas + 8 planes de verificación IA + 57 trazas de flujo de los 19 CU Must |
 | MVP | cobertura C3 verificada: **16/19 RF Must (84,21 %)** |
 | **Paquete de datos y análisis canónico** | **`07_Datos/` — ejecución oficial con `python scripts/run_all.py`** |
 | Manuscrito | `07_Publicacion/manuscrito_final.pdf` + `.tex` |
