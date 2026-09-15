@@ -20,3 +20,12 @@ La matriz actualizada de metadatos se conserva en `07_Datos/resultados/tablas/B6
 La separación pública/restringida, la finalidad académica, la minimización y la custodia se documentan en `08_Etica/B6_CUMPLIMIENTO_ETICA_PRIVACIDAD.md` y `07_Datos/PRIVACIDAD_CAPAS.md`.
 
 **Estado de la observación documental B6:** CERRADA en el corte actual.
+
+
+## Reconciliación del conteo de consentimientos
+
+El inventario público verificable de `02_Evidencias/Consentimientos/` contiene **16 consentimientos específicos de sesión**: 10 asociados a `ENTR-01..10`, 3 a `WALK-TEC-01..03` y 3 a `WALK_NTEC_01..03`. La tabla `07_Datos/resultados/tablas/B6_control_metadatos_consentimientos.csv` registra esas mismas 16 copias públicas.
+
+El expediente ético contiene además `13_A13_Participantes_Externos_FabroGym_Firmado.pdf` y `Adenda_Segunda_Ronda_FabroGym_Firmado.pdf` como documentos complementarios. **No se contabilizan artificialmente como un consentimiento individual número 17** ni sustituyen un formulario específico de sesión.
+
+Si la guía de evaluación exige literalmente 17 consentimientos individuales, el documento número 17 debe identificarse mediante evidencia real o aclaración docente antes de declarar ese conteo como cumplido. No se crea ni duplica un consentimiento para cerrar la diferencia.

@@ -10,7 +10,7 @@
 | **Base de licitud / fundamento de participación** | Participación voluntaria y consentimiento informado para la evidencia primaria de campo. |
 | **Finalidad** | Uso académico para levantamiento, análisis, especificación y validación de requisitos, trazabilidad, reproducibilidad y publicación anonimizada. |
 | **Plazo de conservación** | Las copias restringidas o reidentificables se mantienen únicamente durante el periodo autorizado para el proyecto/evaluación y, cuando corresponda, bajo custodia institucional. |
-| **Responsable de custodia académica** | Equipo actual de cierre: Mera Arias Erick Jhair, Mora Duarte Alex José y Ponce Rivera Mery Helenmey, bajo supervisión académica del docente responsable. |
+| **Responsable de custodia académica** | La custodia operativa reciente está documentada para Mera Arias Erick Jhair, Mora Duarte Alex José y Ponce Rivera Mery Helenmey, bajo supervisión académica del docente responsable. Esta función de custodia no redefine el alcance del equipo evaluable. |
 
 ## 2. Separación pública / restringida
 
