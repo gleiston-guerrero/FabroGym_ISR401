@@ -242,8 +242,8 @@ Antes de congelar la entrega se debe comprobar:
 9. privacidad automática sin bloqueos y revisión humana completada;
 10. `git status` limpio antes de crear el tag.
 
-La verificación previa firmada se conserva como
-`10_Autoria/verificacion_previa.pdf`, conforme a la guía específica
+La verificación previa firmada del 14/09/2026 se conserva como
+`10_Autoria/verificacion_previa_HISTORICA_2026-09-14.pdf`, conforme a la guía específica
 de cierre. Ese PDF se conserva sin alteración como evidencia histórica del estado que verificó. No se utiliza para justificar la exclusión de integrantes ni para validar cambios posteriores. La composición evaluable y el estado de evidencia individual vigente se documentan en `10_Autoria/EQUIPO_EXAMEN_FINAL.md`. Una nueva verificación, si corresponde, debe realizarse solo después del cierre real del siguiente estado etiquetado.
 
 ## 8. Estado de esta carpeta

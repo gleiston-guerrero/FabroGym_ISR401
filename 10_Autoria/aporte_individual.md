@@ -9,7 +9,7 @@
 
 Este documento consolida las contribuciones de cierre que actualmente pueden verificarse mediante commits reales y artefactos del repositorio. La evidencia detallada reciente está disponible para Mera, Mora y Ponce.
 
-La guía y los artefactos académicos mantienen a Alvia y Vaca dentro del equipo evaluable mientras no exista una autorización docente posterior que disponga lo contrario. Sus aportes históricos permanecen íntegros en Git; este documento no inventa contribuciones recientes ni sustituye la evidencia A2 individual que no esté localizada.
+Alvia Villegas Erick Adalberto y Vaca Romero David Octavio se conservan únicamente como participantes históricos cuando corresponda por trazabilidad del proyecto. No se los registra como integrantes pendientes del cierre actual ni se les asignan evidencias recientes no verificables.
 
 ## 2. Criterio de inclusión
 
@@ -42,7 +42,7 @@ La guía y los artefactos académicos mantienen a Alvia y Vaca dentro del equipo
 | Actualizar bitácora, aporte individual y materiales de defensa del cierre | `09_Defensa/`; `10_Autoria/` | `d4e34c1cf763728a6938b0fc99f9f76f20a0f095` | Cierre documental |
 | Incorporar evaluación FAIR/F-UJI y metadatos de preservación/citación | `fair_assessment.pdf`; `FAIR_CHECKLIST.md`; `CITATION.cff`; `README.md`; `CHANGELOG.md` | `889475ed74a492466133730f1fee56ee0f64a5de` | FAIR / preservación / metadatos |
 | Actualizar el reporte de revisión de privacidad pública con la lógica vigente | `07_Datos/resultados/REVISION_PRIVACIDAD_PUBLICA.md` | `bed95950312096597d5167f555f2de04e89fae60` | Privacidad / cierre B6 |
-| Actualizar checklist final, README de autoría y checklist FAIR del cierre | `09_Defensa/checklist_final_repositorio.md`; `10_Autoria/README.md`; `FAIR_CHECKLIST.md` | `d4a07e097906402db182de0de7c958a6095b90fd` | Cierre documental / verificación |
+| Actualizar checklist final, README de autoría y checklist FAIR del cierre | `09_Defensa/checklist_defensa_final.md`; `10_Autoria/README.md`; `FAIR_CHECKLIST.md` | `d4a07e097906402db182de0de7c958a6095b90fd` | Cierre documental / verificación |
 | Sincronizar aporte individual, bitácora e inventario EXIF con el estado de cierre | `10_Autoria/aporte_individual.md`; `10_Autoria/bitacora_sesiones.csv`; `10_Autoria/exif_inventario.csv` | `128c314849a1895cb7b0582609a85b546dfbb350` | Autoría / trazabilidad de cierre |
 | Actualizar el reporte de privacidad y consolidar el estado A6 previo al cierre | `07_Datos/resultados/REVISION_PRIVACIDAD_PUBLICA.md`; `README.md` | `3a2914e986cad5897a7c357e869fb05bb2fb8a1d` | Privacidad / reproducibilidad documental |
 

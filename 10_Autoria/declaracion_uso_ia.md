@@ -1,6 +1,6 @@
 # Declaración de uso de inteligencia artificial — FabroGym
 
-**Proyecto:** FabroGym — Ingeniería de Requerimientos ISR-401  
+**Proyecto:** FabroGym — Ingeniería de Requisitos ISR-401  
 **Entrega:** Entrega 4 (2B / Defensa Final)  
 **Artefacto:** A9 — `10_Autoria/declaracion_uso_ia.md`  
 **Estado de este archivo:** **FINAL — revisión consolidada. Ponce queda registrado como verificador humano y todas las filas tienen estado definitivo.**

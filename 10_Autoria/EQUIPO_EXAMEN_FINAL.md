@@ -1,6 +1,6 @@
 # Equipo de cierre y estado de evidencia individual - FabroGym
 
-**Proyecto:** FabroGym - Ingeniería de Requerimientos (ISR-401)  
+**Proyecto:** FabroGym - Ingeniería de Requisitos (ISR-401)  
 **Corte:** Entrega 4 (2B / Defensa Final)  
 **Repositorio canónico:** `https://github.com/gleiston-guerrero/FabroGym_ISR401`
 
