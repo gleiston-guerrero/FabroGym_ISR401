@@ -1,5 +1,13 @@
 # Changelog
 
+## 2026-09-15 - Cierre §12 del examen suspenso: determinismo y carpeta canónica de resultados
+
+- Se explicita `SEED = 401` en `07_Datos/scripts/run_all.py` y se utiliza esa constante en el bootstrap pseudoaleatorio del cuestionario.
+- Se mantiene `07_Datos/resultados/` como única fuente canónica de resultados; `06_Experimento/resultados/` pasa a ser un espejo derivado byte-idéntico sincronizado por el orquestador oficial.
+- Se documenta la regla de espejo en `README.md`, `07_Datos/README_datos.md` y `06_Experimento/README.md`.
+- Se reejecuta dos veces la cadena canónica y se comprueba identidad SHA-256 de `datos_procesados/` y `resultados/` entre ejecuciones equivalentes.
+- Los manifiestos terminales `07_Datos/checksums_datos.sha256` y `checksums.sha256` **no se regeneran todavía**; se reservan para el penúltimo paso, después de cerrar §15 y §16.
+
 ## 2026-09-15 - Cierre §4 del examen suspenso: especificación textual de casos de uso
 
 - Se especifican textualmente los **19 casos de uso Must** del ERS con actor principal, disparador, precondiciones, flujo principal numerado, flujo alternativo con condición, excepción con condición y poscondiciones.
