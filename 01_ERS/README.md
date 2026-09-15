@@ -35,20 +35,12 @@ incluye ambos para permitir la verificación de su igualdad.
 
 Zenodo publicado, versión 2.0.0; DOI específico: `10.5281/zenodo.22237884`.
 
-## Nota sobre autoría histórica y equipo de examen
+## Nota sobre autoría y alcance evaluable
 
-La ERS/SRS conserva la autoría histórica de los integrantes que participaron en su elaboración durante las distintas etapas del proyecto. Por integridad documental, la presencia de un nombre en la portada o en la tabla de integrantes refleja participación histórica y **no debe interpretarse automáticamente como pertenencia al equipo que rinde el examen final**.
+La ERS/SRS conserva la autoría de los cinco integrantes documentados durante el proyecto. Mientras no exista una autorización docente posterior que modifique formalmente la composición del grupo, el alcance evaluable se mantiene sobre **Alvia Villegas Erick Adalberto, Mera Arias Erick Jhair, Mora Duarte Alex José, Ponce Rivera Mery Helenmey y Vaca Romero David Octavio**.
 
-Para el corte actual, el equipo de cierre, defensa y examen final está conformado por:
+El hecho de que el trabajo correctivo reciente esté concentrado en Mera, Mora y Ponce no autoriza a excluir a Alvia o Vaca del alcance evaluable. Tampoco se reasignan contribuciones ni se fabrican evidencias faltantes.
 
-- **Mera Arias Erick Jhair**;
-- **Mora Duarte Alex José**;
-- **Ponce Rivera Mery Helenmey**.
-
-**Alvia Villegas Erick Adalberto** y **Vaca Romero David Octavio** mantienen la autoría y contribuciones históricas que efectivamente les corresponden, pero no forman parte del equipo que rinde el examen final de este corte.
-
-No se eliminan nombres históricos cuando su presencia sea legítima, ni se reasignan contribuciones. La evidencia individual del cierre se verifica únicamente sobre los integrantes activos.
-
-La delimitación oficial y canónica del equipo de examen se encuentra en:
+El estado canónico de evidencia individual y capturas A2 se encuentra en:
 
 `../10_Autoria/EQUIPO_EXAMEN_FINAL.md`
