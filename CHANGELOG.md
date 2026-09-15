@@ -1,5 +1,15 @@
 # Changelog
 
+## 2026-09-15 - Cierre documental §15: alcance A1/A5 e inventario EXIF completo
+
+- Se separa explícitamente el alcance de A1 y A5: `10_Autoria/bitacora_sesiones.csv` contiene **28 sesiones internas de trabajo del equipo**, mientras las notas de campo se contrastan únicamente contra las **16 sesiones empíricas** de `07_Datos/datos_crudos/sesiones_multimedia_desde_ficha_v3_1.csv` (10 entrevistas + 3 WALK-TEC + 3 WALK-NTEC).
+- Se incorpora `10_Autoria/notas_campo/inventario_notas_campo.csv` y su README de trazabilidad. El corte contiene **13 notas contemporáneas asociables a 13/16 sesiones empíricas**: 10/10 entrevistas y 3/3 walkthroughs técnicos; no están depositadas notas para `WALK-NTEC-01`, `WALK-NTEC-02` y `WALK-NTEC-03`.
+- Se documentan, sin alterar la evidencia, dos discrepancias históricas en las notas técnicas: un archivo cuyo nombre indica `WALK-TEC-03` pero cuyo manuscrito identifica `WALK-TEC-01`, y la fecha manuscrita de `WALK-TEC-02` frente a la fecha del inventario multimedia canónico.
+- `10_Autoria/exif_inventario.csv` se amplía de 11 a **25 fotografías reales**: 2 de equipo, 18 de entorno y 5 de aplicación del cuestionario. Se registran 20 con fecha de captura recuperable, 2 `EXIF_PARCIAL` y 5 `SIN_EXIF`, sin inventar metadatos.
+- Se documenta la discrepancia entre las **26 fotografías** mencionadas por la guía y las **25 físicamente presentes** en el árbol actual: la guía presupone 3 fotos de equipo y el repositorio verificable contiene 2.
+- Se mantiene como equipo actual de cierre a Mera, Mora y Ponce; los aportes históricos de Alvia y Vaca se conservan sin fabricar capturas nuevas.
+- Se restituye en la documentación la exigencia de la guía vigente de producir `10_Autoria/verificacion_previa.pdf` **firmada** sobre el corte final. Ese PDF se genera al final de §15, antes de los manifiestos terminales y de `v2.0.3-final`, para que no certifique un estado intermedio.
+
 ## 2026-09-15 - Cierre §12 del examen suspenso: determinismo y carpeta canónica de resultados
 
 - Se explicita `SEED = 401` en `07_Datos/scripts/run_all.py` y se utiliza esa constante en el bootstrap pseudoaleatorio del cuestionario.
