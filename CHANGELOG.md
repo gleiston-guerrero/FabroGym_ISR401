@@ -3,11 +3,12 @@
 ## 2026-09-14 - PRE-TAG posterior a `v2.0.2-final` (candidato `v2.0.3-final`)
 
 - Se conserva `v2.0.2-final` sin mover ni sobrescribir como línea base histórica ya publicada.
-- Se revierte la interpretación no respaldada que reducía el equipo evaluable a tres integrantes: mientras no exista autorización docente posterior, el alcance se mantiene sobre Alvia, Mera, Mora, Ponce y Vaca.
-- A2 documenta únicamente evidencia real localizada: Mera 13, Mora 10, Ponce 19, Alvia 0 y Vaca 0; no se fabrican, reasignan ni retrofechan capturas.
+- Se delimita el **equipo actual de cierre y examen final** a Mera, Mora y Ponce, conservando sin alterar la autoría histórica de Alvia y Vaca en los artefactos donde participaron.
+- A2 documenta únicamente evidencia real del equipo actual de cierre: Mera 13, Mora 10 y Ponce 19; no se fabrican, reasignan ni retrofechan capturas.
 - Se incorpora el inventario EXIF completo de 11 registros reales: 2 fotografías de equipo, 4 JPG de entorno y 5 fotografías de aplicación del cuestionario.
-- Se documenta que el inventario público contiene 16 consentimientos específicos de sesión y que A13/adenda son complementarios; no se inventa un consentimiento individual número 17.
-- El manuscrito y la retrospectiva distinguen el trabajo correctivo reciente de la composición evaluable y distinguen la línea base publicada de un eventual cierre posterior.
+- Se reconcilia el conteo real de **16 consentimientos específicos de sesión** (10 ENTR + 3 WALK-TEC + 3 WALK-NTEC) frente a la mención de 17 en la guía; la diferencia se documenta como discrepancia de conteo, no como archivo faltante.
+- Se añade un espejo byte-idéntico en `08_Etica/consentimientos/` para que funcione la ruta literal de verificación de la guía; la ubicación canónica continúa siendo `02_Evidencias/Consentimientos/` y los archivos no se cuentan dos veces.
+- El manuscrito y la retrospectiva distinguen la autoría histórica del proyecto del equipo actual de cierre (Mera, Mora y Ponce), y distinguen la línea base publicada de un eventual cierre posterior.
 - Se conservan los resultados empíricos ya versionados y se corrigen únicamente los artefactos/documentación identificados por la auditoría de cierre; no se fuerza una regeneración masiva en este lote mínimo.
 - Se alinean `regenerar_manifiestos_sha256.py` y `verificar_integridad_repositorio.py` con `sha256sum` estándar sobre los bytes físicamente presentes en la entrega, incluida la representación de punteros Git LFS en exportaciones ZIP.
 - **Los manifiestos SHA-256 no se incluyen en este lote de contenido.** Deben regenerarse una sola vez, al final absoluto, después de cualquier evidencia auténtica adicional y antes del siguiente tag.
