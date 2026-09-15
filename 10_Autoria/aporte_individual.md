@@ -3,7 +3,7 @@
 **Proyecto:** FabroGym — ISR-401  
 **Entrega:** Entrega 4 (2B / Defensa Final)  
 **Repositorio:** `https://github.com/gleiston-guerrero/FabroGym_ISR401`  
-**Alcance evaluable:** cinco integrantes según la guía del proyecto; este documento detalla las contribuciones de cierre actualmente verificables de Mera, Mora y Ponce.
+**Equipo actual de cierre:** Mera Arias Erick Jhair, Mora Duarte Alex José y Ponce Rivera Mery Helenmey. Los aportes históricos de Alvia y Vaca se conservan por trazabilidad, pero no se presentan como pendientes del cierre actual.
 
 ## 1. Propósito
 
@@ -128,7 +128,7 @@ Esta relación se contrasta con:
 
 Las contribuciones incluidas se basan en evidencia versionada verificable. No se fabrican commits, no se atribuyen cambios locales no versionados y no se reasignan aportes históricos.
 
-El trabajo correctivo reciente documentado aquí corresponde principalmente a **Mera Arias Erick Jhair, Mora Duarte Alex José y Ponce Rivera Mery Helenmey**. Esta constatación no reduce por sí sola el equipo evaluable de cinco integrantes. Los aportes históricos de Alvia y Vaca permanecen visibles en Git y no se eliminan ni se reasignan.
+El trabajo correctivo reciente documentado aquí corresponde al **equipo actual de cierre: Mera Arias Erick Jhair, Mora Duarte Alex José y Ponce Rivera Mery Helenmey**. Los aportes históricos de Alvia y Vaca permanecen visibles en Git y no se eliminan ni se reasignan.
 
 ## 9. Corte documental de cierre
 
