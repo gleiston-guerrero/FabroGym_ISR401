@@ -50,21 +50,19 @@ El DOI `10.5281/zenodo.22237884` fue evaluado el 11 de septiembre de 2026:
 
 ## Equipo
 
-### Alcance evaluable según la guía vigente
+### Equipo de cierre / examen final
 
-Mientras no exista una autorización docente que modifique la composición del grupo, el alcance evaluable se conserva sobre los **cinco integrantes documentados en el proyecto**:
+El equipo activo para el cierre y examen final está conformado por **Mera Arias Erick Jhair, Mora Duarte Alex José y Ponce Rivera Mery Helenmey**:
 
 | Integrante | Usuario Git / referencia | Estado A2 verificable en este corte |
 |---|---|---:|
 | Erick Jhair Mera Arias | `Emeraxs` | 13 capturas |
 | Alex José Mora Duarte | `amorad35` | 10 capturas |
 | Mery Helenmey Ponce Rivera | `Mery-003` / `Mery` en nombres de captura | 19 capturas |
-| Erick Adalberto Alvia Villegas | histórico del proyecto | 0 capturas A2 localizadas para el corte |
-| David Octavio Vaca Romero | histórico del proyecto | 0 capturas A2 localizadas para el corte |
 
-La actividad de corrección y cierre más reciente está documentada principalmente para Mera, Mora y Ponce. **Eso no redefine por sí solo el grupo evaluado** ni autoriza a excluir a Alvia o Vaca. La evidencia individual faltante no se fabrica, no se reasigna y no se retrofecha. Si se incorporan capturas adicionales, deben ser evidencias auténticas producidas por la persona correspondiente y verificables contra el trabajo real.
+**Alvia Villegas Erick Adalberto** y **Vaca Romero David Octavio** participaron en etapas anteriores del proyecto. Sus aportes históricos se conservan en Git, la ERS/SRS y los artefactos donde realmente intervinieron, pero **no forman parte del equipo actual de cierre** y no se presentan como pendientes de evidencia A2 de este corte.
 
-La fuente canónica para el estado de autoría y A2 es `10_Autoria/EQUIPO_EXAMEN_FINAL.md`; el inventario detallado de capturas está en `10_Autoria/capturas/README.md`.
+La fuente canónica para el estado del equipo de cierre y A2 es `10_Autoria/EQUIPO_EXAMEN_FINAL.md`; el inventario detallado de capturas está en `10_Autoria/capturas/README.md`.
 
 ## Compilar el ERS/SRS
 

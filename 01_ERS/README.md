@@ -35,12 +35,12 @@ incluye ambos para permitir la verificación de su igualdad.
 
 Zenodo publicado, versión 2.0.0; DOI específico: `10.5281/zenodo.22237884`.
 
-## Nota sobre autoría y alcance evaluable
+## Nota sobre autoría histórica y equipo de cierre
 
-La ERS/SRS conserva la autoría de los cinco integrantes documentados durante el proyecto. Mientras no exista una autorización docente posterior que modifique formalmente la composición del grupo, el alcance evaluable se mantiene sobre **Alvia Villegas Erick Adalberto, Mera Arias Erick Jhair, Mora Duarte Alex José, Ponce Rivera Mery Helenmey y Vaca Romero David Octavio**.
+La ERS/SRS conserva la **autoría histórica** de los cinco integrantes que participaron durante el desarrollo del proyecto: Alvia, Mera, Mora, Ponce y Vaca. Esa autoría no se elimina ni se reasigna.
 
-El hecho de que el trabajo correctivo reciente esté concentrado en Mera, Mora y Ponce no autoriza a excluir a Alvia o Vaca del alcance evaluable. Tampoco se reasignan contribuciones ni se fabrican evidencias faltantes.
+Para el **cierre y examen final actual**, el equipo activo está conformado por **Mera Arias Erick Jhair, Mora Duarte Alex José y Ponce Rivera Mery Helenmey**. Alvia Villegas Erick Adalberto y Vaca Romero David Octavio se mantienen únicamente donde corresponde por trazabilidad y autoría histórica; no se registran como pendientes A2 del cierre actual.
 
-El estado canónico de evidencia individual y capturas A2 se encuentra en:
+El estado canónico del equipo de cierre y de las capturas A2 se encuentra en:
 
 `../10_Autoria/EQUIPO_EXAMEN_FINAL.md`
