@@ -1,6 +1,6 @@
 # Changelog
 
-## 2026-09-14 - PRE-TAG posterior a `v2.0.2-final` (candidato `v2.0.3-final`)
+## 2026-09-15 - Consolidación final PRE-CHECKSUMS (etiqueta terminal declarada `v2.0.3-final`)
 
 - Se conserva `v2.0.2-final` sin mover ni sobrescribir como línea base histórica ya publicada.
 - Se delimita el **equipo actual de cierre y examen final** a Mera, Mora y Ponce, conservando sin alterar la autoría histórica de Alvia y Vaca en los artefactos donde participaron.
@@ -10,7 +10,7 @@
 - Se añade un espejo byte-idéntico en `08_Etica/consentimientos/` para que funcione la ruta literal de verificación de la guía; la ubicación canónica continúa siendo `02_Evidencias/Consentimientos/` y los archivos no se cuentan dos veces.
 - El manuscrito y la retrospectiva distinguen la autoría histórica del proyecto del equipo actual de cierre (Mera, Mora y Ponce), y distinguen la línea base publicada de un eventual cierre posterior.
 - Se conservan los resultados empíricos ya versionados y se corrigen únicamente los artefactos/documentación identificados por la auditoría de cierre; no se fuerza una regeneración masiva en este lote mínimo.
-- Se alinean `regenerar_manifiestos_sha256.py` y `verificar_integridad_repositorio.py` con `sha256sum` estándar sobre los bytes físicamente presentes en la entrega, incluida la representación de punteros Git LFS en exportaciones ZIP.
+- Se deja documentado que el cierre de integridad se realizará con comandos manuales `sha256sum`, conforme a la guía de evaluación, sin modificar los scripts auxiliares existentes.
 - **Los manifiestos SHA-256 no se incluyen en este lote de contenido.** Deben regenerarse una sola vez, al final absoluto, después de cualquier evidencia auténtica adicional y antes del siguiente tag.
 
 ## 2026-09-14 — Corrección posterior a auditoría PRE-TAG (`v2.0.2-final`)

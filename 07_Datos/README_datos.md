@@ -134,13 +134,23 @@ sha256sum -c checksums_datos.sha256
 
 El resultado esperado es que **todas las entradas terminen en `OK` y existan 0 fallos**. El propio manifiesto se excluye de su contenido para evitar una referencia hash circular.
 
-La regeneración de los dos manifiestos terminales se realiza **solo después de cerrar el contenido del repositorio**, desde la raíz:
+La regeneración de los dos manifiestos terminales se realiza **solo después de cerrar el contenido del repositorio** y se verifica con `sha256sum` estándar.
+
+Desde `07_Datos`:
 
 ```bash
-python 07_Datos/scripts/regenerar_manifiestos_sha256.py
+find . -path './checksums_datos.sha256' -prune -o -type f -print0 | sort -z | xargs -0 sha256sum > checksums_datos.sha256
+sha256sum -c checksums_datos.sha256 --quiet
 ```
 
-Ese script regenera primero `07_Datos/checksums_datos.sha256` y luego `checksums.sha256`. El manifiesto raíz cubre también el manifiesto de `07_Datos` y calcula los hashes sobre los bytes físicamente presentes en la entrega. Por ello `sha256sum -c checksums.sha256 --quiet` funciona también cuando la exportación contiene un puntero Git LFS: se verifica el puntero entregado, mientras su `oid sha256` se conserva únicamente como referencia al objeto LFS remoto.
+Luego, desde la raíz del repositorio:
+
+```bash
+find . -path './.git' -prune -o -path './checksums.sha256' -prune -o -type f -print0 | sort -z | xargs -0 sha256sum > checksums.sha256
+sha256sum -c checksums.sha256 --quiet
+```
+
+Este procedimiento calcula los hashes sobre los bytes físicamente presentes en la entrega. Si una exportación contiene un puntero Git LFS, el comando estándar verifica los bytes del puntero entregado; el `oid sha256` interno se conserva únicamente como referencia al objeto LFS remoto. Los scripts auxiliares existentes no forman parte del procedimiento terminal exigido por la guía.
 
 ## Privacidad
 

@@ -1,10 +1,10 @@
 # FAIR_CHECKLIST — FabroGym 2B
 
 **Proyecto:** FabroGym — ISR-401  
-**Estado documental:** corrección PRE-TAG posterior a `v2.0.2-final`; esa etiqueta ya publicada se conserva intacta como línea base histórica  
+**Estado documental:** cierre PRE-CHECKSUM posterior a `v2.0.2-final`; esa etiqueta ya publicada se conserva intacta como línea base histórica  
 **Repositorio:** `https://github.com/gleiston-guerrero/FabroGym_ISR401`
 
-Este archivo documenta el estado FAIR y de preservación verificable posterior a la etiqueta ya publicada `v2.0.2-final`. Si el cierre posterior supera todas las verificaciones, resuelve los bloqueos reales y regenera al final los manifiestos SHA-256, el siguiente identificador candidato será `v2.0.3-final`. No se mueve ni se sobrescribe ninguna etiqueta existente.
+Este archivo documenta el estado FAIR y de preservación verificable posterior a la etiqueta ya publicada `v2.0.2-final`. El identificador terminal declarado para esta entrega es `v2.0.3-final`; se crea únicamente después de cerrar contenido y verificar los manifiestos SHA-256 finales. No se mueve ni se sobrescribe ninguna etiqueta existente.
 
 ## Estado actual
 
@@ -104,7 +104,7 @@ Evidencias disponibles antes del tag:
 - [x] README raíz y `CHANGELOG.md` normalizados para A5/B1.
 
 La comprobación desde clon limpio y la verificación de checksums
-se ejecutan sobre el commit candidato inmediatamente antes del tag
+se ejecutan sobre el commit final inmediatamente antes del tag
 final y quedan documentadas en la verificación de cierre.
 
 Procedimiento de congelamiento/post-tag:

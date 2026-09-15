@@ -1,12 +1,12 @@
-# FabroGym — Ingeniería de Requerimientos (ISR-401)
+# FabroGym — Ingeniería de Requisitos (ISR-401)
 
-Repositorio académico del proyecto **FabroGym**, desarrollado en la Universidad Técnica Estatal de Quevedo (UTEQ) para la Entrega 4 (2B / Defensa Final) de Ingeniería de Requerimientos.
+Repositorio académico del proyecto **FabroGym**, desarrollado en la Universidad Técnica Estatal de Quevedo (UTEQ) para la Entrega 4 (2B / Defensa Final) de Ingeniería de Requisitos.
 
 **Repositorio canónico de evaluación:** <https://github.com/gleiston-guerrero/FabroGym_ISR401>
 
 > **Migración de propietario:** el repositorio fue transferido y la URL canónica vigente es la indicada arriba. Para un clon local existente, el remoto debe apuntar a esta dirección con `git remote set-url origin https://github.com/gleiston-guerrero/FabroGym_ISR401.git` y comprobarse posteriormente mediante `git remote -v`.
 
-> **Línea base publicada:** `v2.0.2-final` ya existe y se conserva sin mover ni sobrescribir como línea base histórica del estado cerrado el 14/09/2026. Las correcciones posteriores a esa etiqueta se mantienen en PRE-TAG. Solo cuando no queden bloqueos, se hayan cerrado las evidencias reales pendientes y se regeneren al final ambos manifiestos SHA-256 podrá crearse una nueva etiqueta terminal (`v2.0.3-final`).
+> **Línea base publicada:** `v2.0.2-final` ya existe y se conserva sin mover ni sobrescribir como línea base histórica del estado cerrado el 14/09/2026. Para el cierre del examen suspenso se declara como etiqueta terminal `v2.0.3-final`, que debe crearse únicamente como último paso sobre el commit final, después de regenerar y verificar ambos manifiestos SHA-256.
 
 ## Estado 2B
 
@@ -131,30 +131,28 @@ Zenodo 2.0.0: https://doi.org/10.5281/zenodo.22237884. La evaluación F-UJI real
 
 ### Verificación integral de cierre
 
-Los manifiestos terminales se regeneran únicamente después de cerrar todo el contenido versionado:
+Los manifiestos terminales se regeneran únicamente después de cerrar todo el contenido versionado. Para el cierre final se usa el procedimiento manual con `sha256sum`, alineado con la guía de evaluación y sin depender de scripts auxiliares.
+
+Desde `07_Datos`:
 
 ```bash
-python 07_Datos/scripts/regenerar_manifiestos_sha256.py
+find . -path './checksums_datos.sha256' -prune -o -type f -print0 | sort -z | xargs -0 sha256sum > checksums_datos.sha256
+sha256sum -c checksums_datos.sha256 --quiet
 ```
 
-La integridad global se comprueba desde la raíz con el comando estándar exigido en el cierre:
+Desde la raíz del repositorio:
 
 ```bash
+find . -path './.git' -prune -o -path './checksums.sha256' -prune -o -type f -print0 | sort -z | xargs -0 sha256sum > checksums.sha256
 sha256sum -c checksums.sha256 --quiet
 ```
 
-Como comprobación adicional equivalente puede ejecutarse:
-
-```bash
-python 07_Datos/scripts/verificar_integridad_repositorio.py
-```
-
-Para el paquete empírico canónico se ejecuta literalmente:
+Para el paquete empírico canónico, la reproducción se comprueba además con:
 
 ```bash
 cd 07_Datos
 python scripts/run_all.py
-sha256sum -c checksums_datos.sha256
+sha256sum -c checksums_datos.sha256 --quiet
 ```
 
-`07_Datos/checksums_datos.sha256` contiene rutas relativas a `07_Datos/`; por ello no duplica el prefijo `07_Datos/`. El manifiesto global calcula el SHA-256 sobre los bytes físicamente presentes en la entrega. Si la exportación contiene un puntero Git LFS, se valida el archivo de puntero tal como fue entregado; su `oid sha256` continúa documentando por separado la identidad del objeto LFS no materializado. Ambos manifiestos excluyen únicamente su propio archivo para evitar referencias hash circulares.
+`07_Datos/checksums_datos.sha256` contiene rutas relativas a `07_Datos/`; por ello no duplica el prefijo `07_Datos/`. El manifiesto global calcula SHA-256 sobre los bytes físicamente presentes en la entrega. Si una exportación contiene un puntero Git LFS, `sha256sum` verifica el archivo de puntero tal como fue entregado; su `oid sha256` documenta por separado la identidad del objeto LFS no materializado. Cada manifiesto excluye únicamente su propio archivo para evitar una referencia hash circular.
