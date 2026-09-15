@@ -43,23 +43,19 @@ Repositorio canónico de evaluación:
 
 `https://github.com/gleiston-guerrero/FabroGym_ISR401`
 
-Etiqueta de cierre declarada en el informe para la entrega terminal:
+Última etiqueta publicada:
 
 `v2.0.2-final`
 
-El manuscrito no debe editarse después de este cierre documental; el tag anterior `v2.0.1-final` se conserva como línea base histórica previa, no como identificador terminal de esta nueva corrección.
+Esa etiqueta se conserva intacta como línea base histórica. Las correcciones posteriores permanecen en PRE-TAG; el siguiente identificador candidato será `v2.0.3-final` únicamente después de resolver los bloqueos reales, cerrar todo el contenido y regenerar al final los manifiestos SHA-256.
 
 ## Autoría histórica y equipo del examen
 
 Los autores consignados en artefactos históricos de publicación y en el depósito Zenodo corresponden a la participación acumulada durante el desarrollo del proyecto y se conservan por integridad académica.
 
-El equipo que realiza el cierre, defensa y examen final de este corte está conformado por:
+La guía y los artefactos académicos mantienen un alcance evaluable de cinco integrantes: **Alvia, Mera, Mora, Ponce y Vaca**, mientras no exista una autorización docente posterior que disponga lo contrario.
 
-- **Mera Arias Erick Jhair** — `Emeraxs`;
-- **Mora Duarte Alex José** — `amorad35`;
-- **Ponce Rivera Mery Helenmey** — `Mery-003`.
-
-Alvia Villegas Erick Adalberto y Vaca Romero David Octavio mantienen únicamente las contribuciones y autoría históricas que realmente les corresponden. No se les atribuyen evidencias del corte actual. La delimitación canónica se encuentra en `../10_Autoria/EQUIPO_EXAMEN_FINAL.md`.
+El trabajo correctivo reciente se encuentra documentado principalmente para Mera (`Emeraxs`), Mora (`amorad35`) y Ponce (`Mery-003`). Esta constatación no redefine el equipo evaluado. El estado de evidencia individual A2, incluida la ausencia actual de capturas suficientes para Alvia y Vaca, se documenta sin fabricar evidencia en `../10_Autoria/EQUIPO_EXAMEN_FINAL.md`.
 
 ## Estado de la corrección §16
 
@@ -68,9 +64,9 @@ El informe final incorpora de forma explícita:
 1. la tabla de efectos corregida de §13, con `n_unidades=6` e `interpretable=NO` para inferencia poblacional;
 2. la limitación de la encuesta `n=70` dentro de amenazas a la validez;
 3. la explicación del cierre ético de ENTR-02, ENTR-03, ENTR-04 y ENTR-06;
-4. el repositorio canónico y la etiqueta de cierre `v2.0.2-final` declarada como vigente para la entrega terminal;
+4. el repositorio canónico, `v2.0.2-final` como última línea base ya publicada y el procedimiento para un eventual cierre posterior;
 5. la sección **“Retrospectiva del examen suspenso / Failed-exam correction retrospective”**, con corrección, evidencia y responsable documentado;
-6. la delimitación entre autoría histórica y equipo actual de examen.
+6. la distinción entre autoría histórica, alcance evaluable de cinco integrantes y responsables reales del trabajo correctivo reciente.
 
 El informe conserva estos elementos en estado terminal y no contiene marcadores de trabajo abierto para el cierre §16.
 
