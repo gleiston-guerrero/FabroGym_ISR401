@@ -1,13 +1,17 @@
-# A2 - Capturas de autoría del equipo de examen final
+# A2 - Capturas de autoría del equipo evaluado
 
-La evidencia A2 de este corte corresponde al equipo actual que rinde el examen final: **Mera Arias Erick Jhair (`Emeraxs`)**, **Ponce Rivera Mery Helenmey (`Mery-003`)** y **Mora Duarte Alex José (`amorad35`)**.
+La guía del proyecto mantiene cinco integrantes dentro del alcance evaluable mientras no exista una autorización docente posterior que disponga lo contrario. Este inventario registra únicamente capturas auténticas actualmente localizadas; no crea ni reasigna evidencia.
 
-Distribución verificable de capturas en esta carpeta:
+| Integrante | Identificador visible en nombre de archivo | Capturas localizadas | Estado mínimo de 3 |
+|---|---|---:|---|
+| Mera Arias Erick Jhair | `Emeraxs` | 13 | Cumple |
+| Ponce Rivera Mery Helenmey | `Mery` | 19 | Cumple |
+| Mora Duarte Alex José | `amorad35` | 10 | Cumple |
+| Alvia Villegas Erick Adalberto | - | 0 | **Pendiente** |
+| Vaca Romero David Octavio | - | 0 | **Pendiente** |
 
-| Integrante | Identificador visible en nombre de archivo | Capturas |
-|---|---|---:|
-| Mera Arias Erick Jhair | `Emeraxs` | 12 |
-| Ponce Rivera Mery Helenmey | `Mery` | 19 |
-| Mora Duarte Alex José | `amorad35` | 10 |
+La carpeta contiene **42 capturas atribuibles** a Mera, Ponce y Mora. La imagen previamente sin atribución nominal no se utiliza como evidencia individual.
 
-Cada integrante supera el mínimo de tres capturas. Se eliminó del conjunto A2 una imagen sin atribución nominal porque no aportaba trazabilidad individual. Las contribuciones históricas de Alvia Villegas Erick Adalberto y Vaca Romero David Octavio permanecen en Git y en los artefactos históricos; no forman parte del equipo que rinde este examen final y no se les atribuye evidencia A2 generada por el equipo actual.
+Para Alvia y Vaca no se localizaron, en el conjunto actual, las tres capturas propias requeridas. Cualquier incorporación posterior debe corresponder a trabajo real del integrante, conservar su procedencia y no ser retrofechada, duplicada ni fabricada.
+
+La interpretación canónica del alcance del equipo se mantiene en `10_Autoria/EQUIPO_EXAMEN_FINAL.md`.
