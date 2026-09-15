@@ -35,9 +35,10 @@ El detalle máquina a máquina está en `resultado_pruebas_ui.json`. `captura_co
 
 ## Docker
 
-La configuración incluye `docker-compose.yml` en `05_MVP/` y `Dockerfile` en `MVP_HTML/`. En el entorno de generación se verificó la estructura y sintaxis de los archivos, pero no se ejecutó Docker porque el motor Docker no estaba disponible en dicho entorno. La ejecución final debe comprobarse en Docker Desktop antes de la defensa con:
+El repositorio conserva `docker-compose.yml` en `05_MVP/` y `Dockerfile` en `MVP_HTML/` como mecanismo alternativo de despliegue.
 
-```bash
-cd 05_MVP
-docker compose up --build
-```
+En el entorno utilizado para esta verificación no se ejecutó Docker porque el motor no estaba disponible; por tanto, no se presenta evidencia de ejecución Docker.
+
+La evidencia C3 efectivamente ejecutada para esta entrega corresponde a la prueba automatizada de interfaz en Chromium, con **31/31 comprobaciones correctas** y una cobertura de **16/19 RF Must (84,21 %)**.
+
+La configuración Docker se conserva para reproducción opcional y no se presenta como una comprobación ya ejecutada ni como un requisito pendiente de cierre.

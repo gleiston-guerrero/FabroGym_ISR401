@@ -1,10 +1,16 @@
-# Fotografías reales del equipo de examen final
+# Referencia de fotografías del equipo
 
-Esta carpeta conserva las fotografías de equipo que existen realmente en el repositorio. Los nombres fueron normalizados para hacer visible la fecha sin alterar los bytes de imagen ni su EXIF.
+Esta subcarpeta conserva únicamente la documentación de referencia de las fotografías del equipo.
 
-| Archivo | Fecha EXIF `DateTimeOriginal` | SHA-256 |
-|---|---|---|
-| `2026-07-27_equipo_fabrogym_01.jpg` | `2026:07:27 17:52:21` | `460cfc72669e44537a27f8254eacc3f4b153ab3985f98c33e6508dc09a748702` |
-| `2026-07-27_equipo_fabrogym_02.jpg` | `2026:07:27 17:50:39` | `af8adeba0a4d3d71332e4fd6a1b9ab45471ab2299a46c8bab1162833ef55b742` |
+Las dos fotografías JPG reales se encuentran directamente en:
 
-El inventario canónico es `10_Autoria/exif_inventario.csv`. No se anuncian fotografías adicionales que no existan físicamente en el repositorio.
+`10_Autoria/fotos_equipo/`
+
+- `2026-07-27_equipo_fabrogym_01.jpg`
+- `2026-07-27_equipo_fabrogym_02.jpg`
+
+Esta ubicación permite que la comprobación indicada en la guía mediante `10_Autoria/fotos_equipo/*.jpg` localice ambas imágenes.
+
+La trazabilidad técnica y los metadatos verificables se documentan en `10_Autoria/exif_inventario.csv`.
+
+No se declaran fotografías adicionales que no existan físicamente en el repositorio.
