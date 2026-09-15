@@ -10,6 +10,8 @@ Esta carpeta reúne la evidencia verificable de autoría, contribución individu
 
 La rúbrica final exige que `10_Autoria/` exista con los elementos A1 a A12 como un conjunto completo. Esta carpeta complementa el historial Git y los artefactos técnicos; no los sustituye.
 
+La retrospectiva requerida para el examen suspenso se conserva en `10_Autoria/retrospectiva_equipo.md`. Ese documento es transversal al conjunto A1-A12: registra las correcciones de §4, §12, §13 y §16, quién intervino en cada bloque y los aprendizajes del cierre, sin crear evidencia histórica inexistente.
+
 ## 2. Equipo de cierre y autoría histórica
 
 El **equipo actual de cierre y examen final** está conformado por Mera (`Emeraxs`), Mora (`amorad35`) y Ponce (`Mery-003`).
