@@ -6,7 +6,7 @@ Se realizaron **seis sesiones reales de validación mediante walkthrough**: tres
 
 Las sesiones fueron ejecutadas antes del registro OSF y constituyen evidencia empírica previa o formativa del estudio. No se presentan como datos confirmatorios preregistrados.
 
-La ejecución de nuevos walkthroughs no se encuentra prevista. Las seis sesiones realizadas corresponden al conjunto de walkthroughs que será utilizado para la sistematización, codificación y análisis del Enfoque 3: Explicabilidad como Requisito No Funcional (RNF).
+La ejecución de nuevos walkthroughs no se encuentra prevista. Las seis sesiones realizadas corresponden al conjunto de walkthroughs utilizado para la sistematización, codificación y análisis del Enfoque 3: Explicabilidad como Requisito No Funcional (RNF).
 
 ## Estado de la evidencia
 
@@ -29,9 +29,9 @@ No se incorporarán fechas, consentimientos, resultados, puntuaciones ni otros d
 
 ## Tratamiento posterior
 
-Después del registro OSF se realizará la codificación y el análisis sistemático de las seis sesiones existentes para identificar necesidades de explicabilidad y formular, refinar o ajustar candidatos a RNF con trazabilidad a su evidencia de origen.
+Después del registro OSF se documentó la codificación y el análisis sistemático de las seis sesiones existentes para identificar necesidades de explicabilidad y formular, refinar o ajustar candidatos a RNF con trazabilidad a su evidencia de origen.
 
-Si el member checking final aún se encuentra pendiente, podrá realizarse posteriormente con al menos tres participantes previos del estudio, conforme al protocolo vigente.
+El member checking final se documenta con tres participantes previos del estudio y sus decisiones se integran en el paquete reproducible de `07_Datos`, conforme al protocolo vigente.
 
 ## Observación
 

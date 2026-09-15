@@ -161,7 +161,7 @@ A4_Plan_Gestion_Datos_v3.0.pdf
 
 ## Estado del expediente
 
-El expediente reúne los documentos principales, anexos de Categoría A y la solicitud de autorización institucional. Los archivos permanecen sujetos a revisión, corrección, firma y aprobación por las autoridades correspondientes.
+El expediente reúne los documentos principales, anexos de Categoría A, consentimientos públicos censurados y documentos complementarios de autorización. En el corte de cierre, las copias públicas se mantienen consolidadas para evaluación académica. Cualquier versión institucional firmada o restringida conserva su régimen propio de custodia y aprobación, sin modificar silenciosamente evidencias históricas.
 
 ## Uso académico
 

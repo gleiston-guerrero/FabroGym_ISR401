@@ -19,7 +19,7 @@ La matriz actualizada de metadatos se conserva en `07_Datos/resultados/tablas/B6
 
 La separación pública/restringida, la finalidad académica, la minimización y la custodia se documentan en `08_Etica/B6_CUMPLIMIENTO_ETICA_PRIVACIDAD.md` y `07_Datos/PRIVACIDAD_CAPAS.md`.
 
-**Estado de la observación documental B6:** CERRADA en el corte actual.
+**Estado de la observación documental B6:** CERRADA para los cuatro PDFs observados por origen Word; la discrepancia 16/17 queda documentada como diferencia de conteo frente al inventario verificable.
 
 
 ## Reconciliación del conteo de consentimientos
@@ -36,3 +36,8 @@ El expediente ético contiene además `13_A13_Participantes_Externos_FabroGym_Fi
 - Ruta espejo para el comando literal de la guía: `08_Etica/consentimientos/`
 
 Los 16 PDFs del espejo son **byte-idénticos** a sus equivalentes de la ruta canónica y no constituyen evidencia adicional. Así, el comando de la guía sobre `08_Etica/consentimientos/*.pdf` puede ejecutarse sin mover ni duplicar conceptualmente los consentimientos.
+
+
+## Nota sobre capa textual mínima en WALK_NTEC
+
+La verificación con `pdftotext` sobre los cuatro documentos observados por el docente (`ENTR-02`, `ENTR-03`, `ENTR-04` y `ENTR-06`) devuelve cero palabras, conforme al criterio indicado en la guía. En dos consentimientos no técnicos puede aparecer únicamente el código de sesión (`WNT-01` o `WNT-02`) como capa textual mínima. Esa presencia no corresponde a un documento Word editable ni altera la naturaleza de copia pública censurada del consentimiento.
