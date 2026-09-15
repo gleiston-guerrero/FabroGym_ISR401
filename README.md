@@ -6,7 +6,7 @@ Repositorio académico del proyecto **FabroGym**, desarrollado en la Universidad
 
 > **Migración de propietario:** el repositorio fue transferido y la URL canónica vigente es la indicada arriba. Para un clon local existente, el remoto debe apuntar a esta dirección con `git remote set-url origin https://github.com/gleiston-guerrero/FabroGym_ISR401.git` y comprobarse posteriormente mediante `git remote -v`.
 
-> **Línea base de cierre:** `v2.0.1-final` se conserva como etiqueta histórica ya publicada. El identificador terminal de esta corrección es `v2.0.2-final`, que debe crearse como **tag anotado nuevo** sobre el commit final únicamente después de ejecutar y validar la reproducibilidad, las compilaciones y ambos manifiestos SHA-256. No se debe mover ni sobrescribir `v2.0.1-final`.
+> **Línea base publicada:** `v2.0.2-final` ya existe y se conserva sin mover ni sobrescribir como línea base histórica del estado cerrado el 14/09/2026. Las correcciones posteriores a esa etiqueta se mantienen en PRE-TAG. Solo cuando no queden bloqueos, se hayan cerrado las evidencias reales pendientes y se regeneren al final ambos manifiestos SHA-256 podrá crearse una nueva etiqueta terminal (`v2.0.3-final`).
 
 ## Estado 2B
 
@@ -50,34 +50,21 @@ El DOI `10.5281/zenodo.22237884` fue evaluado el 11 de septiembre de 2026:
 
 ## Equipo
 
-### Equipo actual de cierre y examen final
+### Alcance evaluable según la guía vigente
 
-El equipo que realiza el **cierre, defensa y examen final** de esta versión está conformado exclusivamente por:
+Mientras no exista una autorización docente que modifique la composición del grupo, el alcance evaluable se conserva sobre los **cinco integrantes documentados en el proyecto**:
 
-| Integrante | Usuario Git |
-|---|---|
-| Erick Jhair Mera Arias | `Emeraxs` |
-| Alex José Mora Duarte | `amorad35` |
-| Mery Helenmey Ponce Rivera | `Mery-003` |
+| Integrante | Usuario Git / referencia | Estado A2 verificable en este corte |
+|---|---|---:|
+| Erick Jhair Mera Arias | `Emeraxs` | 13 capturas |
+| Alex José Mora Duarte | `amorad35` | 10 capturas |
+| Mery Helenmey Ponce Rivera | `Mery-003` / `Mery` en nombres de captura | 19 capturas |
+| Erick Adalberto Alvia Villegas | histórico del proyecto | 0 capturas A2 localizadas para el corte |
+| David Octavio Vaca Romero | histórico del proyecto | 0 capturas A2 localizadas para el corte |
 
-### Delimitación del equipo evaluado
+La actividad de corrección y cierre más reciente está documentada principalmente para Mera, Mora y Ponce. **Eso no redefine por sí solo el grupo evaluado** ni autoriza a excluir a Alvia o Vaca. La evidencia individual faltante no se fabrica, no se reasigna y no se retrofecha. Si se incorporan capturas adicionales, deben ser evidencias auténticas producidas por la persona correspondiente y verificables contra el trabajo real.
 
-Para el presente corte de cierre y defensa, la evidencia individual correspondiente al examen final se verifica sobre **Mera Arias Erick Jhair, Mora Duarte Alex José y Ponce Rivera Mery Helenmey**.
-
-**Alvia Villegas Erick Adalberto** y **Vaca Romero David Octavio** participaron en etapas anteriores del proyecto. Sus aportes, commits, menciones documentales y autoría histórica se conservan íntegramente donde corresponden. No se eliminan, modifican, reasignan ni presentan como trabajo de los tres integrantes actuales.
-
-En consecuencia:
-
-- su presencia en documentos históricos no implica participación en el corte actual del examen;
-- no se les atribuyen capturas, sesiones, commits ni evidencias producidas por los tres integrantes que realizan el cierre;
-- no se fabrican ni reconstruyen evidencias individuales para completar una cantidad de integrantes que ya no corresponde al equipo que rinde el examen;
-- la evidencia A2 y la contribución individual del corte final se verifica únicamente sobre los tres integrantes activos.
-
-La declaración formal y canónica de esta delimitación se encuentra en:
-
-`10_Autoria/EQUIPO_EXAMEN_FINAL.md`
-
-Esta separación preserva simultáneamente la **integridad de la autoría histórica** y la **composición real del equipo que rinde el examen final**.
+La fuente canónica para el estado de autoría y A2 es `10_Autoria/EQUIPO_EXAMEN_FINAL.md`; el inventario detallado de capturas está en `10_Autoria/capturas/README.md`.
 
 ## Compilar el ERS/SRS
 
@@ -152,7 +139,13 @@ Los manifiestos terminales se regeneran únicamente después de cerrar todo el c
 python 07_Datos/scripts/regenerar_manifiestos_sha256.py
 ```
 
-La integridad global se comprueba desde la raíz con el verificador compatible con archivos normales y punteros Git LFS:
+La integridad global se comprueba desde la raíz con el comando estándar exigido en el cierre:
+
+```bash
+sha256sum -c checksums.sha256 --quiet
+```
+
+Como comprobación adicional equivalente puede ejecutarse:
 
 ```bash
 python 07_Datos/scripts/verificar_integridad_repositorio.py
@@ -166,4 +159,4 @@ python scripts/run_all.py
 sha256sum -c checksums_datos.sha256
 ```
 
-`07_Datos/checksums_datos.sha256` contiene rutas relativas a `07_Datos/`; por ello no duplica el prefijo `07_Datos/`. El manifiesto global conserva para los objetos Git LFS el SHA-256 declarado por su `oid`, que corresponde al objeto materializado por Git LFS. Ambos manifiestos excluyen únicamente su propio archivo para evitar referencias hash circulares.
+`07_Datos/checksums_datos.sha256` contiene rutas relativas a `07_Datos/`; por ello no duplica el prefijo `07_Datos/`. El manifiesto global calcula el SHA-256 sobre los bytes físicamente presentes en la entrega. Si la exportación contiene un puntero Git LFS, se valida el archivo de puntero tal como fue entregado; su `oid sha256` continúa documentando por separado la identidad del objeto LFS no materializado. Ambos manifiestos excluyen únicamente su propio archivo para evitar referencias hash circulares.

@@ -1,7 +1,23 @@
 # Changelog
 
+## 2026-09-14 - PRE-TAG posterior a `v2.0.2-final` (candidato `v2.0.3-final`)
+
+- Se conserva `v2.0.2-final` sin mover ni sobrescribir como línea base histórica ya publicada.
+- Se revierte la interpretación no respaldada que reducía el equipo evaluable a tres integrantes: mientras no exista autorización docente posterior, el alcance se mantiene sobre Alvia, Mera, Mora, Ponce y Vaca.
+- A2 documenta únicamente evidencia real localizada: Mera 13, Mora 10, Ponce 19, Alvia 0 y Vaca 0; no se fabrican, reasignan ni retrofechan capturas.
+- Se incorpora el inventario EXIF completo de 11 registros reales: 2 fotografías de equipo, 4 JPG de entorno y 5 fotografías de aplicación del cuestionario.
+- Se documenta que el inventario público contiene 16 consentimientos específicos de sesión y que A13/adenda son complementarios; no se inventa un consentimiento individual número 17.
+- El manuscrito y la retrospectiva distinguen el trabajo correctivo reciente de la composición evaluable y distinguen la línea base publicada de un eventual cierre posterior.
+- Se conservan los resultados empíricos ya versionados y se corrigen únicamente los artefactos/documentación identificados por la auditoría de cierre; no se fuerza una regeneración masiva en este lote mínimo.
+- Se alinean `regenerar_manifiestos_sha256.py` y `verificar_integridad_repositorio.py` con `sha256sum` estándar sobre los bytes físicamente presentes en la entrega, incluida la representación de punteros Git LFS en exportaciones ZIP.
+- **Los manifiestos SHA-256 no se incluyen en este lote de contenido.** Deben regenerarse una sola vez, al final absoluto, después de cualquier evidencia auténtica adicional y antes del siguiente tag.
+
 ## 2026-09-14 — Corrección posterior a auditoría PRE-TAG (`v2.0.2-final`)
 
+- Se completó `10_Autoria/exif_inventario.csv` con los 4 JPG de `02_Evidencias/Fotos_Entorno/`; el inventario queda en 11 registros reales (2 equipo + 4 entorno + 5 aplicación del cuestionario).
+- Se sincronizaron `10_Autoria/README.md` y `10_Autoria/aporte_individual.md` con la URL canónica `gleiston-guerrero/FabroGym_ISR401`.
+- Se corrigió la documentación A2 para reflejar las 13 capturas reales de `Emeraxs`, manteniendo 19 de `Mery` y 10 de `amorad35`.
+- Se sincronizó `10_Autoria/EQUIPO_EXAMEN_FINAL.md` con la declaración detallada de composición vigente del equipo de examen.
 - Se integró el paquete PRETAG consolidado sobre el snapshot `b6c9c99`, incluyendo la URL canónica `gleiston-guerrero/FabroGym_ISR401`, la retrospectiva del examen suspenso, el manuscrito con efecto por sesión (`n=3+3`) y el procedimiento reproducible de compilación.
 - Se eliminó del mirror `01_ERS/modelado_final/04_Secuencia/` el conjunto obsoleto de 19 diagramas con identificadores internos antiguos (`RF-AUT-*`, `RF-CLI-*`, etc.); el mirror queda alineado con los 54 PNG canónicos de `03_Modelado/Diagramas_UML/`.
 - Se corrigió el inventario A2 de Mera/Emeraxs de 12 a 13 capturas reales, sin fabricar evidencia ni modificar la atribución histórica de otros integrantes.
@@ -23,7 +39,7 @@
 
 - Se corrige `07_Datos/checksums_datos.sha256` para utilizar rutas relativas al propio paquete y permitir `sha256sum -c checksums_datos.sha256` desde `07_Datos/`.
 - Se incorpora `07_Datos/scripts/regenerar_manifiestos_sha256.py` como procedimiento reproducible para regenerar primero el manifiesto de datos y después el manifiesto global.
-- Se regenera `checksums.sha256` sobre el estado terminal previo al tag y se mantiene compatibilidad con objetos Git LFS mediante su `oid sha256`.
+- Se regenera `checksums.sha256` sobre el estado terminal previo al tag usando SHA-256 de los bytes físicamente presentes, de forma que `sha256sum -c checksums.sha256 --quiet` verifica también los punteros Git LFS incluidos en una exportación ZIP.
 - Se documentan los comandos exactos de regeneración y verificación y se exige 0 fallos antes de crear el tag final.
 
 ## [2B-v2.0-correccion-url] - 2026-09-14
