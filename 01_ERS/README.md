@@ -2,7 +2,7 @@
 
 Versión terminal vigente: **ERS_SRS_2B_v2.0**.
 
-La versión académica vigente es 2.0. Las etiquetas internas 2.1 y 2.2 son revisiones históricas no vigentes. Esta versión integra los 54 diagramas UML definitivos del equipo.
+La versión académica vigente es 2.0. Las etiquetas internas 2.1 y 2.2 son revisiones históricas no vigentes. Esta versión integra los 54 diagramas UML definitivos del equipo y la especificación textual completa de los 19 casos de uso Must (actor, precondiciones, flujo principal, flujo alternativo, excepción y poscondiciones), trazada mediante `ID_Flujo` en `../04_Trazabilidad/matriz_trazabilidad.csv`.
 
 Archivos principales:
 

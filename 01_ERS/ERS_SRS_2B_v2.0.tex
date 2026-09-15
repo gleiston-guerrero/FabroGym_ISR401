@@ -45,7 +45,7 @@
 \begin{tabularx}{\textwidth}{|>{\bfseries}p{4.0cm}|X|}\hline
 Proyecto & FabroGym \\\hline
 Versión & 2.0 -- entrega académica vigente con UML definitivo \\\hline
-Fecha de corte documental & 1 de septiembre de 2026 \\\hline
+Fecha de corte documental & 15 de septiembre de 2026 \\\hline
 Repositorio & \url{https://github.com/gleiston-guerrero/FabroGym_ISR401} \\\hline
 Registro OSF & \url{https://osf.io/62ysc/} -- DOI \href{https://doi.org/10.17605/OSF.IO/62YSC}{10.17605/OSF.IO/62YSC} \\\hline
 DOI del paquete Zenodo & \zenododoi \\\hline
@@ -78,7 +78,7 @@ Para la Entrega 4 (2B / Defensa Final), la única versión académica vigente es
 Versión & Fecha & Cambio principal \\ \midrule
 2.2 (interna, no vigente) & 2026-09-01 & Revisión interna de integración del conjunto UML definitivo; queda subordinada a la versión académica 2.0.\\
 2.1 (interna, no vigente) & 2026-09-01 & Ampliación acumulativa: conserva el cierre 2B y reincorpora 64 páginas de detalle técnico heredado (mockups, historias/casos de uso, UML y catálogo de interfaces), claramente marcado como anexo histórico y subordinado a la versión académica vigente 2.0.\\
-2.0 & 2026-09-01 & Cierre 2B terminal: 25 RF, 23 RNF, 4 restricciones de diseño y 105 filas de trazabilidad (97 trazas preexistentes migradas y 8 planes de verificación del componente inteligente); integración de 16 sesiones, encuesta de 70 respuestas, análisis reproducible y OSF v1.4.\\
+2.0 & 2026-09-15 & Cierre 2B vigente para el examen suspenso: 25 RF, 23 RNF, 4 restricciones de diseño, especificación textual completa de los 19 casos de uso Must y 162 filas de trazabilidad (97 trazas preexistentes migradas, 8 planes de verificación del componente inteligente y 57 trazas de flujo CU); integración de 16 sesiones, encuesta de 70 respuestas, análisis reproducible y OSF v1.4.\\
 1.5.8 & 2026-08-02 & Consolidación 2A con diez entrevistas, codificación temática inicial, 44 identificadores y 70 mockups.\\
 1.5.4 & 2026-08-02 & Compatibilidad de compilación y consolidación visual.\\
 0.2.0 & 2026-07-12 & Entrega anterior utilizada como referencia estructural.\\
@@ -743,6 +743,875 @@ Las 19 historias Must mantienen correspondencia uno a uno con CU-01..CU-19 y CA-
 \textbf{Gherkin / CA-19.} Dada una rutina existente, cuando se modifica un ejercicio o parámetro, entonces se crea una nueva versión y las versiones anteriores permanecen en solo lectura.
 
 
+\section{Especificación textual de los 19 casos de uso Must}
+Esta sección complementa los diagramas UML con la especificación de comportamiento exigida para el cierre del examen suspenso. Cada caso de uso se deriva del RF, la HU, el criterio de aceptación y la evidencia ya versionados; no introduce funcionalidad nueva. Los identificadores de flujo \texttt{CU-xx-FP}, \texttt{CU-xx-FA-01} y \texttt{CU-xx-EX-01} se trazan de forma explícita en \path{04_Trazabilidad/matriz_trazabilidad.csv}.
+
+\begin{importantbox}
+\textbf{Convención de trazabilidad de flujos.} \texttt{FP} identifica el flujo principal, \texttt{FA} un flujo alternativo válido del negocio y \texttt{EX} una excepción que impide o desvía la operación. Las condiciones y respuestas aquí descritas refinan el comportamiento de los requisitos Must existentes; no crean RF adicionales.
+\end{importantbox}
+
+\subsubsection{CU-01 -- Autenticar usuario}
+\begin{tabularx}{\textwidth}{|>{\bfseries}p{3.2cm}|X|}\hline
+Actor principal & Personal autorizado (Administrador, Recepción o Instructor) \\ \hline
+Requisito relacionado & \texttt{RF-01} \\ \hline
+Historia / criterio & \texttt{HU-01} / \texttt{CA-01} \\ \hline
+Componente & Seguridad \\ \hline
+Evidencia de origen & {\ttfamily\seqsplit{EV-ENTR02-07}} \\ \hline
+Mockups relacionados & {\ttfamily\seqsplit{MU-01}} \\ \hline
+Disparador & El usuario solicita acceso al sistema mediante sus credenciales individuales. \\ \hline
+\end{tabularx}
+
+\textbf{Precondiciones.}
+\begin{itemize}
+\item El usuario dispone de una cuenta individual habilitada para demostración.
+\item La interfaz de autenticación y el servicio de seguridad están disponibles.
+\end{itemize}
+
+\textbf{Flujo principal \texttt{CU-01-FP}.}
+\begin{enumerate}
+\item El usuario abre la pantalla de acceso.
+\item El usuario ingresa sus credenciales individuales no biométricas.
+\item El sistema valida que los campos requeridos estén presentes.
+\item El servicio de seguridad contrasta las credenciales con el registro autorizado.
+\item El sistema identifica el rol asociado a la cuenta válida.
+\item El sistema crea la sesión correspondiente al rol.
+\item El sistema registra el evento de autenticación requerido y muestra la vista inicial sin exponer datos excesivos.
+\end{enumerate}
+
+\textbf{Flujo alternativo \texttt{CU-01-FA-01}.} \textit{Condición de disparo:} El usuario autenticado solicita cerrar su sesión.
+\begin{enumerate}[label=\alph*.]
+\item El sistema invalida la sesión activa.
+\item El sistema registra el cierre de sesión y retorna a la pantalla de acceso.
+\end{enumerate}
+
+\textbf{Excepción \texttt{CU-01-EX-01}.} \textit{Condición de disparo:} Las credenciales son inválidas o la cuenta no está habilitada.
+\begin{enumerate}[label=\alph*.]
+\item El sistema deniega el acceso con un mensaje genérico.
+\item El sistema no revela cuál campo falló ni crea una sesión.
+\end{enumerate}
+
+\textbf{Poscondiciones.}
+\begin{itemize}
+\item Con acceso exitoso, existe una sesión activa asociada al rol autorizado.
+\item Con cierre o rechazo, no queda una sesión activa creada por el intento.
+\end{itemize}
+
+\subsubsection{CU-02 -- Aplicar permisos por rol}
+\begin{tabularx}{\textwidth}{|>{\bfseries}p{3.2cm}|X|}\hline
+Actor principal & Administrador \\ \hline
+Requisito relacionado & \texttt{RF-02} \\ \hline
+Historia / criterio & \texttt{HU-02} / \texttt{CA-02} \\ \hline
+Componente & Seguridad \\ \hline
+Evidencia de origen & {\ttfamily\seqsplit{EV-ENTR02-07;EV-ENTR03-06;EV-ENTR08-04}} \\ \hline
+Mockups relacionados & {\ttfamily\seqsplit{MU-22;MU-32}} \\ \hline
+Disparador & Un usuario autenticado solicita ejecutar una operación protegida. \\ \hline
+\end{tabularx}
+
+\textbf{Precondiciones.}
+\begin{itemize}
+\item Existe una sesión autenticada.
+\item El usuario tiene asignado uno de los roles Administrador, Recepción o Instructor.
+\end{itemize}
+
+\textbf{Flujo principal \texttt{CU-02-FP}.}
+\begin{enumerate}
+\item El usuario solicita una operación desde la interfaz.
+\item El sistema identifica el rol de la sesión activa.
+\item El servicio de seguridad consulta las reglas y permisos asociados al rol.
+\item El sistema comprueba que la operación está autorizada.
+\item El sistema habilita la operación y continúa con el caso de uso solicitado.
+\item El sistema registra el evento de autorización cuando corresponde.
+\end{enumerate}
+
+\textbf{Flujo alternativo \texttt{CU-02-FA-01}.} \textit{Condición de disparo:} El rol permite consulta pero no modificación sobre el recurso solicitado.
+\begin{enumerate}[label=\alph*.]
+\item El sistema presenta el recurso en modo de consulta.
+\item Las acciones de modificación permanecen deshabilitadas para ese rol.
+\end{enumerate}
+
+\textbf{Excepción \texttt{CU-02-EX-01}.} \textit{Condición de disparo:} La operación no está asignada al rol o no existe una regla explícita que la autorice.
+\begin{enumerate}[label=\alph*.]
+\item El sistema aplica denegación por defecto.
+\item La operación no se ejecuta y se informa la denegación sin exponer reglas internas.
+\end{enumerate}
+
+\textbf{Poscondiciones.}
+\begin{itemize}
+\item Solo se ejecutan operaciones compatibles con el rol autenticado.
+\item Una operación denegada no modifica información del sistema.
+\end{itemize}
+
+\subsubsection{CU-03 -- Registrar cliente mínimo}
+\begin{tabularx}{\textwidth}{|>{\bfseries}p{3.2cm}|X|}\hline
+Actor principal & Recepción \\ \hline
+Requisito relacionado & \texttt{RF-04} \\ \hline
+Historia / criterio & \texttt{HU-03} / \texttt{CA-03} \\ \hline
+Componente & Clientes \\ \hline
+Evidencia de origen & {\ttfamily\seqsplit{EV-ENTR01-02;EV-ENTR02-02;EV-ENTR03-02;EV-ENTR08-01}} \\ \hline
+Mockups relacionados & {\ttfamily\seqsplit{MU-12;MU-37}} \\ \hline
+Disparador & Recepción solicita crear un cliente. \\ \hline
+\end{tabularx}
+
+\textbf{Precondiciones.}
+\begin{itemize}
+\item El operador está autenticado y autorizado para gestionar clientes.
+\item Se dispone de código interno, nombre de uso y al menos un medio de contacto permitido.
+\end{itemize}
+
+\textbf{Flujo principal \texttt{CU-03-FP}.}
+\begin{enumerate}
+\item Recepción abre el formulario de registro mínimo.
+\item Ingresa código interno, nombre de uso y medio de contacto.
+\item El sistema valida formato y obligatoriedad de los datos mínimos.
+\item El sistema comprueba que el código interno no esté registrado.
+\item El sistema crea el registro del cliente sin solicitar datos de salud, biometría, dirección ni imagen corporal.
+\item El sistema confirma la creación y deja disponible el código del cliente.
+\end{enumerate}
+
+\textbf{Flujo alternativo \texttt{CU-03-FA-01}.} \textit{Condición de disparo:} No se proporcionan datos opcionales distintos del conjunto mínimo.
+\begin{enumerate}[label=\alph*.]
+\item El sistema permite continuar con código, nombre de uso y contacto.
+\item El cliente se registra únicamente con los datos mínimos autorizados.
+\end{enumerate}
+
+\textbf{Excepción \texttt{CU-03-EX-01}.} \textit{Condición de disparo:} Falta un dato mínimo obligatorio o el código interno ya existe.
+\begin{enumerate}[label=\alph*.]
+\item El sistema no crea un nuevo cliente.
+\item Se informa la validación necesaria sin incorporar datos adicionales al expediente.
+\end{enumerate}
+
+\textbf{Poscondiciones.}
+\begin{itemize}
+\item Existe un cliente único con el conjunto mínimo permitido de datos.
+\item No se incorporan categorías de datos excluidas por el alcance.
+\end{itemize}
+
+\subsubsection{CU-04 -- Buscar y consultar cliente}
+\begin{tabularx}{\textwidth}{|>{\bfseries}p{3.2cm}|X|}\hline
+Actor principal & Recepción \\ \hline
+Requisito relacionado & \texttt{RF-05} \\ \hline
+Historia / criterio & \texttt{HU-04} / \texttt{CA-04} \\ \hline
+Componente & Clientes \\ \hline
+Evidencia de origen & {\ttfamily\seqsplit{EV-ENTR02-03;EV-ENTR02-08;EV-ENTR08-05}} \\ \hline
+Mockups relacionados & {\ttfamily\seqsplit{MU-11;MU-36}} \\ \hline
+Disparador & Recepción solicita localizar y consultar una ficha de cliente. \\ \hline
+\end{tabularx}
+
+\textbf{Precondiciones.}
+\begin{itemize}
+\item El usuario está autenticado con permiso de consulta.
+\item Existe un criterio de búsqueda por código, nombre normalizado o contacto.
+\end{itemize}
+
+\textbf{Flujo principal \texttt{CU-04-FP}.}
+\begin{enumerate}
+\item El usuario introduce un criterio de búsqueda.
+\item El sistema normaliza y valida el criterio.
+\item El servicio de clientes consulta coincidencias autorizadas.
+\item El sistema presenta el cliente localizado.
+\item El usuario selecciona la ficha cuando corresponde.
+\item El sistema muestra membresía, último pago, asistencia y novedades permitidas por el rol.
+\end{enumerate}
+
+\textbf{Flujo alternativo \texttt{CU-04-FA-01}.} \textit{Condición de disparo:} La búsqueda devuelve más de una coincidencia válida.
+\begin{enumerate}[label=\alph*.]
+\item El sistema muestra una lista acotada de coincidencias permitidas.
+\item El usuario selecciona el cliente y el sistema continúa con la consulta de su ficha.
+\end{enumerate}
+
+\textbf{Excepción \texttt{CU-04-EX-01}.} \textit{Condición de disparo:} No existe coincidencia o el rol no puede consultar la información solicitada.
+\begin{enumerate}[label=\alph*.]
+\item El sistema informa que no hay resultados disponibles para la consulta autorizada.
+\item No se revelan datos de clientes fuera del alcance del rol.
+\end{enumerate}
+
+\textbf{Poscondiciones.}
+\begin{itemize}
+\item La consulta no modifica el registro del cliente.
+\item Solo se visualiza información operativa permitida.
+\end{itemize}
+
+\subsubsection{CU-05 -- Actualizar o reactivar cliente}
+\begin{tabularx}{\textwidth}{|>{\bfseries}p{3.2cm}|X|}\hline
+Actor principal & Recepción \\ \hline
+Requisito relacionado & \texttt{RF-06} \\ \hline
+Historia / criterio & \texttt{HU-05} / \texttt{CA-05} \\ \hline
+Componente & Clientes \\ \hline
+Evidencia de origen & {\ttfamily\seqsplit{EV-ENTR02-02;EV-ENTR03-02;EV-ENTR04-01;EV-ENTR05-02}} \\ \hline
+Mockups relacionados & {\ttfamily\seqsplit{MU-11;MU-36}} \\ \hline
+Disparador & Recepción solicita modificar o reactivar un cliente existente. \\ \hline
+\end{tabularx}
+
+\textbf{Precondiciones.}
+\begin{itemize}
+\item El usuario está autorizado para gestionar clientes.
+\item El cliente objetivo existe y puede ser localizado.
+\end{itemize}
+
+\textbf{Flujo principal \texttt{CU-05-FP}.}
+\begin{enumerate}
+\item El usuario busca y selecciona el cliente existente.
+\item El sistema carga el registro con su identificador actual.
+\item El usuario modifica los datos permitidos o solicita reactivación.
+\item El sistema valida los cambios y comprueba posibles coincidencias.
+\item El sistema actualiza el mismo registro sin crear un nuevo identificador.
+\item El sistema confirma la actualización o reactivación.
+\end{enumerate}
+
+\textbf{Flujo alternativo \texttt{CU-05-FA-01}.} \textit{Condición de disparo:} Durante una intención de alta se detecta coincidencia con un cliente existente.
+\begin{enumerate}[label=\alph*.]
+\item El sistema advierte la coincidencia antes de crear otro registro.
+\item El usuario selecciona el registro existente y continúa por actualización o reactivación.
+\end{enumerate}
+
+\textbf{Excepción \texttt{CU-05-EX-01}.} \textit{Condición de disparo:} Los cambios producirían una duplicidad o contienen datos no válidos.
+\begin{enumerate}[label=\alph*.]
+\item El sistema rechaza la actualización conflictiva.
+\item El registro original permanece sin cambios.
+\end{enumerate}
+
+\textbf{Poscondiciones.}
+\begin{itemize}
+\item El cliente conserva su identificador original.
+\item La operación no crea duplicados.
+\end{itemize}
+
+\subsubsection{CU-06 -- Configurar planes y promociones}
+\begin{tabularx}{\textwidth}{|>{\bfseries}p{3.2cm}|X|}\hline
+Actor principal & Administrador \\ \hline
+Requisito relacionado & \texttt{RF-07} \\ \hline
+Historia / criterio & \texttt{HU-06} / \texttt{CA-06} \\ \hline
+Componente & Membresías \\ \hline
+Evidencia de origen & {\ttfamily\seqsplit{EV-ENTR02-01;EV-ENTR04-01}} \\ \hline
+Mockups relacionados & {\ttfamily\seqsplit{MU-68}} \\ \hline
+Disparador & El administrador solicita crear o modificar un plan o promoción. \\ \hline
+\end{tabularx}
+
+\textbf{Precondiciones.}
+\begin{itemize}
+\item El administrador mantiene una sesión válida.
+\item La operación de configuración de catálogo está autorizada.
+\end{itemize}
+
+\textbf{Flujo principal \texttt{CU-06-FP}.}
+\begin{enumerate}
+\item El administrador abre el catálogo de planes y promociones.
+\item Ingresa o modifica nombre, duración, precio, vigencia y estado.
+\item El sistema valida los valores ingresados.
+\item El sistema guarda la configuración del plan o promoción.
+\item El catálogo refleja inmediatamente el estado vigente del registro.
+\item El sistema confirma la operación y registra el evento requerido.
+\end{enumerate}
+
+\textbf{Flujo alternativo \texttt{CU-06-FA-01}.} \textit{Condición de disparo:} El administrador decide desactivar un plan o promoción existente sin eliminarlo.
+\begin{enumerate}[label=\alph*.]
+\item El sistema cambia el estado del registro a inactivo.
+\item El registro permanece disponible para trazabilidad histórica y deja de ofrecerse como opción vigente.
+\end{enumerate}
+
+\textbf{Excepción \texttt{CU-06-EX-01}.} \textit{Condición de disparo:} La duración, el precio o el periodo de vigencia son inválidos.
+\begin{enumerate}[label=\alph*.]
+\item El sistema no guarda la configuración.
+\item Se señalan los campos que requieren corrección sin alterar el catálogo vigente.
+\end{enumerate}
+
+\textbf{Poscondiciones.}
+\begin{itemize}
+\item El catálogo conserva una configuración consistente de planes y promociones.
+\item Los registros inactivos no se presentan como planes vigentes.
+\end{itemize}
+
+\subsubsection{CU-07 -- Activar o renovar membresía}
+\begin{tabularx}{\textwidth}{|>{\bfseries}p{3.2cm}|X|}\hline
+Actor principal & Recepción \\ \hline
+Requisito relacionado & \texttt{RF-08} \\ \hline
+Historia / criterio & \texttt{HU-07} / \texttt{CA-07} \\ \hline
+Componente & Membresías \\ \hline
+Evidencia de origen & {\ttfamily\seqsplit{EV-ENTR01-02;EV-ENTR02-04;EV-ENTR03-01;EV-ENTR04-03}} \\ \hline
+Mockups relacionados & {\ttfamily\seqsplit{MU-14;MU-39}} \\ \hline
+Disparador & Recepción solicita activar o renovar la membresía de un cliente. \\ \hline
+\end{tabularx}
+
+\textbf{Precondiciones.}
+\begin{itemize}
+\item El cliente existe.
+\item El plan seleccionado está vigente.
+\item Existe un pago confirmado asociado a la operación.
+\end{itemize}
+
+\textbf{Flujo principal \texttt{CU-07-FP}.}
+\begin{enumerate}
+\item Recepción localiza al cliente.
+\item Selecciona el plan vigente aplicable.
+\item El sistema verifica la confirmación del pago.
+\item El sistema determina la fecha de inicio correspondiente.
+\item El sistema calcula la fecha de vencimiento según la duración del plan.
+\item El sistema registra la membresía y sus fechas.
+\item El sistema confirma la activación.
+\end{enumerate}
+
+\textbf{Flujo alternativo \texttt{CU-07-FA-01}.} \textit{Condición de disparo:} El cliente ya posee una membresía y la operación corresponde a renovación.
+\begin{enumerate}[label=\alph*.]
+\item El sistema identifica la membresía existente.
+\item El sistema registra la renovación conservando el historial y recalculando las fechas con el plan vigente.
+\end{enumerate}
+
+\textbf{Excepción \texttt{CU-07-EX-01}.} \textit{Condición de disparo:} El plan no está vigente o no existe pago confirmado.
+\begin{enumerate}[label=\alph*.]
+\item El sistema impide activar o renovar la membresía.
+\item No se modifican las fechas de vigencia existentes.
+\end{enumerate}
+
+\textbf{Poscondiciones.}
+\begin{itemize}
+\item La activación o renovación queda asociada al cliente, plan y pago confirmado.
+\item Las fechas de inicio y vencimiento quedan persistidas de forma consistente.
+\end{itemize}
+
+\subsubsection{CU-08 -- Consultar vigencia}
+\begin{tabularx}{\textwidth}{|>{\bfseries}p{3.2cm}|X|}\hline
+Actor principal & Personal autorizado \\ \hline
+Requisito relacionado & \texttt{RF-09} \\ \hline
+Historia / criterio & \texttt{HU-08} / \texttt{CA-08} \\ \hline
+Componente & Membresías \\ \hline
+Evidencia de origen & {\ttfamily\seqsplit{EV-ENTR01-03;EV-ENTR02-03;EV-ENTR03-03;EV-ENTR08-02}} \\ \hline
+Mockups relacionados & {\ttfamily\seqsplit{MU-13;MU-38;MU-63(F)}} \\ \hline
+Disparador & Un usuario autorizado solicita consultar la vigencia de una membresía. \\ \hline
+\end{tabularx}
+
+\textbf{Precondiciones.}
+\begin{itemize}
+\item El usuario mantiene una sesión autorizada.
+\item El cliente puede ser localizado.
+\end{itemize}
+
+\textbf{Flujo principal \texttt{CU-08-FP}.}
+\begin{enumerate}
+\item El usuario busca al cliente.
+\item El sistema recupera la membresía asociada.
+\item El sistema determina el estado de la membresía con base en sus fechas.
+\item El sistema muestra estado, plan, fecha de inicio y fecha de vencimiento.
+\item La consulta queda disponible sin modificar el registro.
+\end{enumerate}
+
+\textbf{Flujo alternativo \texttt{CU-08-FA-01}.} \textit{Condición de disparo:} El cliente no posee una membresía activa en la fecha de consulta.
+\begin{enumerate}[label=\alph*.]
+\item El sistema muestra el estado no vigente correspondiente.
+\item No se presenta una membresía inexistente como activa.
+\end{enumerate}
+
+\textbf{Excepción \texttt{CU-08-EX-01}.} \textit{Condición de disparo:} El cliente no existe o el usuario carece de permiso de consulta.
+\begin{enumerate}[label=\alph*.]
+\item El sistema no expone información de membresía.
+\item Se informa que la consulta no puede completarse.
+\end{enumerate}
+
+\textbf{Poscondiciones.}
+\begin{itemize}
+\item La operación es de solo lectura.
+\item La información presentada corresponde al alcance del rol.
+\end{itemize}
+
+\subsubsection{CU-09 -- Alertar vencimientos}
+\begin{tabularx}{\textwidth}{|>{\bfseries}p{3.2cm}|X|}\hline
+Actor principal & Recepción \\ \hline
+Requisito relacionado & \texttt{RF-10} \\ \hline
+Historia / criterio & \texttt{HU-09} / \texttt{CA-09} \\ \hline
+Componente & Membresías \\ \hline
+Evidencia de origen & {\ttfamily\seqsplit{EV-ENTR01-03;EV-ENTR05-02;EV-ENTR07-02}} \\ \hline
+Mockups relacionados & {\ttfamily\seqsplit{MU-10;MU-13;MU-38}} \\ \hline
+Disparador & Recepción consulta las membresías que requieren atención por vencimiento. \\ \hline
+\end{tabularx}
+
+\textbf{Precondiciones.}
+\begin{itemize}
+\item El usuario está autorizado.
+\item Existe una fecha de corte válida para la consulta.
+\end{itemize}
+
+\textbf{Flujo principal \texttt{CU-09-FP}.}
+\begin{enumerate}
+\item El usuario solicita la vista de vencimientos.
+\item El sistema toma la fecha de corte.
+\item El sistema consulta membresías vencidas y próximas a vencer.
+\item El sistema identifica las que vencen dentro de tres días.
+\item El sistema ordena y presenta una lista priorizada.
+\item El sistema no envía mensajes externos automáticamente.
+\end{enumerate}
+
+\textbf{Flujo alternativo \texttt{CU-09-FA-01}.} \textit{Condición de disparo:} No existen membresías vencidas ni próximas a vencer en la ventana definida.
+\begin{enumerate}[label=\alph*.]
+\item El sistema presenta una lista vacía con la fecha de corte aplicada.
+\item No se genera comunicación externa.
+\end{enumerate}
+
+\textbf{Excepción \texttt{CU-09-EX-01}.} \textit{Condición de disparo:} La fecha de corte o el filtro de consulta es inválido.
+\begin{enumerate}[label=\alph*.]
+\item El sistema no ejecuta la búsqueda.
+\item Se solicita corregir el criterio antes de volver a consultar.
+\end{enumerate}
+
+\textbf{Poscondiciones.}
+\begin{itemize}
+\item Se obtiene una lista de atención basada en vigencia.
+\item La consulta no modifica membresías ni dispara mensajería externa.
+\end{itemize}
+
+\subsubsection{CU-10 -- Registrar pago y comprobante}
+\begin{tabularx}{\textwidth}{|>{\bfseries}p{3.2cm}|X|}\hline
+Actor principal & Recepción \\ \hline
+Requisito relacionado & \texttt{RF-11} \\ \hline
+Historia / criterio & \texttt{HU-10} / \texttt{CA-10} \\ \hline
+Componente & Pagos \\ \hline
+Evidencia de origen & {\ttfamily\seqsplit{EV-ENTR01-02;EV-ENTR02-04;EV-ENTR03-04;EV-ENTR07-02;EV-ENTR08-03}} \\ \hline
+Mockups relacionados & {\ttfamily\seqsplit{MU-15;MU-16;MU-40;MU-41}} \\ \hline
+Disparador & Recepción solicita registrar un pago. \\ \hline
+\end{tabularx}
+
+\textbf{Precondiciones.}
+\begin{itemize}
+\item El usuario está autorizado para registrar pagos.
+\item La operación dispone de monto, concepto, medio, fecha y la referencia aplicable.
+\end{itemize}
+
+\textbf{Flujo principal \texttt{CU-10-FP}.}
+\begin{enumerate}
+\item Recepción abre el registro de pago.
+\item Ingresa monto, concepto, medio, referencia y fecha.
+\item El sistema valida los datos de la operación.
+\item El servicio de pagos registra el pago.
+\item El sistema genera un comprobante interno asociado.
+\item El sistema registra el evento requerido y devuelve el pago con su comprobante.
+\end{enumerate}
+
+\textbf{Flujo alternativo \texttt{CU-10-FA-01}.} \textit{Condición de disparo:} El medio de pago no requiere una referencia externa, como en un pago en efectivo.
+\begin{enumerate}[label=\alph*.]
+\item El sistema registra la referencia como no aplicable según la regla del medio.
+\item La operación continúa con los demás datos obligatorios y genera el comprobante interno.
+\end{enumerate}
+
+\textbf{Excepción \texttt{CU-10-EX-01}.} \textit{Condición de disparo:} El monto es inválido o falta un dato obligatorio para el medio seleccionado.
+\begin{enumerate}[label=\alph*.]
+\item El sistema no registra el pago.
+\item No se genera un comprobante de una operación inválida.
+\end{enumerate}
+
+\textbf{Poscondiciones.}
+\begin{itemize}
+\item El pago válido conserva monto, concepto, medio, referencia aplicable y fecha.
+\item Existe un comprobante interno vinculado a la operación.
+\end{itemize}
+
+\subsubsection{CU-11 -- Registrar asistencia}
+\begin{tabularx}{\textwidth}{|>{\bfseries}p{3.2cm}|X|}\hline
+Actor principal & Recepción \\ \hline
+Requisito relacionado & \texttt{RF-13} \\ \hline
+Historia / criterio & \texttt{HU-11} / \texttt{CA-11} \\ \hline
+Componente & Asistencia \\ \hline
+Evidencia de origen & {\ttfamily\seqsplit{EV-ENTR02-03;EV-ENTR03-03;EV-ENTR04-02;EV-ENTR07-07;EV-ENTR08-02}} \\ \hline
+Mockups relacionados & {\ttfamily\seqsplit{MU-20;MU-30;MU-46;MU-47}} \\ \hline
+Disparador & Recepción solicita registrar la asistencia de un cliente. \\ \hline
+\end{tabularx}
+
+\textbf{Precondiciones.}
+\begin{itemize}
+\item El cliente existe.
+\item El usuario tiene permiso para registrar asistencia.
+\end{itemize}
+
+\textbf{Flujo principal \texttt{CU-11-FP}.}
+\begin{enumerate}
+\item Recepción localiza al cliente.
+\item El sistema consulta la vigencia de la membresía.
+\item El sistema confirma que la vigencia permite el ingreso.
+\item Recepción confirma el registro de asistencia.
+\item El sistema crea un único evento de asistencia no biométrico.
+\item El sistema devuelve la confirmación del evento.
+\end{enumerate}
+
+\textbf{Flujo alternativo \texttt{CU-11-FA-01}.} \textit{Condición de disparo:} La asistencia requiere una excepción operativa autorizada.
+\begin{enumerate}[label=\alph*.]
+\item El usuario autorizado documenta la excepción.
+\item El sistema registra el evento de asistencia junto con la referencia de la excepción autorizada.
+\end{enumerate}
+
+\textbf{Excepción \texttt{CU-11-EX-01}.} \textit{Condición de disparo:} La membresía no es válida y no existe una excepción autorizada, o ya existe el mismo evento de asistencia.
+\begin{enumerate}[label=\alph*.]
+\item El sistema rechaza el registro.
+\item No se crea un evento duplicado ni no autorizado.
+\end{enumerate}
+
+\textbf{Poscondiciones.}
+\begin{itemize}
+\item Existe como máximo un evento de asistencia válido para la operación.
+\item El registro no incorpora datos biométricos.
+\end{itemize}
+
+\subsubsection{CU-12 -- Consultar asistencia}
+\begin{tabularx}{\textwidth}{|>{\bfseries}p{3.2cm}|X|}\hline
+Actor principal & Personal autorizado \\ \hline
+Requisito relacionado & \texttt{RF-14} \\ \hline
+Historia / criterio & \texttt{HU-12} / \texttt{CA-12} \\ \hline
+Componente & Asistencia \\ \hline
+Evidencia de origen & {\ttfamily\seqsplit{EV-ENTR03-01;EV-ENTR07-01;EV-ENTR08-05;EV-ENTR09-06}} \\ \hline
+Mockups relacionados & {\ttfamily\seqsplit{MU-20;MU-46;MU-56;MU-65(F)}} \\ \hline
+Disparador & Un usuario autorizado solicita consultar registros de asistencia. \\ \hline
+\end{tabularx}
+
+\textbf{Precondiciones.}
+\begin{itemize}
+\item El usuario mantiene una sesión válida.
+\item Dispone de al menos un criterio permitido de consulta o acceso al resumen autorizado.
+\end{itemize}
+
+\textbf{Flujo principal \texttt{CU-12-FP}.}
+\begin{enumerate}
+\item El usuario abre la consulta de asistencia.
+\item Selecciona filtros por cliente, fecha o turno.
+\item El sistema valida los filtros.
+\item El servicio de asistencia recupera los eventos autorizados.
+\item El sistema calcula los conteos correspondientes.
+\item El sistema muestra detalle y resumen de la consulta.
+\end{enumerate}
+
+\textbf{Flujo alternativo \texttt{CU-12-FA-01}.} \textit{Condición de disparo:} La combinación de filtros no devuelve eventos.
+\begin{enumerate}[label=\alph*.]
+\item El sistema presenta el resultado vacío con los filtros aplicados.
+\item Los conteos se muestran en cero sin inventar registros.
+\end{enumerate}
+
+\textbf{Excepción \texttt{CU-12-EX-01}.} \textit{Condición de disparo:} El rango de fechas es inválido o el usuario intenta consultar información fuera de su permiso.
+\begin{enumerate}[label=\alph*.]
+\item El sistema no ejecuta la consulta solicitada.
+\item No se expone información fuera del rol.
+\end{enumerate}
+
+\textbf{Poscondiciones.}
+\begin{itemize}
+\item La consulta no altera los eventos de asistencia.
+\item El detalle y los conteos corresponden al mismo conjunto filtrado.
+\end{itemize}
+
+\subsubsection{CU-13 -- Administrar productos}
+\begin{tabularx}{\textwidth}{|>{\bfseries}p{3.2cm}|X|}\hline
+Actor principal & Administrador \\ \hline
+Requisito relacionado & \texttt{RF-15} \\ \hline
+Historia / criterio & \texttt{HU-13} / \texttt{CA-13} \\ \hline
+Componente & Inventario \\ \hline
+Evidencia de origen & {\ttfamily\seqsplit{EV-ENTR01-01;EV-ENTR02-05}} \\ \hline
+Mockups relacionados & {\ttfamily\seqsplit{MU-19;MU-28;MU-44;MU-45}} \\ \hline
+Disparador & El administrador solicita crear o mantener un producto. \\ \hline
+\end{tabularx}
+
+\textbf{Precondiciones.}
+\begin{itemize}
+\item El administrador está autenticado.
+\item La gestión de productos está habilitada para su rol.
+\end{itemize}
+
+\textbf{Flujo principal \texttt{CU-13-FP}.}
+\begin{enumerate}
+\item El administrador abre el catálogo de productos.
+\item Ingresa código, nombre, precio, unidad, stock mínimo y estado.
+\item El sistema valida los datos.
+\item El sistema comprueba la unicidad del código.
+\item El sistema guarda el producto.
+\item El catálogo refleja el registro actualizado.
+\end{enumerate}
+
+\textbf{Flujo alternativo \texttt{CU-13-FA-01}.} \textit{Condición de disparo:} El producto ya existe y el administrador solicita modificar sus datos permitidos o su estado.
+\begin{enumerate}[label=\alph*.]
+\item El sistema carga el producto existente.
+\item El administrador modifica los datos permitidos y el sistema actualiza el mismo registro.
+\end{enumerate}
+
+\textbf{Excepción \texttt{CU-13-EX-01}.} \textit{Condición de disparo:} El código está duplicado o el precio, unidad o stock mínimo son inválidos.
+\begin{enumerate}[label=\alph*.]
+\item El sistema no crea ni actualiza el producto con datos inconsistentes.
+\item El catálogo previo permanece sin cambios.
+\end{enumerate}
+
+\textbf{Poscondiciones.}
+\begin{itemize}
+\item El producto queda identificado por un código único.
+\item El catálogo conserva precio, unidad, stock mínimo y estado consistentes.
+\end{itemize}
+
+\subsubsection{CU-14 -- Registrar movimientos de stock}
+\begin{tabularx}{\textwidth}{|>{\bfseries}p{3.2cm}|X|}\hline
+Actor principal & Personal autorizado \\ \hline
+Requisito relacionado & \texttt{RF-16} \\ \hline
+Historia / criterio & \texttt{HU-14} / \texttt{CA-14} \\ \hline
+Componente & Inventario \\ \hline
+Evidencia de origen & {\ttfamily\seqsplit{EV-ENTR01-04;EV-ENTR04-04;EV-ENTR07-03}} \\ \hline
+Mockups relacionados & {\ttfamily\seqsplit{MU-69}} \\ \hline
+Disparador & Un usuario autorizado solicita registrar una entrada o ajuste de inventario. \\ \hline
+\end{tabularx}
+
+\textbf{Precondiciones.}
+\begin{itemize}
+\item El producto existe.
+\item El usuario tiene permiso para registrar movimientos de stock.
+\end{itemize}
+
+\textbf{Flujo principal \texttt{CU-14-FP}.}
+\begin{enumerate}
+\item El usuario selecciona el producto.
+\item Indica el tipo de movimiento, cantidad y motivo.
+\item El sistema identifica al responsable desde la sesión.
+\item El sistema calcula el saldo resultante.
+\item El sistema valida que el saldo sea consistente.
+\item El sistema registra cantidad, motivo, responsable y saldo resultante.
+\item El sistema confirma el movimiento y el nuevo balance.
+\end{enumerate}
+
+\textbf{Flujo alternativo \texttt{CU-14-FA-01}.} \textit{Condición de disparo:} El movimiento corresponde a un ajuste que reduce existencias, pero el saldo resultante permanece no negativo.
+\begin{enumerate}[label=\alph*.]
+\item El sistema calcula el nuevo saldo.
+\item El ajuste se registra con su motivo y responsable y continúa el flujo normal.
+\end{enumerate}
+
+\textbf{Excepción \texttt{CU-14-EX-01}.} \textit{Condición de disparo:} El producto no existe, la cantidad es inválida o el movimiento produciría un saldo negativo.
+\begin{enumerate}[label=\alph*.]
+\item El sistema rechaza el movimiento.
+\item El saldo anterior permanece sin cambios.
+\end{enumerate}
+
+\textbf{Poscondiciones.}
+\begin{itemize}
+\item El saldo resultante coincide con el movimiento registrado.
+\item Cada movimiento conserva motivo y responsable.
+\end{itemize}
+
+\subsubsection{CU-15 -- Registrar venta}
+\begin{tabularx}{\textwidth}{|>{\bfseries}p{3.2cm}|X|}\hline
+Actor principal & Recepción \\ \hline
+Requisito relacionado & \texttt{RF-17} \\ \hline
+Historia / criterio & \texttt{HU-15} / \texttt{CA-15} \\ \hline
+Componente & Ventas \\ \hline
+Evidencia de origen & {\ttfamily\seqsplit{EV-ENTR02-05;EV-ENTR03-01;EV-ENTR04-04;EV-ENTR07-03;EV-ENTR08-03}} \\ \hline
+Mockups relacionados & {\ttfamily\seqsplit{MU-18;MU-27;MU-42;MU-43}} \\ \hline
+Disparador & Recepción solicita registrar una venta de productos. \\ \hline
+\end{tabularx}
+
+\textbf{Precondiciones.}
+\begin{itemize}
+\item El usuario está autorizado para ventas.
+\item Los productos seleccionados existen.
+\end{itemize}
+
+\textbf{Flujo principal \texttt{CU-15-FP}.}
+\begin{enumerate}
+\item Recepción selecciona los productos y cantidades.
+\item El sistema consulta el stock disponible.
+\item El sistema valida que todas las cantidades tengan stock suficiente.
+\item El sistema calcula la venta.
+\item Recepción confirma la operación.
+\item El sistema registra la venta y descuenta existencias en la misma operación demostrativa.
+\item El sistema devuelve la venta, comprobante interno y saldos resultantes.
+\end{enumerate}
+
+\textbf{Flujo alternativo \texttt{CU-15-FA-01}.} \textit{Condición de disparo:} Uno de los ítems no dispone de la cantidad solicitada antes de confirmar la venta.
+\begin{enumerate}[label=\alph*.]
+\item El sistema identifica el ítem con stock insuficiente y solicita ajustar o retirar su cantidad.
+\item Recepción corrige el detalle y el sistema vuelve a validar antes de permitir la confirmación.
+\end{enumerate}
+
+\textbf{Excepción \texttt{CU-15-EX-01}.} \textit{Condición de disparo:} Ocurre un fallo al persistir la venta o el descuento de stock.
+\begin{enumerate}[label=\alph*.]
+\item El sistema no deja una venta parcialmente registrada.
+\item La venta y la actualización de existencias se revierten como una única operación lógica.
+\end{enumerate}
+
+\textbf{Poscondiciones.}
+\begin{itemize}
+\item Una venta confirmada y sus descuentos de stock son consistentes entre sí.
+\item Una operación fallida no deja saldos parciales.
+\end{itemize}
+
+\subsubsection{CU-16 -- Cerrar turno y conciliar caja}
+\begin{tabularx}{\textwidth}{|>{\bfseries}p{3.2cm}|X|}\hline
+Actor principal & Recepción \\ \hline
+Requisito relacionado & \texttt{RF-19} \\ \hline
+Historia / criterio & \texttt{HU-16} / \texttt{CA-16} \\ \hline
+Componente & Caja \\ \hline
+Evidencia de origen & {\ttfamily\seqsplit{EV-ENTR02-01;EV-ENTR02-06;EV-ENTR03-05;EV-ENTR04-05;EV-ENTR07-03;EV-ENTR08-04}} \\ \hline
+Mockups relacionados & {\ttfamily\seqsplit{MU-70}} \\ \hline
+Disparador & Recepción solicita cerrar un turno abierto y conciliar caja. \\ \hline
+\end{tabularx}
+
+\textbf{Precondiciones.}
+\begin{itemize}
+\item Existe un turno abierto.
+\item El usuario está autorizado para ejecutar el cierre.
+\end{itemize}
+
+\textbf{Flujo principal \texttt{CU-16-FP}.}
+\begin{enumerate}
+\item Recepción inicia el cierre del turno.
+\item El sistema consolida pagos y ventas del turno por medio.
+\item Recepción ingresa el valor declarado de caja.
+\item El sistema compara los valores calculados con el valor declarado.
+\item El sistema calcula la diferencia.
+\item El sistema registra el cierre, los totales y la diferencia.
+\item El sistema confirma el cierre del turno.
+\end{enumerate}
+
+\textbf{Flujo alternativo \texttt{CU-16-FA-01}.} \textit{Condición de disparo:} La diferencia calculada es distinta de cero.
+\begin{enumerate}[label=\alph*.]
+\item El sistema conserva la diferencia como parte del cierre.
+\item La interfaz la presenta explícitamente para su seguimiento operativo.
+\end{enumerate}
+
+\textbf{Excepción \texttt{CU-16-EX-01}.} \textit{Condición de disparo:} No existe un turno abierto o falta el valor requerido para la conciliación.
+\begin{enumerate}[label=\alph*.]
+\item El sistema impide cerrar el turno.
+\item No se crea un registro de cierre incompleto.
+\end{enumerate}
+
+\textbf{Poscondiciones.}
+\begin{itemize}
+\item El turno queda cerrado con totales por medio y diferencia registrada.
+\item Los movimientos previos permanecen trazables.
+\end{itemize}
+
+\subsubsection{CU-17 -- Gestionar novedades internas}
+\begin{tabularx}{\textwidth}{|>{\bfseries}p{3.2cm}|X|}\hline
+Actor principal & Personal autorizado \\ \hline
+Requisito relacionado & \texttt{RF-20} \\ \hline
+Historia / criterio & \texttt{HU-17} / \texttt{CA-17} \\ \hline
+Componente & Novedades \\ \hline
+Evidencia de origen & {\ttfamily\seqsplit{EV-ENTR02-01;EV-ENTR02-08;EV-ENTR03-07;EV-ENTR04-06;EV-ENTR05-01}} \\ \hline
+Mockups relacionados & {\ttfamily\seqsplit{MU-21;MU-31;MU-50;MU-51;MU-61}} \\ \hline
+Disparador & Un usuario autorizado solicita crear o actualizar una novedad interna. \\ \hline
+\end{tabularx}
+
+\textbf{Precondiciones.}
+\begin{itemize}
+\item El usuario mantiene una sesión válida.
+\item La categoría de novedad está disponible para la operación.
+\end{itemize}
+
+\textbf{Flujo principal \texttt{CU-17-FP}.}
+\begin{enumerate}
+\item El usuario abre la gestión de novedades.
+\item Ingresa categoría, detalle, responsable, vencimiento y estado.
+\item El sistema valida los campos requeridos.
+\item El sistema registra la novedad.
+\item El sistema incorpora el estado inicial al historial.
+\item El sistema confirma la novedad trazable.
+\end{enumerate}
+
+\textbf{Flujo alternativo \texttt{CU-17-FA-01}.} \textit{Condición de disparo:} Una novedad existente cambia de responsable, vencimiento o estado.
+\begin{enumerate}[label=\alph*.]
+\item El usuario selecciona la novedad y registra el cambio permitido.
+\item El sistema conserva el estado anterior en el historial y añade el nuevo cambio.
+\end{enumerate}
+
+\textbf{Excepción \texttt{CU-17-EX-01}.} \textit{Condición de disparo:} Falta información obligatoria o el usuario no está autorizado para el cambio.
+\begin{enumerate}[label=\alph*.]
+\item El sistema rechaza la operación.
+\item La novedad y su historial permanecen sin alteraciones.
+\end{enumerate}
+
+\textbf{Poscondiciones.}
+\begin{itemize}
+\item La novedad conserva sus datos operativos y el historial de estados.
+\item Los cambios son atribuibles al usuario autorizado.
+\end{itemize}
+
+\subsubsection{CU-18 -- Crear y asignar rutina}
+\begin{tabularx}{\textwidth}{|>{\bfseries}p{3.2cm}|X|}\hline
+Actor principal & Instructor \\ \hline
+Requisito relacionado & \texttt{RF-22} \\ \hline
+Historia / criterio & \texttt{HU-18} / \texttt{CA-18} \\ \hline
+Componente & Rutinas \\ \hline
+Evidencia de origen & {\ttfamily\seqsplit{EV-ENTR01-05;EV-ENTR05-04;EV-ENTR09-01;EV-ENTR09-02;EV-ENTR09-03}} \\ \hline
+Mockups relacionados & {\ttfamily\seqsplit{MU-17;MU-29;MU-54;MU-55;MU-64(F)}} \\ \hline
+Disparador & El instructor solicita crear una rutina y asignarla a un cliente. \\ \hline
+\end{tabularx}
+
+\textbf{Precondiciones.}
+\begin{itemize}
+\item El instructor está autenticado y autorizado.
+\item El cliente objetivo existe en el sistema.
+\end{itemize}
+
+\textbf{Flujo principal \texttt{CU-18-FP}.}
+\begin{enumerate}
+\item El instructor selecciona al cliente.
+\item Define el objetivo operativo de la rutina.
+\item Añade ejercicios con series, repeticiones, descanso y días.
+\item El sistema valida la estructura requerida.
+\item El instructor revisa y confirma la rutina.
+\item El sistema crea la rutina y registra su asignación al cliente.
+\item El sistema confirma la versión inicial sin incorporar datos de salud reales.
+\end{enumerate}
+
+\textbf{Flujo alternativo \texttt{CU-18-FA-01}.} \textit{Condición de disparo:} Antes de confirmar, el instructor modifica la selección u orden de ejercicios o sus parámetros.
+\begin{enumerate}[label=\alph*.]
+\item El sistema actualiza la composición temporal de la rutina.
+\item La validación se repite y el instructor puede confirmar la versión ajustada.
+\end{enumerate}
+
+\textbf{Excepción \texttt{CU-18-EX-01}.} \textit{Condición de disparo:} Falta el objetivo o algún ejercicio carece de parámetros mínimos requeridos.
+\begin{enumerate}[label=\alph*.]
+\item El sistema no asigna la rutina incompleta.
+\item Se solicita completar la información operativa sin pedir datos de salud excluidos.
+\end{enumerate}
+
+\textbf{Poscondiciones.}
+\begin{itemize}
+\item Existe una rutina asignada con objetivo, ejercicios y parámetros operativos.
+\item La rutina no contiene datos de salud reales fuera del alcance.
+\end{itemize}
+
+\subsubsection{CU-19 -- Versionar y ajustar rutina}
+\begin{tabularx}{\textwidth}{|>{\bfseries}p{3.2cm}|X|}\hline
+Actor principal & Instructor \\ \hline
+Requisito relacionado & \texttt{RF-23} \\ \hline
+Historia / criterio & \texttt{HU-19} / \texttt{CA-19} \\ \hline
+Componente & Rutinas \\ \hline
+Evidencia de origen & {\ttfamily\seqsplit{EV-ENTR01-05;EV-ENTR09-01;EV-ENTR09-04;EV-ENTR10-01;EV-ENTR10-03}} \\ \hline
+Mockups relacionados & {\ttfamily\seqsplit{MU-17;MU-54}} \\ \hline
+Disparador & El instructor solicita modificar una rutina existente. \\ \hline
+\end{tabularx}
+
+\textbf{Precondiciones.}
+\begin{itemize}
+\item El instructor está autorizado.
+\item Existe una rutina vigente con al menos una versión registrada.
+\end{itemize}
+
+\textbf{Flujo principal \texttt{CU-19-FP}.}
+\begin{enumerate}
+\item El instructor abre la rutina vigente.
+\item Selecciona el ejercicio o parámetro que requiere ajuste.
+\item Modifica el ejercicio, series, repeticiones, descanso o días según corresponda.
+\item El sistema valida la nueva configuración.
+\item El sistema crea una nueva versión de la rutina.
+\item El sistema conserva las versiones anteriores en solo lectura.
+\item El sistema confirma la nueva versión.
+\end{enumerate}
+
+\textbf{Flujo alternativo \texttt{CU-19-FA-01}.} \textit{Condición de disparo:} El ajuste modifica únicamente parámetros de una rutina sin sustituir sus ejercicios.
+\begin{enumerate}[label=\alph*.]
+\item El sistema conserva la composición de ejercicios.
+\item El cambio de parámetros genera igualmente una nueva versión y mantiene el historial previo.
+\end{enumerate}
+
+\textbf{Excepción \texttt{CU-19-EX-01}.} \textit{Condición de disparo:} El usuario intenta editar directamente una versión histórica o la nueva configuración es inválida.
+\begin{enumerate}[label=\alph*.]
+\item El sistema bloquea la modificación directa de la versión histórica.
+\item No se crea una nueva versión hasta que la configuración sea válida.
+\end{enumerate}
+
+\textbf{Poscondiciones.}
+\begin{itemize}
+\item La versión nueva queda identificada como vigente cuando la operación concluye.
+\item Las versiones anteriores permanecen inmutables y consultables en solo lectura.
+\end{itemize}
+
 \section{Modelado del sistema}
 El modelado de esta versión corresponde al conjunto UML definitivo del equipo y reemplaza las figuras de síntesis provisionales usadas durante las revisiones internas 2.1 y 2.2. La carpeta fuente se conserva en \path{03_Modelado/Diagramas_UML/}. La revisión de integración comprobó correspondencia nominal entre los 19 casos de uso Must, sus diagramas individuales y los 19 diagramas de secuencia; los RF Should permanecen especificados y trazados aunque no tengan CU individual obligatorio.
 
@@ -844,7 +1713,7 @@ El diseño terminal exige control por rol, denegación por defecto, expiración 
 Las pantallas Must deberán cumplir criterios aplicables de WCAG 2.2 AA y funcionar en las dos versiones estables recientes de Chrome, Edge y Firefox al momento de la prueba \cite{wcag2024}.
 
 \section{Trazabilidad terminal}
-La matriz externa \texttt{04\_Trazabilidad/matriz\_trazabilidad.csv} contiene 105 filas: 97 trazas preexistentes migradas y 8 planes de verificación asociados al componente inteligente. Cada fila relaciona fuente/ley, objetivo, stakeholder, evidencia, requisito, CU, HU, CA, componente y mockups. La figura resume el encadenamiento utilizado.
+La matriz externa \texttt{04\_Trazabilidad/matriz\_trazabilidad.csv} contiene 162 filas: 97 trazas preexistentes migradas, 8 planes de verificación asociados al componente inteligente y 57 trazas explícitas de flujo para los 19 casos de uso Must. La columna \texttt{ID\_Flujo} relaciona cada \texttt{CU-xx-FP}, \texttt{CU-xx-FA-01} y \texttt{CU-xx-EX-01} con su requisito, historia, criterio de aceptación, evidencia, componente y mockups. La figura resume el encadenamiento utilizado.
 \begin{figure}[H]\centering\includegraphics[width=.95\textwidth]{figuras_2B/fig_trazabilidad_2B.pdf}\caption{Cadena de trazabilidad de extremo a extremo.}\label{fig:traza}\end{figure}
 
 \begin{landscape}\scriptsize
@@ -960,6 +1829,7 @@ Restricciones de diseño & 4 \\
 RNF de explicabilidad finales & 4 \\
 Total de requisitos terminales en esta ERS & 52 \\
 Filas de trazabilidad preexistentes / planes IA añadidos & 97 / 8 \\
+Trazas de flujo de casos de uso añadidas & 57 \\
 Sesiones acumuladas & 16 \\
 Duración de videos & 06:18:08 \\
 Respuestas de encuesta & 70 \\
