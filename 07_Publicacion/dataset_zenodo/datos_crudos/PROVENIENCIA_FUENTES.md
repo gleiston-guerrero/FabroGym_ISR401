@@ -3,7 +3,7 @@
 - Ficha tecnica fuente entregada por el equipo: `fichas_tecnicas_generadas_v3.1(2).csv`.
   En este paquete se incluye `sesiones_multimedia_desde_ficha_v3_1.csv`, que conserva exactamente
   los 16 codigos de sesion y los nombres/duraciones/hashes de sus audios y videos usados en los calculos.
-  Para el repositorio, el CSV fuente completo debe conservarse como `02_Evidencias/fichas_tecnicas.csv`.
+  Para el repositorio, el CSV fuente completo debe conservarse como `02_Evidencias/00_Restringido/fichas_tecnicas.csv`.
 
 - Cuestionario fuente entregado por el equipo:
   `Respuestas del formulario de clientes - Fabro Gym - Respuestas de formulario 1(2).csv`.

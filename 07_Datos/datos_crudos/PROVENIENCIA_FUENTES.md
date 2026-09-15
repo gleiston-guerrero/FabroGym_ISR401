@@ -11,7 +11,7 @@ Los resultados creados por código se escriben únicamente en `datos_procesados/
 ## Fuentes de recolección y evidencia primaria
 
 - `encuesta_clientes_anonimizada.csv`: conjunto analítico público anonimizado del cuestionario, con **70 respuestas** y corte congelado hasta **31/08/2026 23:58:25**. Las respuestas posteriores al corte no forman parte del conjunto analítico versionado.
-- `sesiones_multimedia_desde_ficha_v3_1.csv`: extracto de la ficha técnica de evidencia multimedia. Conserva los 16 códigos de sesión y los nombres, duraciones y SHA-256 utilizados por el pipeline. La ficha técnica completa se conserva en `02_Evidencias/fichas_tecnicas.csv`.
+- `sesiones_multimedia_desde_ficha_v3_1.csv`: extracto de la ficha técnica de evidencia multimedia. Conserva los 16 códigos de sesión y los nombres, duraciones y SHA-256 utilizados por el pipeline. La ficha técnica completa se conserva en `02_Evidencias/00_Restringido/fichas_tecnicas.csv`.
 
 ## Matrices fuente congeladas para análisis
 
