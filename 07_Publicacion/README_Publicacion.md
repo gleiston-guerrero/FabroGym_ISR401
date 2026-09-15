@@ -53,9 +53,9 @@ Esa etiqueta se conserva intacta como línea base histórica. Las correcciones p
 
 Los autores consignados en artefactos históricos de publicación y en el depósito Zenodo corresponden a la participación acumulada durante el desarrollo del proyecto y se conservan por integridad académica.
 
-La guía y los artefactos académicos mantienen un alcance evaluable de cinco integrantes: **Alvia, Mera, Mora, Ponce y Vaca**, mientras no exista una autorización docente posterior que disponga lo contrario.
+El **equipo actual de cierre y examen final** está conformado por **Mera, Mora y Ponce**. Alvia y Vaca permanecen como autores/participantes históricos únicamente en los artefactos donde realmente intervinieron; su autoría no se elimina ni se reasigna.
 
-El trabajo correctivo reciente se encuentra documentado principalmente para Mera (`Emeraxs`), Mora (`amorad35`) y Ponce (`Mery-003`). Esta constatación no redefine el equipo evaluado. El estado de evidencia individual A2, incluida la ausencia actual de capturas suficientes para Alvia y Vaca, se documenta sin fabricar evidencia en `../10_Autoria/EQUIPO_EXAMEN_FINAL.md`.
+El estado de evidencia individual A2 del equipo actual se documenta en `../10_Autoria/EQUIPO_EXAMEN_FINAL.md`.
 
 ## Estado de la corrección §16
 
@@ -66,7 +66,7 @@ El informe final incorpora de forma explícita:
 3. la explicación del cierre ético de ENTR-02, ENTR-03, ENTR-04 y ENTR-06;
 4. el repositorio canónico, `v2.0.2-final` como última línea base ya publicada y el procedimiento para un eventual cierre posterior;
 5. la sección **“Retrospectiva del examen suspenso / Failed-exam correction retrospective”**, con corrección, evidencia y responsable documentado;
-6. la distinción entre autoría histórica, alcance evaluable de cinco integrantes y responsables reales del trabajo correctivo reciente.
+6. la distinción entre autoría histórica del proyecto y el equipo actual de cierre conformado por Mera, Mora y Ponce.
 
 El informe conserva estos elementos en estado terminal y no contiene marcadores de trabajo abierto para el cierre §16.
 
