@@ -16,7 +16,7 @@ Datos crudos oficiales:  07_Datos/datos_crudos/
 Salidas oficiales:       07_Datos/datos_procesados/ y 07_Datos/resultados/
 ```
 
-`06_Experimento/` se conserva como fuente metodológica/histórica. `07_Publicacion/` conserva artefactos de publicación y depósitos históricos. Ninguna de esas carpetas sustituye a `07_Datos/` para B1.
+`06_Experimento/` se conserva como fuente metodológica/histórica. Como compatibilidad documental de cierre, `06_Experimento/resultados/` se mantiene como **espejo derivado byte-idéntico** de `07_Datos/resultados/`; no es una segunda fuente ni se usa como entrada del pipeline. `07_Publicacion/` conserva artefactos de publicación y depósitos históricos. Ninguna de esas carpetas sustituye a `07_Datos/` para B1.
 
 ## Estructura
 
@@ -82,6 +82,12 @@ python scripts/run_all.py
 
 No se requieren pasos manuales intermedios.
 
+### Semilla y determinismo
+
+El pipeline declara una semilla única y explícita `SEED = 401`. El bootstrap pseudoaleatorio de los índices ordinales utiliza `numpy.random.default_rng(SEED)` y el resto de los cálculos es determinista o usa enumeración exacta. La configuración de ReportLab y el `svg.hashsalt` de Matplotlib también se fijan para evitar variaciones de metadatos o identificadores entre ejecuciones equivalentes.
+
+Dos ejecuciones consecutivas sobre los mismos datos deben producir hashes idénticos en `datos_procesados/` y `resultados/`.
+
 ### Validación estructural previa
 
 El orquestador ejecuta validaciones tempranas sobre las matrices de codificación,
@@ -104,7 +110,9 @@ El pipeline regenera:
 - tablas de resultados;
 - figuras;
 - resúmenes analíticos;
-- artefactos de desviaciones definidos por la cadena.
+- artefactos de desviaciones definidos por la cadena;
+- el `README.md` de resultados;
+- y, cuando se ejecuta dentro del repositorio completo, sincroniza `06_Experimento/resultados/` como espejo byte-idéntico de `07_Datos/resultados/`.
 
 ## Comparación técnico vs. no técnico — criterio terminal F3-04
 

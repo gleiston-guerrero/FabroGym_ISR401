@@ -84,19 +84,17 @@ python scripts/run_all.py
 
 No se eliminan los scripts históricos porque forman parte de la procedencia del estudio; su conservación no crea un segundo paquete canónico.
 
-## Resultados históricos
+## Espejo derivado de resultados
 
-Los archivos existentes en:
-
-```text
-06_Experimento/resultados/
-```
-
-documentan estados previos/intermedios del análisis. Los resultados canónicos regenerables de la Entrega Final están en:
+La instancia canónica y regenerable de los resultados de la Entrega Final está en:
 
 ```text
 07_Datos/resultados/
 ```
+
+Para satisfacer la verificación de consistencia del cierre, `06_Experimento/resultados/` se mantiene como **copia byte-idéntica derivada** de esa carpeta canónica. El espejo se sincroniza al final de `07_Datos/scripts/run_all.py` cuando se ejecuta dentro del repositorio completo.
+
+Este espejo no convierte `06_Experimento/` en una segunda cadena analítica: ningún script ni dato de `06_Experimento/resultados/` se usa como entrada para producir los resultados oficiales.
 
 ## Prerregistro OSF
 

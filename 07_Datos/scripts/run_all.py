@@ -11,7 +11,7 @@ Principios:
 - documenta como NO APLICABLE cualquier inferencia no soportada.
 """
 from pathlib import Path
-import json, math, subprocess, sys
+import json, math, shutil, subprocess, sys
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
@@ -28,6 +28,11 @@ from validar_entradas import validar_codificacion, validar_rnf, validar_member_c
 # Salidas PDF/SVG reproducibles byte a byte entre ejecuciones equivalentes.
 rl_config.invariant = True
 plt.rcParams["svg.hashsalt"] = "FabroGym_ISR401"
+
+# Semilla única y explícita del pipeline. Se usa para todo proceso pseudoaleatorio
+# del cierre (actualmente, el bootstrap de los índices ordinales de encuesta).
+SEED = 401
+np.random.seed(SEED)
 
 ROOT = Path(__file__).resolve().parents[1]
 RAW = ROOT / "datos_crudos"
@@ -137,7 +142,7 @@ def analyze_survey(survey):
         "staff_satisfaction":{"Muy insatisfecho(a)":1,"Insatisfecho(a)":2,"Ni satisfecho(a) ni insatisfecho(a)":3,"Satisfecho(a)":4,"Muy satisfecho(a)":5},
         "privacy_importance":{"Nada importante":1,"Poco importante":2,"Moderadamente importante":3,"Importante":4,"Muy importante":5},
     }
-    rng = np.random.default_rng(401)
+    rng = np.random.default_rng(SEED)
     out = []
     for c, mp in maps.items():
         x = survey[c].map(mp).dropna().astype(float).to_numpy()
@@ -537,6 +542,44 @@ Las actividades no ejecutadas en el corte histórico no se registran como si ya 
     story.append(Paragraph("<b>Principio de transparencia.</b> Las limitaciones que no constituyen diferencias reales frente al protocolo se reportan por separado y no se inflan como desviaciones.", styles["BodyX"]))
     doc.build(story)
 
+
+def write_results_readme():
+    text = f"""# Resultados canónicos de FabroGym
+
+La instancia **canónica, ejecutable y evaluable** de estas salidas es `07_Datos/resultados/`.
+
+La carpeta `06_Experimento/resultados/` se mantiene únicamente como **espejo derivado byte-idéntico** para compatibilidad documental con artefactos históricos. No constituye una segunda cadena analítica y nunca se usa como entrada del pipeline.
+
+La orden oficial es:
+
+```bash
+cd 07_Datos
+python scripts/run_all.py
+```
+
+Semilla pseudoaleatoria explícita del pipeline: `{SEED}`.
+
+Cuando se ejecuta dentro del repositorio completo, `run_all.py` sincroniza este directorio hacia `06_Experimento/resultados/` después de terminar el análisis. La identidad entre ambas carpetas debe comprobarse por rutas y SHA-256 antes del cierre.
+"""
+    (RES / "README.md").write_text(text, encoding="utf-8")
+
+
+def sync_results_mirror():
+    """Replica 07_Datos/resultados en 06_Experimento/resultados sin volverlo canónico.
+
+    El espejo sólo se mantiene cuando el pipeline se ejecuta dentro del repositorio
+    completo. Si 06_Experimento no existe (por ejemplo, paquete 07_Datos aislado),
+    la reproducción canónica sigue siendo válida y no se crea una estructura externa.
+    """
+    exp_dir = ROOT.parent / "06_Experimento"
+    mirror = exp_dir / "resultados"
+    if not exp_dir.is_dir():
+        return False
+    if mirror.exists():
+        shutil.rmtree(mirror)
+    shutil.copytree(RES, mirror)
+    return True
+
 def main():
     survey, sessions, coding, curve, axial, profile, candidates, fragments, mc = read_inputs()
     vt, at = analyze_multimedia(sessions)
@@ -548,6 +591,8 @@ def main():
     write_applicability()
     summary = write_summary(survey, sessions, coding, final, exp, counts, vt, at, sat)
     write_osf_deviations(summary)
+    write_results_readme()
+    mirror_synced = sync_results_mirror()
     print("OK — FabroGym Fase 2 regenerada")
     print(f"Sesiones: {len(sessions)}; video total: {fmt_hms(vt)}; audio total: {fmt_hms(at)}")
     print(f"Encuesta: n={len(survey)}; sin perfil técnico/no técnico; sin Likert de explicabilidad")
@@ -555,6 +600,8 @@ def main():
     print("F3-04: tamaño del efecto técnico/no técnico + IC95% regenerado")
     print(f"Saturación códigos últimas 3: {sat[2]:.3f}% -> {'CUMPLE' if sat[2] <= 5 else 'NO CUMPLE ESTRICTAMENTE'}")
     print(f"Member checking: {int(counts.sum())} decisiones; RNF terminales={len(final)}")
+    print(f"Semilla reproducible: {SEED}")
+    print(f"Espejo 06_Experimento/resultados: {'SINCRONIZADO' if mirror_synced else 'NO APLICA (07_Datos aislado)'}")
 
 if __name__ == "__main__":
     main()
