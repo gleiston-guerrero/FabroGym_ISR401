@@ -11,7 +11,7 @@
 
 ## Alcance de la auditoría
 
-- Archivos inspeccionados por nombre/extensión: **949**.
+- Archivos inspeccionados por nombre/extensión: **963**.
 - CSV inspeccionados en `07_Datos/datos_crudos` y `datos_procesados`: **20**.
 - CSV no legibles: **0**.
 - Hallazgos automáticos bloqueantes: **0**.
