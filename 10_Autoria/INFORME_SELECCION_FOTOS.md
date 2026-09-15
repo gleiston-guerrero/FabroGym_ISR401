@@ -1,39 +1,52 @@
-# Selección A6 y control de privacidad
+# Selección A6 y control de metadatos fotográficos
 
-## Fotografías reales del equipo incorporadas
+## 1. Fotografías reales del equipo
+
+El árbol actual contiene dos fotografías de equipo:
 
 - `2026-07-27_equipo_fabrogym_01.jpg`
 - `2026-07-27_equipo_fabrogym_02.jpg`
 
-Estas son las dos fotografías de equipo que existen físicamente en `10_Autoria/fotos_equipo/`. Ambas conservan `DateTimeOriginal` de 2026-07-27 y su SHA-256 se registra en `exif_inventario.csv`. No se anuncian fotografías adicionales de equipo que no estén presentes en el repositorio.
+Ambas conservan fecha EXIF y están registradas con SHA-256 en `exif_inventario.csv`.
 
-## Fotografías de entorno incorporadas al inventario
+La guía del examen suspenso indicó tres fotografías de equipo, pero en el corte verificable sólo existen estas dos. No se crea ni duplica una tercera imagen para ajustar el conteo.
 
-El inventario EXIF incluye también los cuatro archivos JPG físicamente presentes en `02_Evidencias/Fotos_Entorno/`:
+## 2. Fotografías de entorno
 
-- `EV-FOT-ENT-01_levantamiento_informacion_area_funcional.jpg`
-- `EV-FOT-ENT-02_vista_general_area_entrenamiento.jpg`
-- `EV-FOT-ENT-03_estanteria_implementos_entrenamiento.jpg`
-- `EV-FOT-ENT-05_registro_observacion_junto_maquinaria.jpg`
+En `02_Evidencias/Fotos_Entorno/` existen **18 fotografías** y las 18 se incluyen ahora en `exif_inventario.csv`.
 
-Los cuatro conservan fecha EXIF del 27/07/2026, dispositivo y SHA-256 real.
+El inventario distingue entre:
 
-## Fotografías de aplicación del cuestionario
+- `OK`: fecha y dispositivo disponibles;
+- `EXIF_PARCIAL`: existe fecha, pero falta Make/Model;
+- `SIN_EXIF`: no hay fecha ni dispositivo recuperables.
 
-La evidencia del cuestionario cuenta con **cinco fotografías originales** con fecha EXIF, dispositivo y SHA-256 documentados en `exif_inventario.csv`.
+De las 18 fotografías de entorno, 13 conservan fecha; cinco se declaran `SIN_EXIF`.
 
-Para preservar los metadatos originales, los archivos identificables se conservan en el contenedor restringido:
+## 3. Fotografías de aplicación del cuestionario
+
+Existen cinco fotografías reales de aplicación. Los originales con metadatos se conservan en el contenedor restringido:
 
 `10_Autoria/fotos_equipo/02_Fotos_Aplicacion/A11 Fotos_Originales_Cuestionario.7z`
 
-Las copias destinadas a revisión pública se encuentran en:
+Las copias públicas enmascaradas están en:
 
 `02_Evidencias/Cuestionario/Fotos_Aplicacion/`
 
-y se clasifican como copias públicas enmascaradas.
+El inventario mantiene la correspondencia entre original y copia pública sin exponer información personal.
 
-En `exif_inventario.csv`, las cinco filas `F3-01_APLICACION_CUESTIONARIO` tienen el estado `PUBLICA_ENMASCARADA_ORIGINAL_RESTRINGIDO`.
+## 4. Conteo verificable del corte
 
-## Integridad
+El conjunto fotográfico inventariado queda así:
 
-El inventario final contiene **11 filas reales**: 2 fotografías de equipo, 4 fotografías JPG de entorno y 5 fotografías originales de aplicación del cuestionario. No se mantienen filas correspondientes a archivos inexistentes. Las copias públicas del cuestionario pueden diferir en hash o metadatos como consecuencia del enmascaramiento y no sustituyen a los originales como fuente primaria del inventario.
+- 2 fotografías de equipo;
+- 18 fotografías de entorno;
+- 5 fotografías de aplicación.
+
+**Total: 25 fotografías reales y 25 filas de datos en `exif_inventario.csv`.**
+
+La diferencia frente al conteo de 26 de la guía proviene exclusivamente de que la guía presupone tres fotografías de equipo y el árbol actual contiene dos.
+
+## 5. Integridad
+
+No se inventan metadatos, no se asignan fechas por inferencia y no se duplican fotografías. Los archivos sin metadatos se conservan y se declaran expresamente como `SIN_EXIF`.
