@@ -92,14 +92,14 @@ La cobertura A5 **no se compara contra las 28 filas de `bitacora_sesiones.csv`**
 
 La fuente canónica para el universo empírico es `07_Datos/datos_crudos/sesiones_multimedia_desde_ficha_v3_1.csv`, que contiene **16 sesiones**: 10 entrevistas, 3 walkthroughs técnicos y 3 walkthroughs no técnicos.
 
-En el corte actual hay **13 notas de campo asociables a 13/16 sesiones empíricas**: 10 entrevistas y 3 walkthroughs técnicos. No están depositadas notas para `WALK-NTEC-01`, `WALK-NTEC-02` y `WALK-NTEC-03`. El detalle y las discrepancias históricas de nombres/fechas se documentan en:
+En el corte actual hay **16 notas de campo asociables a las 16/16 sesiones empíricas**: 10/10 entrevistas, 3/3 walkthroughs técnicos y 3/3 walkthroughs no técnicos. Las notas `WALK-NTEC-01`, `WALK-NTEC-02` y `WALK-NTEC-03` ya están depositadas y sus rutas y SHA-256 se registran en el inventario. El detalle y las discrepancias históricas de fecha de dos notas técnicas se documentan en:
 
 ```text
 10_Autoria/notas_campo/README.md
 10_Autoria/notas_campo/inventario_notas_campo.csv
 ```
 
-Si existen notas físicas contemporáneas de esas tres sesiones, deben digitalizarse; si no existen, la ausencia se declara. No se reconstruyen notas posteriormente para aparentar cobertura.
+La cobertura A5 queda completa respecto del universo empírico versionado de 16 sesiones. Esta cobertura no se extrapola a las 28 filas de A1, porque A1 documenta trabajo interno del equipo y no 28 sesiones de elicitación.
 
 ### A6 — `fotos_equipo/`
 
