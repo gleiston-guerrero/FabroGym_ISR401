@@ -93,12 +93,15 @@ La evidencia fotográfica de autoría se organiza en:
 ```text
 10_Autoria/
 └── fotos_equipo/
+    ├── 2026-07-27_equipo_fabrogym_01.jpg
+    ├── 2026-07-27_equipo_fabrogym_02.jpg
     ├── 01_fotos_equipo/
+    │   └── README.md
     └── 02_Fotos_Aplicacion/
         └── A11 Fotos_Originales_Cuestionario.7z
 ```
 
-`01_fotos_equipo/` contiene las **dos fotografías reales del equipo disponibles en el repositorio**, renombradas con la fecha EXIF `2026-07-27`. No se anuncian otras fotografías de equipo inexistentes. El inventario EXIF final refleja únicamente archivos físicamente presentes y trazables: **2 fotos de equipo, 4 JPG de entorno y 5 originales de aplicación del cuestionario**, para un total de **11 registros**.
+Las **dos fotografías reales del equipo disponibles en el repositorio** se encuentran directamente en `10_Autoria/fotos_equipo/`, renombradas con la fecha EXIF `2026-07-27`. La subcarpeta `01_fotos_equipo/` conserva únicamente documentación de referencia sobre esas fotografías. No se anuncian fotografías de equipo inexistentes. El inventario EXIF final refleja únicamente archivos físicamente presentes y trazables: **2 fotos de equipo, 4 JPG de entorno y 5 originales de aplicación del cuestionario**, para un total de **11 registros**.
 
 Además, las **cinco copias públicas enmascaradas de aplicación del cuestionario** se encuentran en:
 
@@ -242,9 +245,7 @@ Antes de congelar la entrega se debe comprobar:
 9. privacidad automática sin bloqueos y revisión humana completada;
 10. `git status` limpio antes de crear el tag.
 
-La verificación previa firmada del 14/09/2026 se conserva como
-`10_Autoria/verificacion_previa_HISTORICA_2026-09-14.pdf`, conforme a la guía específica
-de cierre. Ese PDF se conserva sin alteración como evidencia histórica del estado que verificó. No se utiliza para justificar la exclusión de integrantes ni para validar cambios posteriores. La composición evaluable y el estado de evidencia individual vigente se documentan en `10_Autoria/EQUIPO_EXAMEN_FINAL.md`. Una nueva verificación, si corresponde, debe realizarse solo después del cierre real del siguiente estado etiquetado.
+La verificación terminal del repositorio se realiza sobre el estado final mediante los comandos de integridad y Git establecidos en la guía de cierre, inmediatamente antes de crear la etiqueta anotada terminal. No se mantiene un PDF adicional de “verificación previa” como requisito del cierre. La composición del equipo actual y el estado de evidencia individual vigente se documentan en `10_Autoria/EQUIPO_EXAMEN_FINAL.md`.
 
 ## 8. Estado de esta carpeta
 

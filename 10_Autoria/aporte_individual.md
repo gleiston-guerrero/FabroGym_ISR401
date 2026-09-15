@@ -132,14 +132,10 @@ El trabajo correctivo reciente documentado aquí corresponde al **equipo actual 
 
 ## 9. Corte documental de cierre
 
-Este documento incorpora los aportes versionados verificables existentes hasta el commit `ed4fbf40fa6c5a4222adada63589c94afee36f36`, último `HEAD` remoto anterior al commit final de sincronización que contiene esta actualización.
+Este documento resume los aportes verificables versionados hasta el corte PRE-CHECKSUM vigente. El historial Git del repositorio constituye la fuente canónica para identificar los commits posteriores de cierre.
 
-El commit `ed4fbf40fa6c5a4222adada63589c94afee36f36` forma parte del corte documental de contenido, ya que incorporó ajustes reales de reproducibilidad e integridad en `.gitattributes`, `07_Datos/checksums_datos.sha256` y `07_Datos/scripts/calcular_efecto_perfiles.py`. Por tanto, no se considera únicamente una operación de congelamiento de la entrega.
+No se fija aquí el SHA del commit que contiene este propio documento, con el fin de evitar una referencia circular u obsoleta.
 
-Los ajustes finales de sincronización de trazabilidad, privacidad, catálogos de requisitos, documentación FAIR y este propio documento se consolidan conjuntamente en el commit de cierre que incorpora esta actualización.
+Una vez cerrado todo el contenido, se regeneran y verifican los manifiestos SHA-256. Posteriormente se crea la etiqueta anotada terminal `v2.0.3-final`.
 
-No se consigna dentro de este archivo el SHA de ese mismo commit de cierre, debido a que su identificador solo existe después de crear el commit y depende del contenido versionado, incluido este documento.
-
-Una vez publicado dicho commit, y siempre que no se realicen nuevos cambios de contenido, el `HEAD` resultante constituirá el corte documental definitivo previo a la creación del tag anotado final.
-
-La creación y publicación del tag anotado, así como la posterior ejecución de Software Heritage → `Save again`, son operaciones de congelamiento y preservación posteriores al último commit de contenido y no requieren reabrir este resumen.
+La creación y publicación de dicha etiqueta y las operaciones posteriores de preservación no requieren modificar nuevamente este documento.
