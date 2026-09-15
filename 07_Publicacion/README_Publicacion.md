@@ -47,7 +47,7 @@ Repositorio canónico de evaluación:
 
 `v2.0.2-final`
 
-Esa etiqueta se conserva intacta como línea base histórica. Las correcciones posteriores permanecen en PRE-TAG; el siguiente identificador candidato será `v2.0.3-final` únicamente después de resolver los bloqueos reales, cerrar todo el contenido y regenerar al final los manifiestos SHA-256.
+Esa etiqueta se conserva intacta como línea base histórica. Las correcciones posteriores permanecen en PRE-TAG; el identificador terminal declarado para el cierre será `v2.0.3-final`, creado únicamente después de cerrar todo el contenido y verificar los manifiestos SHA-256 finales.
 
 ## Autoría histórica y equipo del examen
 
