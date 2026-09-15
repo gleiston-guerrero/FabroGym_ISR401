@@ -14,7 +14,7 @@ El inventario conserva únicamente evidencia que existe físicamente y puede tra
 
 ## Fotografías del equipo
 
-Los dos archivos reales se encuentran en `10_Autoria/fotos_equipo/01_fotos_equipo/` con nombres normalizados por fecha:
+Los dos archivos reales se encuentran en `10_Autoria/fotos_equipo/` con nombres normalizados por fecha:
 
 - `2026-07-27_equipo_fabrogym_01.jpg` — `DateTimeOriginal: 2026:07:27 17:52:21`.
 - `2026-07-27_equipo_fabrogym_02.jpg` — `DateTimeOriginal: 2026:07:27 17:50:39`.
