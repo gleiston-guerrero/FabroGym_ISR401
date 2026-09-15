@@ -5,5 +5,7 @@
 - **DOI específico:** [10.5281/zenodo.22237884](https://doi.org/10.5281/zenodo.22237884)
 - **Fecha publicada:** 2026-09-01
 
-Este es el depósito actualmente publicado. La creación de `07_Datos/` no modifica el registro remoto, no reserva otro DOI y no publica una nueva versión. Una eventual versión correctiva se evaluará posteriormente en la Fase 6.
+Este es el depósito actualmente publicado. La creación y mantenimiento de `07_Datos/` no modifica el registro remoto, no reserva otro DOI y no publica una nueva versión.
+
+El depósito Zenodo 2.0.0 se conserva como registro histórico publicado. Este cierre académico no modifica ni reemplaza ese depósito.
 

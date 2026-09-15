@@ -64,7 +64,7 @@ El informe final incorpora de forma explícita:
 1. la tabla de efectos corregida de §13, con `n_unidades=6` e `interpretable=NO` para inferencia poblacional;
 2. la limitación de la encuesta `n=70` dentro de amenazas a la validez;
 3. la explicación del cierre ético de ENTR-02, ENTR-03, ENTR-04 y ENTR-06;
-4. el repositorio canónico, `v2.0.2-final` como última línea base ya publicada y el procedimiento para un eventual cierre posterior;
+4. el repositorio canónico, `v2.0.2-final` como línea base histórica publicada y `v2.0.3-final` como etiqueta terminal declarada, creada únicamente después de verificar los manifiestos SHA-256 finales;
 5. la sección **“Retrospectiva del examen suspenso / Failed-exam correction retrospective”**, con corrección, evidencia y responsable documentado;
 6. la distinción entre autoría histórica del proyecto y el equipo actual de cierre conformado por Mera, Mora y Ponce.
 
