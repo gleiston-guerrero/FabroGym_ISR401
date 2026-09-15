@@ -1,54 +1,75 @@
-# F4-A11 — Inventario EXIF y fotografías de aplicación
+# F4-A11 — Inventario EXIF y fotografías de evidencia
 
 ## Resultado técnico
 
-El inventario conserva únicamente evidencia que existe físicamente y puede trazarse mediante ruta, metadatos EXIF y SHA-256.
+El inventario se amplió para cubrir **todas las fotografías de evidencia físicamente identificadas en el corte actual**, no sólo las que conservan EXIF completo.
+
+Distribución verificada:
 
 - Fotografías reales del equipo: **2**.
-- Fotografías JPG de entorno incluidas por la verificación final: **4**.
-- Fotografías originales de aplicación del cuestionario documentadas: **5**.
-- Total de filas en `exif_inventario.csv`: **11**.
-- Filas con fecha EXIF real documentada: **11**.
-- Fechas inventadas: **0**.
-- Filas de fotografías inexistentes: **0**.
+- Fotografías de entorno: **18**.
+- Fotografías de aplicación del cuestionario: **5**.
+- Total de filas de datos en `exif_inventario.csv`: **25**.
+- Filas con fecha de captura recuperable: **20**.
+- Filas `SIN_EXIF`: **5**.
+- Filas `EXIF_PARCIAL`: **2**.
+- Fechas o dispositivos inventados: **0**.
+
+La guía del examen suspenso contabilizó 26 fotografías asumiendo 3 fotos de equipo. El árbol verificable de FabroGym contiene **2 fotos de equipo + 18 de entorno + 5 de aplicación = 25 fotografías**. No se incorpora una tercera fotografía inexistente.
 
 ## Fotografías del equipo
 
-Los dos archivos reales se encuentran en `10_Autoria/fotos_equipo/` con nombres normalizados por fecha:
+Los dos archivos reales se encuentran en `10_Autoria/fotos_equipo/`:
 
-- `2026-07-27_equipo_fabrogym_01.jpg` — `DateTimeOriginal: 2026:07:27 17:52:21`.
-- `2026-07-27_equipo_fabrogym_02.jpg` — `DateTimeOriginal: 2026:07:27 17:50:39`.
+- `2026-07-27_equipo_fabrogym_01.jpg`
+- `2026-07-27_equipo_fabrogym_02.jpg`
 
-El renombrado hace legible la fecha sin modificar los bytes de imagen ni los metadatos EXIF.
+Ambos conservan fecha EXIF del 27/07/2026. El inventario preserva sus SHA-256 y la información de dispositivo disponible.
 
 ## Fotografías de entorno
 
-La verificación final incorpora al inventario los cuatro archivos JPG presentes en `02_Evidencias/Fotos_Entorno/`, tal como exige el control de cierre:
+Se inventariaron las **18 fotografías físicamente presentes** en:
 
-- `EV-FOT-ENT-01_levantamiento_informacion_area_funcional.jpg`
-- `EV-FOT-ENT-02_vista_general_area_entrenamiento.jpg`
-- `EV-FOT-ENT-03_estanteria_implementos_entrenamiento.jpg`
-- `EV-FOT-ENT-05_registro_observacion_junto_maquinaria.jpg`
+`02_Evidencias/Fotos_Entorno/`
 
-Los cuatro conservan `DateTimeOriginal` del 27/07/2026 y metadatos `Make/Model` del dispositivo. Se registran con su SHA-256 real sin alterar las imágenes.
+No se excluyen los PNG por el mero hecho de ser PNG: se leen los metadatos que realmente conserve cada archivo.
 
-## Fotografías del cuestionario
+Estado observado:
 
-Las cinco fotografías originales del cuestionario contienen personas identificables. Para preservar la evidencia original y sus metadatos EXIF se conservan dentro del contenedor restringido:
+- **13/18** conservan fecha de captura recuperable en metadatos.
+- **11/18** conservan además modelo o fabricante del dispositivo.
+- **2/18** conservan fecha pero no Make/Model y se marcan `EXIF_PARCIAL`.
+- **5/18** no exponen fecha ni dispositivo EXIF recuperables y se marcan `SIN_EXIF`.
+
+Los cinco archivos `SIN_EXIF` son:
+
+- `EV-FOT-ENT-06_vista_entrenamiento_garrosh.png`
+- `EV-FOT-ENT-07_vista_general_garrosh.png`
+- `EV-FOT-ENT-09_Maquinarias_2.png`
+- `EV-FOT-ENT-10_Maquinarias_3.png`
+- `EV-FOT-ENT-14_Pesas.png`
+
+No se completa la fecha a partir del nombre, del orden del archivo ni de la fecha del sistema operativo.
+
+## Fotografías de aplicación del cuestionario
+
+Las cinco fotografías originales del cuestionario contienen personas identificables. Sus metadatos originales se conservan en el contenedor restringido:
 
 `10_Autoria/fotos_equipo/02_Fotos_Aplicacion/A11 Fotos_Originales_Cuestionario.7z`
 
-Las copias públicas enmascaradas se conservan en:
+Las copias públicas enmascaradas permanecen en:
 
 `02_Evidencias/Cuestionario/Fotos_Aplicacion/`
 
-El estado de las cinco filas `F3-01_APLICACION_CUESTIONARIO` es `PUBLICA_ENMASCARADA_ORIGINAL_RESTRINGIDO`.
+Las cinco filas del inventario conservan la correspondencia entre el original documentado y la copia pública asociada. El enmascaramiento puede cambiar el hash y los metadatos de la copia pública; por eso la fuente primaria de EXIF es el original preservado.
 
 ## Regla de integridad
 
-No se inventan fechas, modelos de dispositivo ni archivos. Los originales del cuestionario no se sustituyen por las versiones enmascaradas. La columna `Nombre` conserva el nombre del original del que procede el EXIF y la columna `Ruta_final_o_prevista` identifica la copia pública asociada. Las fotografías de entorno se documentan únicamente a partir de los archivos JPG físicamente presentes en el repositorio.
+Una fila del inventario significa **una fotografía real del expediente**, no una afirmación de que todo archivo tenga EXIF.
 
-## Correspondencia con las copias públicas actuales del cuestionario
+Cuando el metadato existe, se registra. Cuando falta, se declara `SIN_EXIF`; cuando sólo existe parte de la información, se declara `EXIF_PARCIAL`. No se inventan fechas, zonas horarias, fabricantes ni modelos.
+
+## Correspondencia de originales del cuestionario
 
 - `IMG_20260721_102618.jpg` → `Aplicacion_Cuestionario_01.jpg`
 - `IMG_20260721_104307.jpg` → `Aplicacion_Cuestionario_02.jpg`

@@ -51,6 +51,8 @@ Cada fila debe documentar, según corresponda:
 
 La versión congelada no contiene marcadores provisionales de commit.
 
+**Alcance A1.** Las 28 filas actuales son sesiones internas de trabajo/coordination del equipo y se sustentan en actividad Git y decisiones de desarrollo. No equivalen a 28 entrevistas ni a 28 sesiones empíricas, y por tanto no constituyen el denominador de A5 `notas_campo/`.
+
 ### A2 — `capturas/`
 
 Capturas reales de trabajo individual o colaborativo sobre FabroGym. El inventario del equipo actual de cierre contiene 13 capturas de `Emeraxs`, 19 de `Mery` y 10 de `amorad35`, para un total de **42 capturas atribuibles**. El detalle de atribución está en `10_Autoria/capturas/README.md`.
@@ -84,9 +86,20 @@ Deben corresponder a actividades efectivas de revisión, edición, discusión o 
 
 ### A5 — `notas_campo/`
 
-Notas reales obtenidas durante actividades de elicitación, observación o validación.
+Notas reales obtenidas durante **sesiones empíricas de elicitación y validación**.
 
-No se reconstruyen notas posteriormente para aparentar evidencia de campo.
+La cobertura A5 **no se compara contra las 28 filas de `bitacora_sesiones.csv`**. Esa bitácora A1 registra sesiones internas de trabajo del equipo (coordinación, edición, modelado y commits), no 28 entrevistas ni 28 sesiones empíricas.
+
+La fuente canónica para el universo empírico es `07_Datos/datos_crudos/sesiones_multimedia_desde_ficha_v3_1.csv`, que contiene **16 sesiones**: 10 entrevistas, 3 walkthroughs técnicos y 3 walkthroughs no técnicos.
+
+En el corte actual hay **13 notas de campo asociables a 13/16 sesiones empíricas**: 10 entrevistas y 3 walkthroughs técnicos. No están depositadas notas para `WALK-NTEC-01`, `WALK-NTEC-02` y `WALK-NTEC-03`. El detalle y las discrepancias históricas de nombres/fechas se documentan en:
+
+```text
+10_Autoria/notas_campo/README.md
+10_Autoria/notas_campo/inventario_notas_campo.csv
+```
+
+Si existen notas físicas contemporáneas de esas tres sesiones, deben digitalizarse; si no existen, la ausencia se declara. No se reconstruyen notas posteriormente para aparentar cobertura.
 
 ### A6 — `fotos_equipo/`
 
@@ -103,7 +116,7 @@ La evidencia fotográfica de autoría se organiza en:
         └── A11 Fotos_Originales_Cuestionario.7z
 ```
 
-Las **dos fotografías reales del equipo disponibles en el repositorio** se encuentran directamente en `10_Autoria/fotos_equipo/`, renombradas con la fecha EXIF `2026-07-27`. La subcarpeta `01_fotos_equipo/` conserva únicamente documentación de referencia sobre esas fotografías. No se anuncian fotografías de equipo inexistentes. El inventario EXIF final refleja únicamente archivos físicamente presentes y trazables: **2 fotos de equipo, 4 JPG de entorno y 5 originales de aplicación del cuestionario**, para un total de **11 registros**.
+Las **dos fotografías reales del equipo disponibles en el repositorio** se encuentran directamente en `10_Autoria/fotos_equipo/`, renombradas con la fecha EXIF `2026-07-27`. La subcarpeta `01_fotos_equipo/` conserva únicamente documentación de referencia sobre esas fotografías. No se anuncian fotografías de equipo inexistentes. El inventario EXIF final registra **todas las fotografías de evidencia físicamente identificadas en el corte**: 2 fotos de equipo, 18 fotografías de entorno y 5 fotografías de aplicación del cuestionario, para un total de **25 registros**. Cuando un archivo no conserva fecha o dispositivo EXIF, se declara `SIN_EXIF` o `EXIF_PARCIAL`; no se inventan metadatos.
 
 Además, las **cinco copias públicas enmascaradas de aplicación del cuestionario** se encuentran en:
 
@@ -167,13 +180,15 @@ Su alcance debe interpretarse según las personas que realmente la firmaron y no
 
 Inventario técnico de fotografías utilizadas como evidencia.
 
-El inventario final contiene **11 registros verificables**:
+El inventario actual contiene **25 registros**:
 
 - 2 fotografías del equipo;
-- 4 fotografías JPG de entorno de `02_Evidencias/Fotos_Entorno/`;
-- 5 fotografías originales de aplicación del cuestionario.
+- 18 fotografías del entorno de `02_Evidencias/Fotos_Entorno/`;
+- 5 fotografías de aplicación del cuestionario.
 
-Para cada registro se conserva, cuando está disponible en el archivo fuente:
+De esos 25 registros, **20 conservan una fecha de captura en metadatos** y **5 se declaran `SIN_EXIF`** porque no exponen fecha ni dispositivo recuperables. Dos archivos adicionales conservan fecha pero no Make/Model y se marcan `EXIF_PARCIAL`.
+
+Para cada registro se conserva, cuando está disponible:
 
 - fecha EXIF;
 - dispositivo;
@@ -181,7 +196,9 @@ Para cada registro se conserva, cuando está disponible en el archivo fuente:
 - estado EXIF;
 - ruta trazable dentro del repositorio.
 
-Para las cinco fotografías del cuestionario se conserva además la relación entre el original restringido y la copia pública enmascarada. Las copias públicas pueden tener hash distinto del original por el enmascaramiento; el inventario primario se basa en los originales preservados.
+La guía del examen contabilizó 26 fotografías suponiendo 3 fotos de equipo. El árbol verificable actual contiene **2 fotos de equipo + 18 de entorno + 5 de aplicación = 25 fotografías**. No se crea una tercera foto de equipo inexistente para forzar el conteo.
+
+Para las cinco fotografías del cuestionario se conserva además la relación entre el original restringido y la copia pública enmascarada.
 
 ### A12 — `/.mailmap`
 
@@ -241,13 +258,13 @@ Antes de congelar la entrega se debe comprobar:
 3. hashes de commit citados existentes;
 4. autores normalizados mediante `.mailmap`;
 5. doble codificación reproducible;
-6. dos fotografías reales de equipo con EXIF verificable y cinco fotografías de aplicación del cuestionario con trazabilidad EXIF/copia pública;
+6. inventario EXIF con 25 fotografías reales del corte (2 equipo + 18 entorno + 5 aplicación), declarando de forma explícita los archivos `SIN_EXIF` o `EXIF_PARCIAL`;
 7. declaración de uso de IA consistente;
 8. `aporte_individual.md` sincronizado con los commits finales;
 9. privacidad automática sin bloqueos y revisión humana completada;
 10. `git status` limpio antes de crear el tag.
 
-La verificación terminal del repositorio se realiza sobre el estado final mediante los comandos de integridad y Git establecidos en la guía de cierre, inmediatamente antes de crear la etiqueta anotada terminal. No se mantiene un PDF adicional de “verificación previa” como requisito del cierre. La composición del equipo actual y el estado de evidencia individual vigente se documentan en `10_Autoria/EQUIPO_EXAMEN_FINAL.md`.
+La guía vigente del examen suspenso exige una **verificación previa firmada**. Por ello, `10_Autoria/verificacion_previa.pdf` debe generarse únicamente cuando el contenido del repositorio esté congelado, después de cerrar la evidencia A5/A11 y antes de los manifiestos terminales y de la etiqueta anotada. El documento debe reflejar el estado real de ese corte y ser firmado por los integrantes del equipo actual de cierre; no se reutiliza una verificación de una versión anterior.
 
 ## 8. Estado de esta carpeta
 
