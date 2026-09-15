@@ -8,10 +8,12 @@
 - Se incorpora el inventario EXIF completo de 11 registros reales: 2 fotografías de equipo, 4 JPG de entorno y 5 fotografías de aplicación del cuestionario.
 - Se reconcilia el conteo real de **16 consentimientos específicos de sesión** (10 ENTR + 3 WALK-TEC + 3 WALK-NTEC) frente a la mención de 17 en la guía; la diferencia se documenta como discrepancia de conteo, no como archivo faltante.
 - Se añade un espejo byte-idéntico en `08_Etica/consentimientos/` para que funcione la ruta literal de verificación de la guía; la ubicación canónica continúa siendo `02_Evidencias/Consentimientos/` y los archivos no se cuentan dos veces.
-- El manuscrito y la retrospectiva distinguen la autoría histórica del proyecto del equipo actual de cierre (Mera, Mora y Ponce), y distinguen la línea base publicada de un eventual cierre posterior.
+- El manuscrito y la retrospectiva distinguen la autoría histórica del proyecto del equipo actual de cierre (Mera, Mora y Ponce), y declaran `v2.0.3-final` como la etiqueta terminal del cierre, creada únicamente después de verificar los manifiestos finales.
 - Se conservan los resultados empíricos ya versionados y se corrigen únicamente los artefactos/documentación identificados por la auditoría de cierre; no se fuerza una regeneración masiva en este lote mínimo.
 - Se deja documentado que el cierre de integridad se realizará con comandos manuales `sha256sum`, conforme a la guía de evaluación, sin modificar los scripts auxiliares existentes.
-- **Los manifiestos SHA-256 no se incluyen en este lote de contenido.** Deben regenerarse una sola vez, al final absoluto, después de cualquier evidencia auténtica adicional y antes del siguiente tag.
+- **Los dos manifiestos terminales exigidos por §12 (`/checksums.sha256` y `07_Datos/checksums_datos.sha256`) no se regeneran en este lote de contenido.** Deben regenerarse una sola vez, al final absoluto, después de cualquier evidencia auténtica adicional y antes del siguiente tag.
+- Se sincronizan las rutas de fotografías de equipo, se eliminan referencias a una verificación histórica inexistente, se estabiliza el corte documental de autoría y se cierra la redacción de Docker/Zenodo sin declarar tareas futuras no acreditadas.
+- Se actualizan los manifiestos locales de defensa y del paquete académico `dataset_zenodo` para que describan exactamente los archivos actuales; estos no sustituyen a los dos manifiestos terminales exigidos por §12.
 
 ## 2026-09-14 — Corrección posterior a auditoría PRE-TAG (`v2.0.2-final`)
 

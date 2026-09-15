@@ -21,4 +21,4 @@ A5 ERS/SRS normalization: PASS
 - The independent UML evidence remains under dataset_zenodo/modelado/.
 - The published Zenodo 2.0.0 record is not modified retrospectively.
 
-MANIFEST.csv and checksums.sha256 were regenerated after the A5 normalization.
+MANIFEST.csv and checksums.sha256 were regenerated for the current local academic-delivery state after the final metadata normalization.
