@@ -90,7 +90,7 @@ Esta sección se incorpora para hacer visibles, en un único punto del repositor
 | **Base de licitud / fundamento de participación** | La evidencia primaria de campo se obtuvo bajo **participación voluntaria y consentimiento informado**, conforme al A3 y a las condiciones ya declaradas en este expediente. No se usa la IA como fuente de evidencia primaria ni se fabrican datos de participantes. |
 | **Finalidad** | Los datos y evidencias se utilizan exclusivamente para **fines académicos de Ingeniería de Requisitos**, validación empírica, trazabilidad, reproducibilidad y publicación académica anonimizada del proyecto FabroGym. No se autoriza su uso comercial, productivo ni para decisiones sobre personas. |
 | **Plazo de conservación** | Como regla operativa de cierre, las **copias restringidas o reidentificables bajo custodia del equipo** se conservarán únicamente hasta el **cierre formal del periodo académico 2026-2027 PPA** y la finalización de la evaluación de la Entrega 4. Concluido ese hito, las copias personales o no institucionales deberán eliminarse de forma segura. Si la UTEQ exige conservar una evidencia por un plazo institucional adicional, esa copia deberá quedar únicamente bajo custodia institucional autorizada. Los artefactos públicos anonimizados y el paquete reproducible pueden mantenerse de forma persistente en GitHub/Zenodo por no contener identificadores directos destinados a publicación abierta. |
-| **Responsable del tratamiento/custodia académica** | Para el **cierre operativo del proyecto**, la custodia y revisión del material corresponde al equipo actual: **Mera Arias Erick Jhair, Mora Duarte Alex José y Ponce Rivera Mery Helenmey**, bajo supervisión académica del **Ing. Gleiston Guerrero Ulloa, PhD**. Esta identificación es operativa para el expediente académico y no reemplaza la determinación institucional que corresponda a la UTEQ. |
+| **Responsable del tratamiento/custodia académica** | Para las tareas de **custodia y revisión operativa del cierre reciente**, las personas actualmente documentadas en esa actividad son **Mera Arias Erick Jhair, Mora Duarte Alex José y Ponce Rivera Mery Helenmey**, bajo supervisión académica del **Ing. Gleiston Guerrero Ulloa, PhD**. Esta identificación describe la custodia operativa reciente; **no redefine la composición del equipo evaluable**, que permanece sujeta a la guía y a la determinación docente/institucional. |
 
 ### Regla de prevalencia
 
@@ -167,13 +167,15 @@ El expediente reúne los documentos principales, anexos de Categoría A y la sol
 
 Este material se utiliza exclusivamente como evidencia del proceso de Ingeniería de Requisitos del proyecto Fabro Gym. Su contenido no representa asesoría jurídica ni autoriza por sí mismo la ejecución de actividades con participantes.
 
-## Equipo actual de cierre
+## Responsables operativos recientes y alcance evaluable
+
+Las tareas recientes de custodia y revisión del cierre están documentadas principalmente para:
 
 - **Mera Arias Erick Jhair** (`Emeraxs`)
 - **Mora Duarte Alex José** (`amorad35`)
 - **Ponce Rivera Mery Helenmey** (`Mery-003`)
 
-La participación histórica de otros integrantes se conserva en Git y en los artefactos donde corresponda; no se elimina ni se reasigna.
+Esta identificación describe responsabilidades operativas recientes y **no reduce por sí sola el alcance evaluable del equipo**. Mientras no exista una autorización docente posterior que disponga lo contrario, el alcance se mantiene sobre los cinco integrantes documentados en la guía del proyecto: Alvia Villegas Erick Adalberto, Mera Arias Erick Jhair, Mora Duarte Alex José, Ponce Rivera Mery Helenmey y Vaca Romero David Octavio. La evidencia individual faltante no se fabrica ni se reasigna.
 
 ## Licencia y restricciones
 
