@@ -3,7 +3,7 @@
 **Proyecto:** FabroGym — ISR-401  
 **Artefacto principal asociado:** `07_Publicacion/manuscrito_final.tex` / `manuscrito_final.pdf`  
 **Repositorio canónico de evaluación:** `https://github.com/gleiston-guerrero/FabroGym_ISR401`  
-**Última etiqueta publicada:** `v2.0.2-final` (línea base histórica; no se mueve)  
+**Línea base histórica publicada previa al cierre:** `v2.0.2-final` (no se mueve)  
 **Etiqueta terminal declarada:** `v2.0.3-final`, creada solo después de cerrar contenido y verificar manifiestos al final
 
 ## 1. Propósito
