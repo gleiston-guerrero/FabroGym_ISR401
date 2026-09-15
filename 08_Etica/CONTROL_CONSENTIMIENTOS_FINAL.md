@@ -24,8 +24,15 @@ La separación pública/restringida, la finalidad académica, la minimización y
 
 ## Reconciliación del conteo de consentimientos
 
-El inventario público verificable de `02_Evidencias/Consentimientos/` contiene **16 consentimientos específicos de sesión**: 10 asociados a `ENTR-01..10`, 3 a `WALK-TEC-01..03` y 3 a `WALK_NTEC_01..03`. La tabla `07_Datos/resultados/tablas/B6_control_metadatos_consentimientos.csv` registra esas mismas 16 copias públicas.
+El inventario verificable de sesiones contiene **16 consentimientos individuales**: 10 asociados a `ENTR-01..10`, 3 a `WALK-TEC-01..03` y 3 a `WALK_NTEC_01..03`. Esta cantidad coincide con las **16 sesiones** documentadas del trabajo de campo. La tabla `07_Datos/resultados/tablas/B6_control_metadatos_consentimientos.csv` registra esas mismas 16 copias públicas.
 
-El expediente ético contiene además `13_A13_Participantes_Externos_FabroGym_Firmado.pdf` y `Adenda_Segunda_Ronda_FabroGym_Firmado.pdf` como documentos complementarios. **No se contabilizan artificialmente como un consentimiento individual número 17** ni sustituyen un formulario específico de sesión.
+La guía de cierre menciona textualmente **17 consentimientos**, pero en el expediente reproducible disponible no existe un decimoséptimo formulario individual de sesión que pueda identificarse sin duplicar o reclasificar artificialmente otro documento. Por integridad académica, la diferencia se registra como **discrepancia de conteo de la guía frente al inventario verificable**, no como un archivo faltante del repositorio.
 
-Si la guía de evaluación exige literalmente 17 consentimientos individuales, el documento número 17 debe identificarse mediante evidencia real o aclaración docente antes de declarar ese conteo como cumplido. No se crea ni duplica un consentimiento para cerrar la diferencia.
+El expediente ético contiene además `13_A13_Participantes_Externos_FabroGym_Firmado.pdf` y `Adenda_Segunda_Ronda_FabroGym_Firmado.pdf` como documentos complementarios. No se contabilizan como un consentimiento individual adicional.
+
+### Rutas de verificación
+
+- Ruta canónica: `02_Evidencias/Consentimientos/`
+- Ruta espejo para el comando literal de la guía: `08_Etica/consentimientos/`
+
+Los 16 PDFs del espejo son **byte-idénticos** a sus equivalentes de la ruta canónica y no constituyen evidencia adicional. Así, el comando de la guía sobre `08_Etica/consentimientos/*.pdf` puede ejecutarse sin mover ni duplicar conceptualmente los consentimientos.

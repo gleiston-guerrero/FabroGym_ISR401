@@ -1,6 +1,6 @@
 # 09_Defensa - FabroGym Entrega 4 (2B)
 
-Esta carpeta contiene los materiales de defensa de FabroGym para la Entrega 4 (2B) de Ingeniería de Requerimientos. Mientras no exista una autorización docente posterior que modifique formalmente la composición del grupo, el alcance evaluable se mantiene sobre **Alvia Villegas Erick Adalberto, Mera Arias Erick Jhair, Mora Duarte Alex José, Ponce Rivera Mery Helenmey y Vaca Romero David Octavio**. El trabajo correctivo reciente documentado para Mera, Mora y Ponce no redefine por sí solo ese alcance.
+Esta carpeta contiene los materiales de defensa de FabroGym para la Entrega 4 (2B) de Ingeniería de Requerimientos. El **equipo actual de cierre y defensa** está conformado por **Mera Arias Erick Jhair, Mora Duarte Alex José y Ponce Rivera Mery Helenmey**, coherente con la distribución de tres expositores documentada en esta carpeta. Alvia Villegas Erick Adalberto y Vaca Romero David Octavio conservan sus aportes históricos en los artefactos correspondientes, pero no forman parte del equipo actual de cierre.
 
 ## Enfoque de la defensa
 
