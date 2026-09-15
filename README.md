@@ -6,7 +6,7 @@ Repositorio académico del proyecto **FabroGym**, desarrollado en la Universidad
 
 > **Migración de propietario:** el repositorio fue transferido y la URL canónica vigente es la indicada arriba. Para un clon local existente, el remoto debe apuntar a esta dirección con `git remote set-url origin https://github.com/gleiston-guerrero/FabroGym_ISR401.git` y comprobarse posteriormente mediante `git remote -v`.
 
-> **Línea base publicada:** `v2.0.2-final` ya existe y se conserva sin mover ni sobrescribir como línea base histórica del estado cerrado el 14/09/2026. Para el cierre del examen suspenso se declara como etiqueta terminal `v2.0.3-final`, que debe crearse únicamente como último paso sobre el commit final, después de regenerar y verificar ambos manifiestos SHA-256.
+> **Líneas base de cierre:** `v2.0.2-final` se conserva sin mover ni sobrescribir como línea base histórica previa al cierre. La etiqueta terminal definida para esta entrega es `v2.0.3-final`; se publica únicamente como último paso sobre el commit final, después de regenerar y verificar ambos manifiestos SHA-256. Una vez publicada, constituye la línea base vigente del cierre.
 
 ## Estado 2B
 
