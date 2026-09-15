@@ -5,7 +5,7 @@
 - [x] `presentacion.pdf` corresponde a la versión definitiva de 17 diapositivas.
 - [x] `guion.pdf` no organiza la exposición como ejecución operativa en vivo.
 - [x] La diapositiva de prototipo base reporta cobertura y alcance.
-- [x] Las cifras de cierre se mantienen coherentes: 52 requisitos terminales, 25 RF, 23 RNF, 4 RD, 97 trazas, 16/19 RF Must y 84.2 %.
+- [x] Las cifras de cierre se mantienen coherentes: 52 requisitos terminales, 25 RF, 23 RNF, 4 RD, 97 trazas históricas, 8 planes IA, 57 trazas de flujo CU, 16/19 RF Must y 84.2 %.
 - [x] Zenodo se cita con DOI real `10.5281/zenodo.22237884`.
 - [x] OSF se cita con DOI real `10.17605/OSF.IO/62YSC`.
 - [x] F-UJI fue ejecutado con evidencia real: 88 %, nivel FAIR moderado.
