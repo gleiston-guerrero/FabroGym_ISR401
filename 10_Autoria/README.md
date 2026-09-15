@@ -10,11 +10,11 @@ Esta carpeta reúne la evidencia verificable de autoría, contribución individu
 
 La rúbrica final exige que `10_Autoria/` exista con los elementos A1 a A12 como un conjunto completo. Esta carpeta complementa el historial Git y los artefactos técnicos; no los sustituye.
 
-## 2. Alcance del equipo y corrección reciente
+## 2. Equipo de cierre y autoría histórica
 
-La guía y los artefactos académicos del proyecto mantienen un equipo evaluable de cinco integrantes: **Alvia Villegas Erick Adalberto, Mera Arias Erick Jhair, Mora Duarte Alex José, Ponce Rivera Mery Helenmey y Vaca Romero David Octavio**. No existe en este corte una autorización docente versionada que reduzca formalmente ese alcance.
+El **equipo actual de cierre y examen final** está conformado por Mera (`Emeraxs`), Mora (`amorad35`) y Ponce (`Mery-003`).
 
-El trabajo correctivo reciente se encuentra documentado principalmente para Mera (`Emeraxs`), Mora (`amorad35`) y Ponce (`Mery-003`). Esa concentración de actividad reciente no elimina la autoría histórica ni convierte por sí sola al equipo evaluado en un grupo de tres. El estado exacto de evidencia individual se documenta en `10_Autoria/EQUIPO_EXAMEN_FINAL.md`.
+Alvia Villegas Erick Adalberto y Vaca Romero David Octavio conservan la autoría histórica de los aportes realizados durante etapas anteriores del proyecto. Esos aportes no se eliminan ni se reasignan, pero tampoco se presentan como pendientes A2 del cierre actual. El estado exacto se documenta en `10_Autoria/EQUIPO_EXAMEN_FINAL.md`.
 
 ## 3. Principios de integridad
 
@@ -51,7 +51,7 @@ La versión congelada no contiene marcadores provisionales de commit.
 
 ### A2 — `capturas/`
 
-Capturas reales de trabajo individual o colaborativo sobre FabroGym. El inventario actual contiene 13 capturas de `Emeraxs`, 19 de `Mery` y 10 de `amorad35`. No se localizaron capturas A2 atribuibles a Alvia ni a Vaca para este corte; por tanto, **no se declara cumplido su mínimo individual**. El detalle de atribución está en `10_Autoria/capturas/README.md`.
+Capturas reales de trabajo individual o colaborativo sobre FabroGym. El inventario del equipo actual de cierre contiene 13 capturas de `Emeraxs`, 19 de `Mery` y 10 de `amorad35`, para un total de **42 capturas atribuibles**. El detalle de atribución está en `10_Autoria/capturas/README.md`.
 
 Cada captura se relaciona con:
 
@@ -146,9 +146,9 @@ Debe indicar:
 
 ### A10 — `aporte_individual.md` y evidencia firmada
 
-`aporte_individual.md` documenta las contribuciones de cierre que pueden verificarse actualmente mediante commits y artefactos. El documento contiene evidencia detallada reciente para Mera, Mora y Ponce; esto **no redefine** el alcance evaluable de cinco integrantes.
+`aporte_individual.md` documenta las contribuciones de cierre que pueden verificarse actualmente mediante commits y artefactos para **Mera, Mora y Ponce**, que conforman el equipo actual de cierre.
 
-Para cada aporte registrado se conservan actividad, ruta, rol y commit real. Los aportes históricos de Alvia y Vaca permanecen en Git y en los artefactos correspondientes; no se borran, reasignan ni se presentan como evidencia A2 inexistente.
+Para cada aporte registrado se conservan actividad, ruta, rol y commit real. Los aportes históricos de Alvia y Vaca permanecen en Git y en los artefactos correspondientes; no se borran ni se reasignan.
 
 La conformidad firmada disponible se conserva como:
 
