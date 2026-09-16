@@ -1,61 +1,44 @@
 # Notas de campo — alcance y correspondencia con las sesiones empíricas
 
-## Criterio confirmado para el examen suspenso
+## Estado corregido tras la revisión del 16/09/2026
 
-El 15 de septiembre de 2026 se confirmó que la exigencia es **una nota de campo por sesión de elicitación/validación**, no una nota por cada fila de trabajo interno. `10_Autoria/bitacora_sesiones.csv` se sanea con la columna `tipo` y con 16 filas empíricas enlazadas mediante `ruta_nota_campo`.
+La bitácora contiene **44 filas**: 28 de `trabajo_interno` y 16 sesiones empíricas (10 entrevistas + 6 walkthroughs). La cobertura de notas de campo se calcula únicamente sobre esas 16 sesiones empíricas.
 
-Estado verificable: **16/16 sesiones empíricas con nota depositada** (10 entrevistas + 6 walkthroughs).
+Tras la observación del informe de evaluación del 16/09/2026, el estado verificable queda en:
 
+- **10/10 entrevistas** con nota de campo;
+- **3/3 walkthroughs técnicos** con nota de campo;
+- **0/3 walkthroughs no técnicos** con nota de campo contemporánea acreditable.
 
-## 1. Qué documenta esta carpeta
+Total: **13/16 sesiones empíricas con nota de campo contemporánea acreditable**.
 
-`10_Autoria/notas_campo/` conserva notas producidas durante **sesiones empíricas de elicitación y validación** de FabroGym.
+## WALK-NTEC-01, WALK-NTEC-02 y WALK-NTEC-03
 
-La bitácora A1 contiene ahora **44 filas**: 28 clasificadas como `trabajo_interno` y 16 clasificadas como sesiones empíricas (`entrevista` o `walkthrough`). Las notas de esta carpeta corresponden únicamente a esas 16 filas empíricas. Las 28 sesiones internas —revisión por Discord, edición de artefactos, modelado, documentación y commits— no representan entrevistas ni requieren nota de campo.
+Las tres sesiones no técnicas quedan registradas como **sesiones sin nota de campo contemporánea**. Los PNG que antes estaban tratados como notas se conservan, sin alterar sus bytes, en:
 
-La fuente canónica para contar las sesiones empíricas es:
+`10_Autoria/reconstrucciones_posteriores/`
 
-`07_Datos/datos_crudos/sesiones_multimedia_desde_ficha_v3_1.csv`
+Su clasificación correcta es **reconstrucción posterior**. El hecho verificable es que fueron versionados por primera vez el 15/09/2026. En consecuencia, no computan en A5 y no se utilizan para probar qué se escribió durante la sesión.
 
-Ese archivo contiene **16 sesiones empíricas**:
+En `10_Autoria/bitacora_sesiones.csv`, las tres filas WALK-NTEC mantienen `ruta_nota_campo` vacía.
 
-- 10 entrevistas: `ENTR-01` a `ENTR-10`;
-- 3 walkthroughs técnicos: `WALK-TEC-01` a `WALK-TEC-03`;
-- 3 walkthroughs no técnicos: `WALK-NTEC-01` a `WALK-NTEC-03`.
+## Inventario de notas
 
-Por tanto, la cobertura de notas de campo se contrasta con las **16 filas empíricas** de A1 y queda separada de las 28 filas de `trabajo_interno`.
+`inventario_notas_campo.csv` conserva una fila por cada sesión empírica. Para las tres WALK-NTEC:
 
-## 2. Estado real de cobertura en este corte
+- `estado_nota = SIN_NOTA_CONTEMPORANEA`;
+- `nota_campo_ruta` queda vacía;
+- `sha256_nota` queda vacío;
+- la observación remite a la reconstrucción preservada y a su SHA-256.
 
-El repositorio contiene **16 notas de campo asociables a las 16 sesiones empíricas**:
+Las reconstrucciones tienen su propio inventario en:
 
-- 10/10 entrevistas;
-- 3/3 walkthroughs técnicos;
-- 3/3 walkthroughs no técnicos.
+`10_Autoria/reconstrucciones_posteriores/inventario_reconstrucciones.csv`
 
-La cobertura A5 queda, por tanto, en **16/16 sesiones empíricas**. Las tres notas de walkthrough no técnico incorporadas son:
+## Fechas de las sesiones WALK
 
-- `2026-08-16_WALK-NTEC-01_notas_campo.png` — código manuscrito `WALK-NTEC-01`, fecha 16/08/2026;
-- `2026-08-16_WALK-NTEC-02_notas_campo.png` — código manuscrito `WALK-NTEC-02`, fecha 16/08/2026;
-- `2026-08-22_WALK-NTEC-03_notas_campo.png` — código manuscrito `WALK-NTEC-03`, fecha 22/08/2026.
+Este bloque **no vuelve a modificar las fechas de las transcripciones**. La aclaración definitiva se conserva en `04_Trazabilidad/ACLARACION_FECHAS_WALK.md`; los valores manuscritos discordantes se preservan sin edición y se explican allí como errores materiales de consignación del mes.
 
-Las rutas y hashes SHA-256 de las 16 notas se registran en `inventario_notas_campo.csv`.
+## Regla de integridad
 
-## 3. Criterio de fecha y nomenclatura para walkthroughs técnicos
-
-Las notas `WALK-TEC-01`, `WALK-TEC-02` y `WALK-TEC-03` se nombran con la **fecha canónica de sesión** registrada en las fichas técnicas, actas y archivos multimedia del expediente: 2026-08-12, 2026-08-12 y 2026-08-13, respectivamente. La normalización afecta únicamente al nombre/ruta del archivo; las imágenes originales no se editan y conservan sus SHA-256.
-
-En `WALK-TEC-02`, la anotación manuscrita de la fotografía forma parte de la evidencia original y se preserva sin alteración. Para trazabilidad del repositorio, la fecha de sesión usada en la bitácora, el inventario y la nomenclatura es la fecha canónica sustentada por la ficha técnica, el acta y los archivos multimedia.
-
-## 4. Relación con A1
-
-La separación es intencional:
-
-- **A1 — `bitacora_sesiones.csv`:** 44 filas en total, con columna `tipo`: 28 `trabajo_interno`, 10 `entrevista` y 6 `walkthrough`.
-- **A5 — `notas_campo/`:** 16 notas producidas durante las 16 sesiones empíricas de elicitación/validación.
-
-El denominador empírico verificable es 16 y la cobertura actual es **16/16**.
-
-## 5. Regla de integridad
-
-No se crean notas retrospectivas, no se duplican archivos para aparentar cobertura y no se modifica una nota manuscrita para hacerla coincidir con el inventario. Las 16 notas presentes se identifican por sesión, ruta y SHA-256 en el inventario.
+No se crean notas retrospectivas para completar cobertura, no se modifica una reconstrucción para presentarla como contemporánea y no se usa la reconstrucción como evidencia de la fecha real de la sesión.
