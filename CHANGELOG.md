@@ -1,5 +1,30 @@
 # Changelog
 
+## [2B-supletorio-parche-02-aclaracion-definitiva-fechas-walk] - 2026-09-16
+
+### Cierre de la observación sobre fechas WALK
+- Se incorpora `04_Trazabilidad/ACLARACION_FECHAS_WALK.md` con la explicación definitiva del cambio de fechas de las seis transcripciones.
+- Se documenta que `18/08/2026` y `24/08/2026` correspondían a la elaboración/ratificación de las actas y no a la ejecución de las sesiones.
+- Se consolidan las fechas de sesión: TEC-01 `12/08`, TEC-02 `12/08`, TEC-03 `13/08`, NTEC-01 `16/08`, NTEC-02 `16/08` y NTEC-03 `22/08`.
+- Se demuestra que esa cronología ya estaba documentada antes del commit `35c1893`, mediante la ficha técnica versionada el 01/09/2026 y el registro de desviaciones versionado el 04/09/2026.
+- Las anotaciones manuscritas `07/2026` se conservan sin edición y se documentan como errores materiales de consignación del mes, dado que son incompatibles con la versión del formulario (`12 de agosto de 2026`) y con la trazabilidad previa al cambio de las transcripciones.
+- Se incorpora `04_Trazabilidad/VERIFICACION_MULTIMEDIA_WALK.md`: los cuatro MP4 revisados coinciden por SHA-256 con la ficha técnica.
+- Los `creation_time` internos de los MP4 no se usan como fecha de captura porque los archivos fueron procesados/transcodificados con HandBrake y, en un caso, Clideo.
+- No se elimina ni se reescribe ninguna transcripción, consentimiento, acta o nota manuscrita.
+- Los manifiestos y la nueva etiqueta final permanecen pendientes hasta actualizar la retrospectiva y cerrar la composición del equipo.
+
+
+## [2B-supletorio-parche-01-ntec] - 2026-09-16
+
+### Rectificación de §15 — notas WALK-NTEC
+- Se rectifica la declaración anterior de cobertura `16/16`: el estado verificable queda en **13/16 sesiones empíricas con nota de campo contemporánea acreditable**.
+- `WALK-NTEC-01`, `WALK-NTEC-02` y `WALK-NTEC-03` quedan como **sesiones sin nota de campo contemporánea**.
+- Los tres PNG se preservan sin alterar bytes ni SHA-256 en `10_Autoria/reconstrucciones_posteriores/` y se clasifican como **reconstrucciones posteriores** versionadas por primera vez el 15/09/2026.
+- `10_Autoria/bitacora_sesiones.csv` deja vacía `ruta_nota_campo` para esas tres sesiones.
+- `10_Autoria/notas_campo/inventario_notas_campo.csv` deja de contabilizar esos PNG como notas de campo.
+- Este parche **no vuelve a modificar las transcripciones WALK**; la explicación definitiva del cambio de fechas se incorpora en `04_Trazabilidad/ACLARACION_FECHAS_WALK.md`.
+- No se regeneran manifiestos SHA-256 ni se crea etiqueta en este punto; ambos pasos quedan reservados para el cierre terminal.
+
 ## [2B-supletorio-composicion-bitacora] - 2026-09-15
 
 ### Composición evaluable y autoría
