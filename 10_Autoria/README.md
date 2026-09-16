@@ -165,6 +165,8 @@ La conformidad firmada disponible se conserva como:
 10_Autoria/aporte_individual_FIRMA.pdf
 ```
 
+Ese PDF corresponde al **corte histórico del 11 de septiembre de 2026**, anterior a la formalización de la composición del examen suspenso del 15/09/2026. Por ello conserva la composición y URL vigentes en aquel corte y **no define la composición evaluada actual**. La fuente vigente para esta evaluación es `../04_Trazabilidad/solicitud_cambio_composicion_equipo.pdf`, complementada por `EQUIPO_EXAMEN_FINAL.md`. El PDF histórico no se reescribe ni se vuelve a firmar, para preservar su integridad documental.
+
 Su alcance debe interpretarse según las personas que realmente la firmaron y no como sustituto de la evidencia individual exigida a cada integrante.
 
 ### A11 — `exif_inventario.csv`

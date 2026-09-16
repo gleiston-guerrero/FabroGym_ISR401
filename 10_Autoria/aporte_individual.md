@@ -19,7 +19,7 @@ Mora conserva sus aportes propios y cualquier apoyo posterior debe seguir firmad
 - No se atribuyen tareas a un integrante si el historial Git no permite verificar esa relación.
 - Los commits de merge no se usan por sí solos como evidencia principal cuando existe un commit específico.
 - Las actividades colaborativas en Discord se documentan en `10_Autoria/bitacora_sesiones.csv` y se contrastan con la actividad Git verificable.
-- La evidencia firmada se conserva separadamente en `10_Autoria/aporte_individual_FIRMA.pdf`.
+- La evidencia firmada se conserva separadamente en `10_Autoria/aporte_individual_FIRMA.pdf`. Ese PDF corresponde al corte histórico del **11/09/2026**, previo a la formalización de la composición actual, por lo que no sustituye a `04_Trazabilidad/solicitud_cambio_composicion_equipo.pdf` como fuente vigente del examen suspenso.
 - Los cambios locales todavía no versionados no se presentan como aportes cerrados ni se les asigna un SHA inexistente.
 - El commit que contenga esta última sincronización documental constituirá el corte final de contenido previo al tag; su SHA no se inserta dentro de este mismo archivo para evitar una referencia circular.
 
@@ -131,8 +131,9 @@ Se conservan sus aportes previos sin reasignarlos. Entre los bloques verificable
 
 El historial Git completo sigue siendo la fuente canónica para sus demás aportes. Vaca no continúa en la evaluación del examen suspenso y no se le asignan trabajos posteriores.
 
-## 8. Sesión de cierre verificada - 11 de septiembre de 2026
+## 8. Sesión histórica de cierre verificada - 11 de septiembre de 2026
 
+Esta sesión ocurrió **antes** de la formalización de la composición evaluable del 15/09/2026. Se conserva para acreditar el trabajo realmente realizado en ese momento; no redefine quiénes son evaluados en el examen suspenso.
 
 Entre las **22:07 y 22:52 (UTC-05:00)**, Mera, Mora y Ponce permanecieron reunidos de forma **Remota — Discord** durante el bloque de cierre. La modalidad y participación están documentadas en la bitácora; las actividades concretas se contrastan con el historial Git.
 
