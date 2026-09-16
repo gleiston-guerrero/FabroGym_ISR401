@@ -1,37 +1,33 @@
-# Equipo de cierre y estado de evidencia individual - FabroGym
+# Composición vigente para el examen suspenso - FabroGym
 
-**Proyecto:** FabroGym - Ingeniería de Requisitos (ISR-401)  
-**Corte:** Entrega 4 (2B / Defensa Final)  
-**Repositorio canónico:** `https://github.com/gleiston-guerrero/FabroGym_ISR401`
+**Proyecto:** FabroGym - ISR-401  
+**Fecha de formalización:** 15 de septiembre de 2026  
+**Repositorio:** `https://github.com/gleiston-guerrero/FabroGym_ISR401`
 
-## 1. Equipo actual de cierre
+## 1. Integrantes evaluados en el examen suspenso
 
-El equipo activo para el cierre y examen final está conformado por:
+- **Mera Arias Erick Jhair** - GitHub `Emeraxs`.
+- **Ponce Rivera Mery Helenmey** - GitHub `Mery-003`.
 
-- **Mera Arias Erick Jhair** - Git `Emeraxs`.
-- **Mora Duarte Alex José** - Git `amorad35`.
-- **Ponce Rivera Mery Helenmey** - Git `Mery-003`.
+Son los dos integrantes cuya contribución posterior se considera para la calificación del examen suspenso. Sus aportes deben quedar acreditados mediante commits propios y evidencia de autoría propia.
 
-**Alvia Villegas Erick Adalberto** y **Vaca Romero David Octavio** participaron en etapas anteriores del proyecto. Sus contribuciones históricas se conservan por trazabilidad en Git, ERS/SRS, protocolo, publicaciones y demás artefactos donde realmente intervinieron. No se eliminan ni se reasignan esos aportes, pero tampoco se los presenta como integrantes pendientes del cierre actual.
+## 2. Apoyo no evaluado
 
-## 2. Evidencia A2 del equipo de cierre
+- **Mora Duarte Alex José** - GitHub `amorad35`.
 
-El inventario real disponible en `10_Autoria/capturas/` documenta:
+Mora aprobó con la calificación anterior y puede apoyar el cierre. Cualquier aporte que realice continúa siendo suyo y debe quedar firmado con su propia identidad Git. Sus commits no se reasignan ni se contabilizan como aporte de Mera o Ponce.
 
-| Integrante | Identificador visible | Capturas A2 localizadas | Estado frente al mínimo documental de 3 |
-|---|---|---:|---|
-| Mera Arias Erick Jhair | `Emeraxs` | 13 | Cumple |
-| Mora Duarte Alex José | `amorad35` | 10 | Cumple |
-| Ponce Rivera Mery Helenmey | `Mery` | 19 | Cumple |
+## 3. Participación histórica fuera del examen suspenso
 
-La carpeta contiene **42 capturas atribuibles** al equipo actual de cierre. La imagen previamente sin atribución nominal no se utiliza como evidencia individual.
+- **Alvia Villegas Erick Adalberto** - GitHub `Erick-Alvia`.
+- **Vaca Romero David Octavio** - GitHub `David-Bs1`.
 
-## 3. Integridad de la autoría histórica
+Ambos participaron en etapas anteriores del proyecto, pero no continúan en la evaluación del examen suspenso. Sus contribuciones previas se conservan sin alteración en el historial Git y en los artefactos donde intervinieron. No se eliminan, redistribuyen ni atribuyen a otros integrantes.
 
-La delimitación del equipo actual de cierre **no reescribe la historia del proyecto**. Los aportes de Alvia y Vaca permanecen visibles y atribuibles donde corresponda. A su vez, los commits y evidencias del cierre reciente se atribuyen únicamente a Mera, Mora y Ponce cuando así lo demuestra el repositorio.
+## 4. Documento de formalización
 
-No se crean, duplican, reconstruyen, reasignan ni retrofechan capturas.
+La solicitud firmada que formaliza esta composición se deposita en:
 
-## 4. Regla de referencia
+`04_Trazabilidad/solicitud_cambio_composicion_equipo.pdf`
 
-Este archivo es la fuente canónica para interpretar el **equipo actual de cierre** y el estado A2 del corte. `README.md`, `10_Autoria/README.md`, `10_Autoria/aporte_individual.md`, `10_Autoria/capturas/README.md`, `09_Defensa/README.md` y la retrospectiva del manuscrito deben ser coherentes con esta declaración.
+La distinción entre **autoría histórica del proyecto** y **composición evaluada en el examen suspenso** se aplica de manera uniforme en README, ERS/SRS, autoría, ética, publicación y defensa.
