@@ -1,15 +1,17 @@
-# A2 - Capturas de autoría del equipo de cierre
+# A2 - Capturas de autoría y alcance evaluable
 
-Este inventario registra únicamente capturas auténticas del **equipo actual de cierre: Mera, Mora y Ponce**. Los aportes históricos de otros integrantes del proyecto se conservan en Git y en sus artefactos originales, pero no se presentan como pendientes A2 de este corte.
+Este inventario conserva las capturas auténticas disponibles, pero distingue explícitamente la **composición evaluada del examen suspenso** de la participación histórica y del apoyo no evaluado.
 
-| Integrante | Identificador visible en nombre de archivo | Capturas localizadas | Estado mínimo de 3 |
+| Integrante | Usuario / identificador | Capturas localizadas | Estado en examen suspenso |
 |---|---|---:|---|
-| Mera Arias Erick Jhair | `Emeraxs` | 13 | Cumple |
-| Ponce Rivera Mery Helenmey | `Mery` | 19 | Cumple |
-| Mora Duarte Alex José | `amorad35` | 10 | Cumple |
+| Mera Arias Erick Jhair | `Emeraxs` | 13 | **Evaluado - cumple mínimo de 3** |
+| Ponce Rivera Mery Helenmey | `Mery` / `Mery-003` | 19 | **Evaluada - cumple mínimo de 3** |
+| Mora Duarte Alex José | `amorad35` | 10 | Apoyo no evaluado; evidencia propia conservada |
+| Alvia Villegas Erick Adalberto | `Erick-Alvia` | 0 en este corte | Participación histórica; no evaluado en el examen suspenso |
+| Vaca Romero David Octavio | `David-Bs1` | 0 en este corte | Participación histórica; no evaluado en el examen suspenso |
 
-La carpeta contiene **42 capturas atribuibles** a Mera, Ponce y Mora. La imagen previamente sin atribución nominal no se utiliza como evidencia individual.
+Las **42 capturas reales** existentes se conservan sin reasignación. Para la calificación del examen suspenso, la evidencia A2 evaluable corresponde a **Mera y Ponce**, quienes superan el mínimo documental de tres capturas propias.
 
-No se crean, duplican, reconstruyen, reasignan ni retrofechan capturas para alterar la evidencia de autoría.
+Mora puede apoyar, pero sus capturas y commits siguen siendo suyos y no se contabilizan como aporte de Mera o Ponce. No se crean, duplican, reconstruyen, reasignan ni retrofechan capturas.
 
-La interpretación canónica del equipo de cierre se mantiene en `10_Autoria/EQUIPO_EXAMEN_FINAL.md`.
+La composición canónica se mantiene en `10_Autoria/EQUIPO_EXAMEN_FINAL.md` y se formaliza mediante `04_Trazabilidad/solicitud_cambio_composicion_equipo.pdf`.

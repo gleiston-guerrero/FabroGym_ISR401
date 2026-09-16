@@ -12,11 +12,15 @@ La rúbrica final exige que `10_Autoria/` exista con los elementos A1 a A12 como
 
 La retrospectiva requerida para el examen suspenso se conserva en `10_Autoria/retrospectiva_equipo.md`. Ese documento es transversal al conjunto A1-A12: registra las correcciones de §4, §12, §13 y §16, quién intervino en cada bloque y los aprendizajes del cierre, sin crear evidencia histórica inexistente.
 
-## 2. Equipo de cierre y autoría histórica
+## 2. Composición del examen suspenso y autoría histórica
 
-El **equipo actual de cierre y examen final** está conformado por Mera (`Emeraxs`), Mora (`amorad35`) y Ponce (`Mery-003`).
+Para la **evaluación del examen suspenso**, los integrantes evaluados son **Mera Arias Erick Jhair (`Emeraxs`)** y **Ponce Rivera Mery Helenmey (`Mery-003`)**.
 
-Alvia Villegas Erick Adalberto y Vaca Romero David Octavio conservan la autoría histórica de los aportes realizados durante etapas anteriores del proyecto. Esos aportes no se eliminan ni se reasignan, pero tampoco se presentan como pendientes A2 del cierre actual. El estado exacto se documenta en `10_Autoria/EQUIPO_EXAMEN_FINAL.md`.
+**Mora Duarte Alex José (`amorad35`)** participa únicamente como **apoyo no evaluado**. Cualquier aporte suyo debe permanecer firmado con su propio usuario y no se reasigna ni se contabiliza como aporte de los dos evaluados.
+
+**Alvia Villegas Erick Adalberto** y **Vaca Romero David Octavio** conservan la autoría histórica de los aportes realizados antes de dejar de participar en esta etapa. Sus contribuciones no se eliminan ni se redistribuyen.
+
+La composición se formaliza en `../04_Trazabilidad/solicitud_cambio_composicion_equipo.pdf` y la interpretación canónica se mantiene en `EQUIPO_EXAMEN_FINAL.md`.
 
 ## 3. Principios de integridad
 
@@ -35,34 +39,23 @@ Toda evidencia incorporada en `10_Autoria/` debe:
 
 ### A1 — `bitacora_sesiones.csv`
 
-Registro cronológico de sesiones reales de trabajo.
+La bitácora distingue ahora dos universos que antes estaban mezclados conceptualmente:
 
-Cada fila debe documentar, según corresponda:
+- **28 sesiones de `trabajo_interno`**: coordinación, edición, modelado, documentación y commits del equipo.
+- **16 sesiones empíricas**: 10 de tipo `entrevista` y 6 de tipo `walkthrough`, incorporadas con su fecha canónica y su `ruta_nota_campo`.
 
-- identificador de sesión;
-- fecha y horario;
-- modalidad;
-- participantes;
-- usuarios Git;
-- rutas trabajadas;
-- decisiones tomadas;
-- commits reales producidos;
-- fuente de evidencia y observaciones.
+El CSV incluye las columnas `tipo` y `ruta_nota_campo`. Toda fila de tipo `entrevista` o `walkthrough` apunta a una de las 16 notas reales depositadas en `10_Autoria/notas_campo/`. Las sesiones internas no requieren nota de campo.
 
-La versión congelada no contiene marcadores provisionales de commit.
-
-**Alcance A1.** Las 28 filas actuales son sesiones internas de trabajo/coordination del equipo y se sustentan en actividad Git y decisiones de desarrollo. No equivalen a 28 entrevistas ni a 28 sesiones empíricas, y por tanto no constituyen el denominador de A5 `notas_campo/`.
+Por tanto, el conteo correcto para A5 es **16/16 sesiones empíricas con nota**, no 28/28 filas de trabajo interno.
 
 ### A2 — `capturas/`
 
-Capturas reales de trabajo individual o colaborativo sobre FabroGym. El inventario del equipo actual de cierre contiene 13 capturas de `Emeraxs`, 19 de `Mery` y 10 de `amorad35`, para un total de **42 capturas atribuibles**. El detalle de atribución está en `10_Autoria/capturas/README.md`.
+Las 42 capturas existentes se conservan con su autoría real. Para el **examen suspenso**, sólo se evalúan las capturas propias de:
 
-Cada captura se relaciona con:
+- Mera (`Emeraxs`): 13;
+- Ponce (`Mery`/`Mery-003`): 19.
 
-- herramienta utilizada;
-- artefacto trabajado;
-- usuario o integrante;
-- fecha/hora cuando esté disponible.
+Mora (`amorad35`) conserva 10 capturas propias como evidencia histórica/apoyo no evaluado. Alvia y Vaca no continúan en esta evaluación y no se les exige crear capturas nuevas. El detalle se encuentra en `capturas/README.md`.
 
 ### A3 — `fuentes_editables/`
 
@@ -88,7 +81,7 @@ Deben corresponder a actividades efectivas de revisión, edición, discusión o 
 
 Notas reales obtenidas durante **sesiones empíricas de elicitación y validación**.
 
-La cobertura A5 **no se compara contra las 28 filas de `bitacora_sesiones.csv`**. Esa bitácora A1 registra sesiones internas de trabajo del equipo (coordinación, edición, modelado y commits), no 28 entrevistas ni 28 sesiones empíricas.
+La cobertura A5 se calcula únicamente sobre las filas de `bitacora_sesiones.csv` cuyo `tipo` es `entrevista` o `walkthrough`. La bitácora contiene además **28 filas de `trabajo_interno`** para coordinación, edición, modelado, documentación y commits; esas filas no requieren nota de campo.
 
 La fuente canónica para el universo empírico es `07_Datos/datos_crudos/sesiones_multimedia_desde_ficha_v3_1.csv`, que contiene **16 sesiones**: 10 entrevistas, 3 walkthroughs técnicos y 3 walkthroughs no técnicos.
 
@@ -99,7 +92,7 @@ En el corte actual hay **16 notas de campo asociables a las 16/16 sesiones empí
 10_Autoria/notas_campo/inventario_notas_campo.csv
 ```
 
-La cobertura A5 queda completa respecto del universo empírico versionado de 16 sesiones. Esta cobertura no se extrapola a las 28 filas de A1, porque A1 documenta trabajo interno del equipo y no 28 sesiones de elicitación.
+La cobertura A5 queda completa respecto del universo empírico versionado: **16/16 filas empíricas enlazadas a 16 notas reales**. Las otras 28 filas de A1 permanecen clasificadas como `trabajo_interno`.
 
 ### A6 — `fotos_equipo/`
 
@@ -164,9 +157,7 @@ Debe indicar:
 
 ### A10 — `aporte_individual.md` y evidencia firmada
 
-`aporte_individual.md` documenta las contribuciones de cierre que pueden verificarse actualmente mediante commits y artefactos para **Mera, Mora y Ponce**, que conforman el equipo actual de cierre.
-
-Para cada aporte registrado se conservan actividad, ruta, rol y commit real. Los aportes históricos de Alvia y Vaca permanecen en Git y en los artefactos correspondientes; no se borran ni se reasignan.
+`aporte_individual.md` distingue los **aportes evaluables de Mera y Ponce**, el **apoyo no evaluado de Mora** y los **aportes históricos de Alvia y Vaca**. Para cada aporte registrado se conservan actividad, ruta, rol y commit real o referencia al historial Git; ningún trabajo previo se borra, redistribuye ni atribuye a otro integrante.
 
 La conformidad firmada disponible se conserva como:
 
@@ -264,7 +255,7 @@ Antes de congelar la entrega se debe comprobar:
 9. privacidad automática sin bloqueos y revisión humana completada;
 10. `git status` limpio antes de crear el tag.
 
-La guía vigente del examen suspenso exige una **verificación previa firmada**. Por ello, `10_Autoria/verificacion_previa.pdf` debe generarse únicamente cuando el contenido del repositorio esté congelado, después de cerrar la evidencia A5/A11 y antes de los manifiestos terminales y de la etiqueta anotada. El documento debe reflejar el estado real de ese corte y ser firmado por los integrantes del equipo actual de cierre; no se reutiliza una verificación de una versión anterior.
+La guía vigente del examen suspenso exige una **verificación previa firmada**. Por ello, `10_Autoria/verificacion_previa.pdf` debe generarse únicamente cuando el contenido del repositorio esté congelado, después de cerrar la evidencia A5/A11 y antes de los manifiestos terminales y de la etiqueta anotada. El documento debe reflejar el estado real de ese corte y ser firmado por los **dos integrantes evaluados del examen suspenso, Mera y Ponce**; no se reutiliza una verificación de una versión anterior. Mora puede apoyar la revisión, pero no firma como integrante evaluado.
 
 ## 8. Estado de esta carpeta
 

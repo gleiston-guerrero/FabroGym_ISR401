@@ -76,3 +76,14 @@ Cuando el metadato existe, se registra. Cuando falta, se declara `SIN_EXIF`; cua
 - `IMG_20260721_154701.jpg` → `Aplicacion_Cuestionario_03.jpg`
 - `IMG_20260721_154901.jpg` → `Aplicacion_Cuestionario_04.jpg`
 - `IMG_20260825_142844.jpg` → `Aplicacion_Cuestionario_05.jpg`
+
+
+## Interpretación de hashes
+
+`exif_inventario.csv` distingue dos valores cuando la fotografía de aplicación tiene un original restringido y una copia pública enmascarada:
+
+- `SHA256`: hash del **original restringido con EXIF** para las cinco fotografías de aplicación; en el resto coincide con el archivo público.
+- `SHA256_archivo_en_ruta`: hash de los bytes del archivo ubicado en `Ruta_final_o_prevista`.
+- `Interpretacion_SHA256`: declara explícitamente cuál de los dos alcances aplica a cada fila.
+
+Así se evita comparar el hash del original restringido con los bytes de una copia pública enmascarada, que necesariamente son diferentes.

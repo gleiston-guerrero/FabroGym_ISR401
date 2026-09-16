@@ -3,13 +3,15 @@
 **Proyecto:** FabroGym — ISR-401  
 **Entrega:** Entrega 4 (2B / Defensa Final)  
 **Repositorio:** `https://github.com/gleiston-guerrero/FabroGym_ISR401`  
-**Equipo actual de cierre:** Mera Arias Erick Jhair, Mora Duarte Alex José y Ponce Rivera Mery Helenmey. Los aportes históricos de Alvia y Vaca se conservan por trazabilidad, pero no se presentan como pendientes del cierre actual.
+**Integrantes evaluados en el examen suspenso:** Mera Arias Erick Jhair y Ponce Rivera Mery Helenmey.  
+**Apoyo no evaluado:** Mora Duarte Alex José.  
+**Participación histórica fuera del examen suspenso:** Alvia Villegas Erick Adalberto y Vaca Romero David Octavio.
 
 ## 1. Propósito
 
-Este documento consolida las contribuciones de cierre que actualmente pueden verificarse mediante commits reales y artefactos del repositorio. La evidencia detallada reciente está disponible para Mera, Mora y Ponce.
+Este documento conserva la atribución real de las contribuciones del proyecto y separa explícitamente lo que **se evalúa en el examen suspenso** de lo que corresponde a **apoyo no evaluado** o **autoría histórica**. La evidencia reciente evaluable corresponde a Mera y Ponce.
 
-Alvia Villegas Erick Adalberto y Vaca Romero David Octavio se conservan únicamente como participantes históricos cuando corresponda por trazabilidad del proyecto. No se los registra como integrantes pendientes del cierre actual ni se les asignan evidencias recientes no verificables.
+Mora conserva sus aportes propios y cualquier apoyo posterior debe seguir firmado con su usuario. Alvia y Vaca conservan sus contribuciones históricas hasta su salida de esta etapa; no se les inventan evidencias recientes ni se redistribuye su trabajo.
 
 ## 2. Criterio de inclusión
 
@@ -50,7 +52,7 @@ Alvia Villegas Erick Adalberto y Vaca Romero David Octavio se conservan únicame
 
 ---
 
-## 4. Mora Duarte Alex José
+## 4. Mora Duarte Alex José - aportes propios y apoyo no evaluado
 
 **Usuario Git verificado:** `amorad35`
 
@@ -101,7 +103,36 @@ Alvia Villegas Erick Adalberto y Vaca Romero David Octavio se conservan únicame
 
 ---
 
-## 6. Sesión de cierre verificada — 11 de septiembre de 2026
+## 6. Alvia Villegas Erick Adalberto - participación histórica
+
+**Usuario Git verificado:** `Erick-Alvia`
+
+Se conservan sus aportes previos sin reasignarlos. Entre los bloques verificables registrados en la bitácora y el historial Git se encuentran:
+
+| Actividad histórica verificable | Artefacto / ruta | Commit(s) |
+|---|---|---|
+| Organización inicial de documentación de evidencias y consentimientos | `02_Evidencias/Consentimientos/README.md` y README de organización | `6cefac3445299d2579192e3e1962f1303f3413b6`; `fbf87ad7c412e7c6f185f1cf163a157d2e57995c`; `38e0f7e77a008c7aa08ba8e832379dd66da8c54f` |
+| Ajustes documentales de casos de uso UML | `03_Modelado/Diagramas_UML/02_Casos_de_Uso/` | `5fccf1d4ba1d89eac55bc791aabe61bfd47c2dc6`; `256d9d238b292cabc3769c54ab381e84fc0dd953` |
+| Normalización de su identidad institucional en Git | `.mailmap` | `c3975a92f246734f93f064e22fa7a842b55bf9b9`; `73d75fe2e35cd4d90549eb1f5ff41842e046494e` |
+
+El historial Git completo sigue siendo la fuente canónica para sus demás aportes. Alvia no continúa en la evaluación del examen suspenso y no se le asignan trabajos posteriores.
+
+## 7. Vaca Romero David Octavio - participación histórica
+
+**Usuario Git verificado:** `David-Bs1`
+
+Se conservan sus aportes previos sin reasignarlos. Entre los bloques verificables del historial se encuentran:
+
+| Actividad histórica verificable | Artefacto / ruta | Commit(s) |
+|---|---|---|
+| Incorporación de consentimientos censurados de walkthrough | `02_Evidencias/Consentimientos/` | `10a010ff3bff283f7bf33b7eb56097e867f9c967` |
+| Consolidación de integridad mediante checksums de la Entrega 4 | `checksums.sha256` y artefactos asociados | `8e664455294b272b007c8f8a600781a1d5a809f7` |
+| Participación en bloques colaborativos de modelado/evidencia previos al examen suspenso | historial Git y `10_Autoria/bitacora_sesiones.csv` | se conserva en el historial; no se reasigna |
+
+El historial Git completo sigue siendo la fuente canónica para sus demás aportes. Vaca no continúa en la evaluación del examen suspenso y no se le asignan trabajos posteriores.
+
+## 8. Sesión de cierre verificada - 11 de septiembre de 2026
+
 
 Entre las **22:07 y 22:52 (UTC-05:00)**, Mera, Mora y Ponce permanecieron reunidos de forma **Remota — Discord** durante el bloque de cierre. La modalidad y participación están documentadas en la bitácora; las actividades concretas se contrastan con el historial Git.
 
@@ -113,7 +144,7 @@ Entre las **22:07 y 22:52 (UTC-05:00)**, Mera, Mora y Ponce permanecieron reunid
 
 El merge `d0a32b007deba27353d57d877b84e1d28047b55f` es un commit técnico de integración y no se utiliza como evidencia principal de contribución individual.
 
-## 7. Relación con otras evidencias
+## 9. Relación con otras evidencias
 
 Esta relación se contrasta con:
 
@@ -124,13 +155,13 @@ Esta relación se contrasta con:
 - historial Git del repositorio;
 - artefactos existentes en las rutas citadas.
 
-## 8. Declaración de integridad
+## 10. Declaración de integridad
 
 Las contribuciones incluidas se basan en evidencia versionada verificable. No se fabrican commits, no se atribuyen cambios locales no versionados y no se reasignan aportes históricos.
 
-El trabajo correctivo reciente documentado aquí corresponde al **equipo actual de cierre: Mera Arias Erick Jhair, Mora Duarte Alex José y Ponce Rivera Mery Helenmey**. Los aportes históricos de Alvia y Vaca permanecen visibles en Git y no se eliminan ni se reasignan.
+El trabajo **evaluable del examen suspenso** corresponde a **Mera Arias Erick Jhair y Ponce Rivera Mery Helenmey**. Mora conserva sus aportes propios como apoyo no evaluado; Alvia y Vaca permanecen como participación histórica. Ningún aporte se elimina, reasigna ni presenta con una autoría distinta de la real.
 
-## 9. Corte documental de cierre
+## 11. Corte documental de cierre
 
 Este documento resume los aportes verificables versionados hasta el corte PRE-CHECKSUM vigente. El historial Git del repositorio constituye la fuente canónica para identificar los commits posteriores de cierre.
 

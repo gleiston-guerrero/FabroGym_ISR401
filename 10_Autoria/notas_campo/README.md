@@ -1,10 +1,17 @@
 # Notas de campo — alcance y correspondencia con las sesiones empíricas
 
+## Criterio confirmado para el examen suspenso
+
+El 15 de septiembre de 2026 se confirmó que la exigencia es **una nota de campo por sesión de elicitación/validación**, no una nota por cada fila de trabajo interno. `10_Autoria/bitacora_sesiones.csv` se sanea con la columna `tipo` y con 16 filas empíricas enlazadas mediante `ruta_nota_campo`.
+
+Estado verificable: **16/16 sesiones empíricas con nota depositada** (10 entrevistas + 6 walkthroughs).
+
+
 ## 1. Qué documenta esta carpeta
 
 `10_Autoria/notas_campo/` conserva notas producidas durante **sesiones empíricas de elicitación y validación** de FabroGym.
 
-Estas notas **no corresponden a cada fila de `10_Autoria/bitacora_sesiones.csv`**. La bitácora A1 registra 28 sesiones internas de trabajo del equipo —revisión por Discord, edición de artefactos, modelado, documentación y commits— y cumple una finalidad de autoría. No representa 28 entrevistas ni 28 sesiones de elicitación.
+La bitácora A1 contiene ahora **44 filas**: 28 clasificadas como `trabajo_interno` y 16 clasificadas como sesiones empíricas (`entrevista` o `walkthrough`). Las notas de esta carpeta corresponden únicamente a esas 16 filas empíricas. Las 28 sesiones internas —revisión por Discord, edición de artefactos, modelado, documentación y commits— no representan entrevistas ni requieren nota de campo.
 
 La fuente canónica para contar las sesiones empíricas es:
 
@@ -16,7 +23,7 @@ Ese archivo contiene **16 sesiones empíricas**:
 - 3 walkthroughs técnicos: `WALK-TEC-01` a `WALK-TEC-03`;
 - 3 walkthroughs no técnicos: `WALK-NTEC-01` a `WALK-NTEC-03`.
 
-Por tanto, la cobertura de notas de campo se contrasta con esas **16 sesiones empíricas**, no con las 28 sesiones internas de trabajo A1.
+Por tanto, la cobertura de notas de campo se contrasta con las **16 filas empíricas** de A1 y queda separada de las 28 filas de `trabajo_interno`.
 
 ## 2. Estado real de cobertura en este corte
 
@@ -47,10 +54,10 @@ Estas observaciones son de trazabilidad documental; no modifican los datos empí
 
 La separación es intencional:
 
-- **A1 — `bitacora_sesiones.csv`:** sesiones de trabajo y coordinación del equipo con rutas, decisiones y commits.
-- **A5 — `notas_campo/`:** notas producidas durante sesiones empíricas de elicitación/validación con participantes.
+- **A1 — `bitacora_sesiones.csv`:** 44 filas en total, con columna `tipo`: 28 `trabajo_interno`, 10 `entrevista` y 6 `walkthrough`.
+- **A5 — `notas_campo/`:** 16 notas producidas durante las 16 sesiones empíricas de elicitación/validación.
 
-Por ello, no es correcto exigir una nota de campo por cada una de las 28 filas de A1. El denominador empírico verificable es 16 y la cobertura actual es 16/16.
+El denominador empírico verificable es 16 y la cobertura actual es **16/16**.
 
 ## 5. Regla de integridad
 
