@@ -85,7 +85,7 @@ La cobertura A5 se calcula únicamente sobre las filas de `bitacora_sesiones.csv
 
 La fuente canónica para el universo empírico es `07_Datos/datos_crudos/sesiones_multimedia_desde_ficha_v3_1.csv`, que contiene **16 sesiones**: 10 entrevistas, 3 walkthroughs técnicos y 3 walkthroughs no técnicos.
 
-En el corte actual hay **16 notas de campo asociables a las 16/16 sesiones empíricas**: 10/10 entrevistas, 3/3 walkthroughs técnicos y 3/3 walkthroughs no técnicos. Las notas `WALK-NTEC-01`, `WALK-NTEC-02` y `WALK-NTEC-03` ya están depositadas y sus rutas y SHA-256 se registran en el inventario. El detalle y las discrepancias históricas de fecha de dos notas técnicas se documentan en:
+En el corte actual hay **16 notas de campo asociables a las 16/16 sesiones empíricas**: 10/10 entrevistas, 3/3 walkthroughs técnicos y 3/3 walkthroughs no técnicos. Las notas `WALK-NTEC-01`, `WALK-NTEC-02` y `WALK-NTEC-03` ya están depositadas y sus rutas y SHA-256 se registran en el inventario. El detalle de cobertura y el criterio canónico de fecha/nomenclatura de las notas técnicas se documentan en:
 
 ```text
 10_Autoria/notas_campo/README.md

@@ -35,20 +35,17 @@ El repositorio contiene **16 notas de campo asociables a las 16 sesiones empíri
 
 La cobertura A5 queda, por tanto, en **16/16 sesiones empíricas**. Las tres notas de walkthrough no técnico incorporadas son:
 
-- `2026-08-16_WALK-NTEC-01_notas_Campo.png` — código manuscrito `WALK-NTEC-01`, fecha 16/08/2026;
-- `2026-08-16_WALK-NTEC-02_notas_Campo.png` — código manuscrito `WALK-NTEC-02`, fecha 16/08/2026;
-- `2026-08-22_WALK-NTEC-03_notas_Campo.png` — código manuscrito `WALK-NTEC-03`, fecha 22/08/2026.
+- `2026-08-16_WALK-NTEC-01_notas_campo.png` — código manuscrito `WALK-NTEC-01`, fecha 16/08/2026;
+- `2026-08-16_WALK-NTEC-02_notas_campo.png` — código manuscrito `WALK-NTEC-02`, fecha 16/08/2026;
+- `2026-08-22_WALK-NTEC-03_notas_campo.png` — código manuscrito `WALK-NTEC-03`, fecha 22/08/2026.
 
 Las rutas y hashes SHA-256 de las 16 notas se registran en `inventario_notas_campo.csv`.
 
-## 3. Discrepancias históricas de fecha en dos notas técnicas
+## 3. Criterio de fecha y nomenclatura para walkthroughs técnicos
 
-La revisión visual de las notas técnicas detectó dos situaciones que se documentan sin alterar el contenido original:
+Las notas `WALK-TEC-01`, `WALK-TEC-02` y `WALK-TEC-03` se nombran con la **fecha canónica de sesión** registrada en las fichas técnicas, actas y archivos multimedia del expediente: 2026-08-12, 2026-08-12 y 2026-08-13, respectivamente. La normalización afecta únicamente al nombre/ruta del archivo; las imágenes originales no se editan y conservan sus SHA-256.
 
-1. `2026_07_12_WALK-TEC-01_notas_campo.png` contiene manuscrito el código **WALK-TEC-01** y la fecha **12/08/2026**, coherente con la fecha canónica de la sesión (`2026-08-12`). El prefijo histórico del archivo conserva `2026_07_12`; la discrepancia se limita al nombre del archivo.
-2. `2026_07_12_WALK-TEC-02_notas_campo.png` identifica **WALK-TEC-02** y consigna manuscritamente **12/07/2026**, mientras el inventario multimedia canónico registra esa sesión el **2026-08-12**. La discrepancia se declara y no se corrige retrospectivamente.
-
-Estas observaciones son de trazabilidad documental; no modifican los datos empíricos ni las grabaciones.
+En `WALK-TEC-02`, la anotación manuscrita de la fotografía forma parte de la evidencia original y se preserva sin alteración. Para trazabilidad del repositorio, la fecha de sesión usada en la bitácora, el inventario y la nomenclatura es la fecha canónica sustentada por la ficha técnica, el acta y los archivos multimedia.
 
 ## 4. Relación con A1
 
