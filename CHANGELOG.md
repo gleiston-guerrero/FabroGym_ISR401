@@ -13,9 +13,14 @@
 - Las 28 filas históricas de coordinación/edición se clasifican como `trabajo_interno` y se añaden 16 filas empíricas: 10 `entrevista` y 6 `walkthrough`.
 - Las 16 filas empíricas enlazan las 16/16 notas reales depositadas; no se crean notas retrospectivas.
 
-### Normalización final de nombres WALK-NTEC
-- Se normalizan los nombres de `WALK-NTEC-01`, `WALK-NTEC-02` y `WALK-NTEC-03` incorporando la fecha canónica de cada sesión en el nombre del archivo.
-- Se actualizan las rutas en `10_Autoria/bitacora_sesiones.csv`, `10_Autoria/notas_campo/inventario_notas_campo.csv` y `10_Autoria/notas_campo/README.md`, sin modificar el contenido ni los hashes SHA-256 de las evidencias.
+### Normalización final de notas WALK y metadatos de sesión
+- Se normalizan los nombres de las seis notas WALK con fecha canónica, técnica y código de sesión; las imágenes no se editan y conservan sus SHA-256.
+- Se actualizan las rutas en `10_Autoria/bitacora_sesiones.csv`, `10_Autoria/notas_campo/inventario_notas_campo.csv` y `10_Autoria/notas_campo/README.md`.
+- Se sincroniza la línea `Fecha de sesión` de las seis transcripciones WALK con las fechas canónicas respaldadas por fichas técnicas, actas y archivos multimedia, manteniendo idéntico el contenido conversacional.
+- Las copias de transcripción se mantienen sincronizadas en `02_Evidencias`, `06_Experimento`, `07_Datos` y `07_Publicacion/dataset_zenodo`.
+- El paquete académico local `07_Publicacion/dataset_zenodo` regenera su `MANIFEST.csv` y `checksums.sha256` internos tras esta normalización. Estos manifiestos internos son distintos de los manifiestos terminales del repositorio, que siguen reservados para después de `verificacion_previa.pdf`.
+- Se ejecuta nuevamente `07_Datos/scripts/run_all.py` con `SEED = 401`: 16 sesiones, 76 fragmentos, 37 códigos, 18 categorías, 12 decisiones de member checking y delta de Cliff `0.555556` con IC95 `[-0.333333, 1.000000]`; una segunda ejecución no altera los hashes de `datos_procesados/` ni `resultados/`.
+- La auditoría de privacidad se actualiza sobre el árbol actual: 980 archivos inspeccionados, 20 CSV, 0 hallazgos bloqueantes y 0 advertencias; `06_Experimento/resultados` permanece byte-idéntico a `07_Datos/resultados`.
 
 ### Integridad documental
 - `exif_inventario.csv` distingue el hash del original restringido del hash de la copia pública enmascarada cuando corresponde.
