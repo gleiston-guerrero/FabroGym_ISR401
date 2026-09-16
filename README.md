@@ -50,19 +50,19 @@ El DOI `10.5281/zenodo.22237884` fue evaluado el 11 de septiembre de 2026:
 
 ## Equipo
 
-### Equipo de cierre / examen final
+### Composición vigente para el examen suspenso
 
-El equipo activo para el cierre y examen final está conformado por **Mera Arias Erick Jhair, Mora Duarte Alex José y Ponce Rivera Mery Helenmey**:
+Para efectos de la evaluación del examen suspenso, los integrantes evaluados son **Mera Arias Erick Jhair** y **Ponce Rivera Mery Helenmey**. **Mora Duarte Alex José** aprobó con la calificación anterior y participa únicamente como colaborador no evaluado; cualquier aporte suyo conserva su propia identidad Git y no se contabiliza como aporte de Mera o Ponce.
 
-| Integrante | Usuario Git / referencia | Estado A2 verificable en este corte |
-|---|---|---:|
-| Erick Jhair Mera Arias | `Emeraxs` | 13 capturas |
-| Alex José Mora Duarte | `amorad35` | 10 capturas |
-| Mery Helenmey Ponce Rivera | `Mery-003` / `Mery` en nombres de captura | 19 capturas |
+| Integrante | Usuario Git / referencia | Condición en este corte | Evidencia A2 conservada |
+|---|---|---|---:|
+| Erick Jhair Mera Arias | `Emeraxs` | Evaluado | 13 capturas |
+| Mery Helenmey Ponce Rivera | `Mery-003` / `Mery` en nombres de captura | Evaluada | 19 capturas |
+| Alex José Mora Duarte | `amorad35` | Colaborador no evaluado | 10 capturas propias |
 
-**Alvia Villegas Erick Adalberto** y **Vaca Romero David Octavio** participaron en etapas anteriores del proyecto. Sus aportes históricos se conservan en Git, la ERS/SRS y los artefactos donde realmente intervinieron, pero **no forman parte del equipo actual de cierre** y no se presentan como pendientes de evidencia A2 de este corte.
+**Alvia Villegas Erick Adalberto** y **Vaca Romero David Octavio** participaron en etapas anteriores del proyecto y no continúan en el examen suspenso. Sus aportes históricos se conservan íntegramente atribuidos a ellos en Git, la ERS/SRS y los artefactos donde realmente intervinieron; no se eliminan, redistribuyen ni reasignan.
 
-La fuente canónica para el estado del equipo de cierre y A2 es `10_Autoria/EQUIPO_EXAMEN_FINAL.md`; el inventario detallado de capturas está en `10_Autoria/capturas/README.md`.
+La composición vigente se formaliza en `04_Trazabilidad/solicitud_cambio_composicion_equipo.pdf` y se documenta de forma canónica en `10_Autoria/EQUIPO_EXAMEN_FINAL.md`. El inventario de capturas y su condición evaluable se detalla en `10_Autoria/capturas/README.md`.
 
 ## Compilar el ERS/SRS
 

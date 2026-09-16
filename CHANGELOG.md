@@ -6,7 +6,7 @@
 - Se formaliza que **Mera Arias Erick Jhair** y **Ponce Rivera Mery Helenmey** son los integrantes evaluados en el examen suspenso.
 - **Mora Duarte Alex José** queda documentado como apoyo no evaluado; cualquier aporte suyo conserva su propia autoría y no se reasigna.
 - **Alvia Villegas Erick Adalberto** y **Vaca Romero David Octavio** quedan como participación histórica fuera del examen suspenso; sus aportes previos se preservan en Git y en `10_Autoria/aporte_individual.md`.
-- Se incorpora `04_Trazabilidad/solicitud_cambio_composicion_equipo.pdf` como documento de formalización para firma de Mera y Ponce.
+- Se incorpora `04_Trazabilidad/solicitud_cambio_composicion_equipo.pdf` como documento de formalización **firmado por Mera y Ponce**.
 
 ### Bitácora y notas de campo
 - `10_Autoria/bitacora_sesiones.csv` incorpora las columnas `tipo` y `ruta_nota_campo`.
@@ -17,6 +17,8 @@
 - `exif_inventario.csv` distingue el hash del original restringido del hash de la copia pública enmascarada cuando corresponde.
 - Se sincronizan los documentos de README, autoría, ética, publicación, defensa y carátula ERS con la composición vigente del examen suspenso.
 - Se regeneran los manifiestos internos de MVP y defensa; los manifiestos terminales `07_Datos/checksums_datos.sha256` y `checksums.sha256` se reservan para el cierre posterior a `verificacion_previa.pdf`.
+
+**Nota de interpretación histórica:** las entradas anteriores del CHANGELOG que describen a Mera, Mora y Ponce como "equipo actual de cierre" corresponden a cortes previos a la formalización del 15/09/2026. Se conservan como historial y quedan superadas, para la evaluación del examen suspenso, por la composición vigente: **Mera y Ponce evaluados; Mora apoyo no evaluado; Alvia y Vaca participación histórica**.
 
 ## 2026-09-15 - Cierre documental §15: alcance A1/A5 e inventario EXIF completo
 
