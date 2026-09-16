@@ -8,7 +8,7 @@ WALKTHROUGH TÉCNICO 01 — VALIDACIÓN DEL PROTOTIPO
 Código de sesión: WALK-TEC-01
 Código del participante: Participante T01
 Perfil: Técnico
-Fecha de sesión: 18/08/2026
+Fecha de sesión: 12/08/2026
 Duración aproximada del audio: 24:45
 Nota de formato: la fuente no identifica de forma fiable todos los cambios de hablante; se conserva el orden de la conversación sin atribuir turnos no verificables.
 
