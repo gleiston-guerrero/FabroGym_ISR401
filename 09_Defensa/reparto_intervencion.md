@@ -1,5 +1,9 @@
 # Reparto de intervención - Defensa FabroGym 2B
 
+## Estado frente al examen suspenso
+
+Este reparto corresponde a la **defensa previa de tres expositores** y se conserva como evidencia histórica. Para la evaluación del examen suspenso, los integrantes evaluados son **Mera Arias Erick Jhair y Ponce Rivera Mery Helenmey**; Mora Duarte Alex José es apoyo no evaluado. Este archivo no se usa para reasignar a Mera o Ponce intervenciones o artefactos realizados por Mora.
+
 La defensa se organiza para tres expositores y se centra en requisitos, evidencia, modelado, resultados y cierre metodológico. No se asigna a ningún integrante la ejecución operativa del MVP como bloque obligatorio.
 
 | Expositor | Diapositivas | Bloque | Tiempo estimado | Responsabilidad |

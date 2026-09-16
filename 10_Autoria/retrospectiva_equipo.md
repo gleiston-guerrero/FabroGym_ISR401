@@ -10,7 +10,7 @@
 
 Esta retrospectiva documenta qué se corrigió durante el examen suspenso, quién realizó o verificó cada bloque y qué aprendió el equipo del proceso. Se redacta después de las correcciones de especificación de casos de uso (§4) y de reproducibilidad/carpeta canónica de resultados (§12), y se vincula con el manuscrito final recompilado en `07_Publicacion/`.
 
-No sustituye el historial Git ni reasigna autoría histórica. La autoría acumulada del proyecto se conserva en los artefactos originales. Para el cierre reciente, la documentación distingue a Mera (`Emeraxs`), Mora (`amorad35`) y Ponce (`Mery-003`) como equipo de corrección, sin atribuir a Alvia o Vaca actividades recientes que no estén respaldadas por evidencia verificable.
+No sustituye el historial Git ni reasigna autoría histórica. La autoría acumulada del proyecto se conserva en los artefactos originales. Para la evaluación del examen suspenso, la documentación distingue a **Mera (`Emeraxs`) y Ponce (`Mery-003`) como integrantes evaluados**. **Mora (`amorad35`)** queda como apoyo no evaluado y cualquier aporte suyo continúa atribuido a él. **Alvia y Vaca** permanecen como participación histórica fuera del examen suspenso. Ningún aporte se reasigna.
 
 ## 2. Qué corregimos
 
@@ -36,11 +36,19 @@ No sustituye el historial Git ni reasigna autoría histórica. La autoría acumu
 - actualizó el checklist de defensa para reflejar el nuevo estado de los casos de uso y la trazabilidad;
 - participó en la revisión documental de las salidas de resultados y del cierre de publicación.
 
-### Mora Duarte Alex Jose - `amorad35`
+### Mora Duarte Alex Jose - `amorad35` - apoyo no evaluado
 
-- realizó la corrección estadística base que sustituyó la categoría temática por la sesión WALK como unidad independiente;
-- verificó la interpretación del tamaño del efecto y la limitación del cuestionario `n=70` para la comparación técnico/no técnico;
-- participó en la revisión cruzada de la coherencia entre tablas canónicas, discusión y amenazas a la validez.
+- conserva la autoría de los aportes históricos y técnicos que ya realizó en el repositorio;
+- puede apoyar mediante revisión, observaciones y correcciones propias firmadas con su usuario;
+- sus commits no se contabilizan como aporte evaluable de Mera o Ponce y no se reasignan.
+
+### Cierre de autoría y notas confirmado el 15/09/2026
+
+- se formalizó que **Mera y Ponce** son los dos integrantes evaluados del examen suspenso;
+- Alvia y Vaca quedaron como participación histórica fuera de esta evaluación;
+- la bitácora separa **28 sesiones internas** de **16 sesiones empíricas**;
+- las 16 sesiones empíricas cuentan con **16/16 notas de campo** enlazadas desde la bitácora;
+- el inventario EXIF conserva 25 fotografías reales y distingue el hash del original restringido del hash de la copia pública cuando corresponde.
 
 ## 4. Qué aprendimos
 
