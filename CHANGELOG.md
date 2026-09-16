@@ -13,6 +13,10 @@
 - Las 28 filas históricas de coordinación/edición se clasifican como `trabajo_interno` y se añaden 16 filas empíricas: 10 `entrevista` y 6 `walkthrough`.
 - Las 16 filas empíricas enlazan las 16/16 notas reales depositadas; no se crean notas retrospectivas.
 
+### Normalización final de nombres WALK-NTEC
+- Se normalizan los nombres de `WALK-NTEC-01`, `WALK-NTEC-02` y `WALK-NTEC-03` incorporando la fecha canónica de cada sesión en el nombre del archivo.
+- Se actualizan las rutas en `10_Autoria/bitacora_sesiones.csv`, `10_Autoria/notas_campo/inventario_notas_campo.csv` y `10_Autoria/notas_campo/README.md`, sin modificar el contenido ni los hashes SHA-256 de las evidencias.
+
 ### Integridad documental
 - `exif_inventario.csv` distingue el hash del original restringido del hash de la copia pública enmascarada cuando corresponde.
 - Se sincronizan los documentos de README, autoría, ética, publicación, defensa y carátula ERS con la composición vigente del examen suspenso.
