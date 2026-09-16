@@ -1,10 +1,10 @@
 # FAIR_CHECKLIST — FabroGym 2B
 
 **Proyecto:** FabroGym — ISR-401  
-**Estado documental:** cierre PRE-CHECKSUM posterior a `v2.0.2-final`; esa etiqueta ya publicada se conserva intacta como línea base histórica  
+**Estado documental:** `v2.0.2-final` se conserva intacta como línea base histórica; `v2.0.3-final` es la línea base terminal definida para esta entrega y sólo se publica sobre el commit que contenga la verificación previa firmada y los manifiestos SHA-256 terminales validados.  
 **Repositorio:** `https://github.com/gleiston-guerrero/FabroGym_ISR401`
 
-Este archivo documenta el estado FAIR y de preservación verificable posterior a la etiqueta ya publicada `v2.0.2-final`. El identificador terminal declarado para esta entrega es `v2.0.3-final`; se crea únicamente después de cerrar contenido y verificar los manifiestos SHA-256 finales. No se mueve ni se sobrescribe ninguna etiqueta existente.
+Este archivo documenta el estado FAIR y de preservación verificable del cierre. `v2.0.2-final` permanece como línea base histórica y `v2.0.3-final` corresponde a la línea base terminal de esta entrega. La etiqueta terminal se publica únicamente después de incorporar `10_Autoria/verificacion_previa.pdf`, regenerar y validar los manifiestos SHA-256 finales y confirmar el último commit de integridad. No se mueve ni se sobrescribe ninguna etiqueta existente.
 
 ## Estado actual
 
@@ -91,7 +91,7 @@ El reporte `07_Datos/resultados/REVISION_PRIVACIDAD_PUBLICA.md` documenta:
 
 ## Estado de cierre FAIR
 
-Evidencias disponibles antes del tag:
+Evidencias de cierre disponibles en este corte:
 
 - [x] Zenodo v2.0.0 con DOI real.
 - [x] OSF con DOI real.
@@ -103,9 +103,7 @@ Evidencias disponibles antes del tag:
 - [x] Control B6 documentado con 0 hallazgos automáticos bloqueantes y límites de inspección explícitos.
 - [x] README raíz y `CHANGELOG.md` normalizados para A5/B1.
 
-La comprobación desde clon limpio y la verificación de checksums
-se ejecutan sobre el commit final inmediatamente antes del tag
-final y quedan documentadas en la verificación de cierre.
+La `verificacion_previa.pdf` se incorpora sobre el último corte de contenido antes de los manifiestos terminales. A continuación se realiza la comprobación desde clon limpio, se regeneran y validan los checksums SHA-256 y se crea el commit final de integridad. La etiqueta anotada `v2.0.3-final` se publica únicamente sobre ese último commit.
 
 Procedimiento de congelamiento/post-tag:
 

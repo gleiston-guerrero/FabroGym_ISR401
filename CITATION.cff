@@ -2,7 +2,7 @@ cff-version: 1.2.0
 message: "Si utiliza FabroGym o su paquete de replicación, cite esta versión del proyecto."
 type: software
 title: "FabroGym: explainability requirements and reproducible requirements-engineering artifacts"
-version: "2.0"
+version: "2.0.0"
 date-released: "2026-09-01"
 doi: "10.5281/zenodo.22237884"
 abstract: "FabroGym is an ISR-401 requirements-engineering project for a local gym, including a terminal SRS, traceability, an MVP, and a reproducible field-study package on explainability requirements for a proposed fitness-routine recommendation component."
