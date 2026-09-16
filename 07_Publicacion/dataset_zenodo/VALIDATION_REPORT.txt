@@ -1,4 +1,4 @@
-FabroGym local academic-delivery package validation — A5 normalized
+FabroGym local academic-delivery package validation — final session metadata normalization
 
 Zenodo DOI (historical published record): 10.5281/zenodo.22237884
 Interview transcripts: 10 (expected 10)
@@ -6,11 +6,15 @@ Walkthrough transcripts: 6 (expected 6)
 General ENTR coding rows: 59 (expected 59)
 Walkthrough coding rows: 76 (expected 76)
 Forbidden media/archive extensions found: 0
-Manifest entries after A5 normalization: 199
+Manifest entries after session metadata normalization: 199
 
 Methodological separation: PASS
 - ENTR coding preserved for elicitation / general requirement traceability.
 - WALK coding preserved for terminal explainability analysis.
+
+Session metadata normalization: PASS
+- The six WALK transcript headers use the canonical session dates established by the technical inventory, session records and multimedia evidence.
+- Conversational transcript content was not rewritten; only the session-date metadata line was synchronized.
 
 Restricted files in public package: none
 
@@ -21,4 +25,4 @@ A5 ERS/SRS normalization: PASS
 - The independent UML evidence remains under dataset_zenodo/modelado/.
 - The published Zenodo 2.0.0 record is not modified retrospectively.
 
-MANIFEST.csv and checksums.sha256 were regenerated for the current local academic-delivery state after the final metadata normalization.
+MANIFEST.csv and checksums.sha256 were regenerated for the current local academic-delivery state after the final session metadata normalization.
