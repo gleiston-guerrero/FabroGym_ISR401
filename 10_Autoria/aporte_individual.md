@@ -3,15 +3,14 @@
 **Proyecto:** FabroGym — ISR-401  
 **Entrega:** Entrega 4 (2B / Defensa Final)  
 **Repositorio:** `https://github.com/gleiston-guerrero/FabroGym_ISR401`  
-**Integrantes evaluados en el examen suspenso:** Mera Arias Erick Jhair y Ponce Rivera Mery Helenmey.  
-**Apoyo no evaluado:** Mora Duarte Alex José.  
-**Participación histórica fuera del examen suspenso:** Alvia Villegas Erick Adalberto y Vaca Romero David Octavio.
+**Integrantes/autores del proyecto:** Alvia Villegas Erick Adalberto, Mera Arias Erick Jhair, Mora Duarte Alex José, Ponce Rivera Mery Helenmey y Vaca Romero David Octavio.  
+**Criterio de corte:** se distingue el trabajo posterior a la guía de los aportes históricos previos, sin eliminar ni reasignar autoría.
 
 ## 1. Propósito
 
-Este documento conserva la atribución real de las contribuciones del proyecto y separa explícitamente lo que **se evalúa en el examen suspenso** de lo que corresponde a **apoyo no evaluado** o **autoría histórica**. La evidencia reciente evaluable corresponde a Mera y Ponce.
+Este documento conserva la atribución real de las contribuciones del proyecto. Para el corte posterior a la guía diferencia la actividad efectivamente versionada en ese periodo de los aportes previos, sin convertir esa diferencia temporal en una exclusión de la autoría.
 
-Mora conserva sus aportes propios y cualquier apoyo posterior debe seguir firmado con su usuario. Alvia y Vaca conservan sus contribuciones históricas hasta su salida de esta etapa; no se les inventan evidencias recientes ni se redistribuye su trabajo.
+No se inventan evidencias recientes, no se redistribuye trabajo y las capturas añadidas para Alvia y Vaca se identifican expresamente como capturas actuales de commits históricos.
 
 ## 2. Criterio de inclusión
 
@@ -19,7 +18,7 @@ Mora conserva sus aportes propios y cualquier apoyo posterior debe seguir firmad
 - No se atribuyen tareas a un integrante si el historial Git no permite verificar esa relación.
 - Los commits de merge no se usan por sí solos como evidencia principal cuando existe un commit específico.
 - Las actividades colaborativas en Discord se documentan en `10_Autoria/bitacora_sesiones.csv` y se contrastan con la actividad Git verificable.
-- La evidencia firmada se conserva separadamente en `10_Autoria/aporte_individual_FIRMA.pdf`. Ese PDF corresponde al corte histórico del **11/09/2026**, previo a la formalización de la composición actual, por lo que no sustituye a `04_Trazabilidad/solicitud_cambio_composicion_equipo.pdf` como fuente vigente del examen suspenso.
+- La evidencia firmada histórica se conserva en `10_Autoria/aporte_individual_FIRMA.pdf`. La interpretación vigente de autoría se documenta en `10_Autoria/EQUIPO_EXAMEN_FINAL.md` y `04_Trazabilidad/ACTA_RECONOCIMIENTO_AUTORIA_EQUIPO.md`; la solicitud del 15/09/2026 queda como antecedente.
 - Los cambios locales todavía no versionados no se presentan como aportes cerrados ni se les asigna un SHA inexistente.
 - El commit que contenga esta última sincronización documental constituirá el corte final de contenido previo al tag; su SHA no se inserta dentro de este mismo archivo para evitar una referencia circular.
 
@@ -104,36 +103,35 @@ Mora conserva sus aportes propios y cualquier apoyo posterior debe seguir firmad
 ---
 
 ## 6. Alvia Villegas Erick Adalberto - participación histórica
-
 **Usuario Git verificado:** `Erick-Alvia`
 
-Se conservan sus aportes previos sin reasignarlos. Entre los bloques verificables registrados en la bitácora y el historial Git se encuentran:
+Se conservan sus aportes reales sin reasignarlos. Entre los bloques verificables se encuentran:
 
-| Actividad histórica verificable | Artefacto / ruta | Commit(s) |
-|---|---|---|
-| Organización inicial de documentación de evidencias y consentimientos | `02_Evidencias/Consentimientos/README.md` y README de organización | `6cefac3445299d2579192e3e1962f1303f3413b6`; `fbf87ad7c412e7c6f185f1cf163a157d2e57995c`; `38e0f7e77a008c7aa08ba8e832379dd66da8c54f` |
-| Ajustes documentales de casos de uso UML | `03_Modelado/Diagramas_UML/02_Casos_de_Uso/` | `5fccf1d4ba1d89eac55bc791aabe61bfd47c2dc6`; `256d9d238b292cabc3769c54ab381e84fc0dd953` |
-| Normalización de su identidad institucional en Git | `.mailmap` | `c3975a92f246734f93f064e22fa7a842b55bf9b9`; `73d75fe2e35cd4d90549eb1f5ff41842e046494e` |
+| Actividad verificable | Artefacto / ruta | Commit(s) | Captura A2 |
+|---|---|---|---|
+| Organización inicial de documentación de evidencias y consentimientos | `02_Evidencias/Consentimientos/README.md` y README de organización | `6cefac3445299d2579192e3e1962f1303f3413b6`; `fbf87ad7c412e7c6f185f1cf163a157d2e57995c`; `38e0f7e77a008c7aa08ba8e832379dd66da8c54f` | historial Git |
+| Ajustes documentales de casos de uso UML | `03_Modelado/Diagramas_UML/02_Casos_de_Uso/` | `5fccf1d4ba1d89eac55bc791aabe61bfd47c2dc6`; `256d9d238b292cabc3769c54ab381e84fc0dd953` | historial Git |
+| Normalización de identidad institucional | `.mailmap` | `c3975a92f246734f93f064e22fa7a842b55bf9b9`; `73d75fe2e35cd4d90549eb1f5ff41842e046494e` | `2026-09-16_Erick-Alvia_commit_c3975a9_normalizacion_mailmap.png`; `2026-09-16_Erick-Alvia_commit_73d75fe_actualizacion_mailmap.png` |
+| Cambio histórico relacionado con `mailmap` | `mailmap` | `893266e624d447da7b7fbbb879037d2070520d23` | `2026-09-16_Erick-Alvia_commit_893266e_delete_mailmap.png` |
 
-El historial Git completo sigue siendo la fuente canónica para sus demás aportes. Alvia no continúa en la evaluación del examen suspenso y no se le asignan trabajos posteriores.
+Las tres capturas A2 fueron tomadas el **16/09/2026** sobre páginas reales de commits históricos. No se atribuye a Alvia trabajo posterior a la guía que no exista en el historial.
 
 ## 7. Vaca Romero David Octavio - participación histórica
-
 **Usuario Git verificado:** `David-Bs1`
 
-Se conservan sus aportes previos sin reasignarlos. Entre los bloques verificables del historial se encuentran:
+Se conservan sus aportes reales sin reasignarlos. Entre los bloques verificables se encuentran:
 
-| Actividad histórica verificable | Artefacto / ruta | Commit(s) |
-|---|---|---|
-| Incorporación de consentimientos censurados de walkthrough | `02_Evidencias/Consentimientos/` | `10a010ff3bff283f7bf33b7eb56097e867f9c967` |
-| Consolidación de integridad mediante checksums de la Entrega 4 | `checksums.sha256` y artefactos asociados | `8e664455294b272b007c8f8a600781a1d5a809f7` |
-| Participación en bloques colaborativos de modelado/evidencia previos al examen suspenso | historial Git y `10_Autoria/bitacora_sesiones.csv` | se conserva en el historial; no se reasigna |
+| Actividad verificable | Artefacto / ruta | Commit(s) | Captura A2 |
+|---|---|---|---|
+| Incorporación de evidencias de validación walkthrough | `02_Evidencias/` | `9cd5b20742afcd80cd79adbac41b15896888e082` | `2026-09-16_David-Bs1_commit_9cd5b20_evidencias_walkthrough.png` |
+| Incorporación de consentimientos censurados de walkthrough | `02_Evidencias/` | `10a010ff3bff283f7bf33b7eb56097e867f9c967` | `2026-09-16_David-Bs1_commit_10a010f_consentimientos_walkthrough.png` |
+| Consolidación de integridad mediante checksums de la Entrega 4 | `checksums.sha256` | `8e664455294b272b007c8f8a600781a1d5a809f7` | `2026-09-16_David-Bs1_commit_8e66445_checksums.png` |
 
-El historial Git completo sigue siendo la fuente canónica para sus demás aportes. Vaca no continúa en la evaluación del examen suspenso y no se le asignan trabajos posteriores.
+Las tres capturas A2 fueron tomadas el **16/09/2026** sobre páginas reales de commits históricos. No se atribuye a Vaca trabajo posterior a la guía que no exista en el historial.
 
 ## 8. Sesión histórica de cierre verificada - 11 de septiembre de 2026
 
-Esta sesión ocurrió **antes** de la formalización de la composición evaluable del 15/09/2026. Se conserva para acreditar el trabajo realmente realizado en ese momento; no redefine quiénes son evaluados en el examen suspenso.
+Esta sesión ocurrió antes del corte de correcciones del 15/09/2026. Se conserva para acreditar el trabajo realmente realizado en ese momento y no se utiliza para reasignar autoría.
 
 Entre las **22:07 y 22:52 (UTC-05:00)**, Mera, Mora y Ponce permanecieron reunidos de forma **Remota — Discord** durante el bloque de cierre. La modalidad y participación están documentadas en la bitácora; las actividades concretas se contrastan con el historial Git.
 
@@ -160,7 +158,7 @@ Esta relación se contrasta con:
 
 Las contribuciones incluidas se basan en evidencia versionada verificable. No se fabrican commits, no se atribuyen cambios locales no versionados y no se reasignan aportes históricos.
 
-El trabajo **evaluable del examen suspenso** corresponde a **Mera Arias Erick Jhair y Ponce Rivera Mery Helenmey**. Mora conserva sus aportes propios como apoyo no evaluado; Alvia y Vaca permanecen como participación histórica. Ningún aporte se elimina, reasigna ni presenta con una autoría distinta de la real.
+La autoría del proyecto corresponde a los cinco integrantes según sus contribuciones verificables. El trabajo posterior a la guía se interpreta según el historial del periodo evaluado. Ningún aporte se elimina, reasigna ni presenta con una autoría distinta de la real.
 
 ## 11. Corte documental de cierre
 
