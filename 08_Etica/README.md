@@ -90,7 +90,7 @@ Esta sección se incorpora para hacer visibles, en un único punto del repositor
 | **Base de licitud / fundamento de participación** | La evidencia primaria de campo se obtuvo bajo **participación voluntaria y consentimiento informado**, conforme al A3 y a las condiciones ya declaradas en este expediente. No se usa la IA como fuente de evidencia primaria ni se fabrican datos de participantes. |
 | **Finalidad** | Los datos y evidencias se utilizan exclusivamente para **fines académicos de Ingeniería de Requisitos**, validación empírica, trazabilidad, reproducibilidad y publicación académica anonimizada del proyecto FabroGym. No se autoriza su uso comercial, productivo ni para decisiones sobre personas. |
 | **Plazo de conservación** | Como regla operativa de cierre, las **copias restringidas o reidentificables bajo custodia del equipo** se conservarán únicamente hasta el **cierre formal del periodo académico 2026-2027 PPA** y la finalización de la evaluación de la Entrega 4. Concluido ese hito, las copias personales o no institucionales deberán eliminarse de forma segura. Si la UTEQ exige conservar una evidencia por un plazo institucional adicional, esa copia deberá quedar únicamente bajo custodia institucional autorizada. Los artefactos públicos anonimizados y el paquete reproducible pueden mantenerse de forma persistente en GitHub/Zenodo por no contener identificadores directos destinados a publicación abierta. |
-| **Responsable del tratamiento/custodia académica** | Para las tareas de **custodia y revisión operativa del cierre**, las personas documentadas son **Mera Arias Erick Jhair, Mora Duarte Alex José y Ponce Rivera Mery Helenmey**, bajo supervisión académica del **Ing. Gleiston Guerrero Ulloa, PhD**. Estas mismas personas conforman el equipo actual de cierre; la autoría histórica de otros participantes se conserva por trazabilidad. |
+| **Responsable del tratamiento/custodia académica** | Para las tareas de **custodia y revisión operativa**, la documentación histórica registra participación de Mera, Mora y Ponce bajo supervisión académica del **Ing. Gleiston Guerrero Ulloa, PhD**. Para la **evaluación del examen suspenso**, los integrantes evaluados son **Mera Arias Erick Jhair** y **Ponce Rivera Mery Helenmey**; **Mora Duarte Alex José** queda como apoyo no evaluado y sus acciones continúan atribuidas a él. La participación histórica de Alvia y Vaca se conserva por trazabilidad. |
 
 ### Regla de prevalencia
 
@@ -169,13 +169,14 @@ Este material se utiliza exclusivamente como evidencia del proceso de Ingenierí
 
 ## Responsables operativos recientes y alcance evaluable
 
-Las tareas recientes de custodia y revisión del cierre están documentadas principalmente para:
+La documentación histórica de custodia y revisión registra participación de Mera, Mora y Ponce. Para la **evaluación del examen suspenso**, la composición vigente se interpreta así:
 
-- **Mera Arias Erick Jhair** (`Emeraxs`)
-- **Mora Duarte Alex José** (`amorad35`)
-- **Ponce Rivera Mery Helenmey** (`Mery-003`)
+- **Mera Arias Erick Jhair** (`Emeraxs`) - evaluado.
+- **Ponce Rivera Mery Helenmey** (`Mery-003`) - evaluada.
+- **Mora Duarte Alex José** (`amorad35`) - apoyo no evaluado; cualquier acción suya conserva su propia autoría.
+- **Alvia Villegas Erick Adalberto** y **Vaca Romero David Octavio** - participación histórica fuera del examen suspenso.
 
-Esta identificación corresponde al **equipo actual de cierre: Mera Arias Erick Jhair, Mora Duarte Alex José y Ponce Rivera Mery Helenmey**. La participación histórica de Alvia Villegas Erick Adalberto y Vaca Romero David Octavio se conserva en los artefactos y commits donde corresponda, sin eliminar ni reasignar autoría.
+La formalización se conserva en `../04_Trazabilidad/solicitud_cambio_composicion_equipo.pdf`. Ningún aporte histórico se elimina o reasigna.
 
 ## Licencia y restricciones
 

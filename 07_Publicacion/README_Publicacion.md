@@ -53,9 +53,9 @@ Esa etiqueta se conserva intacta como línea base histórica. Las correcciones p
 
 Los autores consignados en artefactos históricos de publicación y en el depósito Zenodo corresponden a la participación acumulada durante el desarrollo del proyecto y se conservan por integridad académica.
 
-El **equipo actual de cierre y examen final** está conformado por **Mera, Mora y Ponce**. Alvia y Vaca permanecen como autores/participantes históricos únicamente en los artefactos donde realmente intervinieron; su autoría no se elimina ni se reasigna.
+Para la **evaluación del examen suspenso**, los integrantes evaluados son **Mera Arias Erick Jhair** y **Ponce Rivera Mery Helenmey**. **Mora Duarte Alex José** participa únicamente como apoyo no evaluado y todo aporte suyo conserva su propia autoría. **Alvia Villegas Erick Adalberto** y **Vaca Romero David Octavio** permanecen como autores/participantes históricos en los artefactos donde realmente intervinieron; su autoría no se elimina ni se reasigna.
 
-El estado de evidencia individual A2 del equipo actual se documenta en `../10_Autoria/EQUIPO_EXAMEN_FINAL.md`.
+El estado de composición y evidencia individual evaluable se documenta en `../10_Autoria/EQUIPO_EXAMEN_FINAL.md` y se formaliza en `../04_Trazabilidad/solicitud_cambio_composicion_equipo.pdf`.
 
 ## Estado de la corrección §16
 
@@ -70,7 +70,7 @@ El informe incorpora de forma explícita:
 5. el repositorio canónico, `v2.0.2-final` como línea base histórica publicada y `v2.0.3-final` como etiqueta terminal declarada, creada únicamente después de verificar los manifiestos SHA-256 finales;
 6. la sección **“Retrospectiva del examen suspenso / Failed-exam correction retrospective”**, actualizada con §4, §12, §13 y §16;
 7. la retrospectiva canónica `../10_Autoria/retrospectiva_equipo.md`, con qué se corrigió, responsables documentados y aprendizajes del equipo;
-8. la distinción entre autoría histórica del proyecto y el equipo actual de cierre conformado por Mera, Mora y Ponce.
+8. la distinción entre autoría histórica del proyecto, apoyo no evaluado de Mora y composición evaluada del examen suspenso conformada por Mera y Ponce.
 
 El manuscrito se congela en este corte de §16; cualquier corrección posterior que altere resultados obligaría a recompilarlo antes del cierre terminal.
 
