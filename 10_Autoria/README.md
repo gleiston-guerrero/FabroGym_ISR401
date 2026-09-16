@@ -42,11 +42,11 @@ Toda evidencia incorporada en `10_Autoria/` debe:
 La bitácora distingue ahora dos universos que antes estaban mezclados conceptualmente:
 
 - **28 sesiones de `trabajo_interno`**: coordinación, edición, modelado, documentación y commits del equipo.
-- **16 sesiones empíricas**: 10 de tipo `entrevista` y 6 de tipo `walkthrough`, incorporadas con su fecha canónica y su `ruta_nota_campo`.
+- **16 sesiones empíricas**: 10 de tipo `entrevista` y 6 de tipo `walkthrough`. La cobertura de nota de campo se registra separadamente.
 
-El CSV incluye las columnas `tipo` y `ruta_nota_campo`. Toda fila de tipo `entrevista` o `walkthrough` apunta a una de las 16 notas reales depositadas en `10_Autoria/notas_campo/`. Las sesiones internas no requieren nota de campo.
+El CSV incluye las columnas `tipo` y `ruta_nota_campo`. En el corte corregido, **13 sesiones empíricas** enlazan una nota de campo contemporánea. `WALK-NTEC-01`, `WALK-NTEC-02` y `WALK-NTEC-03` mantienen `ruta_nota_campo` vacía y se declaran como sesiones **sin nota de campo contemporánea acreditable**. Los tres PNG correspondientes se preservan aparte como reconstrucciones posteriores.
 
-Por tanto, el conteo correcto para A5 es **16/16 sesiones empíricas con nota**, no 28/28 filas de trabajo interno.
+Por tanto, el estado A5 verificable es **13/16 sesiones empíricas con nota contemporánea y 3/16 ausencias declaradas**, no 28/28 filas de trabajo interno.
 
 ### A2 — `capturas/`
 
@@ -85,14 +85,18 @@ La cobertura A5 se calcula únicamente sobre las filas de `bitacora_sesiones.csv
 
 La fuente canónica para el universo empírico es `07_Datos/datos_crudos/sesiones_multimedia_desde_ficha_v3_1.csv`, que contiene **16 sesiones**: 10 entrevistas, 3 walkthroughs técnicos y 3 walkthroughs no técnicos.
 
-En el corte actual hay **16 notas de campo asociables a las 16/16 sesiones empíricas**: 10/10 entrevistas, 3/3 walkthroughs técnicos y 3/3 walkthroughs no técnicos. Las notas `WALK-NTEC-01`, `WALK-NTEC-02` y `WALK-NTEC-03` ya están depositadas y sus rutas y SHA-256 se registran en el inventario. El detalle de cobertura y el criterio canónico de fecha/nomenclatura de las notas técnicas se documentan en:
+En el corte corregido hay **13 notas de campo contemporáneas acreditables para 16 sesiones empíricas**: 10/10 entrevistas y 3/3 walkthroughs técnicos. `WALK-NTEC-01`, `WALK-NTEC-02` y `WALK-NTEC-03` se registran como sesiones sin nota contemporánea. Los tres PNG previamente tratados como notas se preservan, sin edición, como **reconstrucciones posteriores que no computan en A5**.
+
+El detalle se documenta en:
 
 ```text
 10_Autoria/notas_campo/README.md
 10_Autoria/notas_campo/inventario_notas_campo.csv
+10_Autoria/reconstrucciones_posteriores/README.md
+10_Autoria/reconstrucciones_posteriores/inventario_reconstrucciones.csv
 ```
 
-La cobertura A5 queda completa respecto del universo empírico versionado: **16/16 filas empíricas enlazadas a 16 notas reales**. Las otras 28 filas de A1 permanecen clasificadas como `trabajo_interno`.
+La cobertura A5 queda en **13/16 con nota contemporánea + 3/16 ausencias declaradas**. Las otras 28 filas de A1 permanecen clasificadas como `trabajo_interno`. Este parche no vuelve a modificar las transcripciones WALK. La explicación definitiva de los cambios de fecha y su verificación multimedia se conserva en `04_Trazabilidad/ACLARACION_FECHAS_WALK.md` y `04_Trazabilidad/VERIFICACION_MULTIMEDIA_WALK.md`.
 
 ### A6 — `fotos_equipo/`
 
