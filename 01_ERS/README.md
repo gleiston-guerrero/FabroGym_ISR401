@@ -37,12 +37,8 @@ Zenodo publicado, versión 2.0.0; DOI específico: `10.5281/zenodo.22237884`.
 
 ## Nota sobre autoría histórica y composición del examen suspenso
 
-La ERS/SRS conserva la **autoría histórica** de los cinco integrantes que participaron durante el desarrollo del proyecto: Alvia, Mera, Mora, Ponce y Vaca. Esa autoría no se elimina ni se reasigna.
+La ERS/SRS conserva la **autoría histórica de los cinco integrantes** que participaron durante el desarrollo del proyecto: Alvia, Mera, Mora, Ponce y Vaca. Esa autoría no se elimina ni se reasigna.
 
-Para la **evaluación del examen suspenso**, la composición vigente es:
+Para interpretar el corte del examen suspenso se distingue entre el trabajo posterior a la guía y los aportes realizados previamente, sin convertir esa distinción temporal en una exclusión de la autoría del proyecto.
 
-- **Evaluados:** Mera Arias Erick Jhair (`Emeraxs`) y Ponce Rivera Mery Helenmey (`Mery-003`).
-- **Apoyo no evaluado:** Mora Duarte Alex José (`amorad35`), cuyos aportes siguen firmados con su propia identidad.
-- **Participación histórica fuera del examen suspenso:** Alvia Villegas Erick Adalberto y Vaca Romero David Octavio.
-
-La formalización se conserva en `../04_Trazabilidad/solicitud_cambio_composicion_equipo.pdf` y la interpretación canónica en `../10_Autoria/EQUIPO_EXAMEN_FINAL.md`.
+La referencia canónica de autoría y actividad se conserva en `../10_Autoria/EQUIPO_EXAMEN_FINAL.md` y en `../04_Trazabilidad/ACTA_RECONOCIMIENTO_AUTORIA_EQUIPO.md`. La solicitud del 15/09/2026 permanece como antecedente documental.

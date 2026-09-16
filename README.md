@@ -50,19 +50,25 @@ El DOI `10.5281/zenodo.22237884` fue evaluado el 11 de septiembre de 2026:
 
 ## Equipo
 
-### Composición vigente para el examen suspenso
+### Integrantes, autoría y corte de actividad
 
-Para efectos de la evaluación del examen suspenso, los integrantes evaluados son **Mera Arias Erick Jhair** y **Ponce Rivera Mery Helenmey**. **Mora Duarte Alex José** aprobó con la calificación anterior y participa únicamente como colaborador no evaluado; cualquier aporte suyo conserva su propia identidad Git y no se contabiliza como aporte de Mera o Ponce.
+FabroGym conserva como integrantes/autores del proyecto a **Alvia Villegas Erick Adalberto, Mera Arias Erick Jhair, Mora Duarte Alex José, Ponce Rivera Mery Helenmey y Vaca Romero David Octavio**.
 
-| Integrante | Usuario Git / referencia | Condición en este corte | Evidencia A2 conservada |
-|---|---|---|---:|
-| Erick Jhair Mera Arias | `Emeraxs` | Evaluado | 13 capturas |
-| Mery Helenmey Ponce Rivera | `Mery-003` / `Mery` en nombres de captura | Evaluada | 19 capturas |
-| Alex José Mora Duarte | `amorad35` | Colaborador no evaluado | 10 capturas propias |
+El informe del 16/09/2026 distingue el trabajo realizado después de la guía de los aportes históricos previos. Esa distinción se usa para interpretar la actividad del periodo evaluado, pero **no elimina ni reasigna la autoría histórica de ningún integrante**.
 
-**Alvia Villegas Erick Adalberto** y **Vaca Romero David Octavio** participaron en etapas anteriores del proyecto y no continúan en el examen suspenso. Sus aportes históricos se conservan íntegramente atribuidos a ellos en Git, la ERS/SRS y los artefactos donde realmente intervinieron; no se eliminan, redistribuyen ni reasignan.
+| Integrante | Usuario Git / referencia | Evidencia A2 conservada | Interpretación |
+|---|---|---:|---|
+| Erick Jhair Mera Arias | `Emeraxs` | 13 capturas | Autoría propia; trabajo posterior a la guía verificado |
+| Mery Helenmey Ponce Rivera | `Mery-003` / `Mery` | 19 capturas | Autoría propia; trabajo posterior a la guía verificado |
+| Alex José Mora Duarte | `amorad35` | 10 capturas | Autoría propia preservada |
+| Alvia Villegas Erick Adalberto | `Erick-Alvia` | 3 capturas | Commits históricos reales documentados el 16/09 |
+| Vaca Romero David Octavio | `David-Bs1` | 3 capturas | Commits históricos reales documentados el 16/09 |
 
-La composición vigente se formaliza en `04_Trazabilidad/solicitud_cambio_composicion_equipo.pdf` y se documenta de forma canónica en `10_Autoria/EQUIPO_EXAMEN_FINAL.md`. El inventario de capturas y su condición evaluable se detalla en `10_Autoria/capturas/README.md`.
+Las seis capturas nuevas fueron tomadas el 16/09/2026 sobre commits históricos existentes y no se presentan como trabajo nuevo ni se retrofechan.
+
+La interpretación canónica se documenta en `10_Autoria/EQUIPO_EXAMEN_FINAL.md` y el reconocimiento de autoría del conjunto en `04_Trazabilidad/ACTA_RECONOCIMIENTO_AUTORIA_EQUIPO.md`. La solicitud del 15/09/2026 se conserva solo como antecedente documental.
+
+El inventario de capturas se detalla en `10_Autoria/capturas/README.md`.
 
 ## Compilar el ERS/SRS
 

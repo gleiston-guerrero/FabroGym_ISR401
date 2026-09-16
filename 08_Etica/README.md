@@ -90,7 +90,7 @@ Esta sección se incorpora para hacer visibles, en un único punto del repositor
 | **Base de licitud / fundamento de participación** | La evidencia primaria de campo se obtuvo bajo **participación voluntaria y consentimiento informado**, conforme al A3 y a las condiciones ya declaradas en este expediente. No se usa la IA como fuente de evidencia primaria ni se fabrican datos de participantes. |
 | **Finalidad** | Los datos y evidencias se utilizan exclusivamente para **fines académicos de Ingeniería de Requisitos**, validación empírica, trazabilidad, reproducibilidad y publicación académica anonimizada del proyecto FabroGym. No se autoriza su uso comercial, productivo ni para decisiones sobre personas. |
 | **Plazo de conservación** | Como regla operativa de cierre, las **copias restringidas o reidentificables bajo custodia del equipo** se conservarán únicamente hasta el **cierre formal del periodo académico 2026-2027 PPA** y la finalización de la evaluación de la Entrega 4. Concluido ese hito, las copias personales o no institucionales deberán eliminarse de forma segura. Si la UTEQ exige conservar una evidencia por un plazo institucional adicional, esa copia deberá quedar únicamente bajo custodia institucional autorizada. Los artefactos públicos anonimizados y el paquete reproducible pueden mantenerse de forma persistente en GitHub/Zenodo por no contener identificadores directos destinados a publicación abierta. |
-| **Responsable del tratamiento/custodia académica** | Para las tareas de **custodia y revisión operativa**, la documentación histórica registra participación de Mera, Mora y Ponce bajo supervisión académica del **Ing. Gleiston Guerrero Ulloa, PhD**. Para la **evaluación del examen suspenso**, los integrantes evaluados son **Mera Arias Erick Jhair** y **Ponce Rivera Mery Helenmey**; **Mora Duarte Alex José** queda como apoyo no evaluado y sus acciones continúan atribuidas a él. La participación histórica de Alvia y Vaca se conserva por trazabilidad. |
+| **Responsable del tratamiento/custodia académica** | Para las tareas de **custodia y revisión operativa**, la documentación histórica registra participación de Mera, Mora y Ponce bajo supervisión académica del **Ing. Gleiston Guerrero Ulloa, PhD**. Para el corte del **examen suspenso**, la documentación distingue el trabajo posterior a la guía de los aportes previos. La autoría de Mera, Ponce, Mora, Alvia y Vaca se conserva según la evidencia verificable y no se reasigna. |
 
 ### Regla de prevalencia
 
@@ -169,14 +169,9 @@ Este material se utiliza exclusivamente como evidencia del proceso de Ingenierí
 
 ## Responsables operativos recientes y alcance evaluable
 
-La documentación histórica de custodia y revisión registra participación de Mera, Mora y Ponce. Para la **evaluación del examen suspenso**, la composición vigente se interpreta así:
+La documentación de autoría reconoce a los cinco integrantes del proyecto: **Alvia, Mera, Mora, Ponce y Vaca**. Para el corte posterior a la guía se distingue la actividad realizada en ese periodo de los aportes históricos previos, sin eliminar a ningún integrante de la autoría ni reasignar contribuciones.
 
-- **Mera Arias Erick Jhair** (`Emeraxs`) - evaluado.
-- **Ponce Rivera Mery Helenmey** (`Mery-003`) - evaluada.
-- **Mora Duarte Alex José** (`amorad35`) - apoyo no evaluado; cualquier acción suya conserva su propia autoría.
-- **Alvia Villegas Erick Adalberto** y **Vaca Romero David Octavio** - participación histórica fuera del examen suspenso.
-
-La formalización se conserva en `../04_Trazabilidad/solicitud_cambio_composicion_equipo.pdf`. Ningún aporte histórico se elimina o reasigna.
+La interpretación vigente se conserva en `../10_Autoria/EQUIPO_EXAMEN_FINAL.md` y `../04_Trazabilidad/ACTA_RECONOCIMIENTO_AUTORIA_EQUIPO.md`. La solicitud del 15/09/2026 se mantiene únicamente como antecedente.
 
 ## Licencia y restricciones
 

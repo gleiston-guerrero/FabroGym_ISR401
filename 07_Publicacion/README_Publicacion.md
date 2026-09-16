@@ -53,9 +53,11 @@ Esa etiqueta se conserva intacta como línea base histórica. Las correcciones p
 
 Los autores consignados en artefactos históricos de publicación y en el depósito Zenodo corresponden a la participación acumulada durante el desarrollo del proyecto y se conservan por integridad académica.
 
-Para la **evaluación del examen suspenso**, los integrantes evaluados son **Mera Arias Erick Jhair** y **Ponce Rivera Mery Helenmey**. **Mora Duarte Alex José** participa únicamente como apoyo no evaluado y todo aporte suyo conserva su propia autoría. **Alvia Villegas Erick Adalberto** y **Vaca Romero David Octavio** permanecen como autores/participantes históricos en los artefactos donde realmente intervinieron; su autoría no se elimina ni se reasigna.
+FabroGym mantiene la autoría de **Alvia, Mera, Mora, Ponce y Vaca**. Para el corte posterior a la guía se diferencia el trabajo efectivamente versionado en ese periodo de los aportes históricos previos, sin eliminar ni reasignar autoría.
 
-El estado de composición y evidencia individual evaluable se documenta en `../10_Autoria/EQUIPO_EXAMEN_FINAL.md` y se formaliza en `../04_Trazabilidad/solicitud_cambio_composicion_equipo.pdf`.
+Las capturas A2 de Alvia y Vaca añadidas el 16/09/2026 documentan commits históricos reales; no se presentan como actividad nueva.
+
+El estado canónico de autoría se documenta en `../10_Autoria/EQUIPO_EXAMEN_FINAL.md` y `../04_Trazabilidad/ACTA_RECONOCIMIENTO_AUTORIA_EQUIPO.md`. La solicitud anterior se conserva únicamente como antecedente documental.
 
 ## Estado de la corrección §16
 
