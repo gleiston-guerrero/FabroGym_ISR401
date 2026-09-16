@@ -35,9 +35,9 @@ El repositorio contiene **16 notas de campo asociables a las 16 sesiones empíri
 
 La cobertura A5 queda, por tanto, en **16/16 sesiones empíricas**. Las tres notas de walkthrough no técnico incorporadas son:
 
-- `WALK-NTEC-01_notas_Campo.png` — código manuscrito `WALK-NTEC-01`, fecha 16/08/2026;
-- `WALK-NTEC-02_notas_Campo.png` — código manuscrito `WALK-NTEC-02`, fecha 16/08/2026;
-- `WALK-NTEC-03_notas_Campo.png` — código manuscrito `WALK-NTEC-03`, fecha 22/08/2026.
+- `2026-08-16_WALK-NTEC-01_notas_Campo.png` — código manuscrito `WALK-NTEC-01`, fecha 16/08/2026;
+- `2026-08-16_WALK-NTEC-02_notas_Campo.png` — código manuscrito `WALK-NTEC-02`, fecha 16/08/2026;
+- `2026-08-22_WALK-NTEC-03_notas_Campo.png` — código manuscrito `WALK-NTEC-03`, fecha 22/08/2026.
 
 Las rutas y hashes SHA-256 de las 16 notas se registran en `inventario_notas_campo.csv`.
 
