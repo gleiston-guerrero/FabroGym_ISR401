@@ -131,6 +131,8 @@ Zenodo 2.0.0: https://doi.org/10.5281/zenodo.22237884. La evaluación F-UJI real
 
 ### Verificación integral de cierre
 
+Antes de regenerar los manifiestos SHA-256 terminales debe incorporarse `10_Autoria/verificacion_previa.pdf`, firmada por **Mera Arias Erick Jhair** y **Ponce Rivera Mery Helenmey** sobre el corte de contenido congelado. Después de integrar esa verificación firmada, los manifiestos terminales se regeneran una sola vez y la etiqueta anotada `v2.0.3-final` se crea únicamente sobre el último commit de integridad.
+
 Los manifiestos terminales se regeneran únicamente después de cerrar todo el contenido versionado. Para el cierre final se usa el procedimiento manual con `sha256sum`, alineado con la guía de evaluación y sin depender de scripts auxiliares.
 
 Desde `07_Datos`:
