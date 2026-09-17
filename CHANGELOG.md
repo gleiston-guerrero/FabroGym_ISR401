@@ -1,5 +1,15 @@
 # Changelog
 
+## [2B-supletorio-parche-05-preverificacion-terminal] - 2026-09-16
+
+### Saneamiento final antes de la verificación previa
+- Se actualizan únicamente las referencias **vigentes** de cierre para reservar `v2.0.4-final` como nueva etiqueta terminal; `v2.0.0-final` a `v2.0.3-final` se conservan como etiquetas históricas y no se mueven ni sobrescriben.
+- Se alinean README, FAIR, publicación, ética y defensa con el acta vigente de autoría: los cinco integrantes conservan sus aportes verificables y, para el corte posterior a la guía, sólo Mera y Ponce registran actividad nueva.
+- Se corrige la sección retrospectiva/documental del manuscrito para reflejar las 48 capturas A2, la cobertura `13/16` de notas contemporáneas, las tres reconstrucciones WALK-NTEC y el acta de autoría de los cinco; **no se modifican resultados, RQ, delta de Cliff, saturación ni análisis científico**.
+- Se recompila `07_Publicacion/manuscrito_final.pdf` desde su fuente canónica con el compilador reproducible del repositorio.
+- Las entradas históricas anteriores del `CHANGELOG.md`, incluida la referencia a `v2.0.3-final` y a la solicitud unilateral del 15/09, se preservan como historia del proceso y quedan superadas por este corte y por `04_Trazabilidad/ACTA_RECONOCIMIENTO_AUTORIA_EQUIPO.pdf`.
+- La nueva verificación previa firmada, los manifiestos SHA-256 terminales y el tag `v2.0.4-final` permanecen pendientes para el cierre secuencial posterior a este parche.
+
 ## [2B-supletorio-parche-04-retrospectiva-final] - 2026-09-16
 
 ### Actualización §16 — retrospectiva

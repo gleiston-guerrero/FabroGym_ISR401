@@ -6,7 +6,7 @@ Repositorio académico del proyecto **FabroGym**, desarrollado en la Universidad
 
 > **Migración de propietario:** el repositorio fue transferido y la URL canónica vigente es la indicada arriba. Para un clon local existente, el remoto debe apuntar a esta dirección con `git remote set-url origin https://github.com/gleiston-guerrero/FabroGym_ISR401.git` y comprobarse posteriormente mediante `git remote -v`.
 
-> **Líneas base de cierre:** `v2.0.2-final` se conserva sin mover ni sobrescribir como línea base histórica previa al cierre. La etiqueta terminal definida para esta entrega es `v2.0.3-final`; se publica únicamente como último paso sobre el commit final, después de regenerar y verificar ambos manifiestos SHA-256. Una vez publicada, constituye la línea base vigente del cierre.
+> **Líneas base de cierre:** `v2.0.0-final`, `v2.0.1-final`, `v2.0.2-final` y `v2.0.3-final` se conservan sin mover ni sobrescribir como etiquetas históricas. `v2.0.3-final` identifica el corte evaluado por el docente el 16/09/2026. La nueva etiqueta terminal prevista para el cierre corregido es `v2.0.4-final`; se publicará únicamente como último paso sobre el commit final de integridad, después de incorporar la verificación previa firmada y regenerar/verificar ambos manifiestos SHA-256.
 
 ## Estado 2B
 
@@ -137,7 +137,7 @@ Zenodo 2.0.0: https://doi.org/10.5281/zenodo.22237884. La evaluación F-UJI real
 
 ### Verificación integral de cierre
 
-Antes de regenerar los manifiestos SHA-256 terminales debe incorporarse `10_Autoria/verificacion_previa.pdf`, firmada por **Mera Arias Erick Jhair** y **Ponce Rivera Mery Helenmey** sobre el corte de contenido congelado. Después de integrar esa verificación firmada, los manifiestos terminales se regeneran una sola vez y la etiqueta anotada `v2.0.3-final` se crea únicamente sobre el último commit de integridad.
+Antes de regenerar los manifiestos SHA-256 terminales debe incorporarse `10_Autoria/verificacion_previa.pdf`, firmada por **Mera Arias Erick Jhair** y **Ponce Rivera Mery Helenmey**, responsables del cierre posterior a la guía, sobre el corte de contenido congelado. Después de integrar esa verificación firmada, los manifiestos terminales se regeneran una sola vez y la etiqueta anotada `v2.0.4-final` se crea únicamente sobre el último commit de integridad. `v2.0.3-final` permanece como línea base histórica del corte evaluado y no se mueve ni se sobrescribe.
 
 Los manifiestos terminales se regeneran únicamente después de cerrar todo el contenido versionado. Para el cierre final se usa el procedimiento manual con `sha256sum`, alineado con la guía de evaluación y sin depender de scripts auxiliares.
 
