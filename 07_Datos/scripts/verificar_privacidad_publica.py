@@ -597,7 +597,7 @@ lines += [
     "- `2`: existe al menos un hallazgo automático que debe corregirse antes del release/tag final.",
 ]
 
-OUT.write_text("\n".join(lines) + "\n", encoding="utf-8")
+OUT.write_text("\n".join(lines) + "\n", encoding="utf-8", newline="\n")
 
 print("FabroGym — auditoría de privacidad F3-07/B6")
 print(f"Raíz: {REPO_ROOT}")

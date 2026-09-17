@@ -295,7 +295,7 @@ Desde `06_Experimento/` (espejo histórico):
 ```bash
 python scripts_analisis/calcular_efecto_perfiles.py
 ```
-""", encoding="utf-8")
+""", encoding="utf-8", newline="\n")
 
     print("OK F3-04 corregido: unidad = sesion WALK")
     print(f"Sesiones: tecnico={len(tech)}, no_tecnico={len(nontech)}")
