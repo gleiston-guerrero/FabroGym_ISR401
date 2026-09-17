@@ -114,6 +114,8 @@ El pipeline regenera:
 - el `README.md` de resultados;
 - y, cuando se ejecuta dentro del repositorio completo, sincroniza `06_Experimento/resultados/` como espejo byte-idéntico de `07_Datos/resultados/`.
 
+Para el cierre, `06_Experimento/scripts_analisis/run_all.py` y `07_Datos/scripts/run_all.py` se conservan **byte-idénticos** para eliminar divergencias del orquestador. La ejecución evaluable sigue siendo únicamente la de `07_Datos`; el código contiene una guarda de ubicación que impide que la copia de compatibilidad de `06_Experimento` intente sincronizarse sobre sí misma.
+
 ## Comparación técnico vs. no técnico — criterio terminal F3-04
 
 La comparación de perfiles usa como unidad independiente la **sesión de walkthrough** y no las categorías temáticas derivadas. El conjunto contiene **6 unidades independientes**: 3 sesiones técnicas y 3 no técnicas.
