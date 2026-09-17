@@ -67,6 +67,17 @@ Después de los cuatro commits anteriores se ejecuta el último lote de coherenc
 
 El SHA del commit que integre este mismo lote no se inserta dentro de la retrospectiva para evitar una autorreferencia circular. El historial Git será la evidencia canónica de su integración. Después de este lote no se modifica contenido académico salvo que falle una comprobación de la verificación previa.
 
+### 3.6 Endurecimiento técnico final antes del congelamiento
+
+Como última comprobación previa a la verificación firmada se realiza un endurecimiento de consistencia que no altera el alcance ni los resultados del proyecto:
+
+- `CU-04-EX-01` y `CU-08-EX-01` se refinan para que sus condiciones de excepción no puedan interpretarse como negación de las precondiciones de autorización; la matriz de trazabilidad se sincroniza con la misma redacción.
+- `10_Autoria/doble_codificacion/calcular_kappa_ic.py` fija LF de forma explícita en sus salidas CSV, sin modificar el algoritmo, la semilla ni los valores analíticos.
+- `EV-VAL-01` se documenta como identificador de evidencia que enlaza `RNF-05` con las seis actas walkthrough existentes, sin modificar el contenido, estado ni criterio de aceptación del requisito.
+- La ERS se recompila después de estos ajustes y conserva los mismos conteos de requisitos y flujos.
+
+Este lote cierra el contenido académico previo a la nueva verificación firmada. Su SHA no se inserta dentro de esta retrospectiva porque el propio documento forma parte del mismo commit de integración.
+
 ## 4. Quién hizo qué en el cierre posterior al informe
 
 | Integrante | Trabajo verificable posterior al informe del 17/09 | Commits / evidencia |

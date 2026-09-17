@@ -1,5 +1,14 @@
 # Changelog
 
+## [2B-supletorio-parche-09-endurecimiento-preverificacion] - 2026-09-17
+
+### Endurecimiento final antes del congelamiento
+- Se refinan `CU-04-EX-01` y `CU-08-EX-01` para eliminar ambigüedades residuales entre precondiciones de autorización y condiciones de excepción; `04_Trazabilidad/matriz_trazabilidad.csv` se sincroniza con la ERS sin crear requisitos, actores ni flujos nuevos.
+- `10_Autoria/doble_codificacion/calcular_kappa_ic.py` fija `lineterminator="\n"` en sus dos escritores CSV para que una regeneración en Windows o Linux conserve LF determinista; no se modifican el algoritmo, la semilla, los datos ni los valores de kappa/IC95 %.
+- `02_Evidencias/Validacion_walkthrough/README.md` documenta `EV-VAL-01` como identificador de evidencia que enlaza `RNF-05` con las seis actas existentes, sin modificar el contenido, estado ni criterio de aceptación del requisito.
+- Se recompila `01_ERS/ERS_SRS_2B_v2.0.pdf` desde la fuente corregida y se mantienen sin cambios los conteos de 25 RF, 23 RNF, 4 RD y 57 flujos CU.
+- Ambas retrospectivas se sincronizan con este mismo lote de endurecimiento previo a la verificación firmada; no se inserta el SHA del commit que contendrá el propio lote para evitar autorreferencia circular.
+
 ## [2B-supletorio-parche-08-coherencia-preverificacion-final] - 2026-09-17
 
 ### Última sincronización de coherencia antes de congelar contenido
