@@ -102,32 +102,31 @@ No se inventan evidencias recientes, no se redistribuye trabajo y las capturas a
 
 ---
 
-## 6. Alvia Villegas Erick Adalberto - autoría histórica verificable; sin actividad posterior a la guía
+## 6. Alvia Villegas Erick Adalberto — autoría histórica verificable; depósito A2 propio del 17/09/2026
 **Usuario Git verificado:** `Erick-Alvia`
 
-Se conservan sus aportes reales sin reasignarlos. Entre los bloques verificables se encuentran:
+Sus aportes históricos se conservan según Git. Para atender §15, y por instrucción directa del docente, Alvia realiza y deposita personalmente tres capturas desde su sesión autenticada.
 
-| Actividad verificable | Artefacto / ruta | Commit(s) | Captura A2 |
+| Actividad histórica verificable | Artefacto / ruta | Commit histórico | Captura A2 vigente |
 |---|---|---|---|
-| Organización inicial de documentación de evidencias y consentimientos | `02_Evidencias/Consentimientos/README.md` y README de organización | `6cefac3445299d2579192e3e1962f1303f3413b6`; `fbf87ad7c412e7c6f185f1cf163a157d2e57995c`; `38e0f7e77a008c7aa08ba8e832379dd66da8c54f` | historial Git |
-| Ajustes documentales de casos de uso UML | `03_Modelado/Diagramas_UML/02_Casos_de_Uso/` | `5fccf1d4ba1d89eac55bc791aabe61bfd47c2dc6`; `256d9d238b292cabc3769c54ab381e84fc0dd953` | historial Git |
-| Normalización de identidad institucional | `.mailmap` | `c3975a92f246734f93f064e22fa7a842b55bf9b9`; `73d75fe2e35cd4d90549eb1f5ff41842e046494e` | `2026-09-16_Erick-Alvia_commit_c3975a9_normalizacion_mailmap.png`; `2026-09-16_Erick-Alvia_commit_73d75fe_actualizacion_mailmap.png` |
-| Cambio histórico relacionado con `mailmap` | `mailmap` | `893266e624d447da7b7fbbb879037d2070520d23` | `2026-09-16_Erick-Alvia_commit_893266e_delete_mailmap.png` |
+| Actualización de diagramas de casos de uso | `03_Modelado/Diagramas_UML/02_Casos_de_Uso/` | `98fe055ea547306f272e7c651937ad4c8fcbae98` | `2026-09-17_Erick-Alvia_commit_98fe055_diagramas_casos_uso.png` |
+| Incorporación de transcripciones anonimizadas de walkthrough | `02_Evidencias/Transcripciones/` | `af636224d7437106ba746a0ed73de924fbad2c55` | `2026-09-17_Erick-Alvia_commit_af63622_transcripciones_walkthrough.png` |
+| Actualización de evidencia restringida | `02_Evidencias/00_Restringido/` | `e73613ef9d1908abcde7560fbf725deeffaae4e7` | `2026-09-17_Erick-Alvia_commit_e73613e_evidencia_restringida.png` |
 
-Las tres capturas A2 fueron tomadas el **16/09/2026** sobre páginas reales de commits históricos. No se atribuye a Alvia trabajo posterior a la guía que no exista en el historial.
+El commit del 17/09 que deposita estas imágenes es **evidencia histórica A2**, no un nuevo aporte técnico al contenido mostrado.
 
-## 7. Vaca Romero David Octavio - autoría histórica verificable; sin actividad posterior a la guía
+## 7. Vaca Romero David Octavio — autoría histórica verificable; depósito A2 propio del 17/09/2026
 **Usuario Git verificado:** `David-Bs1`
 
-Se conservan sus aportes reales sin reasignarlos. Entre los bloques verificables se encuentran:
+Sus aportes históricos se conservan según Git. Para atender §15, y por instrucción directa del docente, Vaca realiza y deposita personalmente tres capturas desde su sesión autenticada.
 
-| Actividad verificable | Artefacto / ruta | Commit(s) | Captura A2 |
+| Actividad histórica verificable | Artefacto / ruta | Commit histórico | Captura A2 vigente |
 |---|---|---|---|
-| Incorporación de evidencias de validación walkthrough | `02_Evidencias/` | `9cd5b20742afcd80cd79adbac41b15896888e082` | `2026-09-16_David-Bs1_commit_9cd5b20_evidencias_walkthrough.png` |
-| Incorporación de consentimientos censurados de walkthrough | `02_Evidencias/` | `10a010ff3bff283f7bf33b7eb56097e867f9c967` | `2026-09-16_David-Bs1_commit_10a010f_consentimientos_walkthrough.png` |
-| Consolidación de integridad mediante checksums de la Entrega 4 | `checksums.sha256` | `8e664455294b272b007c8f8a600781a1d5a809f7` | `2026-09-16_David-Bs1_commit_8e66445_checksums.png` |
+| Checksums SHA-256 de la Entrega 4 | `checksums.sha256` | `8e664455294b272b007c8f8a600781a1d5a809f7` | `2026-09-17_David-Bs1_commit_8e66445_checksums_entrega4.png` |
+| Consentimientos censurados de walkthrough | `02_Evidencias/` | `10a010ff3bff283f7bf33b7eb56097e867f9c967` | `2026-09-17_David-Bs1_commit_10a010f_consentimientos_walkthrough.png` |
+| Evidencias de validación walkthrough | `02_Evidencias/` | `9cd5b20742afcd80cd79adbac41b15896888e082` | `2026-09-17_David-Bs1_commit_9cd5b20_evidencias_walkthrough.png` |
 
-Las tres capturas A2 fueron tomadas el **16/09/2026** sobre páginas reales de commits históricos. No se atribuye a Vaca trabajo posterior a la guía que no exista en el historial.
+El commit del 17/09 que deposita estas imágenes es **evidencia histórica A2**, no un nuevo aporte técnico al contenido mostrado.
 
 ## 8. Sesión histórica de cierre verificada - 11 de septiembre de 2026
 
@@ -166,6 +165,6 @@ Este documento resume los aportes verificables versionados hasta el corte PRE-CH
 
 No se fija aquí el SHA del commit que contiene este propio documento, con el fin de evitar una referencia circular u obsoleta.
 
-Una vez cerrado todo el contenido, se incorpora la verificación previa firmada, se regeneran y verifican los manifiestos SHA-256 y posteriormente se crea la etiqueta anotada terminal `v2.0.4-final`. `v2.0.3-final` permanece como referencia histórica del corte evaluado.
+Una vez cerrado todo el contenido, se incorpora la verificación previa firmada, se regeneran y verifican los manifiestos SHA-256 y posteriormente se crea una nueva etiqueta anotada posterior a `v2.0.4-final`; por secuencia, corresponde `v2.0.5-final`. `v2.0.4-final` permanece como referencia histórica del corte evaluado el 17/09/2026.
 
 La creación y publicación de dicha etiqueta y las operaciones posteriores de preservación no requieren modificar nuevamente este documento.

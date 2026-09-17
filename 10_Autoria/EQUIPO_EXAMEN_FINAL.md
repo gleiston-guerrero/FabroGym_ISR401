@@ -1,66 +1,48 @@
 # Equipo, autoría y participación - examen suspenso FabroGym
 
 **Proyecto:** FabroGym - ISR-401  
-**Fecha de actualización:** 16 de septiembre de 2026  
+**Fecha de actualización:** 17 de septiembre de 2026  
 **Repositorio:** `https://github.com/gleiston-guerrero/FabroGym_ISR401`
 
-## 1. Integrantes y autoría del proyecto
+## 1. Autoría histórica del proyecto
 
-FabroGym conserva como integrantes/autores del proyecto a:
+FabroGym conserva la autoría histórica verificable de **Alvia Villegas Erick Adalberto (`Erick-Alvia`)**, **Mera Arias Erick Jhair (`Emeraxs`)**, **Mora Duarte Alex José (`amorad35`)**, **Ponce Rivera Mery Helenmey (`Mery-003`)** y **Vaca Romero David Octavio (`David-Bs1`)**.
 
-- **Alvia Villegas Erick Adalberto** - GitHub `Erick-Alvia`.
-- **Mera Arias Erick Jhair** - GitHub `Emeraxs`.
-- **Mora Duarte Alex José** - GitHub `amorad35`.
-- **Ponce Rivera Mery Helenmey** - GitHub `Mery-003`.
-- **Vaca Romero David Octavio** - GitHub `David-Bs1`.
+La autoría se determina por los commits y artefactos realmente producidos; no se reasignan contribuciones.
 
-La autoría histórica de cada integrante se conserva según los commits y artefactos realmente producidos. No se elimina, redistribuye ni reasigna trabajo entre integrantes.
+## 2. Trabajo técnico posterior a la guía
 
-## 2. Corte de evaluación posterior a la guía
+El informe docente del 17/09/2026 evaluó `v2.0.4-final` (`dc5a228`) y constató que, en ese corte, el trabajo posterior a la guía sobre los ítems de la rúbrica correspondía a **Mera Arias Erick Jhair** y **Ponce Rivera Mery Helenmey**.
 
-De acuerdo con el historial verificado en el informe del 16/09/2026, el trabajo posterior a la guía fue realizado por **Mera Arias Erick Jhair** y **Ponce Rivera Mery Helenmey**.
+Los aportes previos de Mora, Alvia y Vaca se conservan como históricos. No se les atribuye trabajo técnico posterior a la guía que no esté respaldado por el historial Git.
 
-**Mora Duarte Alex José, Alvia Villegas Erick Adalberto y Vaca Romero David Octavio** conservan íntegramente los aportes propios realizados en etapas anteriores. En este documento no se les atribuyen commits ni actividades posteriores a la guía que no existan en el historial.
+## 3. Depósito personal de A2 solicitado por el docente
 
-Esta distinción describe el **corte de actividad evaluado** y no elimina a ningún integrante de la autoría del proyecto.
+El 17/09/2026 el docente indicó que las capturas de Alvia y Vaca debían ser realizadas e incorporadas por **ellos mismos**.
 
-## 3. Evidencia A2 de capturas
+En cumplimiento de esa instrucción:
 
-La carpeta `10_Autoria/capturas/` conserva evidencia verificable de los cinco integrantes:
+- `Erick-Alvia` deposita tres capturas de commits históricos propios;
+- `David-Bs1` deposita tres capturas de commits históricos propios.
 
-- Mera (`Emeraxs`): 13 capturas.
-- Ponce (`Mery` / `Mery-003`): 19 capturas.
-- Mora (`amorad35`): 10 capturas.
-- Alvia (`Erick-Alvia`): 3 capturas de commits históricos.
-- Vaca (`David-Bs1`): 3 capturas de commits históricos.
+Estos commits del 17/09 se clasifican como **depósito de evidencia histórica A2**. No se describen como nuevos aportes técnicos de la fase de corrección y no modifican la fecha ni la autoría de los commits históricos mostrados.
 
-**Total documental A2: 48 capturas.**
+## 4. Evidencia A2 vigente
 
-Las seis capturas incorporadas el 16/09/2026 muestran páginas reales de commits históricos de Alvia y Vaca. Su fecha de captura es actual y se conserva como tal; no se retrofechan para aparentar que fueron generadas durante esos commits.
+- Mera: 13 capturas.
+- Ponce: 19 capturas.
+- Mora: 10 capturas.
+- Alvia: 3 capturas históricas propias.
+- Vaca: 3 capturas históricas propias.
 
-El detalle se encuentra en:
+**Total A2: 48 capturas.**
 
-- `10_Autoria/capturas/README.md`
-- `10_Autoria/capturas/inventario_capturas_alvia_vaca.csv`
+Las seis capturas anteriores observadas por el docente se retiran del corte final A2.
 
-## 4. Aclaración sobre la solicitud anterior
+## 5. Solicitud de composición del 15/09/2026
 
-`04_Trazabilidad/solicitud_cambio_composicion_equipo.pdf` y su fuente Markdown se conservan como **antecedentes documentales del 15/09/2026**.
+`04_Trazabilidad/solicitud_cambio_composicion_equipo.md` y su PDF se conservan **sin modificación** como antecedentes de la solicitud formulada por Mera y Ponce.
 
-No se utilizan como prueba de un cambio unilateral de la composición del proyecto. La interpretación vigente reconoce la autoría de los cinco integrantes y distingue únicamente el trabajo realmente verificable en el corte posterior a la guía.
+El depósito personal de A2 por Alvia y Vaca atiende únicamente la procedencia de la evidencia y no se documenta como revocatoria, aceptación o rechazo de aquella solicitud.
 
-La constancia actual de reconocimiento de autoría y participación se conserva en:
-
-`04_Trazabilidad/ACTA_RECONOCIMIENTO_AUTORIA_EQUIPO.md`
-
-Una vez suscrita por los cinco integrantes, su versión firmada debe depositarse como:
-
-`04_Trazabilidad/ACTA_RECONOCIMIENTO_AUTORIA_EQUIPO.pdf`
-
-## 5. Regla de integridad
-
-- No se fabrican commits.
-- No se reasignan contribuciones.
-- No se presentan capturas tomadas el 16/09/2026 como si hubieran sido tomadas en fechas anteriores.
-- Las capturas nuevas solo documentan visualmente commits históricos ya existentes.
-- La calificación individual de cada integrante corresponde al trabajo que el docente verifique para el periodo evaluado.
+Consulte `04_Trazabilidad/ACLARACION_ALCANCE_CAPTURAS_ALVIA_VACA_20260917.md`.

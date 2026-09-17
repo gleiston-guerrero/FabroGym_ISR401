@@ -1,11 +1,10 @@
 # Retrospectiva del equipo - examen suspenso FabroGym
 
 **Proyecto:** FabroGym - ISR-401  
-**Fecha de corte de esta retrospectiva:** 16 de septiembre de 2026  
+**Fecha de corte de esta retrospectiva:** 17 de septiembre de 2026  
 **Repositorio canónico:** `https://github.com/gleiston-guerrero/FabroGym_ISR401`  
-**Línea base evaluada:** `v2.0.3-final`  
-**Commit de estado previo a esta actualización:** `fc0344dec7ecc39d4d8a121a59607345cb227982`  
-**Siguiente etiqueta terminal prevista:** `v2.0.4-final`, únicamente después de la nueva verificación previa y de regenerar/verificar los manifiestos SHA-256.
+**Línea base evaluada:** `v2.0.4-final` (`dc5a228`)  
+**Siguiente etiqueta terminal prevista:** `v2.0.5-final`, únicamente después de la verificación previa final y de regenerar/verificar los manifiestos SHA-256.
 
 ## 1. Propósito
 
@@ -21,8 +20,8 @@ Por ello, esta actualización no reabre los resultados numéricos ni modifica el
 |---|---|---|---|
 | §4 - Casos de uso | Cerrado previamente | Los 19 CU Must mantienen actor, disparador, precondiciones, flujo principal, alternativa, excepción y poscondiciones, con 57 trazas de flujo añadidas. | `01_ERS/ERS_SRS_2B_v2.0.tex`; `04_Trazabilidad/matriz_trazabilidad.csv`. |
 | §12 - Reproducibilidad | Cerrado previamente | `07_Datos/resultados/` permanece como fuente canónica; `06_Experimento/resultados/` es espejo derivado. `SEED = 401` permanece declarado. | `07_Datos/scripts/run_all.py`; README de datos/resultados. |
-| §15 - Autoría A2 | Actualizado | Se añadieron 3 capturas reales de commits históricos de Alvia y 3 de Vaca. A2 queda documentado con **48 capturas**: Mera 13, Ponce 19, Mora 10, Alvia 3 y Vaca 3. | `10_Autoria/capturas/README.md`; `10_Autoria/capturas/inventario_capturas_alvia_vaca.csv`. |
-| §15 - Composición / autoría | Actualizado | Se dejó de tratar la solicitud del 15/09 como cambio unilateral vigente. Los cinco integrantes conservan la autoría de sus aportes verificables y el acta de reconocimiento quedó suscrita por los cinco. | `04_Trazabilidad/ACTA_RECONOCIMIENTO_AUTORIA_EQUIPO.pdf`; `10_Autoria/EQUIPO_EXAMEN_FINAL.md`. |
+| §15 - Autoría A2 | **Cerrado documentalmente** | Por instrucción del docente, Alvia y Vaca realizan y depositan personalmente 3 capturas históricas propias cada uno. Las 6 capturas observadas se retiran. A2 mantiene **48 capturas**. | `10_Autoria/capturas/README.md`; `04_Trazabilidad/VERIFICACION_CAPTURAS_ALVIA_VACA_20260917.md`. |
+| §15 - Alcance de A2 / autoría | Actualizado | La solicitud del 15/09 se conserva sin modificar. Los commits del 17/09 de Alvia y Vaca se documentan solo como depósito de evidencia histórica A2 solicitado por el docente, no como nuevo trabajo técnico. | `04_Trazabilidad/ACLARACION_ALCANCE_CAPTURAS_ALVIA_VACA_20260917.md`; `10_Autoria/EQUIPO_EXAMEN_FINAL.md`. |
 | §15 - Notas de campo | Rectificado | La cobertura verificable pasa de `16/16` a **13/16 notas contemporáneas**. `WALK-NTEC-01`, `02` y `03` figuran como sesiones sin nota contemporánea. Sus PNG se conservan como reconstrucciones posteriores, sin utilizarlos como prueba de lo escrito durante la sesión. | `10_Autoria/bitacora_sesiones.csv`; `10_Autoria/notas_campo/inventario_notas_campo.csv`; `10_Autoria/reconstrucciones_posteriores/`. |
 | Observación de fechas WALK | Explicada por escrito | Se documentó por qué las fechas antiguas `18/08` y `24/08` correspondían a elaboración/ratificación de actas y se consolidaron las fechas de sesión utilizadas por la trazabilidad multimedia. No se reescribió el contenido conversacional de las transcripciones. | `04_Trazabilidad/ACLARACION_FECHAS_WALK.md`; `04_Trazabilidad/VERIFICACION_MULTIMEDIA_WALK.md`. |
 | §16 - Manuscrito | Sin cambios sustantivos | Se conserva el manuscrito evaluado porque el informe lo declaró en orden: usa sesión WALK como unidad independiente, 3+3 sesiones, y no trata las 18 categorías como unidades independientes. | `07_Publicacion/manuscrito_final.tex`; `07_Publicacion/manuscrito_final.pdf`. |
@@ -55,7 +54,7 @@ También indicó que el manuscrito estaba en orden y que la retrospectiva debía
 - esas tres sesiones quedaron sin `ruta_nota_campo` y la cobertura real quedó en **13/16**;
 - se creó `04_Trazabilidad/ACLARACION_FECHAS_WALK.md`;
 - se verificaron los archivos multimedia observados por SHA-256 y se documentó por qué sus `creation_time` no se utilizan como fecha de captura;
-- se incorporaron seis capturas A2 históricas reales: tres de Alvia y tres de Vaca;
+- se incorporó inicialmente un conjunto de seis capturas A2 que el informe del 17/09 observó por haber sido tomadas desde una sesión ajena;
 - la evidencia A2 quedó en **48 capturas**;
 - se sustituyó la interpretación unilateral de composición por reconocimiento de autoría verificable de los cinco integrantes;
 - se incorporó el acta firmada por los cinco integrantes en `04_Trazabilidad/ACTA_RECONOCIMIENTO_AUTORIA_EQUIPO.pdf`;
@@ -64,17 +63,17 @@ También indicó que el manuscrito estaba en orden y que la retrospectiva debía
 
 ## 4. Autoría y participación
 
-FabroGym conserva como autores/integrantes del proyecto a:
+El historial Git conserva la autoría histórica verificable de los cinco integrantes. Para el corte técnico posterior a la guía, el informe del 17/09/2026 constató trabajo sobre los ítems evaluados para **Mera Arias Erick Jhair** y **Ponce Rivera Mery Helenmey**.
 
-- **Alvia Villegas Erick Adalberto** - `Erick-Alvia`;
-- **Mera Arias Erick Jhair** - `Emeraxs`;
-- **Mora Duarte Alex José** - `amorad35`;
-- **Ponce Rivera Mery Helenmey** - `Mery-003`;
-- **Vaca Romero David Octavio** - `David-Bs1`.
+Después del informe, el docente indicó que Alvia y Vaca debían realizar e incorporar personalmente sus capturas. Por ello:
 
-El historial Git y los artefactos determinan la atribución real de cada contribución. La documentación distingue el trabajo posterior a la guía de los aportes históricos previos, pero esa distinción no elimina ni reasigna autoría.
+- **Alvia (`Erick-Alvia`)** realiza y deposita tres capturas de sus commits históricos `98fe055`, `af63622` y `e73613e`;
+- **Vaca (`David-Bs1`)** realiza y deposita tres capturas de sus commits históricos `8e66445`, `10a010f` y `9cd5b20`;
+- **Mera/Ponce** consolidan inventario, verificación y documentación de cierre sin atribuirse la toma de esas capturas.
 
-Las capturas incorporadas el 16/09/2026 para Alvia y Vaca son capturas actuales de commits históricos reales. No se presentan como trabajo nuevo ni se retrofechan.
+Los commits de Alvia y Vaca del 17/09 se clasifican como **depósito de evidencia histórica A2**. No se presentan como nuevos aportes técnicos de la fase de corrección y no cambian la fecha ni la autoría de los commits históricos mostrados.
+
+La solicitud del 15/09/2026 se conserva sin modificar como antecedente y el depósito personal de A2 no se documenta como modificación de aquella solicitud.
 
 ## 5. Rectificación específica sobre las notas de campo
 
@@ -140,7 +139,7 @@ Todavía **no** se declaran terminales los manifiestos ni la nueva etiqueta. El 
 3. regenerar `07_Datos/checksums_datos.sha256`;
 4. regenerar `checksums.sha256`;
 5. verificar ambos manifiestos sin fallos;
-6. crear una **nueva etiqueta anotada** sobre el último commit; por secuencia del repositorio, la etiqueta prevista es `v2.0.4-final`;
-7. no mover ni sobrescribir `v2.0.3-final`, que se conserva como referencia del corte evaluado.
+6. crear una **nueva etiqueta anotada** sobre el último commit; por secuencia del repositorio, la etiqueta prevista es `v2.0.5-final`;
+7. no mover ni sobrescribir `v2.0.4-final`, que se conserva como referencia de la línea base evaluada el 17/09/2026.
 
 El objetivo de este cierre es que cada afirmación del repositorio sea consistente con la evidencia que realmente existe y con las observaciones expresas del informe de evaluación.

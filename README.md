@@ -6,7 +6,7 @@ Repositorio académico del proyecto **FabroGym**, desarrollado en la Universidad
 
 > **Migración de propietario:** el repositorio fue transferido y la URL canónica vigente es la indicada arriba. Para un clon local existente, el remoto debe apuntar a esta dirección con `git remote set-url origin https://github.com/gleiston-guerrero/FabroGym_ISR401.git` y comprobarse posteriormente mediante `git remote -v`.
 
-> **Líneas base de cierre:** `v2.0.0-final`, `v2.0.1-final`, `v2.0.2-final` y `v2.0.3-final` se conservan sin mover ni sobrescribir como etiquetas históricas. `v2.0.3-final` identifica el corte evaluado por el docente el 16/09/2026. La nueva etiqueta terminal prevista para el cierre corregido es `v2.0.4-final`; se publicará únicamente como último paso sobre el commit final de integridad, después de incorporar la verificación previa firmada y regenerar/verificar ambos manifiestos SHA-256.
+> **Líneas base de cierre:** `v2.0.0-final` a `v2.0.4-final` se conservan sin mover ni sobrescribir como etiquetas históricas. `v2.0.4-final` identifica la línea base evaluada en el informe del 17/09/2026 (`dc5a228`). Las correcciones posteriores se cerrarán con una nueva etiqueta anotada; por secuencia, corresponde `v2.0.5-final`, únicamente después de la verificación previa final y de regenerar/verificar ambos manifiestos SHA-256.
 
 ## Estado 2B
 
@@ -50,25 +50,21 @@ El DOI `10.5281/zenodo.22237884` fue evaluado el 11 de septiembre de 2026:
 
 ## Equipo
 
-### Integrantes, autoría y corte de actividad
+### Autoría histórica y evidencia A2
 
-FabroGym conserva como integrantes/autores del proyecto a **Alvia Villegas Erick Adalberto, Mera Arias Erick Jhair, Mora Duarte Alex José, Ponce Rivera Mery Helenmey y Vaca Romero David Octavio**.
+FabroGym conserva la autoría histórica verificable de los cinco integrantes del proyecto. El informe del 17/09/2026 constató que, en la línea base evaluada `v2.0.4-final`, el trabajo posterior a la guía sobre los ítems de la rúbrica correspondía a **Mera Arias Erick Jhair** y **Ponce Rivera Mery Helenmey**.
 
-El informe del 16/09/2026 distingue el trabajo realizado después de la guía de los aportes históricos previos. Esa distinción se usa para interpretar la actividad del periodo evaluado, pero **no elimina ni reasigna la autoría histórica de ningún integrante**.
-
-| Integrante | Usuario Git / referencia | Evidencia A2 conservada | Interpretación |
+| Integrante | Usuario Git | A2 vigente | Interpretación |
 |---|---|---:|---|
-| Erick Jhair Mera Arias | `Emeraxs` | 13 capturas | Autoría propia; trabajo posterior a la guía verificado |
-| Mery Helenmey Ponce Rivera | `Mery-003` / `Mery` | 19 capturas | Autoría propia; trabajo posterior a la guía verificado |
-| Alex José Mora Duarte | `amorad35` | 10 capturas | Autoría propia preservada |
-| Alvia Villegas Erick Adalberto | `Erick-Alvia` | 3 capturas | Commits históricos reales documentados el 16/09 |
-| Vaca Romero David Octavio | `David-Bs1` | 3 capturas | Commits históricos reales documentados el 16/09 |
+| Erick Jhair Mera Arias | `Emeraxs` | 13 | Evidencia propia conservada |
+| Mery Helenmey Ponce Rivera | `Mery-003` / `Mery` | 19 | Evidencia propia conservada |
+| Alex José Mora Duarte | `amorad35` | 10 | Autoría histórica preservada |
+| Alvia Villegas Erick Adalberto | `Erick-Alvia` | 3 | Evidencia histórica propia depositada personalmente el 17/09 |
+| Vaca Romero David Octavio | `David-Bs1` | 3 | Evidencia histórica propia depositada personalmente el 17/09 |
 
-Las seis capturas nuevas fueron tomadas el 16/09/2026 sobre commits históricos existentes y no se presentan como trabajo nuevo ni se retrofechan.
+Por instrucción directa del docente del 17/09/2026, Alvia y Vaca realizan y suben personalmente sus capturas. Los commits usados para depositarlas se clasifican como **depósito de evidencia histórica A2** y no como nuevos aportes técnicos a la fase de corrección.
 
-La interpretación canónica se documenta en `10_Autoria/EQUIPO_EXAMEN_FINAL.md` y el reconocimiento de autoría del conjunto en `04_Trazabilidad/ACTA_RECONOCIMIENTO_AUTORIA_EQUIPO.md`. La solicitud del 15/09/2026 se conserva solo como antecedente documental.
-
-El inventario de capturas se detalla en `10_Autoria/capturas/README.md`.
+La solicitud del 15/09/2026 sobre composición evaluada se conserva sin modificar como antecedente; la incorporación personal de A2 no se documenta como modificación de esa solicitud. Consulte `10_Autoria/EQUIPO_EXAMEN_FINAL.md` y `04_Trazabilidad/ACLARACION_ALCANCE_CAPTURAS_ALVIA_VACA_20260917.md`.
 
 ## Compilar el ERS/SRS
 
@@ -137,7 +133,7 @@ Zenodo 2.0.0: https://doi.org/10.5281/zenodo.22237884. La evaluación F-UJI real
 
 ### Verificación integral de cierre
 
-Antes de regenerar los manifiestos SHA-256 terminales debe incorporarse `10_Autoria/verificacion_previa.pdf`, firmada por **Mera Arias Erick Jhair** y **Ponce Rivera Mery Helenmey**, responsables del cierre posterior a la guía, sobre el corte de contenido congelado. Después de integrar esa verificación firmada, los manifiestos terminales se regeneran una sola vez y la etiqueta anotada `v2.0.4-final` se crea únicamente sobre el último commit de integridad. `v2.0.3-final` permanece como línea base histórica del corte evaluado y no se mueve ni se sobrescribe.
+Antes de regenerar los manifiestos SHA-256 terminales debe incorporarse `10_Autoria/verificacion_previa.pdf`, firmada por **Mera Arias Erick Jhair** y **Ponce Rivera Mery Helenmey**, responsables del cierre posterior a la guía, sobre el corte de contenido congelado. Después de integrar esa verificación firmada, los manifiestos terminales se regeneran una sola vez y la nueva etiqueta anotada se crea únicamente sobre el último commit de integridad. `v2.0.4-final` permanece como línea base histórica del corte evaluado el 17/09/2026 y no se mueve ni se sobrescribe; por secuencia, el nuevo cierre corresponde a `v2.0.5-final`.
 
 Los manifiestos terminales se regeneran únicamente después de cerrar todo el contenido versionado. Para el cierre final se usa el procedimiento manual con `sha256sum`, alineado con la guía de evaluación y sin depender de scripts auxiliares.
 
