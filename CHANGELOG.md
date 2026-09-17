@@ -1,5 +1,19 @@
 # Changelog
 
+## [2B-supletorio-parche-06-saneamiento-post-informe] - 2026-09-17
+
+### Estado vigente posterior al informe del 17/09/2026
+- `v2.0.4-final` (`dc5a228`) se conserva como **línea base evaluada** por el docente el 17/09/2026; no se mueve ni se sobrescribe.
+- El siguiente cierre terminal previsto es **`v2.0.5-final`**, únicamente después de congelar el contenido, emitir una nueva verificación previa firmada y regenerar/verificar ambos manifiestos SHA-256.
+- §4 queda corregido en la ERS y la matriz: se eliminan las siete contradicciones precondición/excepción observadas, se corrigen los flujos alternativos señalados y los 19 FA indican apertura y retorno/terminación.
+- §12 queda corregido a nivel técnico: los dos `run_all.py` se sincronizan, los scripts relevantes fuerzan LF y se documenta la igualdad byte a byte de los 38 resultados. Los manifiestos terminales permanecen pendientes hasta el congelamiento final.
+- La observación de `WALK-TEC-01` queda aclarada mediante `04_Trazabilidad/VERIFICACION_MULTIMEDIA_WALK.md` y `04_Trazabilidad/ACLARACION_FECHAS_WALK.md`.
+- A2 queda saneado: Alvia y Vaca depositan personalmente capturas de aportes históricos; las seis capturas observadas del 16/09 se retiran y las copias accidentales de Alvia en la raíz se eliminan.
+- Se incorpora `04_Trazabilidad/ACLARACION_COMMIT_FEF33D8.md`: el commit histórico `fef33d8` anunciaba un script, pero modificó únicamente `checksums.sha256`; el historial se conserva sin reescritura.
+- §16 se actualiza con una retrospectiva fechada al 17/09 que restituye **quién hizo qué** y registra las correcciones posteriores al informe.
+- `07_Publicacion/manuscrito_final.tex` se actualiza **solo en su retrospectiva y línea base declarada** y se recompila; no se alteran resultados, RQ, delta de Cliff, saturación ni conclusiones científicas aceptadas.
+- Las secciones del `CHANGELOG.md` fechadas el 16/09 y antes se conservan como **historial del proceso**. Sus referencias a etiquetas futuras o estados pendientes describen aquellos cortes históricos y no representan el estado vigente posterior al informe del 17/09.
+
 ## [2B-supletorio-parche-05-preverificacion-terminal] - 2026-09-16
 
 ### Saneamiento final antes de la verificación previa
