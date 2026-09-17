@@ -23,6 +23,10 @@ La evidencia incorporada comprende:
 - `WALK-NTEC-02_Acta.pdf`
 - `WALK-NTEC-03_Acta.pdf`
 
+### Identificador de trazabilidad `EV-VAL-01`
+
+`EV-VAL-01` es el identificador de evidencia utilizado en el catálogo para enlazar `RNF-05` con las seis actas de walkthrough conservadas en esta carpeta. Este identificador documenta la procedencia de la evidencia y no modifica el contenido, estado ni criterio de aceptación de `RNF-05`.
+
 Las grabaciones u otros archivos que contengan información sensible se mantienen fuera de la zona pública o en los espacios restringidos definidos para el proyecto.
 
 No se incorporarán fechas, consentimientos, resultados, puntuaciones ni otros datos que no puedan verificarse mediante la evidencia disponible.
