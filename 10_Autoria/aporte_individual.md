@@ -10,7 +10,7 @@
 
 Este documento conserva la atribución real de las contribuciones del proyecto. Para el corte posterior a la guía diferencia la actividad efectivamente versionada en ese periodo de los aportes previos, sin convertir esa diferencia temporal en una exclusión de la autoría.
 
-No se inventan evidencias recientes, no se redistribuye trabajo y las capturas añadidas para Alvia y Vaca se identifican expresamente como capturas actuales de commits históricos.
+No se inventan evidencias recientes, no se redistribuye trabajo y las capturas vigentes de Alvia y Vaca se identifican expresamente como depósitos personales del 17/09/2026 sobre commits históricos propios, sin convertirlos en trabajo técnico nuevo de la fase de corrección.
 
 ## 2. Criterio de inclusión
 
@@ -54,6 +54,8 @@ No se inventan evidencias recientes, no se redistribuye trabajo y las capturas a
 | Documentar la verificación de las capturas propias de Alvia y Vaca | `04_Trazabilidad/VERIFICACION_CAPTURAS_ALVIA_VACA_20260917.md`; inventario A2 | `bf82034456649d25f9ad920ba3c11105d78fccec` | Autoría / verificación A2 |
 | Eliminar las copias de Alvia depositadas accidentalmente en la raíz | raíz del repositorio; `10_Autoria/capturas/` | `ce89a2b42b8d1fdd1d86bfb7875c4ed393a6b205` | Limpieza documental A2 |
 | Sincronizar línea base, FAIR y manuscrito con el cierre posterior a `v2.0.4-final` | `FAIR_CHECKLIST.md`; `07_Publicacion/README_Publicacion.md`; `07_Publicacion/manuscrito_final.*` | `3e16b35d9420cd56c3af909257ac54067ced9ca2` | Saneamiento documental §3 / §16 |
+| Normalizar finales de línea del corte pre-verificación y reforzar política LF | `.gitattributes`; `.mailmap`; CSV textuales de trazabilidad, defensa, EXIF y ficha técnica | `e7668ef7713b728a6330c029661dd5eae775c2b3` | Reproducibilidad / integridad pre-verificación |
+| Actualizar fecha de corte documental del ERS y recompilar entregables | `01_ERS/ERS_SRS_2B_v2.0.*`; `07_Publicacion/manuscrito_final.*` | `08d4bf9c4ad991492db5fcaeddc1fbd25a6f6173` | Cierre documental / recompilación reproducible |
 
 **Síntesis:** participación verificable en MVP, experimento, paquete `07_Datos`, reproducibilidad, publicación científica, autoría, defensa, privacidad y cierre FAIR/F-UJI.
 
@@ -111,6 +113,8 @@ No se inventan evidencias recientes, no se redistribuye trabajo y las capturas a
 | Cerrar documentalmente la fecha de sesión de WALK-TEC-01 | `04_Trazabilidad/ACLARACION_FECHAS_WALK.md` | `ab8d8978204e90c849bd10cb4b042f747148dcc3` | Trazabilidad multimedia |
 | Consolidar el cierre documental de autoría A2 | `10_Autoria/`; retrospectivas | `fccdb9d9c619871d3cd307b148b1c7c3486876ee` | Autoría / §15 |
 | Consolidar retrospectiva y saneamiento documental posterior al informe | `CHANGELOG.md`; retrospectivas; `04_Trazabilidad/ACLARACION_COMMIT_FEF33D8.md` | `37f02ac47189bf37fadd010445cb4a8679e6d50e` | Saneamiento documental §3 / §16 |
+| Sincronizar autoría y evidencia A2 pre-verificación, incluidos los SHA-256 vigentes de Vaca | `04_Trazabilidad/VERIFICACION_CAPTURAS_ALVIA_VACA_20260917.md`; `10_Autoria/`; retrospectivas | `d52ca17c33832eb5057479428cdc71b584b7d494` | Autoría / evidencia A2 / §15 |
+| Consolidar documentación de línea base para la pre-verificación final | `README.md`; `CHANGELOG.md`; `FAIR_CHECKLIST.md`; `07_Publicacion/README_Publicacion.md` | `7eb007e03618b65f8fa39c1430b041abba90ac06` | Cierre documental §3 / pre-verificación |
 
 **Síntesis:** participación verificable en mockups, ética, doble codificación, uso de IA, coordinación, defensa final, evidencia firmada de autoría, integridad y reproducibilidad pre-tag.
 
