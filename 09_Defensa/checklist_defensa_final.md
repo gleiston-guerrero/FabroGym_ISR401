@@ -16,7 +16,7 @@
 - [x] Mantener el hilo: problema -> evidencia -> requisitos -> modelado -> resultados -> cierre.
 - [x] No abrir evidencia restringida ni documentos identificables de participantes.
 - [x] El prototipo se menciona como evidencia de apoyo.
-- [x] La distribución de tres expositores corresponde a la defensa previa y se conserva como evidencia histórica. Para el examen suspenso se evalúa únicamente a Mera y Ponce; Mora queda como apoyo no evaluado.
+- [x] La distribución de tres expositores corresponde a la defensa previa y se conserva como evidencia histórica. En el corte posterior a la guía sólo Mera y Ponce registran actividad nueva; Mora, Alvia y Vaca conservan la autoría de sus aportes previos. Esta distribución no redefine la autoría ni la calificación individual del periodo evaluado.
 - [x] No afirmar que la IA está implementada.
 - [x] No afirmar saturación estricta <=5 %; reportar 6.306 % por códigos y 1.852 % como evidencia axial complementaria.
 
