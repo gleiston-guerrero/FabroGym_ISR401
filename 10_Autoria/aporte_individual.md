@@ -46,6 +46,14 @@ No se inventan evidencias recientes, no se redistribuye trabajo y las capturas a
 | Actualizar checklist final, README de autoría y checklist FAIR del cierre | `09_Defensa/checklist_defensa_final.md`; `10_Autoria/README.md`; `FAIR_CHECKLIST.md` | `d4a07e097906402db182de0de7c958a6095b90fd` | Cierre documental / verificación |
 | Sincronizar aporte individual, bitácora e inventario EXIF con el estado de cierre | `10_Autoria/aporte_individual.md`; `10_Autoria/bitacora_sesiones.csv`; `10_Autoria/exif_inventario.csv` | `128c314849a1895cb7b0582609a85b546dfbb350` | Autoría / trazabilidad de cierre |
 | Actualizar el reporte de privacidad y consolidar el estado A6 previo al cierre | `07_Datos/resultados/REVISION_PRIVACIDAD_PUBLICA.md`; `README.md` | `3a2914e986cad5897a7c357e869fb05bb2fb8a1d` | Privacidad / reproducibilidad documental |
+| Corregir precondiciones, excepciones y flujos alternativos observados en §4 | `01_ERS/ERS_SRS_2B_v2.0.tex`; `01_ERS/ERS_SRS_2B_v2.0.pdf` | `1dd541b57101ee370ed6c1ad094fda6c8901f009` | Ingeniería de requisitos / casos de uso |
+| Sincronizar los dos `run_all.py` y fijar política LF del pipeline | `.gitattributes`; `06_Experimento/scripts_analisis/run_all.py`; `07_Datos/scripts/run_all.py` | `53d17a01f22e282769536753c0ae0c8fe25dd4ab` | Reproducibilidad / §12 |
+| Registrar la verificación de sincronía y reproducibilidad del pipeline | `04_Trazabilidad/VERIFICACION_SINCRONIA_RUN_ALL.md` | `318f4eb3cae0ee70f116038837f8694634c4bee4` | Verificación técnica / §12 |
+| Verificar metadatos técnicos de WALK-TEC-01 | `04_Trazabilidad/VERIFICACION_MULTIMEDIA_WALK.md` | `d995cdb3afdf86cea84a103e0b1fa1cf1e116f68` | Trazabilidad multimedia |
+| Retirar las seis capturas A2 observadas por el docente | `10_Autoria/capturas/`; documentación A2 | `0bf5014ab71fc1c634dc4d23023a577b4c816f52` | Autoría / saneamiento A2 |
+| Documentar la verificación de las capturas propias de Alvia y Vaca | `04_Trazabilidad/VERIFICACION_CAPTURAS_ALVIA_VACA_20260917.md`; inventario A2 | `bf82034456649d25f9ad920ba3c11105d78fccec` | Autoría / verificación A2 |
+| Eliminar las copias de Alvia depositadas accidentalmente en la raíz | raíz del repositorio; `10_Autoria/capturas/` | `ce89a2b42b8d1fdd1d86bfb7875c4ed393a6b205` | Limpieza documental A2 |
+| Sincronizar línea base, FAIR y manuscrito con el cierre posterior a `v2.0.4-final` | `FAIR_CHECKLIST.md`; `07_Publicacion/README_Publicacion.md`; `07_Publicacion/manuscrito_final.*` | `3e16b35d9420cd56c3af909257ac54067ced9ca2` | Saneamiento documental §3 / §16 |
 
 **Síntesis:** participación verificable en MVP, experimento, paquete `07_Datos`, reproducibilidad, publicación científica, autoría, defensa, privacidad y cierre FAIR/F-UJI.
 
@@ -97,6 +105,12 @@ No se inventan evidencias recientes, no se redistribuye trabajo y las capturas a
 | Cerrar evidencia A6 y trazabilidad de fotografías | `02_Evidencias/Cuestionario/Fotos_Aplicacion/`; `10_Autoria/exif_inventario.csv`; documentación A6 | `5542e050ca8a492ffd528f01cbde497b958ad922` | Evidencia A6 / trazabilidad |
 | Actualizar checksums SHA-256 generales con las rutas vigentes del repositorio | `checksums.sha256` | `5961a4a6d231bf1419ab6bc0bde4a3fd0587c70d` | Integridad / cierre |
 | Estabilizar la reproducibilidad y los checksums de `07_Datos` | `.gitattributes`; `07_Datos/checksums_datos.sha256`; `07_Datos/scripts/calcular_efecto_perfiles.py` | `ed4fbf40fa6c5a4222adada63589c94afee36f36` | Reproducibilidad / integridad |
+| Sincronizar los 19 flujos alternativos corregidos con la matriz | `04_Trazabilidad/matriz_trazabilidad.csv` | `0d42923be7070ed67030ae3095495f9c09b11266` | Trazabilidad / §4 |
+| Fijar LF en scripts auxiliares del pipeline | `06_Experimento/scripts_analisis/`; `07_Datos/scripts/` | `6a68f3cbb86d294930651feb74c7c286422fbd69` | Reproducibilidad / §12 |
+| Aclarar la cadena canónica y el procedimiento reproducible | `06_Experimento/README.md`; `07_Datos/README_datos.md` | `6244ea87e1f96638f5d09a882f9dfa8447835171` | Documentación B1 / §12 |
+| Cerrar documentalmente la fecha de sesión de WALK-TEC-01 | `04_Trazabilidad/ACLARACION_FECHAS_WALK.md` | `ab8d8978204e90c849bd10cb4b042f747148dcc3` | Trazabilidad multimedia |
+| Consolidar el cierre documental de autoría A2 | `10_Autoria/`; retrospectivas | `fccdb9d9c619871d3cd307b148b1c7c3486876ee` | Autoría / §15 |
+| Consolidar retrospectiva y saneamiento documental posterior al informe | `CHANGELOG.md`; retrospectivas; `04_Trazabilidad/ACLARACION_COMMIT_FEF33D8.md` | `37f02ac47189bf37fadd010445cb4a8679e6d50e` | Saneamiento documental §3 / §16 |
 
 **Síntesis:** participación verificable en mockups, ética, doble codificación, uso de IA, coordinación, defensa final, evidencia firmada de autoría, integridad y reproducibilidad pre-tag.
 
@@ -113,7 +127,7 @@ Sus aportes históricos se conservan según Git. Para atender §15, y por instru
 | Incorporación de transcripciones anonimizadas de walkthrough | `02_Evidencias/Transcripciones/` | `af636224d7437106ba746a0ed73de924fbad2c55` | `2026-09-17_Erick-Alvia_commit_af63622_transcripciones_walkthrough.png` |
 | Actualización de evidencia restringida | `02_Evidencias/00_Restringido/` | `e73613ef9d1908abcde7560fbf725deeffaae4e7` | `2026-09-17_Erick-Alvia_commit_e73613e_evidencia_restringida.png` |
 
-El commit del 17/09 que deposita estas imágenes es **evidencia histórica A2**, no un nuevo aporte técnico al contenido mostrado.
+El depósito canónico de estas imágenes fue realizado por `Erick-Alvia` en `47cac4329ebb25bf0bae36f75698ebf24b81eeb0`. El depósito previo `e4881d11624007c0850bec64d613909bd45c40e6` quedó superado por haber ubicado las imágenes accidentalmente en la raíz. Ambos se interpretan únicamente como **depósito de evidencia histórica A2**, no como nuevo aporte técnico al contenido mostrado.
 
 ## 7. Vaca Romero David Octavio — autoría histórica verificable; depósito A2 propio del 17/09/2026
 **Usuario Git verificado:** `David-Bs1`
@@ -126,7 +140,7 @@ Sus aportes históricos se conservan según Git. Para atender §15, y por instru
 | Consentimientos censurados de walkthrough | `02_Evidencias/` | `10a010ff3bff283f7bf33b7eb56097e867f9c967` | `2026-09-17_David-Bs1_commit_10a010f_consentimientos_walkthrough.png` |
 | Evidencias de validación walkthrough | `02_Evidencias/` | `9cd5b20742afcd80cd79adbac41b15896888e082` | `2026-09-17_David-Bs1_commit_9cd5b20_evidencias_walkthrough.png` |
 
-El commit del 17/09 que deposita estas imágenes es **evidencia histórica A2**, no un nuevo aporte técnico al contenido mostrado.
+El depósito canónico de estas imágenes fue realizado por `David-Bs1` en `2ecbe55e722ea3bee3725dc011681956ac3eb499`. Se interpreta únicamente como **depósito de evidencia histórica A2**, no como nuevo aporte técnico al contenido mostrado.
 
 ## 8. Sesión histórica de cierre verificada - 11 de septiembre de 2026
 
@@ -165,6 +179,6 @@ Este documento resume los aportes verificables versionados hasta el corte PRE-CH
 
 No se fija aquí el SHA del commit que contiene este propio documento, con el fin de evitar una referencia circular u obsoleta.
 
-Una vez cerrado todo el contenido, se incorpora la verificación previa firmada, se regeneran y verifican los manifiestos SHA-256 y posteriormente se crea una nueva etiqueta anotada posterior a `v2.0.4-final`; por secuencia, corresponde `v2.0.5-final`. `v2.0.4-final` permanece como referencia histórica del corte evaluado el 17/09/2026.
+El identificador del cierre terminal de este ciclo de correcciones es `v2.0.5-final`. El procedimiento exige congelar primero el contenido, incorporar la verificación previa firmada y regenerar/verificar ambos manifiestos SHA-256 antes de crear y publicar esa etiqueta sobre el último commit de integridad. `v2.0.4-final` permanece como referencia histórica del corte evaluado el 17/09/2026 y no se mueve ni se sobrescribe.
 
 La creación y publicación de dicha etiqueta y las operaciones posteriores de preservación no requieren modificar nuevamente este documento.

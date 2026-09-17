@@ -4,8 +4,8 @@
 **Fecha de corte de esta retrospectiva:** 17 de septiembre de 2026  
 **Repositorio canónico:** `https://github.com/gleiston-guerrero/FabroGym_ISR401`  
 **Línea base evaluada por el docente:** `v2.0.4-final` (`dc5a228`)  
-**Corte posterior al informe usado para este saneamiento:** posterior a `ce89a2b`  
-**Siguiente etiqueta terminal prevista:** `v2.0.5-final`, únicamente después de una nueva verificación previa firmada y de regenerar/verificar ambos manifiestos SHA-256.
+**Corte documental:** pre-verificación posterior al informe del 17/09/2026  
+**Identificador del cierre terminal:** `v2.0.5-final`; el tag se crea/publica únicamente después de una nueva verificación previa firmada y de regenerar/verificar ambos manifiestos SHA-256.
 
 ## 1. Propósito
 
@@ -17,7 +17,7 @@ Esta actualización no modifica los resultados científicos aceptados. Su finali
 
 | Bloque | Estado documental posterior al informe | Corrección realizada | Evidencia principal |
 |---|---|---|---|
-| §3 - Línea base | **Saneado documentalmente** | `v2.0.4-final` se conserva como línea base evaluada del 17/09; el siguiente cierre será una etiqueta nueva, prevista como `v2.0.5-final`. | `README.md`; `CHANGELOG.md`; `FAIR_CHECKLIST.md`; `07_Publicacion/README_Publicacion.md`. |
+| §3 - Línea base | **Saneado documentalmente** | `v2.0.4-final` se conserva como línea base evaluada del 17/09; `v2.0.5-final` identifica el cierre terminal de las correcciones posteriores y se crea/publica solo al final de la secuencia de integridad. | `README.md`; `CHANGELOG.md`; `FAIR_CHECKLIST.md`; `07_Publicacion/README_Publicacion.md`. |
 | §4 - Casos de uso | **Corregido** | Se eliminaron las siete contradicciones precondición/excepción observadas, se corrigieron los flujos alternativos cuestionados y los 19 FA indican apertura y retorno/terminación. La matriz mantiene 57 flujos sincronizados. | `01_ERS/ERS_SRS_2B_v2.0.tex`; `01_ERS/ERS_SRS_2B_v2.0.pdf`; `04_Trazabilidad/matriz_trazabilidad.csv`. |
 | §12 - Reproducibilidad | **Contenido técnico corregido; manifiestos terminales pendientes** | Los dos `run_all.py` quedaron sincronizados, los scripts auxiliares fuerzan LF y los 38 resultados de `07_Datos/resultados/` y `06_Experimento/resultados/` permanecen byte-idénticos. | `.gitattributes`; `07_Datos/scripts/`; `06_Experimento/scripts_analisis/`; `04_Trazabilidad/VERIFICACION_SINCRONIA_RUN_ALL.md`. |
 | §15 - Autoría A2 | **Corregido** | Alvia y Vaca realizaron y depositaron personalmente tres capturas de commits históricos propios cada uno. Las seis capturas observadas del 16/09 fueron retiradas. | `10_Autoria/capturas/`; `10_Autoria/capturas/inventario_capturas_alvia_vaca.csv`; `04_Trazabilidad/VERIFICACION_CAPTURAS_ALVIA_VACA_20260917.md`. |
@@ -58,8 +58,8 @@ Los commits de Alvia y Vaca del 17/09 se clasifican como **depósito personal de
 
 | Integrante | Trabajo verificable posterior al informe del 17/09 | Commits / evidencia |
 |---|---|---|
-| **Mera Arias Erick Jhair (`Emeraxs`)** | Corrección textual de §4; sincronización de `run_all.py` y política LF; verificación reproducible del pipeline; análisis técnico de WALK-TEC-01; retiro de capturas A2 observadas; verificación documental A2; limpieza de duplicados de Alvia. | `1dd541b`, `53d17a0`, `318f4eb`, `d995cdb`, `0bf5014`, `bf82034`, `ce89a2b`. |
-| **Ponce Rivera Mery Helenmey (`Mery-003`)** | Sincronización de trazabilidad de §4; LF en scripts auxiliares; documentación de cadena canónica; cierre documental de WALK-TEC-01; consolidación documental A2 y retrospectiva. | `0d42923`, `6a68f3c`, `6244ea8`, `ab8d897`, `fccdb9d`. |
+| **Mera Arias Erick Jhair (`Emeraxs`)** | Corrección textual de §4; sincronización de `run_all.py` y política LF; verificación reproducible del pipeline; análisis técnico de WALK-TEC-01; retiro de capturas A2 observadas; verificación documental A2; limpieza de duplicados de Alvia. | `1dd541b`, `53d17a0`, `318f4eb`, `d995cdb`, `0bf5014`, `bf82034`, `ce89a2b`, `3e16b35`. |
+| **Ponce Rivera Mery Helenmey (`Mery-003`)** | Sincronización de trazabilidad de §4; LF en scripts auxiliares; documentación de cadena canónica; cierre documental de WALK-TEC-01; consolidación documental A2 y retrospectiva. | `0d42923`, `6a68f3c`, `6244ea8`, `ab8d897`, `fccdb9d`, `37f02ac`. |
 | **Alvia Villegas Erick Adalberto (`Erick-Alvia`)** | Depósito personal de tres capturas de aportes históricos, conforme a la instrucción del docente. El primer depósito quedó en ruta incorrecta y fue sustituido por el depósito canónico. | `e4881d1` (ruta incorrecta, superado); `47cac43` (depósito A2 vigente). |
 | **Vaca Romero David Octavio (`David-Bs1`)** | Depósito personal de tres capturas de aportes históricos, conforme a la instrucción del docente. | `2ecbe55`. |
 | **Mora Duarte Alex José (`amorad35`)** | No se le atribuye trabajo técnico nuevo posterior al informe del 17/09. Sus aportes históricos permanecen preservados. | Historial previo del repositorio. |
