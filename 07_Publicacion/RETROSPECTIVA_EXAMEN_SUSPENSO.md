@@ -1,84 +1,146 @@
 # Retrospectiva del equipo - examen suspenso FabroGym
 
 **Proyecto:** FabroGym - ISR-401  
-**Fecha de corte de esta retrospectiva:** 15 de septiembre de 2026  
+**Fecha de corte de esta retrospectiva:** 16 de septiembre de 2026  
 **Repositorio canónico:** `https://github.com/gleiston-guerrero/FabroGym_ISR401`  
-**Línea base histórica publicada:** `v2.0.2-final`  
-**Etiqueta terminal prevista:** `v2.0.3-final`, únicamente después del cierre documental, la verificación de integridad y los manifiestos SHA-256 terminales.
+**Línea base evaluada:** `v2.0.3-final`  
+**Commit de estado previo a esta actualización:** `fc0344dec7ecc39d4d8a121a59607345cb227982`  
+**Siguiente etiqueta terminal prevista:** `v2.0.4-final`, únicamente después de la nueva verificación previa y de regenerar/verificar los manifiestos SHA-256.
 
 ## 1. Propósito
 
-Esta retrospectiva documenta qué se corrigió durante el examen suspenso, quién realizó o verificó cada bloque y qué aprendió el equipo del proceso. Se redacta después de las correcciones de especificación de casos de uso (§4) y de reproducibilidad/carpeta canónica de resultados (§12), y se vincula con el manuscrito final recompilado en `07_Publicacion/`.
+Esta retrospectiva sustituye el corte del 15/09/2026 y documenta las correcciones realizadas después de la revisión del examen suspenso del 16/09/2026.
 
-No sustituye el historial Git ni reasigna autoría histórica. La autoría acumulada del proyecto se conserva en los artefactos originales. Para la evaluación del examen suspenso, la documentación distingue a **Mera (`Emeraxs`) y Ponce (`Mery-003`) como integrantes evaluados**. **Mora (`amorad35`)** queda como apoyo no evaluado y cualquier aporte suyo continúa atribuido a él. **Alvia y Vaca** permanecen como participación histórica fuera del examen suspenso. Ningún aporte se reasigna.
+El informe del docente indicó que el **manuscrito estaba en orden** y que el pendiente de §16 era la retrospectiva: debía recoger todo lo ocurrido hasta el último corte y corregir la afirmación relativa a las notas de campo.
 
-## 2. Qué corregimos
+Por ello, esta actualización no reabre los resultados numéricos ni modifica el análisis científico ya aceptado. Su finalidad es dejar trazable el cierre documental posterior: autoría, notas WALK-NTEC, aclaración de fechas WALK, acta de los cinco integrantes y alineación de la portada ERS.
 
-| Bloque | Hallazgo del examen | Corrección realizada | Evidencia verificable |
+## 2. Estado de las correcciones
+
+| Bloque | Estado documentado | Corrección / cierre realizado | Evidencia principal |
 |---|---|---|---|
-| §4 - ERS/SRS | Los 19 casos de uso Must estaban modelados y trazados, pero no especificados textualmente con el nivel de comportamiento exigido. | Se incorporó para cada CU actor, disparador, precondiciones, flujo principal numerado, flujo alternativo con condición, excepción con condición y poscondiciones. Se añadieron `ID_Flujo` y `Descripcion_Flujo` en la matriz y 57 trazas explícitas de flujo. | `01_ERS/ERS_SRS_2B_v2.0.tex`, `01_ERS/ERS_SRS_2B_v2.0.pdf`, `04_Trazabilidad/matriz_trazabilidad.csv`; commits `eaec001`, `da6e327`, `b494bf4`, `3a9697f`. |
-| §12 - reproducibilidad | El corte evaluado tenía diferencias entre `06_Experimento/resultados/` y `07_Datos/resultados/`, y la semilla del proceso no estaba declarada como una constante única del cierre. | Se dejó `07_Datos/resultados/` como única salida canónica; `06_Experimento/resultados/` se mantiene solo como espejo derivado byte-idéntico. `run_all.py` declara `SEED = 401`. Dos ejecuciones consecutivas sobre los mismos datos fueron verificadas con hashes idénticos en las salidas generadas. | `07_Datos/scripts/run_all.py`, `07_Datos/README_datos.md`, `07_Datos/resultados/README.md`, `06_Experimento/README.md`, `06_Experimento/resultados/`; commits `330bdc9`, `33988cb` y sincronizaciones posteriores. |
-| §13 - tamaño del efecto | Un análisis anterior había tratado categorías temáticas como si fueran unidades independientes. | La unidad independiente se corrigió a sesión WALK: 3 técnicas y 3 no técnicas (`n_unidades=6`). El análisis principal reporta Cliff's delta `0.555556`, IC95% `[-0.333333, 1.000000]` e `interpretable=NO` para inferencia poblacional. | `07_Datos/resultados/tablas/tabla_efecto_perfiles.csv`, `07_Datos/resultados/F3-04_TAMANIO_EFECTO.md`, `07_Datos/scripts/calcular_efecto_perfiles.py`. |
-| §16 - manuscrito | El manuscrito evaluado era anterior al análisis corregido y no existía la retrospectiva canónica en `10_Autoria/`. | Se sincronizó la narración de resultados y discusión con las tablas canónicas, se mantuvieron explícitas las limitaciones reales, se recompiló el PDF después del cierre de resultados de §12 y se creó esta retrospectiva. | `07_Publicacion/manuscrito_final.tex`, `07_Publicacion/manuscrito_final.pdf`, `10_Autoria/retrospectiva_equipo.md`. |
+| §4 - Casos de uso | Cerrado previamente | Los 19 CU Must mantienen actor, disparador, precondiciones, flujo principal, alternativa, excepción y poscondiciones, con 57 trazas de flujo añadidas. | `01_ERS/ERS_SRS_2B_v2.0.tex`; `04_Trazabilidad/matriz_trazabilidad.csv`. |
+| §12 - Reproducibilidad | Cerrado previamente | `07_Datos/resultados/` permanece como fuente canónica; `06_Experimento/resultados/` es espejo derivado. `SEED = 401` permanece declarado. | `07_Datos/scripts/run_all.py`; README de datos/resultados. |
+| §15 - Autoría A2 | Actualizado | Se añadieron 3 capturas reales de commits históricos de Alvia y 3 de Vaca. A2 queda documentado con **48 capturas**: Mera 13, Ponce 19, Mora 10, Alvia 3 y Vaca 3. | `10_Autoria/capturas/README.md`; `10_Autoria/capturas/inventario_capturas_alvia_vaca.csv`. |
+| §15 - Composición / autoría | Actualizado | Se dejó de tratar la solicitud del 15/09 como cambio unilateral vigente. Los cinco integrantes conservan la autoría de sus aportes verificables y el acta de reconocimiento quedó suscrita por los cinco. | `04_Trazabilidad/ACTA_RECONOCIMIENTO_AUTORIA_EQUIPO.pdf`; `10_Autoria/EQUIPO_EXAMEN_FINAL.md`. |
+| §15 - Notas de campo | Rectificado | La cobertura verificable pasa de `16/16` a **13/16 notas contemporáneas**. `WALK-NTEC-01`, `02` y `03` figuran como sesiones sin nota contemporánea. Sus PNG se conservan como reconstrucciones posteriores, sin utilizarlos como prueba de lo escrito durante la sesión. | `10_Autoria/bitacora_sesiones.csv`; `10_Autoria/notas_campo/inventario_notas_campo.csv`; `10_Autoria/reconstrucciones_posteriores/`. |
+| Observación de fechas WALK | Explicada por escrito | Se documentó por qué las fechas antiguas `18/08` y `24/08` correspondían a elaboración/ratificación de actas y se consolidaron las fechas de sesión utilizadas por la trazabilidad multimedia. No se reescribió el contenido conversacional de las transcripciones. | `04_Trazabilidad/ACLARACION_FECHAS_WALK.md`; `04_Trazabilidad/VERIFICACION_MULTIMEDIA_WALK.md`. |
+| §16 - Manuscrito | Sin cambios sustantivos | Se conserva el manuscrito evaluado porque el informe lo declaró en orden: usa sesión WALK como unidad independiente, 3+3 sesiones, y no trata las 18 categorías como unidades independientes. | `07_Publicacion/manuscrito_final.tex`; `07_Publicacion/manuscrito_final.pdf`. |
+| §16 - Retrospectiva | **Actualizada en este parche** | Se reemplaza el corte desactualizado del 15/09, se incorpora todo lo ocurrido después y se elimina la afirmación incompatible con la reclasificación de las notas NTEC. | `10_Autoria/retrospectiva_equipo.md`; `07_Publicacion/RETROSPECTIVA_EXAMEN_SUSPENSO.md`. |
 
-## 3. Quién hizo qué
+## 3. Cronología del cierre posterior al corte anterior
 
-### Mera Arias Erick Jhair - `Emeraxs`
+### 15 de septiembre de 2026
 
-- completó la especificación textual de los 19 casos de uso en la ERS y recompiló el documento;
-- documentó el cierre §4 en README/CHANGELOG;
-- ajustó la ejecución reproducible de `run_all.py` para declarar `SEED = 401` y sincronizar el espejo de resultados;
-- participó en la revisión del manuscrito final y en la comprobación de consistencia entre resultados y texto.
+- se completó y recompiló el manuscrito final después del cierre de los resultados;
+- se reorganizaron notas y metadatos de sesión;
+- se modificaron los encabezados de fecha de las seis transcripciones WALK para sincronizarlos con la cronología ya registrada por el proyecto.
 
-### Ponce Rivera Mery Helenmey - `Mery-003`
+### 16 de septiembre de 2026 - madrugada
 
-- reemitió la matriz de trazabilidad para incorporar los 57 flujos `FP/FA/EX` sin alterar los requisitos terminales;
-- actualizó el checklist de defensa para reflejar el nuevo estado de los casos de uso y la trazabilidad;
-- participó en la revisión documental de las salidas de resultados y del cierre de publicación.
+- se emitió `10_Autoria/verificacion_previa.pdf` sobre el corte existente en ese momento.
 
-### Mora Duarte Alex Jose - `amorad35` - apoyo no evaluado
+### 16 de septiembre de 2026 - revisión del docente
 
-- conserva la autoría de los aportes históricos y técnicos que ya realizó en el repositorio;
-- puede apoyar mediante revisión, observaciones y correcciones propias firmadas con su usuario;
-- sus commits no se contabilizan como aporte evaluable de Mera o Ponce y no se reasignan.
+El informe de evaluación señaló dos problemas posteriores al corte de la retrospectiva anterior:
 
-### Cierre de autoría y notas confirmado el 15/09/2026
+1. tres imágenes WALK-NTEC no podían acreditarse como notas contemporáneas;
+2. el cambio de fechas de las transcripciones WALK requería explicación escrita.
 
-- se formalizó que **Mera y Ponce** son los dos integrantes evaluados del examen suspenso;
-- Alvia y Vaca quedaron como participación histórica fuera de esta evaluación;
-- la bitácora separa **28 sesiones internas** de **16 sesiones empíricas**;
-- las 16 sesiones empíricas cuentan con **16/16 notas de campo** enlazadas desde la bitácora;
-- el inventario EXIF conserva 25 fotografías reales y distingue el hash del original restringido del hash de la copia pública cuando corresponde.
+También indicó que el manuscrito estaba en orden y que la retrospectiva debía actualizarse.
 
-## 4. Qué aprendimos
+### 16 de septiembre de 2026 - correcciones posteriores al informe
 
-1. **Trazabilidad no equivale a especificación.** Tener `CU/HU/CA` vinculados a un requisito no sustituye describir el comportamiento completo del caso de uso. Para un cierre verificable, el flujo principal, las alternativas y las excepciones deben existir y poder rastrearse.
+- `WALK-NTEC-01`, `02` y `03` se reclasificaron como **reconstrucciones posteriores**;
+- esas tres sesiones quedaron sin `ruta_nota_campo` y la cobertura real quedó en **13/16**;
+- se creó `04_Trazabilidad/ACLARACION_FECHAS_WALK.md`;
+- se verificaron los archivos multimedia observados por SHA-256 y se documentó por qué sus `creation_time` no se utilizan como fecha de captura;
+- se incorporaron seis capturas A2 históricas reales: tres de Alvia y tres de Vaca;
+- la evidencia A2 quedó en **48 capturas**;
+- se sustituyó la interpretación unilateral de composición por reconocimiento de autoría verificable de los cinco integrantes;
+- se incorporó el acta firmada por los cinco integrantes en `04_Trazabilidad/ACTA_RECONOCIMIENTO_AUTORIA_EQUIPO.pdf`;
+- la portada de la ERS se alineó con esa interpretación, sin modificar los casos de uso ni el contenido técnico ya aceptado;
+- el último estado previo a esta retrospectiva quedó en `main` commit `fc0344dec7ecc39d4d8a121a59607345cb227982`.
 
-2. **La unidad de análisis debe corresponder al diseño real.** Las categorías temáticas ayudan a interpretar el corpus, pero no son observaciones independientes. La sesión WALK es la unidad defendible para la comparación exploratoria realizada.
+## 4. Autoría y participación
 
-3. **Reproducibilidad significa una sola fuente canónica.** Conservar resultados duplicados sin una regla explícita crea ambigüedad. El cierre deja `07_Datos/resultados/` como única fuente evaluable y cualquier copia adicional como espejo derivado.
+FabroGym conserva como autores/integrantes del proyecto a:
 
-4. **Un resultado negativo también es un resultado válido.** El indicador estricto de saturación de códigos es `6.306%`, superior al umbral de `5%`; no se reclasifica como cumplimiento. Del mismo modo, el IC95% del delta de Cliff es amplio e incluye cero, por lo que no se formula una inferencia poblacional.
+- **Alvia Villegas Erick Adalberto** - `Erick-Alvia`;
+- **Mera Arias Erick Jhair** - `Emeraxs`;
+- **Mora Duarte Alex José** - `amorad35`;
+- **Ponce Rivera Mery Helenmey** - `Mery-003`;
+- **Vaca Romero David Octavio** - `David-Bs1`.
 
-5. **No se corrige una carencia fabricando evidencia.** El equipo conserva las discrepancias que no pueden resolverse retroactivamente con evidencia real. No se inventan consentimientos, capturas, fotografías, notas de campo ni observaciones estadísticas.
+El historial Git y los artefactos determinan la atribución real de cada contribución. La documentación distingue el trabajo posterior a la guía de los aportes históricos previos, pero esa distinción no elimina ni reasigna autoría.
 
-6. **El manuscrito debe congelarse después de los resultados que reporta.** Por eso el PDF final de §16 se recompila después de la regeneración reproducible de §12 y antes de los manifiestos terminales.
+Las capturas incorporadas el 16/09/2026 para Alvia y Vaca son capturas actuales de commits históricos reales. No se presentan como trabajo nuevo ni se retrofechan.
 
-## 5. Limitaciones y asuntos que no deben maquillarse
+## 5. Rectificación específica sobre las notas de campo
 
-- La comparación por perfil se basa en tres sesiones técnicas y tres no técnicas; se mantiene como descriptiva/exploratoria.
-- El cuestionario de 70 respuestas no contiene una variable de perfil técnico/no técnico ni una escala de explicabilidad y no se usa para esa comparación.
-- El indicador estricto de saturación de códigos no alcanza el umbral del 5%.
-- La evidencia histórica de autoría se conserva tal como existe; cualquier elemento adicional de §15 sólo puede incorporarse si es real y verificable.
+La retrospectiva anterior afirmaba que las 16 sesiones empíricas tenían `16/16` notas de campo y utilizaba una formulación general que ya no era compatible con lo observado por el docente.
 
-## 6. Regla de cierre
+El cierre corregido es:
 
-Esta retrospectiva no declara cerrados los manifiestos SHA-256 ni la etiqueta terminal. Esos pasos se ejecutan únicamente cuando ya no se modificará ningún contenido evaluable. El orden terminal es:
+- entrevistas: **10/10** notas contemporáneas;
+- WALK técnicos: **3/3** notas contemporáneas;
+- WALK no técnicos: **0/3** notas contemporáneas acreditables;
+- total: **13/16**.
 
-1. cerrar los artefactos documentales y de autoría que correspondan;
-2. regenerar `07_Datos/checksums_datos.sha256`;
-3. regenerar `checksums.sha256`;
-4. verificar ambos sin fallos;
-5. crear la etiqueta anotada `v2.0.3-final` sobre el commit final.
+Los tres PNG de WALK-NTEC se preservan por trazabilidad en `10_Autoria/reconstrucciones_posteriores/`, pero se declaran explícitamente como **reconstrucciones posteriores** y no computan como notas de campo tomadas durante las sesiones.
 
-La meta del cierre no es aumentar artificialmente el expediente, sino lograr que cada afirmación pueda rastrearse a evidencia real, un requisito versionado, un resultado reproducible o un commit verificable.
+La corrección no consiste en ocultar o eliminar esos archivos, sino en **clasificarlos de acuerdo con lo que realmente pueden acreditar**.
+
+## 6. Aclaración de las fechas WALK
+
+Las fechas consolidadas de sesión son:
+
+- `WALK-TEC-01`: **12/08/2026**
+- `WALK-TEC-02`: **12/08/2026**
+- `WALK-TEC-03`: **13/08/2026**
+- `WALK-NTEC-01`: **16/08/2026**
+- `WALK-NTEC-02`: **16/08/2026**
+- `WALK-NTEC-03`: **22/08/2026**
+
+La explicación completa y la evidencia utilizada se mantienen en `04_Trazabilidad/ACLARACION_FECHAS_WALK.md`.
+
+Las fechas `18/08/2026` y `24/08/2026` que figuraban anteriormente en los encabezados correspondían a elaboración/ratificación de actas. Los documentos manuscritos con anotaciones discordantes se preservan sin edición y la discrepancia se explica, no se oculta.
+
+## 7. Qué aprendimos
+
+1. **Una evidencia debe declararse por lo que realmente puede demostrar.** Conservar un archivo no obliga a clasificarlo como evidencia contemporánea si fue construido posteriormente.
+
+2. **Una corrección documental debe conservar la historia del cambio.** La solicitud de composición del 15/09 se mantiene como antecedente, pero ya no se usa como fuente canónica después del acta suscrita por los cinco.
+
+3. **Las fechas de sesión y las fechas de elaboración documental no son equivalentes.** La trazabilidad debe distinguir ejecución, elaboración de acta, procesamiento multimedia y versionado Git.
+
+4. **La autoría no se corrige reasignando trabajo.** Las capturas nuevas de Alvia y Vaca documentan commits existentes; no crean contribuciones nuevas.
+
+5. **La unidad de análisis debe corresponder al diseño.** Para el efecto por perfiles se conservan seis sesiones independientes, tres técnicas y tres no técnicas; las 18 categorías temáticas no se tratan como observaciones independientes.
+
+6. **El cierre debe ser secuencial.** Primero se congela el contenido, después se realiza la verificación previa final, luego se regeneran los manifiestos y solo al final se crea una nueva etiqueta.
+
+## 8. Limitaciones que permanecen declaradas
+
+- la comparación por perfil sigue basada en 3 sesiones técnicas y 3 no técnicas;
+- el IC95% del delta de Cliff sigue siendo amplio e incluye cero;
+- el cuestionario de 70 respuestas no contiene variable de perfil técnico/no técnico ni escala de explicabilidad;
+- el indicador estricto de saturación de códigos permanece en `6.306%`, por encima del umbral de `5%`;
+- las tres WALK-NTEC permanecen sin nota de campo contemporánea;
+- los documentos históricos y sus discrepancias se conservan, no se reescriben retrospectivamente.
+
+## 9. Regla de cierre terminal
+
+Con esta actualización queda atendido el pendiente documental señalado para la retrospectiva de §16.
+
+Todavía **no** se declaran terminales los manifiestos ni la nueva etiqueta. El orden restante es:
+
+1. ejecutar una **nueva verificación previa** sobre el estado posterior a esta retrospectiva;
+2. congelar cualquier último cambio documental;
+3. regenerar `07_Datos/checksums_datos.sha256`;
+4. regenerar `checksums.sha256`;
+5. verificar ambos manifiestos sin fallos;
+6. crear una **nueva etiqueta anotada** sobre el último commit; por secuencia del repositorio, la etiqueta prevista es `v2.0.4-final`;
+7. no mover ni sobrescribir `v2.0.3-final`, que se conserva como referencia del corte evaluado.
+
+El objetivo de este cierre es que cada afirmación del repositorio sea consistente con la evidencia que realmente existe y con las observaciones expresas del informe de evaluación.
