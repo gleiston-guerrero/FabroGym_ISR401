@@ -20,7 +20,7 @@ Las capturas son evidencia visual de **autoría histórica**. El commit usado pa
 | Vaca Romero David Octavio | `David-Bs1` | `10a010ff3bff283f7bf33b7eb56097e867f9c967` — Consentimientos censurados de walkthrough | `2026-09-17_David-Bs1_commit_10a010f_consentimientos_walkthrough.png` | `3cbebde8e087ea652b853faaf3577ccd3f8358e98eb881c30c23a263ec25ea02` |
 | Vaca Romero David Octavio | `David-Bs1` | `9cd5b20742afcd80cd79adbac41b15896888e082` — Evidencias de validación walkthrough | `2026-09-17_David-Bs1_commit_9cd5b20_evidencias_walkthrough.png` | `7fc1c6edba4eccae0490031f4282eb633636bab10095ff1aa82c320958f85c2a` |
 
-## Capturas anteriores que deben retirarse
+## Capturas anteriores retiradas del corte vigente
 
 - `2026-09-16_Erick-Alvia_commit_c3975a9_normalizacion_mailmap.png`
 - `2026-09-16_Erick-Alvia_commit_73d75fe_actualizacion_mailmap.png`
