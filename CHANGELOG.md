@@ -1,5 +1,15 @@
 # Changelog
 
+## [2B-supletorio-parche-04-retrospectiva-final] - 2026-09-16
+
+### Actualización §16 — retrospectiva
+- Se actualizan `10_Autoria/retrospectiva_equipo.md` y `07_Publicacion/RETROSPECTIVA_EXAMEN_SUSPENSO.md` con fecha de corte 16/09/2026 y estado previo `fc0344d`.
+- Se incorporan las correcciones posteriores al corte anterior: reclasificación de WALK-NTEC, cobertura real `13/16`, aclaración de fechas WALK, seis capturas A2 de Alvia/Vaca, acta de autoría suscrita por los cinco integrantes y alineación de la portada ERS.
+- Se elimina la afirmación anterior de `16/16` notas contemporáneas y se documenta que las tres WALK-NTEC son reconstrucciones posteriores y no computan como notas de campo de la sesión.
+- La solicitud de cambio de composición del 15/09/2026 queda como antecedente histórico; la fuente vigente de reconocimiento de autoría es `04_Trazabilidad/ACTA_RECONOCIMIENTO_AUTORIA_EQUIPO.pdf`.
+- El manuscrito no se modifica: el informe del 16/09/2026 lo declaró en orden.
+- Los manifiestos SHA-256 y la nueva etiqueta anotada permanecen pendientes hasta ejecutar la verificación previa final sobre este nuevo corte.
+
 ## [2B-supletorio-parche-03-autoria-cinco-integrantes] - 2026-09-16
 
 ### Cierre documental A2 / autoría
