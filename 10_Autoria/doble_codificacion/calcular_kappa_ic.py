@@ -80,12 +80,12 @@ def main():
     detalle = out.with_name(out.stem + "_detalle.csv")
 
     with out.open("w", encoding="utf-8-sig", newline="") as f:
-        w = csv.writer(f)
+        w = csv.writer(f, lineterminator="\n")
         w.writerow(["Campo","N","Acuerdo_observado","Acuerdo_esperado","Kappa","IC95_inferior","IC95_superior","Bootstrap","Seed"])
         w.writerow([args.campo,n,f"{po:.6f}",f"{pe:.6f}",f"{kap:.6f}",f"{lo:.6f}",f"{hi:.6f}",len(boots),args.seed])
 
     with detalle.open("w", encoding="utf-8-sig", newline="") as f:
-        w = csv.writer(f)
+        w = csv.writer(f, lineterminator="\n")
         w.writerow(["ID_Registro",f"{args.campo}_Mora",f"{args.campo}_Ponce","Acuerdo"])
         for rid in ids:
             w.writerow([rid,A[rid],B[rid],"SI" if A[rid] == B[rid] else "NO"])

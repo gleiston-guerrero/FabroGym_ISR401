@@ -921,7 +921,7 @@ Disparador & Recepción solicita localizar y consultar una ficha de cliente. \\ 
 \item El usuario selecciona el cliente y el sistema continúa con la consulta de su ficha.
 \end{enumerate}
 
-\textbf{Excepción \texttt{CU-04-EX-01}.} \textit{Condición de disparo:} No existe coincidencia o el rol no puede consultar la información solicitada.
+\textbf{Excepción \texttt{CU-04-EX-01}.} \textit{Condición de disparo:} No existe coincidencia o la información solicitada queda fuera del alcance permitido para el rol.
 \begin{enumerate}[label=\alph*.]
 \item El sistema informa que no hay resultados disponibles para la consulta autorizada.
 \item No se revelan datos de clientes fuera del alcance del rol.
@@ -1101,7 +1101,7 @@ Disparador & Un usuario autorizado solicita consultar la vigencia de una membres
 \item No se presenta una membresía inexistente como activa.
 \end{enumerate}
 
-\textbf{Excepción \texttt{CU-08-EX-01}.} \textit{Condición de disparo:} El cliente no existe o el usuario carece de permiso de consulta.
+\textbf{Excepción \texttt{CU-08-EX-01}.} \textit{Condición de disparo:} El cliente no existe o el criterio de búsqueda es inválido.
 \begin{enumerate}[label=\alph*.]
 \item El sistema no expone información de membresía.
 \item Se informa que la consulta no puede completarse.
