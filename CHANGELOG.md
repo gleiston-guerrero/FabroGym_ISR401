@@ -1,5 +1,16 @@
 # Changelog
 
+## [2B-supletorio-parche-07-microsaneamiento-preverificacion] - 2026-09-17
+
+### Último micro-saneamiento antes del congelamiento
+- Se recalculan directamente sobre los PNG vigentes los tres SHA-256 de Vaca en `04_Trazabilidad/VERIFICACION_CAPTURAS_ALVIA_VACA_20260917.md`; los hashes de Alvia permanecen sin cambios al coincidir con sus archivos actuales.
+- La portada de la ERS actualiza su fecha de corte documental al **17/09/2026** y el PDF se recompila desde la fuente sin modificar versión, requisitos ni contenido técnico de los casos de uso ya corregidos.
+- `10_Autoria/aporte_individual.md` se sincroniza con el trabajo verificable posterior al informe del 17/09 para Mera y Ponce, y registra los depósitos A2 personales de Alvia y Vaca sin convertirlos en aportes técnicos nuevos.
+- La política de finales de línea fija `eol=lf` para los formatos textuales versionados (`.md`, `.csv`, `.txt`, `.py`, `.tex`, `.sha256`, entre otros), preservando la regla Git LFS binaria; se normalizan a LF los cinco archivos textuales que todavía conservaban CRLF en el snapshot pre-verificación.
+- `04_Trazabilidad/ACTA_RECONOCIMIENTO_AUTORIA_EQUIPO.md` recibe una nota de alcance posterior que conserva el acta/PDF firmado del 16/09 como evidencia histórica y aclara que las seis capturas mencionadas allí fueron sustituidas por los depósitos personales del 17/09.
+- Los documentos vigentes usan una redacción estable para `v2.0.5-final`: es el **identificador del cierre terminal** de este ciclo; el tag se crea/publica únicamente después de la verificación previa firmada y de comprobar ambos manifiestos SHA-256 sobre el contenido congelado.
+- La secuencia terminal queda fijada como: contenido congelado -> verificación previa firmada -> manifiesto de `07_Datos` -> manifiesto raíz -> comprobación desde clon limpio -> commit final de integridad -> tag anotado `v2.0.5-final`.
+
 ## [2B-supletorio-parche-06-saneamiento-post-informe] - 2026-09-17
 
 ### Estado vigente posterior al informe del 17/09/2026

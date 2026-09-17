@@ -47,7 +47,7 @@ Etiquetas históricas publicadas:
 
 `v2.0.0-final`, `v2.0.1-final`, `v2.0.2-final`, `v2.0.3-final` y `v2.0.4-final`.
 
-Todas se conservan intactas. `v2.0.4-final` (`dc5a228`) corresponde a la línea base evaluada por el docente el 17/09/2026. Las correcciones posteriores pertenecen al nuevo corte PRE-CHECKSUM que antecede a `v2.0.5-final`, etiqueta terminal prevista y creada únicamente después de cerrar todo el contenido, sustituir la verificación previa por una versión firmada sobre ese corte y verificar ambos manifiestos SHA-256 finales.
+Todas se conservan intactas. `v2.0.4-final` (`dc5a228`) corresponde a la línea base evaluada por el docente el 17/09/2026. El cierre terminal de las correcciones posteriores se identifica como `v2.0.5-final`; el tag se crea/publica únicamente después de cerrar todo el contenido, integrar una verificación previa firmada sobre ese corte y verificar ambos manifiestos SHA-256 finales.
 
 ## Autoría histórica y equipo del examen
 
@@ -69,7 +69,7 @@ El informe incorpora de forma explícita:
 2. la limitación de la encuesta `n=70` dentro de amenazas a la validez;
 3. el resultado de saturación de códigos `6.306 %` y la estabilización axial `1.852 %`, sin convertir el incumplimiento del umbral estricto en un resultado positivo;
 4. la explicación del cierre ético de ENTR-02, ENTR-03, ENTR-04 y ENTR-06;
-5. el repositorio canónico, las etiquetas `v2.0.0-final` a `v2.0.4-final` como referencias históricas publicadas, `v2.0.4-final` como línea base evaluada el 17/09/2026 y `v2.0.5-final` como siguiente etiqueta terminal prevista;
+5. el repositorio canónico, las etiquetas `v2.0.0-final` a `v2.0.4-final` como referencias históricas publicadas, `v2.0.4-final` como línea base evaluada el 17/09/2026 y `v2.0.5-final` como identificador del cierre terminal posterior al informe;
 6. la sección **“Retrospectiva del examen suspenso / Failed-exam correction retrospective”**, actualizada con §4, §12, §13 y §16;
 7. la retrospectiva canónica `../10_Autoria/retrospectiva_equipo.md`, con qué se corrigió, responsables documentados y aprendizajes del equipo;
 8. la autoría histórica verificable de los cinco integrantes, la distinción del trabajo técnico posterior a la guía y el depósito personal de evidencia histórica A2 realizado por Alvia y Vaca el 17/09/2026, sin convertir esos depósitos en nuevos aportes técnicos.
