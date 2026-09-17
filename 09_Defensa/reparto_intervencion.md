@@ -2,7 +2,7 @@
 
 ## Estado frente al examen suspenso
 
-Este reparto corresponde a la **defensa previa de tres expositores** y se conserva como evidencia histórica. FabroGym mantiene la autoría verificable de los cinco integrantes. En el corte posterior a la guía sólo **Mera Arias Erick Jhair** y **Ponce Rivera Mery Helenmey** registran actividad nueva; **Mora Duarte Alex José**, **Alvia Villegas Erick Adalberto** y **Vaca Romero David Octavio** conservan sus aportes propios anteriores. Este archivo no se usa para reasignar intervenciones o artefactos entre integrantes ni para modificar la calificación individual del periodo evaluado.
+Este reparto corresponde a la **defensa previa de tres expositores** y se conserva como evidencia histórica. FabroGym mantiene la autoría verificable de los cinco integrantes. En el corte posterior a la guía, el **trabajo técnico sobre los ítems de la rúbrica** corresponde a **Mera Arias Erick Jhair** y **Ponce Rivera Mery Helenmey**. **Alvia Villegas Erick Adalberto** y **Vaca Romero David Octavio** registran únicamente depósitos personales de evidencia histórica A2 solicitados por el docente; **Mora Duarte Alex José** conserva sus aportes históricos sin trabajo técnico nuevo posterior al informe. Este archivo no se usa para reasignar intervenciones o artefactos entre integrantes ni para modificar la calificación individual del periodo evaluado.
 
 La defensa se organiza para tres expositores y se centra en requisitos, evidencia, modelado, resultados y cierre metodológico. No se asigna a ningún integrante la ejecución operativa del MVP como bloque obligatorio.
 
