@@ -4,3 +4,6 @@
 
 # Finales de línea deterministas para reproducibilidad y SHA-256 de 07_Datos
 07_Datos/** text=auto eol=lf
+
+# Fuentes Python deterministas en cualquier plataforma
+*.py text eol=lf

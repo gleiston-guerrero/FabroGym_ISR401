@@ -5,17 +5,19 @@ FabroGym — Entrega 4 (2B), Fase 2
 Entrada única reproducible del análisis empírico.
 
 Principios:
-- usa únicamente datos versionados en 06_Experimento/datos_crudos/;
+- opera sobre el directorio local `datos_crudos/`; la ejecución canónica y evaluable es `07_Datos/scripts/run_all.py`;
+- la copia en `06_Experimento/scripts_analisis/` se conserva byte-idéntica solo para compatibilidad y trazabilidad;
 - no inventa observaciones, puntuaciones, perfiles, hashes ni pruebas;
 - no convierte preguntas generales de encuesta en Likert de explicabilidad;
 - documenta como NO APLICABLE cualquier inferencia no soportada.
 """
 from pathlib import Path
-import json, math, subprocess, sys
+import json, math, shutil, subprocess, sys
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 from statsmodels.stats.power import TTestPower, TTestIndPower
+from reportlab import rl_config
 from reportlab.lib import colors
 from reportlab.lib.pagesizes import A4
 from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
@@ -24,7 +26,17 @@ from reportlab.lib.units import mm
 from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, Table, TableStyle
 from validar_entradas import validar_codificacion, validar_rnf, validar_member_checking
 
+# Salidas PDF/SVG reproducibles byte a byte entre ejecuciones equivalentes.
+rl_config.invariant = True
+plt.rcParams["svg.hashsalt"] = "FabroGym_ISR401"
+
+# Semilla única y explícita del pipeline. Se usa para todo proceso pseudoaleatorio
+# del cierre (actualmente, el bootstrap de los índices ordinales de encuesta).
+SEED = 401
+np.random.seed(SEED)
+
 ROOT = Path(__file__).resolve().parents[1]
+IS_CANONICAL = ROOT.name == "07_Datos"
 RAW = ROOT / "datos_crudos"
 PROC = ROOT / "datos_procesados"
 RES = ROOT / "resultados"
@@ -51,7 +63,7 @@ def fmt_hms(x):
 def savefig(base_name):
     plt.tight_layout()
     plt.savefig(FIG / f"{base_name}.png", dpi=220)
-    plt.savefig(FIG / f"{base_name}.svg")
+    plt.savefig(FIG / f"{base_name}.svg", metadata={"Date": None})
     plt.close()
 
 def read_inputs():
@@ -87,9 +99,9 @@ def analyze_multimedia(sessions):
     s["audio_hash_formato_64hex"] = s["audio_sha256"].astype(str).str.fullmatch(r"[0-9a-fA-F]{64}")
     s["video_hash_formato_64hex"] = s["video_sha256"].astype(str).str.fullmatch(r"[0-9a-fA-F]{64}")
     vt, at = int(s["video_segundos"].sum()), int(s["audio_segundos"].sum())
-    s.to_csv(PROC / "sesiones_multimedia_verificadas.csv", index=False, encoding="utf-8-sig")
+    s.to_csv(PROC / "sesiones_multimedia_verificadas.csv", index=False, encoding="utf-8-sig", lineterminator="\n")
     s.drop(columns=["audio_segundos","video_segundos"]).to_csv(
-        TAB / "tabla_identificadores_ficha_tecnica.csv", index=False, encoding="utf-8-sig")
+        TAB / "tabla_identificadores_ficha_tecnica.csv", index=False, encoding="utf-8-sig", lineterminator="\n")
     summary = pd.DataFrame([{
         "sesiones_unicas": len(s),
         "entrevistas_ENTR": int(s["codigo_sesion"].str.startswith("ENTR-").sum()),
@@ -107,11 +119,11 @@ def analyze_multimedia(sessions):
         "hashes_video_formato_valido": bool(s["video_hash_formato_64hex"].all()),
         "nota_hashes": "Se valida formato SHA-256 (64 hex). La coincidencia con multimedia requiere rehashear los archivos reales de la zona restringida."
     }])
-    summary.to_csv(TAB / "tabla_cumplimiento_multimedia.csv", index=False, encoding="utf-8-sig")
+    summary.to_csv(TAB / "tabla_cumplimiento_multimedia.csv", index=False, encoding="utf-8-sig", lineterminator="\n")
     return vt, at
 
 def analyze_survey(survey):
-    survey.to_csv(PROC / "encuesta_clientes_limpia.csv", index=False, encoding="utf-8-sig")
+    survey.to_csv(PROC / "encuesta_clientes_limpia.csv", index=False, encoding="utf-8-sig", lineterminator="\n")
     categorical = [
         "attendance_freq","membership_tenure","membership_check","expiry_difficulty","payment_wait",
         "notice_preference","registration_ease","plan_clarity","staff_satisfaction","entry_method",
@@ -122,7 +134,7 @@ def analyze_survey(survey):
         for value, count in survey[c].fillna("(vacío)").value_counts(dropna=False).items():
             rows.append({"variable":c,"categoria":value,"conteo":int(count),
                          "porcentaje":round(100*count/len(survey),3)})
-    pd.DataFrame(rows).to_csv(TAB / "tabla_encuesta_frecuencias.csv", index=False, encoding="utf-8-sig")
+    pd.DataFrame(rows).to_csv(TAB / "tabla_encuesta_frecuencias.csv", index=False, encoding="utf-8-sig", lineterminator="\n")
 
     maps = {
         "expiry_difficulty":{"Nunca":1,"Casi nunca":2,"A veces":3,"Casi siempre":4,"Siempre":5},
@@ -132,7 +144,7 @@ def analyze_survey(survey):
         "staff_satisfaction":{"Muy insatisfecho(a)":1,"Insatisfecho(a)":2,"Ni satisfecho(a) ni insatisfecho(a)":3,"Satisfecho(a)":4,"Muy satisfecho(a)":5},
         "privacy_importance":{"Nada importante":1,"Poco importante":2,"Moderadamente importante":3,"Importante":4,"Muy importante":5},
     }
-    rng = np.random.default_rng(401)
+    rng = np.random.default_rng(SEED)
     out = []
     for c, mp in maps.items():
         x = survey[c].map(mp).dropna().astype(float).to_numpy()
@@ -144,7 +156,7 @@ def analyze_survey(survey):
             "IC95_boot_media_sup":round(float(np.quantile(boot,.975)),3),
             "interpretacion":"Índice descriptivo ordinal; NO es escala Likert de explicabilidad."
         })
-    pd.DataFrame(out).to_csv(TAB / "tabla_encuesta_indices_ordinales.csv", index=False, encoding="utf-8-sig")
+    pd.DataFrame(out).to_csv(TAB / "tabla_encuesta_indices_ordinales.csv", index=False, encoding="utf-8-sig", lineterminator="\n")
 
     pd.DataFrame([{
         "n_respuestas":len(survey),
@@ -154,7 +166,7 @@ def analyze_survey(survey):
         "nombre_participante_no_vacio":int(survey["participant_name"].notna().sum()),
         "columna_auxiliar_no_vacia":int(survey["col21"].notna().sum()),
         "uso_valido":"Descriptivo para necesidades generales del gimnasio; no para comparar perfiles ni medir satisfacción de explicabilidad."
-    }]).to_csv(TAB / "tabla_alcance_encuesta.csv", index=False, encoding="utf-8-sig")
+    }]).to_csv(TAB / "tabla_alcance_encuesta.csv", index=False, encoding="utf-8-sig", lineterminator="\n")
 
     n_one = TTestPower().solve_power(effect_size=.5, alpha=.05, power=.80, alternative="two-sided")
     n_ind = TTestIndPower().solve_power(effect_size=.5, alpha=.05, power=.80, ratio=1, alternative="two-sided")
@@ -165,7 +177,7 @@ def analyze_survey(survey):
         {"escenario":"Dos grupos independientes de igual tamaño","Cohen_d":0.5,"alpha":0.05,"potencia":0.80,
          "n_requerido_continuo":round(float(n_ind),3),"n_requerido_redondeado":math.ceil(n_ind),
          "aplicabilidad_FabroGym":"Requeriría ~64 por grupo (128 total). El cuestionario no registra perfil técnico/no técnico."}
-    ]).to_csv(TAB / "tabla_power_calculation.csv", index=False, encoding="utf-8-sig")
+    ]).to_csv(TAB / "tabla_power_calculation.csv", index=False, encoding="utf-8-sig", lineterminator="\n")
 
     imp = survey["improve_first"].value_counts()
     plt.figure(figsize=(8,5)); plt.bar(imp.index, imp.values)
@@ -180,18 +192,18 @@ def analyze_survey(survey):
     return n_one, n_ind
 
 def analyze_walkthroughs(coding, curve, axial, profile):
-    coding.to_csv(PROC / "codificacion_walkthroughs.csv", index=False, encoding="utf-8-sig")
-    profile.to_csv(PROC / "comparacion_perfiles_walkthroughs.csv", index=False, encoding="utf-8-sig")
-    profile.to_csv(TAB / "tabla_comparacion_perfiles_walkthroughs.csv", index=False, encoding="utf-8-sig")
+    coding.to_csv(PROC / "codificacion_walkthroughs.csv", index=False, encoding="utf-8-sig", lineterminator="\n")
+    profile.to_csv(PROC / "comparacion_perfiles_walkthroughs.csv", index=False, encoding="utf-8-sig", lineterminator="\n")
+    profile.to_csv(TAB / "tabla_comparacion_perfiles_walkthroughs.csv", index=False, encoding="utf-8-sig", lineterminator="\n")
 
     curve = curve.copy(); axial = axial.copy()
     curve["Codigos_acumulados"] = curve["Codigos_nuevos"].cumsum()
     curve["Porcentaje_nuevos_sobre_total_final"] = 100 * curve["Codigos_nuevos"] / curve["Codigos_nuevos"].sum()
     axial["Categorias_acumuladas"] = axial["Categorias_axiales_nuevas"].cumsum()
-    curve.to_csv(PROC / "curva_saturacion_codigos_walkthroughs.csv", index=False, encoding="utf-8-sig")
-    axial.to_csv(PROC / "curva_estabilizacion_categorias_axiales.csv", index=False, encoding="utf-8-sig")
-    curve.to_csv(TAB / "tabla_saturacion_codigos_walkthroughs.csv", index=False, encoding="utf-8-sig")
-    axial.to_csv(TAB / "tabla_estabilizacion_categorias_axiales.csv", index=False, encoding="utf-8-sig")
+    curve.to_csv(PROC / "curva_saturacion_codigos_walkthroughs.csv", index=False, encoding="utf-8-sig", lineterminator="\n")
+    axial.to_csv(PROC / "curva_estabilizacion_categorias_axiales.csv", index=False, encoding="utf-8-sig", lineterminator="\n")
+    curve.to_csv(TAB / "tabla_saturacion_codigos_walkthroughs.csv", index=False, encoding="utf-8-sig", lineterminator="\n")
+    axial.to_csv(TAB / "tabla_estabilizacion_categorias_axiales.csv", index=False, encoding="utf-8-sig", lineterminator="\n")
 
     total = int(curve["Codigos_nuevos"].sum()); avg3 = float(curve.tail(3)["Codigos_nuevos"].mean())
     pct = 100 * avg3 / total
@@ -204,7 +216,7 @@ def analyze_walkthroughs(coding, curve, axial, profile):
         {"nivel":"Categorías_axiales","total_acumulado":total_a,"promedio_nuevas_ultimas_3":round(avg3a,3),
          "porcentaje_criterio":round(pcta,3),"umbral_referencia_pct":5.0,"cumple_umbral":bool(pcta<=5),
          "conclusion":"Se estabilizan; evidencia complementaria, no sustituto del criterio por códigos."}
-    ]).to_csv(TAB / "tabla_resumen_saturacion.csv", index=False, encoding="utf-8-sig")
+    ]).to_csv(TAB / "tabla_resumen_saturacion.csv", index=False, encoding="utf-8-sig", lineterminator="\n")
 
     pd.DataFrame([{
         "sesiones_tecnicas":3,"sesiones_no_tecnicas":3,
@@ -214,7 +226,7 @@ def analyze_walkthroughs(coding, curve, axial, profile):
         "codigos_normalizados_total":int(coding["Codigo_Normalizado"].nunique()),
         "tipo_comparacion":"Descriptiva/cualitativa",
         "mann_whitney":"NO APLICABLE: no existe resultado cuantitativo por participante preregistrado; n=3 por perfil."
-    }]).to_csv(TAB / "tabla_resumen_perfiles.csv", index=False, encoding="utf-8-sig")
+    }]).to_csv(TAB / "tabla_resumen_perfiles.csv", index=False, encoding="utf-8-sig", lineterminator="\n")
 
     plt.figure(figsize=(9,5)); plt.plot(curve["Codigo_Sesion"], curve["Codigos_nuevos"], marker="o", label="Códigos nuevos")
     plt.plot(curve["Codigo_Sesion"], curve["Codigos_acumulados"], marker="o", label="Códigos acumulados")
@@ -229,9 +241,9 @@ def analyze_walkthroughs(coding, curve, axial, profile):
 
 def analyze_explainability(coding, candidates, fragments, mc):
     exp = coding[coding["Aplicable_Explicabilidad"].astype(str).str.strip().str.lower().isin(["si","sí"])].copy()
-    exp.to_csv(PROC / "fragmentos_explicabilidad_desde_codificacion.csv", index=False, encoding="utf-8-sig")
-    fragments.to_csv(PROC / "fragmentos_pertinentes_explicabilidad.csv", index=False, encoding="utf-8-sig")
-    mc.to_csv(PROC / "member_checking.csv", index=False, encoding="utf-8-sig")
+    exp.to_csv(PROC / "fragmentos_explicabilidad_desde_codificacion.csv", index=False, encoding="utf-8-sig", lineterminator="\n")
+    fragments.to_csv(PROC / "fragmentos_pertinentes_explicabilidad.csv", index=False, encoding="utf-8-sig", lineterminator="\n")
+    mc.to_csv(PROC / "member_checking.csv", index=False, encoding="utf-8-sig", lineterminator="\n")
 
     dims = []
     for v in exp["Dimension_Explicabilidad"].dropna():
@@ -241,7 +253,7 @@ def analyze_explainability(coding, candidates, fragments, mc):
     dim_counts = pd.Series(dims).value_counts().rename_axis("dimension_observada").reset_index(name="fragmentos")
     dim_counts["porcentaje_sobre_9_fragmentos"] = round(100*dim_counts["fragmentos"]/len(exp),3)
     dim_counts["nota"] = "Frecuencia descriptiva de etiquetas observadas; no equivale a cobertura porcentual del marco completo."
-    dim_counts.to_csv(TAB / "tabla_dimensiones_explicabilidad_observadas.csv", index=False, encoding="utf-8-sig")
+    dim_counts.to_csv(TAB / "tabla_dimensiones_explicabilidad_observadas.csv", index=False, encoding="utf-8-sig", lineterminator="\n")
 
     final = candidates.copy()
     final.insert(0, "ID_RNF_Final", final["ID_RNF"].map(FINAL_MAP))
@@ -249,11 +261,11 @@ def analyze_explainability(coding, candidates, fragments, mc):
     final["Estado_requisito"] = "ESPECIFICADO"
     final["Estado_componente_recomendacion"] = "PROPUESTO"
     final["Implementado_en_MVP"] = "NO"
-    final.to_csv(PROC / "RNF_explicabilidad_final.csv", index=False, encoding="utf-8-sig")
+    final.to_csv(PROC / "RNF_explicabilidad_final.csv", index=False, encoding="utf-8-sig", lineterminator="\n")
     cols = ["ID_RNF_Final","ID_Candidato","Enunciado_RNF","Que_se_explica","A_quien","Formato","Momento",
             "Metrica","Umbral","Metodo_Comprobacion","Fuentes","Resultado_Member_Checking","Decision_Final",
             "Fecha_Member_Checking","Nota_Member_Checking","Estado_requisito","Estado_componente_recomendacion","Implementado_en_MVP"]
-    final[cols].to_csv(TAB / "tabla_RNF_explicabilidad_final.csv", index=False, encoding="utf-8-sig")
+    final[cols].to_csv(TAB / "tabla_RNF_explicabilidad_final.csv", index=False, encoding="utf-8-sig", lineterminator="\n")
 
     complete = final[["Metrica","Umbral","Metodo_Comprobacion"]].notna().all(axis=1)
     pd.DataFrame([{
@@ -265,12 +277,12 @@ def analyze_explainability(coding, candidates, fragments, mc):
         "porcentaje_operacionalizacion_completa":round(100*complete.mean(),3),
         "cobertura_porcentaje_marco_explicabilidad":"NO CALCULABLE",
         "motivo_cobertura":"El protocolo exige denominador y clasificación verificables; la evidencia usa etiquetas compuestas y no fija un universo cerrado."
-    }]).to_csv(TAB / "tabla_resumen_explicabilidad.csv", index=False, encoding="utf-8-sig")
+    }]).to_csv(TAB / "tabla_resumen_explicabilidad.csv", index=False, encoding="utf-8-sig", lineterminator="\n")
 
     counts = mc["Resultado"].value_counts().reindex(["Confirmado","Ajustado","No confirmado"], fill_value=0)
     mcs = pd.DataFrame([{"Resultado":k,"Conteo":int(v),"Porcentaje":round(100*v/len(mc),3)} for k,v in counts.items()])
-    mcs.to_csv(TAB / "tabla_member_checking_resumen.csv", index=False, encoding="utf-8-sig")
-    mc.to_csv(TAB / "tabla_member_checking_decisiones.csv", index=False, encoding="utf-8-sig")
+    mcs.to_csv(TAB / "tabla_member_checking_resumen.csv", index=False, encoding="utf-8-sig", lineterminator="\n")
+    mc.to_csv(TAB / "tabla_member_checking_decisiones.csv", index=False, encoding="utf-8-sig", lineterminator="\n")
     rows = []
     for cid, g in mc.groupby("ID"):
         c = g["Resultado"].value_counts()
@@ -278,7 +290,7 @@ def analyze_explainability(coding, candidates, fragments, mc):
         rows.append({"ID_Candidato":cid,"ID_RNF_Final":FINAL_MAP.get(cid,""),
                      "Confirmado":int(c.get("Confirmado",0)),"Ajustado":int(c.get("Ajustado",0)),
                      "No_confirmado":int(c.get("No confirmado",0)),"Decision_final":decision})
-    pd.DataFrame(rows).to_csv(TAB / "tabla_member_checking_por_RNF.csv", index=False, encoding="utf-8-sig")
+    pd.DataFrame(rows).to_csv(TAB / "tabla_member_checking_por_RNF.csv", index=False, encoding="utf-8-sig", lineterminator="\n")
 
     plt.figure(figsize=(7,4.5)); plt.bar(mcs["Resultado"], mcs["Conteo"])
     plt.xlabel("Decisión"); plt.ylabel("Conteo"); plt.title("Member checking de cuatro candidatos RNF")
@@ -292,17 +304,19 @@ def write_applicability():
         {"metrica_prueba":"Fleiss kappa entre rondas de validación","estado":"NO CALCULADO",
          "justificacion":"No existen dos rondas equivalentes de clasificación; el protocolo v1.4 preregistró decisión nominal de member checking y excluyó kappa."},
         {"metrica_prueba":"U de Mann-Whitney técnico vs no técnico","estado":"NO APLICABLE",
-         "justificacion":"Hay tres walkthroughs por perfil y no existe resultado cuantitativo independiente por participante preregistrado."},
+         "justificacion":"Hay tres walkthroughs por perfil. Existe una medida agregada posterior por sesión para tamaño del efecto, pero no un resultado cuantitativo por participante preregistrado que justifique una prueba inferencial."},
         {"metrica_prueba":"Shapiro-Wilk / Levene","estado":"NO APLICABLE",
          "justificacion":"No se ejecuta una hipótesis inferencial sobre una variable cuantitativa del Enfoque 3."},
         {"metrica_prueba":"Tamaño del efecto técnico vs no técnico por sesiones WALK","estado":"APLICADO DESCRIPTIVAMENTE",
-         "justificacion":"Delta de Cliff sobre la proporción de fragmentos pertinentes a explicabilidad por sesión + IC95% bootstrap exacto; 3 sesiones técnicas vs 3 no técnicas. No se interpreta como inferencia poblacional."},
+         "justificacion":"Delta de Cliff sobre la proporción de fragmentos pertinentes a explicabilidad por sesión + IC95% bootstrap exacto; n_unidades=6 (3 técnicas + 3 no técnicas). La tabla marca interpretable=NO para inferencia poblacional."},
         {"metrica_prueba":"Bootstrap IC95% de índices ordinales generales de encuesta","estado":"APLICADO DESCRIPTIVAMENTE",
          "justificacion":"Solo describe seis preguntas ordinales generales; no se interpreta como explicabilidad ni como prueba de hipótesis."}
-    ]).to_csv(TAB / "tabla_aplicabilidad_pruebas_estadisticas.csv", index=False, encoding="utf-8-sig")
+    ]).to_csv(TAB / "tabla_aplicabilidad_pruebas_estadisticas.csv", index=False, encoding="utf-8-sig", lineterminator="\n")
 
 def write_summary(survey, sessions, coding, final, exp, counts, vt, at, sat):
     total, avg3, pct, total_a, avg3a, pcta = sat
+    effect_table = pd.read_csv(TAB / "tabla_efecto_perfiles.csv", encoding="utf-8-sig")
+    effect_primary = effect_table.iloc[0].to_dict()
     summary = {
         "proyecto":"FabroGym","fase":"2B - Fase 2 análisis empírico reproducible",
         "sesiones":{"total":len(sessions),"entrevistas":10,"walkthroughs":6,"walkthroughs_tecnicos":3,"walkthroughs_no_tecnicos":3,
@@ -311,6 +325,18 @@ def write_summary(survey, sessions, coding, final, exp, counts, vt, at, sat):
         "walkthroughs":{"fragmentos":len(coding),"tecnicos":int((coding["Perfil"]=="Tecnico").sum()),
                         "no_tecnicos":int((coding["Perfil"]=="No tecnico").sum()),
                         "codigos_normalizados":int(coding["Codigo_Normalizado"].nunique()),"categorias":int(coding["Categoria"].nunique())},
+        "efecto_perfiles":{
+            "unidad_analisis":str(effect_primary["unidad_analisis"]),
+            "n_unidades":int(effect_primary["n_unidades"]),
+            "n_tecnico":int(effect_primary["n_tecnico"]),
+            "n_no_tecnico":int(effect_primary["n_no_tecnico"]),
+            "medida":"Delta de Cliff",
+            "delta":float(effect_primary["efecto_delta"]),
+            "ic95_inf":float(effect_primary["IC95_bootstrap_exacto_inf"]),
+            "ic95_sup":float(effect_primary["IC95_bootstrap_exacto_sup"]),
+            "interpretable":str(effect_primary["interpretable"]),
+            "alcance":"descriptivo-exploratorio; no inferencia poblacional"
+        },
         "explicabilidad":{"fragmentos_pertinentes":len(exp),"candidatos":len(final),"rnf_finales":len(final),
                           "cobertura_marco_porcentaje":None,"razon_no_porcentaje":"No existe denominador cerrado verificable en instrumento/codificación."},
         "member_checking":{"participantes":["MC-P01","MC-P02","MC-P03"],"fecha":"2026-08-29","decisiones":int(counts.sum()),
@@ -320,9 +346,9 @@ def write_summary(survey, sessions, coding, final, exp, counts, vt, at, sat):
                       "umbral_pct":5.0,"cumple_codigos":bool(pct<=5),"categorias_axiales_total":total_a,
                       "porcentaje_categorias_ultimas_3":round(pcta,3),"cumple_categorias":bool(pcta<=5)}
     }
-    (RES / "resumen_resultados.json").write_text(json.dumps(summary, ensure_ascii=False, indent=2), encoding="utf-8")
-    md = f"""# Resultados empíricos terminales — FabroGym\n\n## Evidencia multimedia\nLa ficha técnica v3.1 identifica 16 sesiones únicas: 10 `ENTR-*`, 3 `WALK-TEC-*` y 3 `WALK-NTEC-*`. La suma de los 16 videos es **{fmt_hms(vt)}** ({vt/60:.3f} min), por encima de 240 min; los audios suman **{fmt_hms(at)}**. No se suman audio y video como si fueran sesiones distintas.\n\n## Encuesta\nSe analizaron **{len(survey)} respuestas**. Las columnas directas finales de identificación están vacías en las 70 filas. El cuestionario no contiene un campo técnico/no técnico ni ítems Likert de explicabilidad; se reportan frecuencias e índices ordinales generales con IC95% bootstrap, sin reinterpretarlos como explicabilidad.\n\n## Walkthroughs\nSe analizaron **{len(coding)} fragmentos codificados**: {int((coding['Perfil']=='Tecnico').sum())} técnicos y {int((coding['Perfil']=='No tecnico').sum())} no técnicos, con {coding['Codigo_Normalizado'].nunique()} códigos normalizados y {coding['Categoria'].nunique()} categorías. La comparación entre perfiles se realiza a nivel de sesión WALK independiente (3 técnicas vs 3 no técnicas); el tamaño del efecto principal es delta de Cliff sobre la proporción de fragmentos pertinentes a explicabilidad por sesión, con IC95% bootstrap exacto y sin p-valor ni inferencia poblacional. Consulte F3-04_TAMANIO_EFECTO.md.\n\n## Explicabilidad y member checking\nSe identificaron **{len(exp)} fragmentos pertinentes** y **{len(final)} RNF terminales**. El member checking con `MC-P01`, `MC-P02` y `MC-P03` produjo {int(counts.sum())} decisiones: {int(counts['Confirmado'])} confirmaciones, {int(counts['Ajustado'])} ajustes y {int(counts['No confirmado'])} no confirmaciones. Los RNF se terminalizan como `RNF-16` a `RNF-19`; el componente recomendador permanece **PROPUESTO**, no implementado.\n\nNo se calcula porcentaje de cobertura del marco de explicabilidad: no existe un denominador cerrado verificable.\n\n## Saturación\nEn las últimas tres sesiones aparecen en promedio **{avg3:.3f}** códigos nuevos sobre **{total}** acumulados: **{pct:.3f}%**. El criterio estricto <=5% **no se alcanza**, aunque la curva presenta inflexión visible desde la cuarta sesión. A nivel axial, las últimas tres sesiones representan **{pcta:.3f}%** de categorías nuevas; se informa solo como evidencia complementaria de estabilización.\n\n## Pruebas no aplicadas\nNo se fabrican Fleiss kappa, Mann-Whitney, Shapiro-Wilk ni Levene donde los datos/protocolo no los soportan. Consulte `tabla_aplicabilidad_pruebas_estadisticas.csv`.\n"""
-    (RES / "RESUMEN_FASE2.md").write_text(md, encoding="utf-8")
+    (RES / "resumen_resultados.json").write_text(json.dumps(summary, ensure_ascii=False, indent=2), encoding="utf-8", newline="\n")
+    md = f"""# Resultados empíricos terminales — FabroGym\n\n## Evidencia multimedia\nLa ficha técnica v3.1 identifica 16 sesiones únicas: 10 `ENTR-*`, 3 `WALK-TEC-*` y 3 `WALK-NTEC-*`. La suma de los 16 videos es **{fmt_hms(vt)}** ({vt/60:.3f} min), por encima de 240 min; los audios suman **{fmt_hms(at)}**. No se suman audio y video como si fueran sesiones distintas.\n\n## Encuesta\nSe analizaron **{len(survey)} respuestas**. Las columnas directas finales de identificación están vacías en las 70 filas. El cuestionario no contiene un campo técnico/no técnico ni ítems Likert de explicabilidad; se reportan frecuencias e índices ordinales generales con IC95% bootstrap, sin reinterpretarlos como explicabilidad.\n\n## Walkthroughs\nSe analizaron **{len(coding)} fragmentos codificados**: {int((coding['Perfil']=='Tecnico').sum())} técnicos y {int((coding['Perfil']=='No tecnico').sum())} no técnicos, con {coding['Codigo_Normalizado'].nunique()} códigos normalizados y {coding['Categoria'].nunique()} categorías. La comparación entre perfiles se realiza a nivel de sesión WALK independiente (`n_unidades=6`: 3 técnicas vs 3 no técnicas); el tamaño del efecto principal es delta de Cliff sobre la proporción de fragmentos pertinentes a explicabilidad por sesión, con IC95% bootstrap exacto. La tabla terminal marca `interpretable=NO` para inferencia poblacional; no se genera p-valor. Consulte F3-04_TAMANIO_EFECTO.md.\n\n## Explicabilidad y member checking\nSe identificaron **{len(exp)} fragmentos pertinentes** y **{len(final)} RNF terminales**. El member checking con `MC-P01`, `MC-P02` y `MC-P03` produjo {int(counts.sum())} decisiones: {int(counts['Confirmado'])} confirmaciones, {int(counts['Ajustado'])} ajustes y {int(counts['No confirmado'])} no confirmaciones. Los RNF se terminalizan como `RNF-16` a `RNF-19`; el componente recomendador permanece **PROPUESTO**, no implementado.\n\nNo se calcula porcentaje de cobertura del marco de explicabilidad: no existe un denominador cerrado verificable.\n\n## Saturación\nEn las últimas tres sesiones aparecen en promedio **{avg3:.3f}** códigos nuevos sobre **{total}** acumulados: **{pct:.3f}%**. El criterio estricto <=5% **no se alcanza**, aunque la curva presenta inflexión visible desde la cuarta sesión. A nivel axial, las últimas tres sesiones representan **{pcta:.3f}%** de categorías nuevas; se informa solo como evidencia complementaria de estabilización.\n\n## Pruebas no aplicadas\nNo se fabrican Fleiss kappa, Mann-Whitney, Shapiro-Wilk ni Levene donde los datos/protocolo no los soportan. Consulte `tabla_aplicabilidad_pruebas_estadisticas.csv`.\n"""
+    (RES / "RESUMEN_FASE2.md").write_text(md, encoding="utf-8", newline="\n")
     return summary
 
 def write_osf_deviations(summary):
@@ -454,9 +480,9 @@ Solo se añadirá una nueva entrada cuando exista:
 Las actividades no ejecutadas en el corte histórico no se registran como si ya hubieran ocurrido. Las entradas históricas no se eliminan para hacer coincidir retrospectivamente el protocolo con el estado final.
 """
     text = text.replace("__DEVIATIONS_MD__", "") if False else text
-    (ROOT / "osf_deviations.md").write_text(text, encoding="utf-8")
+    (ROOT / "osf_deviations.md").write_text(text, encoding="utf-8", newline="\n")
     if ROOT.name == "07_Datos":
-        (ROOT / "desviaciones.md").write_text(text, encoding="utf-8")
+        (ROOT / "desviaciones.md").write_text(text, encoding="utf-8", newline="\n")
 
     reg = pd.DataFrame([
         {
@@ -496,7 +522,7 @@ Las actividades no ejecutadas en el corte histórico no se registran como si ya 
             "Estado":"CORREGIDA",
         },
     ])
-    reg.to_csv(ROOT / "desviaciones_registro.csv", index=False, encoding="utf-8-sig")
+    reg.to_csv(ROOT / "desviaciones_registro.csv", index=False, encoding="utf-8-sig", lineterminator="\n")
 
     styles = getSampleStyleSheet()
     styles.add(ParagraphStyle(name="TitleCenter2", parent=styles["Title"], alignment=TA_CENTER, fontSize=15, leading=18, spaceAfter=10))
@@ -518,6 +544,48 @@ Las actividades no ejecutadas en el corte histórico no se registran como si ya 
     story.append(Paragraph("<b>Principio de transparencia.</b> Las limitaciones que no constituyen diferencias reales frente al protocolo se reportan por separado y no se inflan como desviaciones.", styles["BodyX"]))
     doc.build(story)
 
+
+def write_results_readme():
+    text = f"""# Resultados canónicos de FabroGym
+
+La instancia **canónica, ejecutable y evaluable** de estas salidas es `07_Datos/resultados/`.
+
+La carpeta `06_Experimento/resultados/` se mantiene únicamente como **espejo derivado byte-idéntico** para compatibilidad documental con artefactos históricos. No constituye una segunda cadena analítica y nunca se usa como entrada del pipeline.
+
+La orden oficial es:
+
+```bash
+cd 07_Datos
+python scripts/run_all.py
+```
+
+Semilla pseudoaleatoria explícita del pipeline: `{SEED}`.
+
+Cuando se ejecuta dentro del repositorio completo, `run_all.py` sincroniza este directorio hacia `06_Experimento/resultados/` después de terminar el análisis. La identidad entre ambas carpetas debe comprobarse por rutas y SHA-256 antes del cierre.
+"""
+    (RES / "README.md").write_text(text, encoding="utf-8", newline="\n")
+
+
+def sync_results_mirror():
+    """Replica 07_Datos/resultados en 06_Experimento/resultados sin volverlo canónico.
+
+    El espejo sólo se mantiene cuando el pipeline se ejecuta dentro del repositorio
+    completo. Si 06_Experimento no existe (por ejemplo, paquete 07_Datos aislado),
+    la reproducción canónica sigue siendo válida y no se crea una estructura externa.
+    """
+    # La sincronización cruzada sólo corresponde a la ejecución canónica desde 07_Datos.
+    # La copia byte-idéntica en 06_Experimento nunca debe borrar/copiar su propio directorio.
+    if not IS_CANONICAL:
+        return False
+    exp_dir = ROOT.parent / "06_Experimento"
+    mirror = exp_dir / "resultados"
+    if not exp_dir.is_dir():
+        return False
+    if mirror.exists():
+        shutil.rmtree(mirror)
+    shutil.copytree(RES, mirror)
+    return True
+
 def main():
     survey, sessions, coding, curve, axial, profile, candidates, fragments, mc = read_inputs()
     vt, at = analyze_multimedia(sessions)
@@ -529,6 +597,8 @@ def main():
     write_applicability()
     summary = write_summary(survey, sessions, coding, final, exp, counts, vt, at, sat)
     write_osf_deviations(summary)
+    write_results_readme()
+    mirror_synced = sync_results_mirror()
     print("OK — FabroGym Fase 2 regenerada")
     print(f"Sesiones: {len(sessions)}; video total: {fmt_hms(vt)}; audio total: {fmt_hms(at)}")
     print(f"Encuesta: n={len(survey)}; sin perfil técnico/no técnico; sin Likert de explicabilidad")
@@ -536,6 +606,8 @@ def main():
     print("F3-04: tamaño del efecto técnico/no técnico + IC95% regenerado")
     print(f"Saturación códigos últimas 3: {sat[2]:.3f}% -> {'CUMPLE' if sat[2] <= 5 else 'NO CUMPLE ESTRICTAMENTE'}")
     print(f"Member checking: {int(counts.sum())} decisiones; RNF terminales={len(final)}")
+    print(f"Semilla reproducible: {SEED}")
+    print(f"Espejo 06_Experimento/resultados: {'SINCRONIZADO' if mirror_synced else 'NO APLICA (ejecución no canónica o paquete aislado)'}")
 
 if __name__ == "__main__":
     main()
