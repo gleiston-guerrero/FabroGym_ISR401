@@ -1,9 +1,28 @@
-02_Evidencias/00_Restringido/*.7z filter=lfs diff=lfs merge=lfs -text
-
+# Finales de línea deterministas para archivos textuales versionados
 .gitattributes text eol=lf
-
-# Finales de línea deterministas para reproducibilidad y SHA-256 de 07_Datos
-07_Datos/** text=auto eol=lf
-
-# Fuentes Python deterministas en cualquier plataforma
+.gitignore text eol=lf
+.mailmap text eol=lf
+LICENSE text eol=lf
+Dockerfile text eol=lf
+.dockerignore text eol=lf
+*.md text eol=lf
+*.txt text eol=lf
+*.csv text eol=lf
+*.json text eol=lf
+*.sha256 text eol=lf
 *.py text eol=lf
+*.tex text eol=lf
+*.bib text eol=lf
+*.cff text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+*.html text eol=lf
+*.css text eol=lf
+*.js text eol=lf
+*.svg text eol=lf
+*.drawio text eol=lf
+*.sh text eol=lf
+*.bat text eol=lf
+
+# Evidencia restringida binaria gestionada por Git LFS; nunca tratar como texto
+02_Evidencias/00_Restringido/*.7z filter=lfs diff=lfs merge=lfs -text
