@@ -43,11 +43,11 @@ Repositorio canónico de evaluación:
 
 `https://github.com/gleiston-guerrero/FabroGym_ISR401`
 
-Línea base histórica publicada previa al cierre:
+Etiquetas históricas publicadas:
 
-`v2.0.2-final`
+`v2.0.0-final`, `v2.0.1-final`, `v2.0.2-final` y `v2.0.3-final`.
 
-Esa etiqueta se conserva intacta como línea base histórica. Las correcciones posteriores corresponden al corte PRE-CHECKSUM que antecede a la etiqueta terminal `v2.0.3-final`, creada únicamente después de cerrar todo el contenido y verificar los manifiestos SHA-256 finales.
+Todas se conservan intactas. `v2.0.3-final` corresponde al corte evaluado por el docente el 16/09/2026. Las correcciones posteriores pertenecen al nuevo corte PRE-CHECKSUM que antecede a `v2.0.4-final`, etiqueta terminal prevista y creada únicamente después de cerrar todo el contenido, incorporar la verificación previa firmada y verificar los manifiestos SHA-256 finales.
 
 ## Autoría histórica y equipo del examen
 
@@ -69,10 +69,10 @@ El informe incorpora de forma explícita:
 2. la limitación de la encuesta `n=70` dentro de amenazas a la validez;
 3. el resultado de saturación de códigos `6.306 %` y la estabilización axial `1.852 %`, sin convertir el incumplimiento del umbral estricto en un resultado positivo;
 4. la explicación del cierre ético de ENTR-02, ENTR-03, ENTR-04 y ENTR-06;
-5. el repositorio canónico, `v2.0.2-final` como línea base histórica publicada y `v2.0.3-final` como etiqueta terminal declarada, creada únicamente después de verificar los manifiestos SHA-256 finales;
+5. el repositorio canónico, las etiquetas `v2.0.0-final` a `v2.0.3-final` como referencias históricas y `v2.0.4-final` como nueva etiqueta terminal prevista, creada únicamente después de la verificación previa firmada y de comprobar los manifiestos SHA-256 finales;
 6. la sección **“Retrospectiva del examen suspenso / Failed-exam correction retrospective”**, actualizada con §4, §12, §13 y §16;
 7. la retrospectiva canónica `../10_Autoria/retrospectiva_equipo.md`, con qué se corrigió, responsables documentados y aprendizajes del equipo;
-8. la distinción entre autoría histórica del proyecto, apoyo no evaluado de Mora y composición evaluada del examen suspenso conformada por Mera y Ponce.
+8. la autoría verificable de los cinco integrantes y la distinción temporal de actividad: después de la guía sólo Mera y Ponce registran trabajo versionado; Mora, Alvia y Vaca conservan sus aportes propios sin que se les atribuya actividad posterior inexistente.
 
 El manuscrito se congela en este corte de §16; cualquier corrección posterior que altere resultados obligaría a recompilarlo antes del cierre terminal.
 
