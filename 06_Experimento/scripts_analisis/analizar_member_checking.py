@@ -14,7 +14,7 @@ def procesar(entrada: Path, salida: Path):
         return
     c=Counter((r.get('Resultado') or '').strip() for r in rows if (r.get('Resultado') or '').strip())
     with (salida/'resumen_member_checking.csv').open('w',encoding='utf-8-sig',newline='') as f:
-        w=csv.writer(f); w.writerow(['Resultado','Conteo'])
+        w=csv.writer(f, lineterminator="\n"); w.writerow(['Resultado','Conteo'])
         for result in ['Confirmado','Ajustado','No confirmado']:
             w.writerow([result,c.get(result,0)])
     print(f'Decisiones de member checking procesadas: {sum(c.values())}')

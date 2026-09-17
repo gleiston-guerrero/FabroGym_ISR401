@@ -84,6 +84,8 @@ python scripts/run_all.py
 
 No se eliminan los scripts históricos porque forman parte de la procedencia del estudio; su conservación no crea un segundo paquete canónico.
 
+**Aclaración de cierre:** `scripts_analisis/run_all.py` se mantiene como copia de compatibilidad **byte-idéntica** de `07_Datos/scripts/run_all.py`. El propio script detecta el directorio desde el que se ejecuta y solo sincroniza el espejo `06_Experimento/resultados/` cuando la ejecución parte del paquete canónico `07_Datos`. La orden oficial continúa siendo exclusivamente `cd 07_Datos && python scripts/run_all.py`.
+
 ## Espejo derivado de resultados
 
 La instancia canónica y regenerable de los resultados de la Entrega Final está en:
