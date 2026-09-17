@@ -1,5 +1,16 @@
 # Changelog
 
+## [2B-supletorio-parche-03-autoria-cinco-integrantes] - 2026-09-16
+
+### Cierre documental A2 / autoría
+- Se incorporan **6 capturas reales** tomadas el 16/09/2026 de commits históricos: 3 de `Erick-Alvia` y 3 de `David-Bs1`.
+- La evidencia A2 pasa de 42 a **48 capturas**: Mera 13, Ponce 19, Mora 10, Alvia 3 y Vaca 3.
+- Las capturas nuevas conservan su fecha real de captura y no se retrofechan; documentan commits históricos existentes y no se presentan como trabajo nuevo posterior a la guía.
+- Se actualizan `10_Autoria/EQUIPO_EXAMEN_FINAL.md`, `10_Autoria/capturas/README.md`, `10_Autoria/aporte_individual.md` y los README relacionados para reconocer la autoría de los cinco integrantes y distinguirla del corte temporal de actividad evaluada.
+- La solicitud del 15/09/2026 se conserva como antecedente y deja de utilizarse como fuente canónica de un cambio unilateral de composición.
+- Se incorpora `04_Trazabilidad/ACTA_RECONOCIMIENTO_AUTORIA_EQUIPO.md`; la versión firmada por los cinco se depositará como `04_Trazabilidad/ACTA_RECONOCIMIENTO_AUTORIA_EQUIPO.pdf`.
+- No se modifican el ERS/SRS, el manuscrito ni las retrospectivas en este parche. La retrospectiva se actualiza en §16 después de cerrar §15.
+
 ## [2B-supletorio-parche-02-aclaracion-definitiva-fechas-walk] - 2026-09-16
 
 ### Cierre de la observación sobre fechas WALK

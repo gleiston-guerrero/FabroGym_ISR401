@@ -12,15 +12,13 @@ La rúbrica final exige que `10_Autoria/` exista con los elementos A1 a A12 como
 
 La retrospectiva requerida para el examen suspenso se conserva en `10_Autoria/retrospectiva_equipo.md`. Ese documento es transversal al conjunto A1-A12: registra las correcciones de §4, §12, §13 y §16, quién intervino en cada bloque y los aprendizajes del cierre, sin crear evidencia histórica inexistente.
 
-## 2. Composición del examen suspenso y autoría histórica
+## 2. Equipo, autoría y corte de actividad
 
-Para la **evaluación del examen suspenso**, los integrantes evaluados son **Mera Arias Erick Jhair (`Emeraxs`)** y **Ponce Rivera Mery Helenmey (`Mery-003`)**.
+FabroGym conserva la autoría verificable de los cinco integrantes: **Alvia Villegas Erick Adalberto (`Erick-Alvia`)**, **Mera Arias Erick Jhair (`Emeraxs`)**, **Mora Duarte Alex José (`amorad35`)**, **Ponce Rivera Mery Helenmey (`Mery-003`)** y **Vaca Romero David Octavio (`David-Bs1`)**.
 
-**Mora Duarte Alex José (`amorad35`)** participa únicamente como **apoyo no evaluado**. Cualquier aporte suyo debe permanecer firmado con su propio usuario y no se reasigna ni se contabiliza como aporte de los dos evaluados.
+Para el corte posterior a la guía se distingue el trabajo realmente versionado durante ese periodo de los aportes históricos previos. Esa distinción no elimina integrantes ni autoría.
 
-**Alvia Villegas Erick Adalberto** y **Vaca Romero David Octavio** conservan la autoría histórica de los aportes realizados antes de dejar de participar en esta etapa. Sus contribuciones no se eliminan ni se redistribuyen.
-
-La composición se formaliza en `../04_Trazabilidad/solicitud_cambio_composicion_equipo.pdf` y la interpretación canónica se mantiene en `EQUIPO_EXAMEN_FINAL.md`.
+La interpretación canónica se mantiene en `EQUIPO_EXAMEN_FINAL.md` y `../04_Trazabilidad/ACTA_RECONOCIMIENTO_AUTORIA_EQUIPO.md`. La solicitud del 15/09/2026 se conserva únicamente como antecedente documental.
 
 ## 3. Principios de integridad
 
@@ -50,12 +48,17 @@ Por tanto, el estado A5 verificable es **13/16 sesiones empíricas con nota cont
 
 ### A2 — `capturas/`
 
-Las 42 capturas existentes se conservan con su autoría real. Para el **examen suspenso**, sólo se evalúan las capturas propias de:
+La carpeta conserva **48 capturas auténticas**:
 
 - Mera (`Emeraxs`): 13;
-- Ponce (`Mery`/`Mery-003`): 19.
+- Ponce (`Mery` / `Mery-003`): 19;
+- Mora (`amorad35`): 10;
+- Alvia (`Erick-Alvia`): 3 capturas tomadas el 16/09/2026 de commits históricos reales;
+- Vaca (`David-Bs1`): 3 capturas tomadas el 16/09/2026 de commits históricos reales.
 
-Mora (`amorad35`) conserva 10 capturas propias como evidencia histórica/apoyo no evaluado. Alvia y Vaca no continúan en esta evaluación y no se les exige crear capturas nuevas. El detalle se encuentra en `capturas/README.md`.
+Las seis capturas nuevas no se retrofechan y no se interpretan como trabajo nuevo del examen suspenso. Solo hacen visible actividad histórica ya existente en Git.
+
+El detalle se encuentra en `capturas/README.md` e `capturas/inventario_capturas_alvia_vaca.csv`.
 
 ### A3 — `fuentes_editables/`
 
@@ -161,7 +164,7 @@ Debe indicar:
 
 ### A10 — `aporte_individual.md` y evidencia firmada
 
-`aporte_individual.md` distingue los **aportes evaluables de Mera y Ponce**, el **apoyo no evaluado de Mora** y los **aportes históricos de Alvia y Vaca**. Para cada aporte registrado se conservan actividad, ruta, rol y commit real o referencia al historial Git; ningún trabajo previo se borra, redistribuye ni atribuye a otro integrante.
+`aporte_individual.md` conserva los aportes verificables de **los cinco integrantes** y distingue el trabajo posterior a la guía de la autoría histórica previa. Para cada aporte registrado se conservan actividad, ruta, rol y commit real o referencia al historial Git; ningún trabajo se borra, redistribuye ni atribuye a otro integrante.
 
 La conformidad firmada disponible se conserva como:
 
@@ -169,7 +172,7 @@ La conformidad firmada disponible se conserva como:
 10_Autoria/aporte_individual_FIRMA.pdf
 ```
 
-Ese PDF corresponde al **corte histórico del 11 de septiembre de 2026**, anterior a la formalización de la composición del examen suspenso del 15/09/2026. Por ello conserva la composición y URL vigentes en aquel corte y **no define la composición evaluada actual**. La fuente vigente para esta evaluación es `../04_Trazabilidad/solicitud_cambio_composicion_equipo.pdf`, complementada por `EQUIPO_EXAMEN_FINAL.md`. El PDF histórico no se reescribe ni se vuelve a firmar, para preservar su integridad documental.
+Ese PDF corresponde al **corte histórico del 11 de septiembre de 2026** y se conserva sin reescritura. La interpretación vigente de autoría se documenta en `EQUIPO_EXAMEN_FINAL.md` y `../04_Trazabilidad/ACTA_RECONOCIMIENTO_AUTORIA_EQUIPO.md`. La solicitud del 15/09/2026 se conserva solo como antecedente y no se utiliza como cambio unilateral de composición.
 
 Su alcance debe interpretarse según las personas que realmente la firmaron y no como sustituto de la evidencia individual exigida a cada integrante.
 
