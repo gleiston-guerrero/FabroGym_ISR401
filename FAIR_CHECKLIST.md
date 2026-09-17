@@ -1,10 +1,10 @@
 # FAIR_CHECKLIST — FabroGym 2B
 
 **Proyecto:** FabroGym — ISR-401  
-**Estado documental:** `v2.0.0-final` a `v2.0.3-final` se conservan intactas como etiquetas históricas; `v2.0.3-final` corresponde al corte evaluado el 16/09/2026. La nueva línea base terminal prevista es `v2.0.4-final` y sólo se publicará sobre el commit que contenga la verificación previa firmada y los manifiestos SHA-256 terminales validados.  
+**Estado documental:** `v2.0.0-final` a `v2.0.4-final` se conservan intactas como etiquetas históricas publicadas; `v2.0.4-final` (`dc5a228`) corresponde a la línea base evaluada por el docente el 17/09/2026. El nuevo cierre terminal previsto es `v2.0.5-final`, únicamente después de una nueva verificación previa firmada y de regenerar/verificar los manifiestos SHA-256 terminales.  
 **Repositorio:** `https://github.com/gleiston-guerrero/FabroGym_ISR401`
 
-Este archivo documenta el estado FAIR y de preservación verificable del cierre. Las etiquetas `v2.0.0-final`, `v2.0.1-final`, `v2.0.2-final` y `v2.0.3-final` permanecen como referencias históricas; `v2.0.3-final` identifica el corte evaluado por el docente. La etiqueta terminal corregida `v2.0.4-final` se publicará únicamente después de incorporar `10_Autoria/verificacion_previa.pdf`, regenerar y validar los manifiestos SHA-256 finales y confirmar el último commit de integridad. No se mueve ni se sobrescribe ninguna etiqueta existente.
+Este archivo documenta el estado FAIR y de preservación verificable del cierre. Las etiquetas `v2.0.0-final` a `v2.0.4-final` permanecen como referencias históricas publicadas; `v2.0.4-final` identifica la línea base evaluada el 17/09/2026. Las correcciones posteriores se cerrarán con una nueva etiqueta anotada `v2.0.5-final`, únicamente después de reemplazar la verificación previa por una versión firmada sobre el corte congelado y de regenerar/validar ambos manifiestos SHA-256. No se mueve ni se sobrescribe ninguna etiqueta existente.
 
 ## Estado actual
 
@@ -103,7 +103,7 @@ Evidencias de cierre disponibles en este corte:
 - [x] Control B6 documentado con 0 hallazgos automáticos bloqueantes y límites de inspección explícitos.
 - [x] README raíz y `CHANGELOG.md` normalizados para A5/B1.
 
-La `verificacion_previa.pdf` se incorpora sobre el último corte de contenido antes de los manifiestos terminales. A continuación se realiza la comprobación desde clon limpio, se regeneran y validan los checksums SHA-256 y se crea el commit final de integridad. La etiqueta anotada `v2.0.4-final` se publica únicamente sobre ese último commit; `v2.0.3-final` se conserva como referencia histórica del corte evaluado.
+La `verificacion_previa.pdf` existente corresponde a un corte anterior a las correcciones posteriores al informe del 17/09. Antes de los manifiestos terminales debe ser sustituida por una nueva versión firmada sobre el contenido congelado. A continuación se realiza la comprobación desde clon limpio, se regeneran y validan ambos manifiestos SHA-256 y se crea el commit final de integridad. La etiqueta anotada `v2.0.5-final` se publicará únicamente sobre ese último commit; `v2.0.4-final` se conserva como referencia histórica de la línea base evaluada.
 
 Procedimiento de congelamiento/post-tag:
 
