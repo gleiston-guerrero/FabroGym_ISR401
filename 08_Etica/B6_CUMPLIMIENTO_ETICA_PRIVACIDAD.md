@@ -10,7 +10,7 @@
 | **Base de licitud / fundamento de participación** | Participación voluntaria y consentimiento informado para la evidencia primaria de campo. |
 | **Finalidad** | Uso académico para levantamiento, análisis, especificación y validación de requisitos, trazabilidad, reproducibilidad y publicación anonimizada. |
 | **Plazo de conservación** | Las copias restringidas o reidentificables se mantienen únicamente durante el periodo autorizado para el proyecto/evaluación y, cuando corresponda, bajo custodia institucional. |
-| **Responsable de custodia académica** | La custodia operativa histórica reciente está documentada para Mera Arias Erick Jhair, Mora Duarte Alex José y Ponce Rivera Mery Helenmey, bajo supervisión académica del docente responsable. Para el examen suspenso, **Mera y Ponce son los integrantes evaluados**; **Mora participa como apoyo no evaluado** y toda acción suya permanece atribuida a su identidad. Esta función de custodia no redefine la composición evaluada. |
+| **Responsable de custodia académica** | La custodia operativa histórica reciente está documentada para Mera Arias Erick Jhair, Mora Duarte Alex José y Ponce Rivera Mery Helenmey, bajo supervisión académica del docente responsable. La autoría del proyecto corresponde a los cinco integrantes según sus aportes verificables. En el corte posterior a la guía sólo Mera y Ponce registran actividad nueva; esta distinción temporal y la función de custodia no reasignan autoría ni modifican la calificación individual documentada para el periodo evaluado. |
 
 ## 2. Separación pública / restringida
 

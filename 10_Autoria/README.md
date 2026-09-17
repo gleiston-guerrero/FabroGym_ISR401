@@ -264,7 +264,7 @@ Antes de congelar la entrega se debe comprobar:
 9. privacidad automática sin bloqueos y revisión humana completada;
 10. `git status` limpio antes de crear el tag.
 
-La guía vigente del examen suspenso exige una **verificación previa firmada**. Por ello, `10_Autoria/verificacion_previa.pdf` debe generarse únicamente cuando el contenido del repositorio esté congelado, después de cerrar la evidencia A5/A11 y antes de los manifiestos terminales y de la etiqueta anotada. El documento debe reflejar el estado real de ese corte y ser firmado por los **dos integrantes evaluados del examen suspenso, Mera y Ponce**; no se reutiliza una verificación de una versión anterior. Mora puede apoyar la revisión, pero no firma como integrante evaluado.
+La guía vigente del examen suspenso exige una **verificación previa firmada**. Por ello, `10_Autoria/verificacion_previa.pdf` debe generarse únicamente cuando el contenido del repositorio esté congelado, después de cerrar la evidencia A5/A11 y antes de los manifiestos terminales y de la etiqueta anotada. El documento debe reflejar el estado real de ese corte y ser firmado por **Mera Arias Erick Jhair y Ponce Rivera Mery Helenmey**, responsables del cierre posterior a la guía; no se reutiliza una verificación de una versión anterior. Esta regla de firma no elimina la autoría histórica de Mora, Alvia o Vaca ni modifica la calificación individual registrada por el docente para el periodo evaluado.
 
 ## 8. Estado de esta carpeta
 

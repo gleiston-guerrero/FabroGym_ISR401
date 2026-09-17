@@ -51,7 +51,7 @@ No se inventan evidencias recientes, no se redistribuye trabajo y las capturas a
 
 ---
 
-## 4. Mora Duarte Alex José - aportes propios y apoyo no evaluado
+## 4. Mora Duarte Alex José - aportes propios; sin actividad posterior a la guía
 
 **Usuario Git verificado:** `amorad35`
 
@@ -102,7 +102,7 @@ No se inventan evidencias recientes, no se redistribuye trabajo y las capturas a
 
 ---
 
-## 6. Alvia Villegas Erick Adalberto - participación histórica
+## 6. Alvia Villegas Erick Adalberto - autoría histórica verificable; sin actividad posterior a la guía
 **Usuario Git verificado:** `Erick-Alvia`
 
 Se conservan sus aportes reales sin reasignarlos. Entre los bloques verificables se encuentran:
@@ -116,7 +116,7 @@ Se conservan sus aportes reales sin reasignarlos. Entre los bloques verificables
 
 Las tres capturas A2 fueron tomadas el **16/09/2026** sobre páginas reales de commits históricos. No se atribuye a Alvia trabajo posterior a la guía que no exista en el historial.
 
-## 7. Vaca Romero David Octavio - participación histórica
+## 7. Vaca Romero David Octavio - autoría histórica verificable; sin actividad posterior a la guía
 **Usuario Git verificado:** `David-Bs1`
 
 Se conservan sus aportes reales sin reasignarlos. Entre los bloques verificables se encuentran:
@@ -166,6 +166,6 @@ Este documento resume los aportes verificables versionados hasta el corte PRE-CH
 
 No se fija aquí el SHA del commit que contiene este propio documento, con el fin de evitar una referencia circular u obsoleta.
 
-Una vez cerrado todo el contenido, se regeneran y verifican los manifiestos SHA-256. Posteriormente se crea la etiqueta anotada terminal `v2.0.3-final`.
+Una vez cerrado todo el contenido, se incorpora la verificación previa firmada, se regeneran y verifican los manifiestos SHA-256 y posteriormente se crea la etiqueta anotada terminal `v2.0.4-final`. `v2.0.3-final` permanece como referencia histórica del corte evaluado.
 
 La creación y publicación de dicha etiqueta y las operaciones posteriores de preservación no requieren modificar nuevamente este documento.
