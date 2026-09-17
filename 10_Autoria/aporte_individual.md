@@ -56,6 +56,10 @@ No se inventan evidencias recientes, no se redistribuye trabajo y las capturas v
 | Sincronizar línea base, FAIR y manuscrito con el cierre posterior a `v2.0.4-final` | `FAIR_CHECKLIST.md`; `07_Publicacion/README_Publicacion.md`; `07_Publicacion/manuscrito_final.*` | `3e16b35d9420cd56c3af909257ac54067ced9ca2` | Saneamiento documental §3 / §16 |
 | Normalizar finales de línea del corte pre-verificación y reforzar política LF | `.gitattributes`; `.mailmap`; CSV textuales de trazabilidad, defensa, EXIF y ficha técnica | `e7668ef7713b728a6330c029661dd5eae775c2b3` | Reproducibilidad / integridad pre-verificación |
 | Actualizar fecha de corte documental del ERS y recompilar entregables | `01_ERS/ERS_SRS_2B_v2.0.*`; `07_Publicacion/manuscrito_final.*` | `08d4bf9c4ad991492db5fcaeddc1fbd25a6f6173` | Cierre documental / recompilación reproducible |
+| Sincronizar materiales finales de defensa con sus fuentes vigentes | `09_Defensa/README.md`; `09_Defensa/checklist_defensa_final.*`; `09_Defensa/reparto_intervencion.*` | `4b7d617ef12c8da86b7e21993fdba1e4382464e6` | Defensa / coherencia documental |
+| Sincronizar autoría y retrospectiva al corte pre-verificación | `10_Autoria/aporte_individual.md`; `10_Autoria/retrospectiva_equipo.md` | `53938921f075f77a2c265726bb05983c2b1b6e75` | Autoría / retrospectiva pre-verificación |
+| Endurecer ERS y reproducibilidad antes del congelamiento | `01_ERS/ERS_SRS_2B_v2.0.*`; `10_Autoria/doble_codificacion/calcular_kappa_ic.py` | `54486026407ed0ebc180593ba4f692c02271db09` | Casos de uso / reproducibilidad |
+| Actualizar retrospectiva canónica con el endurecimiento final | `10_Autoria/retrospectiva_equipo.md` | `30c7c5c90f58f6c58cbd5532e8255164638feb88` | Retrospectiva / cierre documental |
 
 **Síntesis:** participación verificable en MVP, experimento, paquete `07_Datos`, reproducibilidad, publicación científica, autoría, defensa, privacidad y cierre FAIR/F-UJI.
 
@@ -115,6 +119,10 @@ No se inventan evidencias recientes, no se redistribuye trabajo y las capturas v
 | Consolidar retrospectiva y saneamiento documental posterior al informe | `CHANGELOG.md`; retrospectivas; `04_Trazabilidad/ACLARACION_COMMIT_FEF33D8.md` | `37f02ac47189bf37fadd010445cb4a8679e6d50e` | Saneamiento documental §3 / §16 |
 | Sincronizar autoría y evidencia A2 pre-verificación, incluidos los SHA-256 vigentes de Vaca | `04_Trazabilidad/VERIFICACION_CAPTURAS_ALVIA_VACA_20260917.md`; `10_Autoria/`; retrospectivas | `d52ca17c33832eb5057479428cdc71b584b7d494` | Autoría / evidencia A2 / §15 |
 | Consolidar documentación de línea base para la pre-verificación final | `README.md`; `CHANGELOG.md`; `FAIR_CHECKLIST.md`; `07_Publicacion/README_Publicacion.md` | `7eb007e03618b65f8fa39c1430b041abba90ac06` | Cierre documental §3 / pre-verificación |
+| Cerrar integridad documental de defensa y trazabilidad | `09_Defensa/MANIFEST_DEFENSA.csv`; `04_Trazabilidad/`; `08_Etica/` | `59cbd82eeddf215d83c1287b3e7f06f5513a9e43` | Defensa / trazabilidad / integridad |
+| Consolidar el cierre documental previo a la verificación | `07_Publicacion/RETROSPECTIVA_EXAMEN_SUSPENSO.md`; `CHANGELOG.md` | `fbaf9b3d2696422f773c8f5a81e4f183beb90db8` | Retrospectiva / cierre documental |
+| Sincronizar trazabilidad y documentar `EV-VAL-01` | `04_Trazabilidad/matriz_trazabilidad.csv`; `02_Evidencias/Validacion_walkthrough/README.md` | `3b437a13152eb8a20fff4d8382e1a50adeee7aea` | Trazabilidad / evidencia de validación |
+| Consolidar el microsaneamiento final pre-verificación | `07_Publicacion/RETROSPECTIVA_EXAMEN_SUSPENSO.md`; `CHANGELOG.md` | `8ed19c719e1906f4650e9742c6354569ed938971` | Cierre documental / pre-verificación |
 
 **Síntesis:** participación verificable en mockups, ética, doble codificación, uso de IA, coordinación, defensa final, evidencia firmada de autoría, integridad y reproducibilidad pre-tag.
 
