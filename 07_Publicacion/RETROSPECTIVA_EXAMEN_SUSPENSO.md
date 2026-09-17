@@ -54,12 +54,25 @@ Esta actualización no modifica los resultados científicos aceptados. Su finali
 
 Los commits de Alvia y Vaca del 17/09 se clasifican como **depósito personal de evidencia histórica A2 solicitado por el docente**. No se presentan como nuevos aportes técnicos a §4, §12 o §16.
 
+### 3.5 Micro-saneamiento final previo a la verificación
+
+Después de los cuatro commits anteriores se ejecuta el último lote de coherencia documental antes de congelar el contenido. Este corte:
+
+- sincroniza los PDF de `09_Defensa` con sus fuentes Markdown vigentes;
+- regenera `09_Defensa/MANIFEST_DEFENSA.csv` sobre los bytes actuales de la carpeta;
+- distingue en Defensa y Ética el trabajo técnico de Mera/Ponce de los depósitos históricos A2 de Alvia/Vaca;
+- actualiza `aporte_individual.md` y ambas retrospectivas hasta los commits `e7668ef`, `d52ca17`, `08d4bf9` y `7eb007e`;
+- amplía la aclaración histórica de checksums para incluir `c641540` y `dc5a228`;
+- deja explícito que la causa del `creation_time` de WALK-TEC-01 no puede determinarse con la evidencia disponible.
+
+El SHA del commit que integre este mismo lote no se inserta dentro de la retrospectiva para evitar una autorreferencia circular. El historial Git será la evidencia canónica de su integración. Después de este lote no se modifica contenido académico salvo que falle una comprobación de la verificación previa.
+
 ## 4. Quién hizo qué en el cierre posterior al informe
 
 | Integrante | Trabajo verificable posterior al informe del 17/09 | Commits / evidencia |
 |---|---|---|
-| **Mera Arias Erick Jhair (`Emeraxs`)** | Corrección textual de §4; sincronización de `run_all.py` y política LF; verificación reproducible del pipeline; análisis técnico de WALK-TEC-01; retiro de capturas A2 observadas; verificación documental A2; limpieza de duplicados de Alvia. | `1dd541b`, `53d17a0`, `318f4eb`, `d995cdb`, `0bf5014`, `bf82034`, `ce89a2b`, `3e16b35`. |
-| **Ponce Rivera Mery Helenmey (`Mery-003`)** | Sincronización de trazabilidad de §4; LF en scripts auxiliares; documentación de cadena canónica; cierre documental de WALK-TEC-01; consolidación documental A2 y retrospectiva. | `0d42923`, `6a68f3c`, `6244ea8`, `ab8d897`, `fccdb9d`, `37f02ac`. |
+| **Mera Arias Erick Jhair (`Emeraxs`)** | Corrección textual de §4; sincronización de `run_all.py`; política y normalización LF; verificación reproducible del pipeline; análisis técnico de WALK-TEC-01; retiro/verificación de capturas A2 observadas; limpieza de duplicados de Alvia; actualización del corte documental del ERS y recompilación de entregables. | `1dd541b`, `53d17a0`, `318f4eb`, `d995cdb`, `0bf5014`, `bf82034`, `ce89a2b`, `3e16b35`, `e7668ef`, `08d4bf9`. |
+| **Ponce Rivera Mery Helenmey (`Mery-003`)** | Sincronización de trazabilidad de §4; LF en scripts auxiliares; documentación de cadena canónica; cierre documental de WALK-TEC-01; consolidación documental A2 y retrospectiva; corrección de SHA-256 de Vaca y consolidación de README/CHANGELOG/FAIR/publicación para pre-verificación. | `0d42923`, `6a68f3c`, `6244ea8`, `ab8d897`, `fccdb9d`, `37f02ac`, `d52ca17`, `7eb007e`. |
 | **Alvia Villegas Erick Adalberto (`Erick-Alvia`)** | Depósito personal de tres capturas de aportes históricos, conforme a la instrucción del docente. El primer depósito quedó en ruta incorrecta y fue sustituido por el depósito canónico. | `e4881d1` (ruta incorrecta, superado); `47cac43` (depósito A2 vigente). |
 | **Vaca Romero David Octavio (`David-Bs1`)** | Depósito personal de tres capturas de aportes históricos, conforme a la instrucción del docente. | `2ecbe55`. |
 | **Mora Duarte Alex José (`amorad35`)** | No se le atribuye trabajo técnico nuevo posterior al informe del 17/09. Sus aportes históricos permanecen preservados. | Historial previo del repositorio. |
@@ -94,7 +107,7 @@ La solicitud de cambio de composición del 15/09/2026 se conserva como anteceden
 
 Asimismo, el commit `fef33d8` se conserva sin reescritura. Su mensaje no coincide con el cambio real versionado y esa diferencia queda explicitada en `04_Trazabilidad/ACLARACION_COMMIT_FEF33D8.md`.
 
-La presente retrospectiva queda fechada y versionada como documento Markdown. La **verificación previa firmada** se emite en el siguiente paso, una vez congelado este contenido, para que certifique el corte real que antecederá a los manifiestos terminales.
+La presente retrospectiva queda fechada y versionada como documento Markdown y sincronizada con el último lote de coherencia pre-verificación. La **verificación previa firmada** se emite en el siguiente paso, una vez congelado este contenido, para que certifique el corte real que antecederá a los manifiestos terminales.
 
 ## 8. Limitaciones que permanecen declaradas
 

@@ -1,5 +1,17 @@
 # Changelog
 
+## [2B-supletorio-parche-08-coherencia-preverificacion-final] - 2026-09-17
+
+### Última sincronización de coherencia antes de congelar contenido
+- Se sincronizan `09_Defensa/checklist_defensa_final.pdf` y `09_Defensa/reparto_intervencion.pdf` con sus fuentes Markdown vigentes, preservando la defensa de tres expositores como evidencia histórica y distinguiendo el trabajo técnico de Mera/Ponce de los depósitos A2 históricos de Alvia/Vaca.
+- Se regenera `09_Defensa/MANIFEST_DEFENSA.csv` desde los bytes actuales de todos los artefactos de la carpeta, excluyendo únicamente el propio manifiesto para evitar autorreferencia.
+- `08_Etica/B6_CUMPLIMIENTO_ETICA_PRIVACIDAD.md` y `09_Defensa/README.md` quedan alineados con la misma distinción de autoría/actividad posterior al informe.
+- `10_Autoria/aporte_individual.md` y ambas retrospectivas incorporan los commits `e7668ef`, `d52ca17`, `08d4bf9` y `7eb007e`; el SHA del commit que integra este propio lote no se incrusta para evitar una referencia circular.
+- `04_Trazabilidad/ACLARACION_COMMIT_FEF33D8.md` amplía la aclaración histórica a `c641540` y `dc5a228`: sus mensajes de "993 entradas verificadas sin fallos" no se consideran evidencia vigente porque el informe docente comprobó 157 fallos en clon limpio.
+- `04_Trazabilidad/VERIFICACION_CAPTURAS_ALVIA_VACA_20260917.md` deja de presentar las capturas observadas como pendientes de retiro y las identifica correctamente como retiradas del corte vigente.
+- Se reafirma que el `creation_time` de WALK-TEC-01 se conserva como metadato interno y que la evidencia disponible no permite atribuir su valor a HandBrake, Clideo ni a otra causa concreta.
+- Con este lote se cierra el contenido documental previo a la nueva verificación firmada; los manifiestos terminales y `v2.0.5-final` continúan pendientes hasta completar la secuencia de integridad.
+
 ## [2B-supletorio-parche-07-microsaneamiento-preverificacion] - 2026-09-17
 
 ### Último micro-saneamiento antes del congelamiento
@@ -29,26 +41,26 @@
 
 ### Saneamiento final antes de la verificación previa
 - Se actualizan únicamente las referencias **vigentes** de cierre para reservar `v2.0.4-final` como nueva etiqueta terminal; `v2.0.0-final` a `v2.0.3-final` se conservan como etiquetas históricas y no se mueven ni sobrescriben.
-- Se alinean README, FAIR, publicación, ética y defensa con el acta vigente de autoría: los cinco integrantes conservan sus aportes verificables y, para el corte posterior a la guía, sólo Mera y Ponce registran actividad nueva.
+- Se alinean README, FAIR, publicación, ética y defensa con el acta vigente de autoría: los cinco integrantes conservan sus aportes verificables y, en ese corte, Mera y Ponce registraban el trabajo técnico nuevo sobre los ítems de la rúbrica. Los depósitos A2 personales de Alvia y Vaca del 17/09 se documentan en los parches posteriores y no se interpretan como trabajo técnico nuevo.
 - Se corrige la sección retrospectiva/documental del manuscrito para reflejar las 48 capturas A2, la cobertura `13/16` de notas contemporáneas, las tres reconstrucciones WALK-NTEC y el acta de autoría de los cinco; **no se modifican resultados, RQ, delta de Cliff, saturación ni análisis científico**.
 - Se recompila `07_Publicacion/manuscrito_final.pdf` desde su fuente canónica con el compilador reproducible del repositorio.
 - Las entradas históricas anteriores del `CHANGELOG.md`, incluida la referencia a `v2.0.3-final` y a la solicitud unilateral del 15/09, se preservan como historia del proceso y quedan superadas por este corte y por `04_Trazabilidad/ACTA_RECONOCIMIENTO_AUTORIA_EQUIPO.pdf`.
-- La nueva verificación previa firmada, los manifiestos SHA-256 terminales y el tag `v2.0.4-final` permanecen pendientes para el cierre secuencial posterior a este parche.
+- En ese corte histórico, la nueva verificación previa firmada, los manifiestos SHA-256 terminales y el tag `v2.0.4-final` permanecían pendientes. Posteriormente `v2.0.4-final` fue creado y evaluado por el docente; el estado vigente se documenta en los parches del 17/09.
 
 ## [2B-supletorio-parche-04-retrospectiva-final] - 2026-09-16
 
 ### Actualización §16 — retrospectiva
 - Se actualizan `10_Autoria/retrospectiva_equipo.md` y `07_Publicacion/RETROSPECTIVA_EXAMEN_SUSPENSO.md` con fecha de corte 16/09/2026 y estado previo `fc0344d`.
-- Se incorporan las correcciones posteriores al corte anterior: reclasificación de WALK-NTEC, cobertura real `13/16`, aclaración de fechas WALK, seis capturas A2 de Alvia/Vaca, acta de autoría suscrita por los cinco integrantes y alineación de la portada ERS.
+- Se incorporan las correcciones posteriores al corte anterior: reclasificación de WALK-NTEC, cobertura real `13/16`, aclaración de fechas WALK, seis capturas A2 inicialmente atribuidas a Alvia/Vaca (posteriormente observadas y sustituidas), acta de autoría suscrita por los cinco integrantes y alineación de la portada ERS.
 - Se elimina la afirmación anterior de `16/16` notas contemporáneas y se documenta que las tres WALK-NTEC son reconstrucciones posteriores y no computan como notas de campo de la sesión.
 - La solicitud de cambio de composición del 15/09/2026 queda como antecedente histórico; la fuente vigente de reconocimiento de autoría es `04_Trazabilidad/ACTA_RECONOCIMIENTO_AUTORIA_EQUIPO.pdf`.
-- El manuscrito no se modifica: el informe del 16/09/2026 lo declaró en orden.
+- En este parche histórico el manuscrito no se modificó; posteriormente fue recompilado y su retrospectiva/línea base se actualizaron en los cortes del 17/09, sin alterar los resultados científicos aceptados.
 - Los manifiestos SHA-256 y la nueva etiqueta anotada permanecen pendientes hasta ejecutar la verificación previa final sobre este nuevo corte.
 
 ## [2B-supletorio-parche-03-autoria-cinco-integrantes] - 2026-09-16
 
 ### Cierre documental A2 / autoría
-- Se incorporan **6 capturas reales** tomadas el 16/09/2026 de commits históricos: 3 de `Erick-Alvia` y 3 de `David-Bs1`.
+- Se incorporaron inicialmente **6 capturas de páginas de commits históricos** el 16/09/2026. El informe posterior determinó que no acreditaban autoría individual porque habían sido tomadas desde una sesión ajena; fueron retiradas y sustituidas el 17/09 por depósitos personales de `Erick-Alvia` y `David-Bs1`.
 - La evidencia A2 pasa de 42 a **48 capturas**: Mera 13, Ponce 19, Mora 10, Alvia 3 y Vaca 3.
 - Las capturas nuevas conservan su fecha real de captura y no se retrofechan; documentan commits históricos existentes y no se presentan como trabajo nuevo posterior a la guía.
 - Se actualizan `10_Autoria/EQUIPO_EXAMEN_FINAL.md`, `10_Autoria/capturas/README.md`, `10_Autoria/aporte_individual.md` y los README relacionados para reconocer la autoría de los cinco integrantes y distinguirla del corte temporal de actividad evaluada.
@@ -65,7 +77,7 @@
 - Se demuestra que esa cronología ya estaba documentada antes del commit `35c1893`, mediante la ficha técnica versionada el 01/09/2026 y el registro de desviaciones versionado el 04/09/2026.
 - Las anotaciones manuscritas `07/2026` se conservan sin edición y se documentan como errores materiales de consignación del mes, dado que son incompatibles con la versión del formulario (`12 de agosto de 2026`) y con la trazabilidad previa al cambio de las transcripciones.
 - Se incorpora `04_Trazabilidad/VERIFICACION_MULTIMEDIA_WALK.md`: los cuatro MP4 revisados coinciden por SHA-256 con la ficha técnica.
-- Los `creation_time` internos de los MP4 no se usan como fecha de captura porque los archivos fueron procesados/transcodificados con HandBrake y, en un caso, Clideo.
+- Los `creation_time` internos de los MP4 no se usan como fecha de sesión. Los archivos conservados declaran procesamiento/codificación con HandBrake y, en un caso, Clideo, pero la evidencia disponible **no permite atribuir a esos programas la causa** del valor `creation_time`.
 - No se elimina ni se reescribe ninguna transcripción, consentimiento, acta o nota manuscrita.
 - Los manifiestos y la nueva etiqueta final permanecen pendientes hasta actualizar la retrospectiva y cerrar la composición del equipo.
 
@@ -92,7 +104,7 @@
 ### Bitácora y notas de campo
 - `10_Autoria/bitacora_sesiones.csv` incorpora las columnas `tipo` y `ruta_nota_campo`.
 - Las 28 filas históricas de coordinación/edición se clasifican como `trabajo_interno` y se añaden 16 filas empíricas: 10 `entrevista` y 6 `walkthrough`.
-- Las 16 filas empíricas enlazan las 16/16 notas reales depositadas; no se crean notas retrospectivas.
+- En ese corte se declararon 16/16 notas depositadas; la revisión posterior rectificó el estado verificable a **13/16 notas contemporáneas** y reclasificó las tres WALK-NTEC como reconstrucciones posteriores.
 
 ### Normalización final de notas WALK y metadatos de sesión
 - Se normalizan los nombres de las seis notas WALK con fecha canónica, técnica y código de sesión; las imágenes no se editan y conservan sus SHA-256.
@@ -113,7 +125,7 @@
 ## 2026-09-15 - Cierre documental §15: alcance A1/A5 e inventario EXIF completo
 
 - Se separa explícitamente el alcance de A1 y A5: `10_Autoria/bitacora_sesiones.csv` contiene **28 sesiones internas de trabajo del equipo**, mientras las notas de campo se contrastan únicamente contra las **16 sesiones empíricas** de `07_Datos/datos_crudos/sesiones_multimedia_desde_ficha_v3_1.csv` (10 entrevistas + 3 WALK-TEC + 3 WALK-NTEC).
-- Se incorpora `10_Autoria/notas_campo/inventario_notas_campo.csv` y su README de trazabilidad. El corte contiene **16 notas de campo asociables a las 16/16 sesiones empíricas**: 10/10 entrevistas, 3/3 walkthroughs técnicos y 3/3 walkthroughs no técnicos; las tres notas `WALK-NTEC` quedan depositadas, identificadas y registradas con SHA-256.
+- Se incorpora `10_Autoria/notas_campo/inventario_notas_campo.csv` y su README de trazabilidad. Esa entrada histórica declaró 16/16 notas; la revisión posterior dejó el estado verificable en **13/16 notas contemporáneas** (10/10 entrevistas y 3/3 WALK técnicos), con las tres WALK-NTEC preservadas como reconstrucciones posteriores.
 - Se documentan, sin alterar la evidencia, dos discrepancias históricas de fecha en notas técnicas: el prefijo `2026_07_12` del archivo de `WALK-TEC-01` frente a su fecha manuscrita/canónica 12/08/2026, y la fecha manuscrita 12/07/2026 de `WALK-TEC-02` frente a la fecha canónica 2026-08-12.
 - `10_Autoria/exif_inventario.csv` se amplía de 11 a **25 fotografías reales**: 2 de equipo, 18 de entorno y 5 de aplicación del cuestionario. Se registran 20 con fecha de captura recuperable, 2 `EXIF_PARCIAL` y 5 `SIN_EXIF`, sin inventar metadatos.
 - Se documenta la discrepancia entre las **26 fotografías** mencionadas por la guía y las **25 físicamente presentes** en el árbol actual: la guía presupone 3 fotos de equipo y el repositorio verificable contiene 2.
@@ -178,7 +190,7 @@
 ## 2026-09-14 — Cierre §12: manifiestos SHA-256 terminales
 
 - Se corrige `07_Datos/checksums_datos.sha256` para utilizar rutas relativas al propio paquete y permitir `sha256sum -c checksums_datos.sha256` desde `07_Datos/`.
-- Se incorpora `07_Datos/scripts/regenerar_manifiestos_sha256.py` como procedimiento reproducible para regenerar primero el manifiesto de datos y después el manifiesto global.
+- En ese corte histórico se documentó `07_Datos/scripts/regenerar_manifiestos_sha256.py`. El archivo no forma parte del corte vigente; el cierre posterior al informe utiliza los comandos manuales `sha256sum` documentados en `README.md` y exige verificación en clon limpio.
 - Se regenera `checksums.sha256` sobre el estado terminal previo al tag usando SHA-256 de los bytes físicamente presentes, de forma que `sha256sum -c checksums.sha256 --quiet` verifica también los punteros Git LFS incluidos en una exportación ZIP.
 - Se documentan los comandos exactos de regeneración y verificación y se exige 0 fallos antes de crear el tag final.
 
