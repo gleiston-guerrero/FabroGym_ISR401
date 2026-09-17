@@ -1,9 +1,10 @@
 # Aclaración definitiva de fechas — sesiones WALK
 
 **Proyecto:** FabroGym — ISR-401  
-**Fecha de aclaración:** 16 de septiembre de 2026  
+**Fecha de aclaración inicial:** 16 de septiembre de 2026  
+**Actualización focal por observación docente:** 17 de septiembre de 2026  
 **Alcance:** `WALK-NTEC-01..03` y `WALK-TEC-01..03`  
-**Motivo:** observación escrita del informe de evaluación del examen suspenso del 16/09/2026.
+**Motivo:** observaciones escritas de evaluación y, en particular, la solicitud del informe del 17/09/2026 de explicar la diferencia entre `creation_time = 05/08/2026` y la fecha de sesión `12/08/2026` de `WALK-TEC-01`.
 
 ## 1. Objeto de la aclaración
 
@@ -76,19 +77,31 @@ Además:
 - la nota manuscrita de `WALK-TEC-03` indica `13/08/2026`;
 - los consentimientos de `WALK-TEC-03` y `WALK-NTEC-03` indican, respectivamente, `13/08/2026` y `22/08/2026`.
 
-Para el cierre documental, los valores `07/2026` se tratan como **errores materiales de consignación del mes** en esos documentos manuscritos. Los archivos firmados y las imágenes manuscritas **no se editan, sustituyen ni retocan**; la discrepancia se conserva visible y se explica en este documento.
+Para el cierre documental, los valores `07/2026` se tratan como **errores materiales de consignación del mes** en esos documentos manuscritos. Los archivos firmados y las imágenes manuscritas **no se editan, sustituyen ni retocan**; la diferencia se conserva visible y se explica en este documento.
 
 Esta interpretación se adopta porque la cronología de agosto ya estaba asentada en el registro técnico del 01/09 y en el registro metodológico del 04/09, ambos anteriores al cambio cuestionado de las transcripciones.
 
-## 5. Verificación de los cuatro videos observados
+## 5. Verificación multimedia y tratamiento específico de `WALK-TEC-01`
 
-Se verificaron directamente los cuatro archivos MP4 utilizados en `WALK-NTEC-01`, `WALK-NTEC-02`, `WALK-TEC-01` y `WALK-TEC-02`.
+Se verificaron los objetos multimedia observados y el 17/09/2026 se realizó una **reverificación focal directa** del archivo materializado de `WALK-TEC-01`.
 
-Sus SHA-256 coinciden exactamente con los registrados en `02_Evidencias/00_Restringido/fichas_tecnicas.csv`. Por tanto, los archivos revisados son los mismos objetos audiovisuales catalogados por el proyecto.
+El SHA-256 calculado del MP4 reverificado es:
 
-Los MP4 presentan metadatos de procesamiento asociados a **HandBrake 1.10.2** y, en uno de ellos, a **Clideo**. Sus valores internos `creation_time` no se utilizan para inferir la fecha de captura, porque corresponden a archivos procesados/transcodificados y no ofrecen una marca temporal de captura homogénea o fiable.
+`147eb88ebb07818179611e51e9381cff1f781f53408153f6623c03731326aa5a`
 
-La verificación técnica detallada se conserva en:
+Ese valor coincide exactamente con la ficha técnica ya versionada. FFprobe confirma una duración de `1485.666667 s` (~24:45.667), H.264/AAC y los siguientes metadatos de contenedor:
+
+- `creation_time = 2026-08-05T16:54:12.000000Z`;
+- `date = 2026-08-05T16:54:12+0000`;
+- `encoder = HandBrake 1.10.2 2025090600`.
+
+El archivo conservado declara a HandBrake como codificador. El valor `creation_time = 05/08/2026` se conserva íntegro, pero se interpreta únicamente como **metadato interno del contenedor MP4 procesado**. Los artefactos disponibles no permiten determinar de forma verificable por qué ese valor quedó escrito en el archivo; por ello no se atribuye una causa no demostrable.
+
+La fecha de sesión `12/08/2026` no se obtiene del `creation_time`. Se sustenta por evidencia documental independiente: la nota de campo manuscrita de `WALK-TEC-01` registra `12/08/2026` y `24'46 aprox.`; la ficha técnica versionada desde el 01/09 registra `fecha_sesion = 2026-08-12`, duración `00:24:46` y el mismo SHA-256 del MP4; y la cronología de `07_Datos/desviaciones.md` ya consignaba agosto antes de la corrección posterior de las transcripciones. El acta, elaborada/ratificada el 18/08, reporta además `24:45 aprox.`, duración coherente con el archivo.
+
+Por tanto, para trazabilidad quedan separados cuatro datos: **05/08** (`creation_time` interno del MP4 procesado), **12/08** (fecha de sesión), **18/08** (elaboración/ratificación del acta) y **01/09** (procesamiento/catalogación de la ficha técnica). Ninguno sustituye a otro, y el `creation_time` no se utiliza como evidencia de la fecha de realización de la sesión.
+
+La verificación técnica reproducible, los comandos utilizados y los límites de interpretación se conservan en:
 
 `04_Trazabilidad/VERIFICACION_MULTIMEDIA_WALK.md`
 
@@ -122,4 +135,6 @@ Las fechas anteriores `18/08/2026` y `24/08/2026` eran fechas de elaboración/ra
 
 Las anotaciones manuscritas `07/2026` se conservan sin modificación y se documentan como errores materiales de consignación del mes, sin ocultarlas ni sustituir la evidencia primaria.
 
-Este documento cierra la explicación requerida sin eliminar transcripciones, sin reescribir evidencia primaria y sin utilizar las reconstrucciones NTEC como prueba contemporánea.
+Para `WALK-TEC-01`, el `creation_time = 05/08/2026` se conserva sin modificación como metadato interno del MP4 procesado y **no se utiliza para fechar la sesión**. La fecha `12/08/2026` queda establecida mediante evidencia documental independiente y anterior al cambio de las transcripciones, además de la correspondencia de identidad y duración del MP4 verificado.
+
+Con esta separación explícita entre metadato del contenedor, fecha de sesión, fecha del acta y fecha de catalogación, **queda atendida la observación del informe docente del 17/09/2026 sobre `WALK-TEC-01`**. No se alteran transcripciones ni evidencia primaria y no se utilizan las reconstrucciones NTEC como prueba contemporánea.
