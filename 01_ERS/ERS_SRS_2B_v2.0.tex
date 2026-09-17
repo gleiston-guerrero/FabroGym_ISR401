@@ -749,7 +749,7 @@ Las 19 historias Must mantienen correspondencia uno a uno con CU-01..CU-19 y CA-
 Esta sección complementa los diagramas UML con la especificación de comportamiento exigida para el cierre del examen suspenso. Cada caso de uso se deriva del RF, la HU, el criterio de aceptación y la evidencia ya versionados; no introduce funcionalidad nueva. Los identificadores de flujo \texttt{CU-xx-FP}, \texttt{CU-xx-FA-01} y \texttt{CU-xx-EX-01} se trazan de forma explícita en \path{04_Trazabilidad/matriz_trazabilidad.csv}.
 
 \begin{importantbox}
-\textbf{Convención de trazabilidad de flujos.} \texttt{FP} identifica el flujo principal, \texttt{FA} un flujo alternativo válido del negocio y \texttt{EX} una excepción que impide o desvía la operación. Las condiciones y respuestas aquí descritas refinan el comportamiento de los requisitos Must existentes; no crean RF adicionales.
+\textbf{Convención de trazabilidad de flujos.} \texttt{FP} identifica el flujo principal, \texttt{FA} un flujo alternativo válido del negocio y \texttt{EX} una excepción que impide o desvía la operación. Cada \texttt{FA} declara de forma explícita el paso del \texttt{FP} desde el cual se abre y el punto al que retorna o si termina el caso de uso. Las condiciones y respuestas aquí descritas refinan el comportamiento de los requisitos Must existentes; no crean RF adicionales.
 \end{importantbox}
 
 \subsubsection{CU-01 -- Autenticar usuario}
@@ -765,7 +765,7 @@ Disparador & El usuario solicita acceso al sistema mediante sus credenciales ind
 
 \textbf{Precondiciones.}
 \begin{itemize}
-\item El usuario dispone de una cuenta individual habilitada para demostración.
+\item El usuario puede acceder a la interfaz de autenticación.
 \item La interfaz de autenticación y el servicio de seguridad están disponibles.
 \end{itemize}
 
@@ -780,10 +780,10 @@ Disparador & El usuario solicita acceso al sistema mediante sus credenciales ind
 \item El sistema registra el evento de autenticación requerido y muestra la vista inicial sin exponer datos excesivos.
 \end{enumerate}
 
-\textbf{Flujo alternativo \texttt{CU-01-FA-01}.} \textit{Condición de disparo:} El usuario autenticado solicita cerrar su sesión.
+\textbf{Flujo alternativo \texttt{CU-01-FA-01}.} \textit{Condición de disparo:} En el paso 3 del flujo principal falta uno de los campos requeridos para intentar la autenticación. \textit{Apertura y retorno:} Se abre desde el paso 3; después de completar el campo faltante, retorna al paso 3 para repetir la validación.
 \begin{enumerate}[label=\alph*.]
-\item El sistema invalida la sesión activa.
-\item El sistema registra el cierre de sesión y retorna a la pantalla de acceso.
+\item El sistema identifica el campo requerido que falta sin validar todavía las credenciales.
+\item El usuario completa el campo requerido.
 \end{enumerate}
 
 \textbf{Excepción \texttt{CU-01-EX-01}.} \textit{Condición de disparo:} Las credenciales son inválidas o la cuenta no está habilitada.
@@ -795,7 +795,7 @@ Disparador & El usuario solicita acceso al sistema mediante sus credenciales ind
 \textbf{Poscondiciones.}
 \begin{itemize}
 \item Con acceso exitoso, existe una sesión activa asociada al rol autorizado.
-\item Con cierre o rechazo, no queda una sesión activa creada por el intento.
+\item Con rechazo de la autenticación, no se crea una sesión activa.
 \end{itemize}
 
 \subsubsection{CU-02 -- Aplicar permisos por rol}
@@ -825,7 +825,7 @@ Disparador & Un usuario autenticado solicita ejecutar una operación protegida. 
 \item El sistema registra el evento de autorización cuando corresponde.
 \end{enumerate}
 
-\textbf{Flujo alternativo \texttt{CU-02-FA-01}.} \textit{Condición de disparo:} El rol permite consulta pero no modificación sobre el recurso solicitado.
+\textbf{Flujo alternativo \texttt{CU-02-FA-01}.} \textit{Condición de disparo:} El rol permite consulta pero no modificación sobre el recurso solicitado. \textit{Apertura y retorno:} Se abre desde el paso 4 del flujo principal; el caso de uso termina al presentar el recurso en modo de consulta, sin ejecutar el paso 5 como operación de modificación.
 \begin{enumerate}[label=\alph*.]
 \item El sistema presenta el recurso en modo de consulta.
 \item Las acciones de modificación permanecen deshabilitadas para ese rol.
@@ -857,7 +857,7 @@ Disparador & Recepción solicita crear un cliente. \\ \hline
 \textbf{Precondiciones.}
 \begin{itemize}
 \item El operador está autenticado y autorizado para gestionar clientes.
-\item Se dispone de código interno, nombre de uso y al menos un medio de contacto permitido.
+\item El formulario de registro mínimo está disponible para el operador.
 \end{itemize}
 
 \textbf{Flujo principal \texttt{CU-03-FP}.}
@@ -870,10 +870,10 @@ Disparador & Recepción solicita crear un cliente. \\ \hline
 \item El sistema confirma la creación y deja disponible el código del cliente.
 \end{enumerate}
 
-\textbf{Flujo alternativo \texttt{CU-03-FA-01}.} \textit{Condición de disparo:} No se proporcionan datos opcionales distintos del conjunto mínimo.
+\textbf{Flujo alternativo \texttt{CU-03-FA-01}.} \textit{Condición de disparo:} En el paso 3 del flujo principal los datos mínimos están presentes, pero el medio de contacto no cumple el formato permitido. \textit{Apertura y retorno:} Se abre desde el paso 3; una vez corregido el contacto, retorna al paso 3 para repetir la validación de formato y obligatoriedad.
 \begin{enumerate}[label=\alph*.]
-\item El sistema permite continuar con código, nombre de uso y contacto.
-\item El cliente se registra únicamente con los datos mínimos autorizados.
+\item El sistema identifica el medio de contacto que requiere corrección y conserva los demás datos ya ingresados.
+\item Recepción corrige el medio de contacto sin añadir categorías de datos excluidas por el alcance.
 \end{enumerate}
 
 \textbf{Excepción \texttt{CU-03-EX-01}.} \textit{Condición de disparo:} Falta un dato mínimo obligatorio o el código interno ya existe.
@@ -915,7 +915,7 @@ Disparador & Recepción solicita localizar y consultar una ficha de cliente. \\ 
 \item El sistema muestra membresía, último pago, asistencia y novedades permitidas por el rol.
 \end{enumerate}
 
-\textbf{Flujo alternativo \texttt{CU-04-FA-01}.} \textit{Condición de disparo:} La búsqueda devuelve más de una coincidencia válida.
+\textbf{Flujo alternativo \texttt{CU-04-FA-01}.} \textit{Condición de disparo:} La búsqueda devuelve más de una coincidencia válida. \textit{Apertura y retorno:} Se abre desde el paso 3 del flujo principal; después de que el usuario selecciona una coincidencia, retorna al paso 6 para mostrar la ficha autorizada.
 \begin{enumerate}[label=\alph*.]
 \item El sistema muestra una lista acotada de coincidencias permitidas.
 \item El usuario selecciona el cliente y el sistema continúa con la consulta de su ficha.
@@ -960,10 +960,10 @@ Disparador & Recepción solicita modificar o reactivar un cliente existente. \\ 
 \item El sistema confirma la actualización o reactivación.
 \end{enumerate}
 
-\textbf{Flujo alternativo \texttt{CU-05-FA-01}.} \textit{Condición de disparo:} Durante una intención de alta se detecta coincidencia con un cliente existente.
+\textbf{Flujo alternativo \texttt{CU-05-FA-01}.} \textit{Condición de disparo:} En el paso 3 del flujo principal el cliente seleccionado se encuentra inactivo y el usuario solicita reactivarlo. \textit{Apertura y retorno:} Se abre desde el paso 3; después de validar la reactivación sobre el mismo identificador, retorna al paso 6 para confirmar el resultado.
 \begin{enumerate}[label=\alph*.]
-\item El sistema advierte la coincidencia antes de crear otro registro.
-\item El usuario selecciona el registro existente y continúa por actualización o reactivación.
+\item El sistema conserva el identificador existente y prepara el cambio de estado del cliente.
+\item El sistema valida que la reactivación no genere una duplicidad y reactiva el mismo registro.
 \end{enumerate}
 
 \textbf{Excepción \texttt{CU-05-EX-01}.} \textit{Condición de disparo:} Los cambios producirían una duplicidad o contienen datos no válidos.
@@ -1005,7 +1005,7 @@ Disparador & El administrador solicita crear o modificar un plan o promoción. \
 \item El sistema confirma la operación y registra el evento requerido.
 \end{enumerate}
 
-\textbf{Flujo alternativo \texttt{CU-06-FA-01}.} \textit{Condición de disparo:} El administrador decide desactivar un plan o promoción existente sin eliminarlo.
+\textbf{Flujo alternativo \texttt{CU-06-FA-01}.} \textit{Condición de disparo:} El administrador decide desactivar un plan o promoción existente sin eliminarlo. \textit{Apertura y retorno:} Se abre desde el paso 2 del flujo principal; después de cambiar el estado a inactivo, retorna al paso 5 para reflejar el estado actualizado en el catálogo.
 \begin{enumerate}[label=\alph*.]
 \item El sistema cambia el estado del registro a inactivo.
 \item El registro permanece disponible para trazabilidad histórica y deja de ofrecerse como opción vigente.
@@ -1036,9 +1036,8 @@ Disparador & Recepción solicita activar o renovar la membresía de un cliente. 
 
 \textbf{Precondiciones.}
 \begin{itemize}
-\item El cliente existe.
-\item El plan seleccionado está vigente.
-\item Existe un pago confirmado asociado a la operación.
+\item Recepción está autenticada y autorizada para gestionar membresías.
+\item El cliente existe y puede ser localizado para iniciar la operación.
 \end{itemize}
 
 \textbf{Flujo principal \texttt{CU-07-FP}.}
@@ -1052,10 +1051,10 @@ Disparador & Recepción solicita activar o renovar la membresía de un cliente. 
 \item El sistema confirma la activación.
 \end{enumerate}
 
-\textbf{Flujo alternativo \texttt{CU-07-FA-01}.} \textit{Condición de disparo:} El cliente ya posee una membresía y la operación corresponde a renovación.
+\textbf{Flujo alternativo \texttt{CU-07-FA-01}.} \textit{Condición de disparo:} El cliente ya posee una membresía y la operación corresponde a renovación. \textit{Apertura y retorno:} Se abre desde el paso 4 del flujo principal; después de determinar el inicio de la renovación conservando el historial, retorna al paso 5 para calcular el nuevo vencimiento.
 \begin{enumerate}[label=\alph*.]
-\item El sistema identifica la membresía existente.
-\item El sistema registra la renovación conservando el historial y recalculando las fechas con el plan vigente.
+\item El sistema identifica la membresía vigente o previa que será renovada y conserva su historial.
+\item El sistema determina la fecha de inicio de la renovación sin sobrescribir los periodos anteriores.
 \end{enumerate}
 
 \textbf{Excepción \texttt{CU-07-EX-01}.} \textit{Condición de disparo:} El plan no está vigente o no existe pago confirmado.
@@ -1083,8 +1082,8 @@ Disparador & Un usuario autorizado solicita consultar la vigencia de una membres
 
 \textbf{Precondiciones.}
 \begin{itemize}
-\item El usuario mantiene una sesión autorizada.
-\item El cliente puede ser localizado.
+\item El usuario mantiene una sesión autorizada para consultar membresías.
+\item La interfaz de búsqueda de clientes está disponible.
 \end{itemize}
 
 \textbf{Flujo principal \texttt{CU-08-FP}.}
@@ -1096,7 +1095,7 @@ Disparador & Un usuario autorizado solicita consultar la vigencia de una membres
 \item La consulta queda disponible sin modificar el registro.
 \end{enumerate}
 
-\textbf{Flujo alternativo \texttt{CU-08-FA-01}.} \textit{Condición de disparo:} El cliente no posee una membresía activa en la fecha de consulta.
+\textbf{Flujo alternativo \texttt{CU-08-FA-01}.} \textit{Condición de disparo:} El cliente no posee una membresía activa en la fecha de consulta. \textit{Apertura y retorno:} Se abre desde el paso 3 del flujo principal; el caso de uso termina después de presentar el estado no vigente, sin ejecutar los pasos destinados a mostrar una membresía activa.
 \begin{enumerate}[label=\alph*.]
 \item El sistema muestra el estado no vigente correspondiente.
 \item No se presenta una membresía inexistente como activa.
@@ -1127,8 +1126,8 @@ Disparador & Recepción consulta las membresías que requieren atención por ven
 
 \textbf{Precondiciones.}
 \begin{itemize}
-\item El usuario está autorizado.
-\item Existe una fecha de corte válida para la consulta.
+\item El usuario está autenticado y autorizado para consultar vencimientos.
+\item La vista de vencimientos está disponible para iniciar la consulta.
 \end{itemize}
 
 \textbf{Flujo principal \texttt{CU-09-FP}.}
@@ -1141,7 +1140,7 @@ Disparador & Recepción consulta las membresías que requieren atención por ven
 \item El sistema no envía mensajes externos automáticamente.
 \end{enumerate}
 
-\textbf{Flujo alternativo \texttt{CU-09-FA-01}.} \textit{Condición de disparo:} No existen membresías vencidas ni próximas a vencer en la ventana definida.
+\textbf{Flujo alternativo \texttt{CU-09-FA-01}.} \textit{Condición de disparo:} No existen membresías vencidas ni próximas a vencer en la ventana definida. \textit{Apertura y retorno:} Se abre desde el paso 3 del flujo principal; el caso de uso termina después de presentar el resultado vacío con la fecha de corte aplicada.
 \begin{enumerate}[label=\alph*.]
 \item El sistema presenta una lista vacía con la fecha de corte aplicada.
 \item No se genera comunicación externa.
@@ -1172,8 +1171,8 @@ Disparador & Recepción solicita registrar un pago. \\ \hline
 
 \textbf{Precondiciones.}
 \begin{itemize}
-\item El usuario está autorizado para registrar pagos.
-\item La operación dispone de monto, concepto, medio, fecha y la referencia aplicable.
+\item El usuario está autenticado y autorizado para registrar pagos.
+\item La interfaz de registro de pagos está disponible.
 \end{itemize}
 
 \textbf{Flujo principal \texttt{CU-10-FP}.}
@@ -1186,7 +1185,7 @@ Disparador & Recepción solicita registrar un pago. \\ \hline
 \item El sistema registra el evento requerido y devuelve el pago con su comprobante.
 \end{enumerate}
 
-\textbf{Flujo alternativo \texttt{CU-10-FA-01}.} \textit{Condición de disparo:} El medio de pago no requiere una referencia externa, como en un pago en efectivo.
+\textbf{Flujo alternativo \texttt{CU-10-FA-01}.} \textit{Condición de disparo:} El medio de pago no requiere una referencia externa, como en un pago en efectivo. \textit{Apertura y retorno:} Se abre desde el paso 3 del flujo principal; después de registrar la referencia como no aplicable, retorna al paso 4 para registrar el pago.
 \begin{enumerate}[label=\alph*.]
 \item El sistema registra la referencia como no aplicable según la regla del medio.
 \item La operación continúa con los demás datos obligatorios y genera el comprobante interno.
@@ -1231,7 +1230,7 @@ Disparador & Recepción solicita registrar la asistencia de un cliente. \\ \hlin
 \item El sistema devuelve la confirmación del evento.
 \end{enumerate}
 
-\textbf{Flujo alternativo \texttt{CU-11-FA-01}.} \textit{Condición de disparo:} La asistencia requiere una excepción operativa autorizada.
+\textbf{Flujo alternativo \texttt{CU-11-FA-01}.} \textit{Condición de disparo:} La asistencia requiere una excepción operativa autorizada. \textit{Apertura y retorno:} Se abre desde el paso 3 del flujo principal; después de documentar la excepción autorizada, retorna al paso 4 para confirmar el registro de asistencia.
 \begin{enumerate}[label=\alph*.]
 \item El usuario autorizado documenta la excepción.
 \item El sistema registra el evento de asistencia junto con la referencia de la excepción autorizada.
@@ -1276,7 +1275,7 @@ Disparador & Un usuario autorizado solicita consultar registros de asistencia. \
 \item El sistema muestra detalle y resumen de la consulta.
 \end{enumerate}
 
-\textbf{Flujo alternativo \texttt{CU-12-FA-01}.} \textit{Condición de disparo:} La combinación de filtros no devuelve eventos.
+\textbf{Flujo alternativo \texttt{CU-12-FA-01}.} \textit{Condición de disparo:} La combinación de filtros no devuelve eventos. \textit{Apertura y retorno:} Se abre desde el paso 4 del flujo principal; el caso de uso termina después de presentar el resultado vacío y los conteos en cero.
 \begin{enumerate}[label=\alph*.]
 \item El sistema presenta el resultado vacío con los filtros aplicados.
 \item Los conteos se muestran en cero sin inventar registros.
@@ -1321,7 +1320,7 @@ Disparador & El administrador solicita crear o mantener un producto. \\ \hline
 \item El catálogo refleja el registro actualizado.
 \end{enumerate}
 
-\textbf{Flujo alternativo \texttt{CU-13-FA-01}.} \textit{Condición de disparo:} El producto ya existe y el administrador solicita modificar sus datos permitidos o su estado.
+\textbf{Flujo alternativo \texttt{CU-13-FA-01}.} \textit{Condición de disparo:} El producto ya existe y el administrador solicita modificar sus datos permitidos o su estado. \textit{Apertura y retorno:} Se abre desde el paso 4 del flujo principal; después de actualizar el mismo registro, retorna al paso 6 para reflejar el producto actualizado en el catálogo.
 \begin{enumerate}[label=\alph*.]
 \item El sistema carga el producto existente.
 \item El administrador modifica los datos permitidos y el sistema actualiza el mismo registro.
@@ -1352,25 +1351,25 @@ Disparador & Un usuario autorizado solicita registrar una entrada o ajuste de in
 
 \textbf{Precondiciones.}
 \begin{itemize}
-\item El producto existe.
-\item El usuario tiene permiso para registrar movimientos de stock.
+\item El usuario está autenticado y tiene permiso para registrar movimientos de stock.
+\item La gestión de inventario está disponible para iniciar la operación.
 \end{itemize}
 
 \textbf{Flujo principal \texttt{CU-14-FP}.}
 \begin{enumerate}
-\item El usuario selecciona el producto.
-\item Indica el tipo de movimiento, cantidad y motivo.
-\item El sistema identifica al responsable desde la sesión.
-\item El sistema calcula el saldo resultante.
-\item El sistema valida que el saldo sea consistente.
+\item El usuario indica el producto sobre el que desea registrar el movimiento.
+\item El sistema verifica que el producto exista en el catálogo.
+\item El usuario selecciona una entrada e ingresa cantidad y motivo.
+\item El sistema identifica al responsable desde la sesión y calcula el saldo resultante incrementando las existencias.
+\item El sistema valida que la cantidad y el saldo resultante sean consistentes.
 \item El sistema registra cantidad, motivo, responsable y saldo resultante.
 \item El sistema confirma el movimiento y el nuevo balance.
 \end{enumerate}
 
-\textbf{Flujo alternativo \texttt{CU-14-FA-01}.} \textit{Condición de disparo:} El movimiento corresponde a un ajuste que reduce existencias, pero el saldo resultante permanece no negativo.
+\textbf{Flujo alternativo \texttt{CU-14-FA-01}.} \textit{Condición de disparo:} En el paso 3 del flujo principal el usuario selecciona un ajuste en lugar de una entrada. \textit{Apertura y retorno:} Se abre desde el paso 3; después de calcular el efecto del ajuste, retorna al paso 5 para validar el saldo antes de registrar el movimiento.
 \begin{enumerate}[label=\alph*.]
-\item El sistema calcula el nuevo saldo.
-\item El ajuste se registra con su motivo y responsable y continúa el flujo normal.
+\item El usuario indica la cantidad y el motivo del ajuste, especificando su efecto sobre las existencias.
+\item El sistema identifica al responsable desde la sesión y calcula el saldo resultante del ajuste.
 \end{enumerate}
 
 \textbf{Excepción \texttt{CU-14-EX-01}.} \textit{Condición de disparo:} El producto no existe, la cantidad es inválida o el movimiento produciría un saldo negativo.
@@ -1413,7 +1412,7 @@ Disparador & Recepción solicita registrar una venta de productos. \\ \hline
 \item El sistema devuelve la venta, comprobante interno y saldos resultantes.
 \end{enumerate}
 
-\textbf{Flujo alternativo \texttt{CU-15-FA-01}.} \textit{Condición de disparo:} Uno de los ítems no dispone de la cantidad solicitada antes de confirmar la venta.
+\textbf{Flujo alternativo \texttt{CU-15-FA-01}.} \textit{Condición de disparo:} Uno de los ítems no dispone de la cantidad solicitada antes de confirmar la venta. \textit{Apertura y retorno:} Se abre desde el paso 3 del flujo principal; después de que Recepción ajusta o retira la cantidad, retorna al paso 2 para consultar nuevamente el stock y repetir la validación.
 \begin{enumerate}[label=\alph*.]
 \item El sistema identifica el ítem con stock insuficiente y solicita ajustar o retirar su cantidad.
 \item Recepción corrige el detalle y el sistema vuelve a validar antes de permitir la confirmación.
@@ -1444,25 +1443,25 @@ Disparador & Recepción solicita cerrar un turno abierto y conciliar caja. \\ \h
 
 \textbf{Precondiciones.}
 \begin{itemize}
-\item Existe un turno abierto.
-\item El usuario está autorizado para ejecutar el cierre.
+\item El usuario está autenticado y autorizado para ejecutar el cierre.
+\item La función de conciliación de caja está disponible para iniciar la operación.
 \end{itemize}
 
 \textbf{Flujo principal \texttt{CU-16-FP}.}
 \begin{enumerate}
 \item Recepción inicia el cierre del turno.
+\item El sistema verifica que exista un turno abierto y recupera sus movimientos asociados.
 \item El sistema consolida pagos y ventas del turno por medio.
 \item Recepción ingresa el valor declarado de caja.
-\item El sistema compara los valores calculados con el valor declarado.
-\item El sistema calcula la diferencia.
+\item El sistema compara los valores calculados con el valor declarado y calcula la diferencia.
 \item El sistema registra el cierre, los totales y la diferencia.
 \item El sistema confirma el cierre del turno.
 \end{enumerate}
 
-\textbf{Flujo alternativo \texttt{CU-16-FA-01}.} \textit{Condición de disparo:} La diferencia calculada es distinta de cero.
+\textbf{Flujo alternativo \texttt{CU-16-FA-01}.} \textit{Condición de disparo:} La diferencia calculada es distinta de cero. \textit{Apertura y retorno:} Se abre desde el paso 5 del flujo principal; después de dejar la diferencia identificada para seguimiento, retorna al paso 6 para registrar el cierre con dicha diferencia.
 \begin{enumerate}[label=\alph*.]
-\item El sistema conserva la diferencia como parte del cierre.
-\item La interfaz la presenta explícitamente para su seguimiento operativo.
+\item El sistema marca la diferencia calculada como parte explícita de la conciliación.
+\item La interfaz la presenta para su seguimiento operativo antes de registrar el cierre.
 \end{enumerate}
 
 \textbf{Excepción \texttt{CU-16-EX-01}.} \textit{Condición de disparo:} No existe un turno abierto o falta el valor requerido para la conciliación.
@@ -1504,7 +1503,7 @@ Disparador & Un usuario autorizado solicita crear o actualizar una novedad inter
 \item El sistema confirma la novedad trazable.
 \end{enumerate}
 
-\textbf{Flujo alternativo \texttt{CU-17-FA-01}.} \textit{Condición de disparo:} Una novedad existente cambia de responsable, vencimiento o estado.
+\textbf{Flujo alternativo \texttt{CU-17-FA-01}.} \textit{Condición de disparo:} Una novedad existente cambia de responsable, vencimiento o estado. \textit{Apertura y retorno:} Se abre desde el paso 1 del flujo principal cuando el usuario elige una novedad existente; el caso de uso termina después de registrar el cambio y conservar el estado anterior en el historial.
 \begin{enumerate}[label=\alph*.]
 \item El usuario selecciona la novedad y registra el cambio permitido.
 \item El sistema conserva el estado anterior en el historial y añade el nuevo cambio.
@@ -1550,7 +1549,7 @@ Disparador & El instructor solicita crear una rutina y asignarla a un cliente. \
 \item El sistema confirma la versión inicial sin incorporar datos de salud reales.
 \end{enumerate}
 
-\textbf{Flujo alternativo \texttt{CU-18-FA-01}.} \textit{Condición de disparo:} Antes de confirmar, el instructor modifica la selección u orden de ejercicios o sus parámetros.
+\textbf{Flujo alternativo \texttt{CU-18-FA-01}.} \textit{Condición de disparo:} Antes de confirmar, el instructor modifica la selección u orden de ejercicios o sus parámetros. \textit{Apertura y retorno:} Se abre desde el paso 5 del flujo principal; después de actualizar la composición temporal, retorna al paso 4 para repetir la validación antes de confirmar.
 \begin{enumerate}[label=\alph*.]
 \item El sistema actualiza la composición temporal de la rutina.
 \item La validación se repite y el instructor puede confirmar la versión ajustada.
@@ -1596,7 +1595,7 @@ Disparador & El instructor solicita modificar una rutina existente. \\ \hline
 \item El sistema confirma la nueva versión.
 \end{enumerate}
 
-\textbf{Flujo alternativo \texttt{CU-19-FA-01}.} \textit{Condición de disparo:} El ajuste modifica únicamente parámetros de una rutina sin sustituir sus ejercicios.
+\textbf{Flujo alternativo \texttt{CU-19-FA-01}.} \textit{Condición de disparo:} El ajuste modifica únicamente parámetros de una rutina sin sustituir sus ejercicios. \textit{Apertura y retorno:} Se abre desde el paso 3 del flujo principal; después de conservar la composición de ejercicios, retorna al paso 4 para validar la configuración y continuar con el versionado.
 \begin{enumerate}[label=\alph*.]
 \item El sistema conserva la composición de ejercicios.
 \item El cambio de parámetros genera igualmente una nueva versión y mantiene el historial previo.
