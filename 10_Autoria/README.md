@@ -18,7 +18,7 @@ FabroGym conserva la autoría verificable de los cinco integrantes: **Alvia Vill
 
 Para el corte posterior a la guía se distingue el trabajo realmente versionado durante ese periodo de los aportes históricos previos. Esa distinción no elimina integrantes ni autoría.
 
-La interpretación canónica se mantiene en `EQUIPO_EXAMEN_FINAL.md` y `../04_Trazabilidad/ACTA_RECONOCIMIENTO_AUTORIA_EQUIPO.md`. La solicitud del 15/09/2026 se conserva únicamente como antecedente documental.
+La interpretación canónica se mantiene en `EQUIPO_EXAMEN_FINAL.md` y `../04_Trazabilidad/ACLARACION_ALCANCE_CAPTURAS_ALVIA_VACA_20260917.md`. La solicitud del 15/09/2026 se conserva sin modificar como antecedente; el depósito personal de A2 no se documenta como modificación de esa solicitud.
 
 ## 3. Principios de integridad
 
@@ -53,10 +53,10 @@ La carpeta conserva **48 capturas auténticas**:
 - Mera (`Emeraxs`): 13;
 - Ponce (`Mery` / `Mery-003`): 19;
 - Mora (`amorad35`): 10;
-- Alvia (`Erick-Alvia`): 3 capturas tomadas el 16/09/2026 de commits históricos reales;
-- Vaca (`David-Bs1`): 3 capturas tomadas el 16/09/2026 de commits históricos reales.
+- Alvia (`Erick-Alvia`): 3 capturas históricas propias realizadas y depositadas personalmente el 17/09/2026;
+- Vaca (`David-Bs1`): 3 capturas históricas propias realizadas y depositadas personalmente el 17/09/2026.
 
-Las seis capturas nuevas no se retrofechan y no se interpretan como trabajo nuevo del examen suspenso. Solo hacen visible actividad histórica ya existente en Git.
+Por instrucción del docente, cada uno debe realizar e incorporar sus propias capturas. Los commits del 17/09 usados para depositarlas son **depósitos de evidencia histórica A2** y no se presentan como nuevas contribuciones técnicas de la fase de corrección.
 
 El detalle se encuentra en `capturas/README.md` e `capturas/inventario_capturas_alvia_vaca.csv`.
 
